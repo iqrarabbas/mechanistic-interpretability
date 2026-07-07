@@ -1,0 +1,55 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Large local datasets
+Dataset/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+/Dataset/
+
+# Model checkpoints and training artifacts
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Hugging Face / experiment caches
+.cache/
+wandb/
+runs/
+lightning_logs/
+
+# Generated logs
+*.log
+logs/
+
+# Keep result figures trackable by default.
+# Add results/ here later if generated plots become too large.
