@@ -1,0 +1,60 @@
+{
+  "manifest_version": "supervisor_v1",
+  "created_date": "2026-08-24",
+  "index_semantics": "zero-based half-open intervals [start, end)",
+  "datasets": {
+    "imagenet_val": {
+      "root": "Dataset",
+      "image_directory": "Dataset/ILSVRC2012_img_val",
+      "size": 50000
+    },
+    "imagenetv2_matched_frequency": {
+      "root": "external_data/imagenetv2-matched-frequency-format-val",
+      "size": 10000
+    }
+  },
+  "current_protocol": {
+    "status": "historical audit only; contains forbidden overlap",
+    "splits": [
+      {"name": "sae_train", "dataset": "imagenet_val", "start": 0, "end": 10000, "isolation_group": "feature_development"},
+      {"name": "sae_validation", "dataset": "imagenet_val", "start": 10000, "end": 11000, "isolation_group": "feature_development"},
+      {"name": "harmful_feature_discovery", "dataset": "imagenet_val", "start": 25000, "end": 30000, "isolation_group": "feature_development"},
+      {"name": "harmful_feature_validation", "dataset": "imagenet_val", "start": 30000, "end": 32000, "isolation_group": "feature_development"},
+      {"name": "harmful_feature_exploratory_evaluation", "dataset": "imagenet_val", "start": 35000, "end": 40000, "isolation_group": "feature_development"},
+      {"name": "initial_adapter_train", "dataset": "imagenet_val", "start": 25000, "end": 30000, "isolation_group": "adapter_gate_development"},
+      {"name": "initial_adapter_validation", "dataset": "imagenet_val", "start": 30000, "end": 32000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter0_gate_train", "dataset": "imagenet_val", "start": 0, "end": 5000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter0_gate_validation", "dataset": "imagenet_val", "start": 5000, "end": 7000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter1_gate_train", "dataset": "imagenet_val", "start": 7000, "end": 12000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter1_gate_validation", "dataset": "imagenet_val", "start": 12000, "end": 14000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter2_gate_train", "dataset": "imagenet_val", "start": 14000, "end": 19000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter2_gate_validation", "dataset": "imagenet_val", "start": 19000, "end": 21000, "isolation_group": "adapter_gate_development"},
+      {"name": "final_evaluation", "dataset": "imagenetv2_matched_frequency", "start": 0, "end": 10000, "isolation_group": "final_evaluation"}
+    ]
+  },
+  "proposed_protocol": {
+    "status": "locked candidate protocol; must be used for clean confirmation",
+    "rules": [
+      "Feature-development images may be reused among SAE training, feature discovery, and feature validation, but never for adapter or gate fitting.",
+      "Adapter and gate may share the same seed-specific training partition because they form one development stage.",
+      "Each adapter seed has a disjoint train/validation partition.",
+      "Adapters must start from neutral/random initialization or an initialization trained only inside the corresponding adapter split.",
+      "ImageNetV2 remains untouched until all feature, architecture, gate, and hyperparameter choices are frozen."
+    ],
+    "splits": [
+      {"name": "sae_train", "dataset": "imagenet_val", "start": 0, "end": 10000, "isolation_group": "feature_development"},
+      {"name": "sae_validation", "dataset": "imagenet_val", "start": 10000, "end": 11000, "isolation_group": "feature_development"},
+      {"name": "harmful_feature_discovery", "dataset": "imagenet_val", "start": 0, "end": 5000, "isolation_group": "feature_development"},
+      {"name": "harmful_feature_validation", "dataset": "imagenet_val", "start": 11000, "end": 13000, "isolation_group": "feature_development"},
+      {"name": "feature_protocol_dry_run", "dataset": "imagenet_val", "start": 13000, "end": 15000, "isolation_group": "feature_development"},
+      {"name": "adapter0_gate_train", "dataset": "imagenet_val", "start": 15000, "end": 20000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter0_gate_validation", "dataset": "imagenet_val", "start": 20000, "end": 22000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter1_gate_train", "dataset": "imagenet_val", "start": 22000, "end": 27000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter1_gate_validation", "dataset": "imagenet_val", "start": 27000, "end": 29000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter2_gate_train", "dataset": "imagenet_val", "start": 29000, "end": 34000, "isolation_group": "adapter_gate_development"},
+      {"name": "adapter2_gate_validation", "dataset": "imagenet_val", "start": 34000, "end": 36000, "isolation_group": "adapter_gate_development"},
+      {"name": "unused_imagenet_reserve", "dataset": "imagenet_val", "start": 36000, "end": 50000, "isolation_group": "reserved"},
+      {"name": "final_evaluation", "dataset": "imagenetv2_matched_frequency", "start": 0, "end": 10000, "isolation_group": "final_evaluation"}
+    ]
+  }
+}

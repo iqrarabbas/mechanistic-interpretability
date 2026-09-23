@@ -307,6 +307,135 @@ Generated plots are saved in:
 results/
 ```
 
+### Run Level-4 Logit Lens Analysis
+
+```bash
+PYTHONPATH=. python scripts/compare_logit_lens_level4.py --corruption both
+```
+
+This analyzes 1,000 held-out Blur-4 and Noise-4 images. It records the
+correct-class probability after every transformer layer and the first layer
+where the correct class becomes the top-1 prediction. Raw metrics and plots
+are saved under `results/logit_lens/`.
+
+Current first-correct-layer results:
+
+| Dataset | Base ViT | Matching fine-tuned ViT |
+|---|---:|---:|
+| Blur-4 | 10.564 | 9.643 |
+| Noise-4 | 10.106 | 9.552 |
+
+Lower is earlier. These results reproduce the paper's finding that the
+correct class emerges earlier after corruption-specific fine-tuning.
+
+### Run Level-4 Attention Analysis
+
+```bash
+PYTHONPATH=. python scripts/compare_attention_level4.py --corruption both
+```
+
+This compares paired clean and corrupted attention tensors for the base and
+matching fine-tuned models. It measures entropy difference (corrupted minus
+clean), mean squared difference, and cosine similarity at all 12 layers. Raw
+metrics and plots are saved under `results/attention/`.
+
+Across layers, fine-tuning increases mean clean/corrupted attention cosine
+similarity from 0.7315 to 0.7663 for Blur-4 and from 0.6530 to 0.7004 for
+Noise-4. Mean squared attention difference also decreases for both corruption
+families.
+
+### Train and Compare Level-4 Sparse Autoencoders
+
+Train one SAE with:
+
+```bash
+PYTHONPATH=. python scripts/train_sae_level4.py \
+  --corruption blur --model base --sae-type vanilla
+```
+
+The paper-level matrix contains both SAE types (`vanilla`, `batchtopk`) for the
+base and fine-tuned model in each corruption family. Defaults follow the paper:
+expansion factor 32, BatchTopK k=32, auxiliary coefficient 1/32, 15 epochs,
+early stopping, learning rate 1e-3, and cosine annealing. The PDF does not give
+a numerical L1 coefficient, so this implementation exposes
+`--l1-coefficient` and defaults it to 1e-3.
+
+The paper-mode vanilla implementation follows Equation 2 literally: squared
+errors are summed over each 768-dimensional patch vector, L1 magnitudes are
+summed over each 24,576-dimensional SAE vector, and both are averaged over
+patches. Check `active_features` in `training.json` after training; a value
+close to all 24,576 features indicates that the SAE is not meaningfully sparse.
+The PDF omits the numerical value of lambda, so `1e-3` remains a documented
+assumption.
+
+Literal-paper checkpoints are saved under `*_vanilla_paper`, and their results
+under `*_vanilla_paper_metrics.json` and `*_vanilla_paper_distribution.png`.
+Existing `*_vanilla` checkpoints and results are preserved unchanged.
+
+To run a small lambda pilot without overwriting full checkpoints, wait for any
+current GPU training to finish and then run:
+
+```bash
+bash scripts/run_vanilla_lambda_sweep.sh
+```
+
+This trains six base-ViT pilots on 1,000 clean/Blur-4 pairs, validates on 200
+separate pairs, runs at most five epochs, and saves each lambda under a unique
+`pilot_lambda_*` checkpoint directory. These pilots estimate the
+sparsity-reconstruction trade-off; they cannot recover the value omitted from
+the paper.
+
+After the sweep finishes, summarize its validation trade-offs with:
+
+```bash
+python scripts/summarize_vanilla_lambda_sweep.py
+```
+
+To reproduce the same literal-paper Vanilla SAE workflow for Gaussian Noise
+severity 4 while preserving all Blur-4 checkpoints and results, run:
+
+```bash
+bash scripts/run_noise4_vanilla_paper.sh
+```
+
+This trains separate SAEs for the base and Noise-4-fine-tuned ViTs on paired
+clean/Noise-4 activations, then compares corresponding-patch cosine similarity
+on 1,000 held-out pairs. Outputs use `noise4_*` names.
+
+For the paper's Figure 9 using Blur-4 only, train both required dictionaries:
+
+```bash
+PYTHONPATH=. python scripts/train_sae_level4.py \
+  --corruption blur --model base --sae-type vanilla
+PYTHONPATH=. python scripts/train_sae_level4.py \
+  --corruption blur --model fine_tuned --sae-type vanilla
+PYTHONPATH=. python scripts/compare_sae_level4.py \
+  --corruption blur --sae-type vanilla --model-scope both
+```
+
+For BatchTopK, use `--l1-coefficient 0`. The implementation follows the
+reference BatchTopK mechanics: unit-normalized inputs, decoder-bias centering,
+batch-wide TopK selection, persistent dead-feature tracking, and auxiliary
+reconstruction. Corrected BatchTopK checkpoints are saved with a
+`_batchtopk_reference` suffix so they remain distinct from earlier legacy
+experiments.
+
+On a GPU with 12 GB or less, the trainer automatically changes a requested
+BatchTopK image batch size above one to `1`. This preserves every clean and
+corrupted image patch while avoiding the large batch-wide TopK backward-pass
+allocation.
+
+After all SAEs are trained, run:
+
+```bash
+PYTHONPATH=. python scripts/compare_sae_level4.py \
+  --corruption both --sae-type both
+```
+
+This calculates cosine similarities between corresponding clean/corrupted
+patch activations and saves distribution plots and JSON summaries under
+`results/sae/`.
+
 ## Result Plots
 
 The `results/` folder contains plots such as:
@@ -348,9 +477,9 @@ Additional project notes are stored in:
 
 The next phase is mechanistic interpretability analysis:
 
-- Add Expected Calibration Error (ECE)
-- Run Logit Lens analysis
-- Measure attention entropy on clean vs blurred images
+- Re-run downstream evaluation with Expected Calibration Error (ECE)
+- Logit Lens analysis is complete for Blur-4 and Noise-4
+- Attention analysis is complete for Blur-4 and Noise-4
 - Compare hidden representations between base and fine-tuned models
 - Optionally train a Noise-4 fine-tuned model
 - Optionally test adversarial attacks such as FGSM and PGD

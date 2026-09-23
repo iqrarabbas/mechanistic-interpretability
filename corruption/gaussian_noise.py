@@ -2,7 +2,7 @@ import numpy as np
 from PIL import Image
 
 
-def apply_gaussian_noise(image, severity=4):
+def apply_gaussian_noise(image, severity=4, seed=None):
     """
     Apply Gaussian noise.
 
@@ -22,7 +22,8 @@ def apply_gaussian_noise(image, severity=4):
 
     std = noise_std_by_severity[severity]
 
-    noise = np.random.normal(
+    rng = np.random.default_rng(seed)
+    noise = rng.normal(
         loc=0.0,
         scale=std,
         size=image_array.shape,

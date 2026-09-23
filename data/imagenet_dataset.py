@@ -18,6 +18,7 @@ class ImageNetDataset(Dataset):
         corruption=None,
         blur_severity=4,
         noise_severity=4,
+        corruption_seed=0,
     ):
         self.dataset_dir = Path(dataset_dir)
         self.max_samples = max_samples
@@ -25,6 +26,7 @@ class ImageNetDataset(Dataset):
         self.corruption = corruption
         self.blur_severity = blur_severity
         self.noise_severity = noise_severity
+        self.corruption_seed = corruption_seed
 
         self.image_dir = self.dataset_dir / "ILSVRC2012_img_val"
         self.devkit_dir = self.dataset_dir / "ILSVRC2012_devkit_t12"
@@ -34,9 +36,19 @@ class ImageNetDataset(Dataset):
         )
         self.meta_file = self.devkit_dir / "data" / "meta.mat"
 
-        self.processor = AutoImageProcessor.from_pretrained(
-            "google/vit-base-patch16-224"
-        )
+        try:
+            self.processor = AutoImageProcessor.from_pretrained(
+                "google/vit-base-patch16-224", local_files_only=True
+            )
+        except OSError:
+            offline_processor = (
+                Path(__file__).parent.parent
+                / "configs"
+                / "vit_base_patch16_224_processor"
+            )
+            self.processor = AutoImageProcessor.from_pretrained(
+                offline_processor, local_files_only=True
+            )
 
         meta = loadmat(self.meta_file)
         synsets = meta["synsets"]
@@ -96,6 +108,9 @@ class ImageNetDataset(Dataset):
             image = apply_gaussian_noise(
                 image,
                 severity=self.noise_severity,
+                # Use the original ImageNet index so every model sees exactly
+                # the same corrupted version of a given test image.
+                seed=self.corruption_seed + self.start_index + index,
             )
 
         inputs = self.processor(images=image, return_tensors="pt")

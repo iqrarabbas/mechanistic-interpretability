@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 
 import torch
 import matplotlib.pyplot as plt
@@ -6,10 +7,12 @@ from torch.utils.data import DataLoader
 from transformers import ViTForImageClassification
 from tqdm import tqdm
 
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from data.imagenet_dataset import ImageNetDataset
 from interpretability.logit_lens import get_correct_class_probs_by_layer
 
-PROJECT_ROOT = Path(__file__).parent.parent
 DATASET_DIR = PROJECT_ROOT / "Dataset"
 RESULTS_DIR = PROJECT_ROOT / "results"
 RESULTS_DIR.mkdir(exist_ok=True)

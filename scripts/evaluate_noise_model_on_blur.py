@@ -59,9 +59,11 @@ print("-" * 40)
 print(f"Clean Top-1:  {clean_results['top1']:.4f}")
 print(f"Clean Top-5:  {clean_results['top5']:.4f}")
 print(f"Clean Top-10: {clean_results['top10']:.4f}")
+print(f"Clean ECE:    {clean_results['ece']:.4f}")
 
 print()
 
 print(f"Blur Top-1:   {blur_results['top1']:.4f}")
 print(f"Blur Top-5:   {blur_results['top5']:.4f}")
 print(f"Blur Top-10:  {blur_results['top10']:.4f}")
+print(f"Blur ECE:     {blur_results['ece']:.4f}")

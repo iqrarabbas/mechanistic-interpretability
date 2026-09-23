@@ -24,7 +24,12 @@
 - [ ] Compare base vs fine-tuned model
 
 ## Later
-- [ ] Logit Lens analysis
-- [ ] Attention entropy analysis
+- [x] Logit Lens correct-class probability for Blur-4 and Noise-4
+- [x] First correct-prediction layer for Blur-4 and Noise-4
+- [x] Expected Calibration Error (ECE)
+- [x] Attention entropy analysis for Blur-4 and Noise-4
+- [x] Attention squared-difference and cosine-similarity analysis
 - [ ] Representation similarity analysis
-- [ ] Optional SAE analysis
+- [x] Vanilla ReLU and BatchTopK SAE training/evaluation pipeline
+- [ ] Complete full 15-epoch training for all eight level-4 SAEs
+- [ ] Generate final SAE similarity distributions
