@@ -1,0 +1,173 @@
+{
+  "configuration": {
+    "cache_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_2",
+    "initial_adapter": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_2/classification_weight_0.05.pt",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/noise_bidirectional_development_gpu/summary.json",
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "feature_count": 16,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "feature_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "predictor_batch_size": 4,
+    "image_batch_size": 2,
+    "independent_samples": 2,
+    "independent_start": 0,
+    "noise_seed": 2026,
+    "seed": 35,
+    "num_workers": 0,
+    "bootstrap_repetitions": 20,
+    "max_cache_samples": 8,
+    "run_name": "smoke_8",
+    "device": "cpu",
+    "harmful_features": [
+      14024,
+      14852,
+      11406,
+      4889,
+      8139,
+      17892,
+      18955,
+      3893,
+      6757,
+      17227,
+      12743,
+      12135,
+      8903,
+      3867,
+      22608,
+      8779
+    ],
+    "random_features": [
+      23262,
+      22970,
+      2533,
+      20272,
+      12765,
+      22323,
+      6026,
+      11262,
+      8300,
+      2376,
+      8064,
+      11138,
+      21,
+      564,
+      8412,
+      22991
+    ],
+    "frozen_components": [
+      "ViT",
+      "SAE",
+      "existing residual adapter"
+    ],
+    "trainable_added_parameters": 13073
+  },
+  "training": {
+    "harmful_sae_guided": {
+      "best_validation_total": 3.1315306425094604,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 3.0240482091903687,
+            "residual": 2.822194457054138,
+            "classification": 1.3193647265434265,
+            "preservation": 0.0,
+            "feature": 2.717708945274353
+          },
+          "validation": {
+            "total": 3.1315306425094604,
+            "residual": 2.948573112487793,
+            "classification": 0.5920455157756805,
+            "preservation": 0.16614508628845215,
+            "feature": 2.900959849357605
+          }
+        }
+      ]
+    },
+    "random_sae_guided": {
+      "best_validation_total": 3.002302408218384,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 2.904044508934021,
+            "residual": 2.8222233057022095,
+            "classification": 1.3194147571921349,
+            "preservation": 0.0,
+            "feature": 0.3170119524002075
+          },
+          "validation": {
+            "total": 3.002302408218384,
+            "residual": 2.9485665559768677,
+            "classification": 0.5920175015926361,
+            "preservation": 0.16588115692138672,
+            "feature": 0.31681741774082184
+          }
+        }
+      ]
+    }
+  },
+  "independent_evaluation": {
+    "baseline": {
+      "noise4_accuracy": 1.0,
+      "clean_accuracy": 1.0
+    },
+    "existing_hidden_adapter": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.0425412654876709,
+      "mean_true_logit_change": -0.7224845886230469,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy": 1.0,
+      "clean_accuracy_gain": 0.0
+    },
+    "harmful_sae_guided": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.04550576210021973,
+      "mean_true_logit_change": -0.7245383262634277,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy": 1.0,
+      "clean_accuracy_gain": 0.0
+    },
+    "random_sae_guided": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.04251265525817871,
+      "mean_true_logit_change": -0.7221236228942871,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy": 1.0,
+      "clean_accuracy_gain": 0.0
+    }
+  },
+  "comparison": {
+    "harmful_guided_minus_existing_gain": 0.0,
+    "harmful_guided_minus_random_guided_gain": 0.0,
+    "sae_guidance_supported": false
+  }
+}

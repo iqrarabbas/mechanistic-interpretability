@@ -1,0 +1,1101 @@
+{
+  "configuration": {
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment99_attention_head_corruption_detector/full_3seed_clean_noise_blur_v1",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "minimum_corruption_retention": 0.95,
+    "run_name": "full_3seed_95pct_retention_v1",
+    "threshold_candidates": 201,
+    "selection_data": "first half of each Experiment 99 validation condition",
+    "evaluation_data": "second half of each Experiment 99 validation condition",
+    "new_vit_inference": false,
+    "imageNetV2_accessed": false,
+    "router_uses_clean_counterpart": false,
+    "status": "cached-feature development analysis; adapter not applied"
+  },
+  "results": {
+    "0": {
+      "selected_clean_probability_threshold": 0.23500000000000001,
+      "development": {
+        "original_argmax": {
+          "overall_accuracy": 0.8636363744735718,
+          "macro_family_accuracy": 0.8639625112215678,
+          "family_accuracy": {
+            "clean": 0.6200000047683716,
+            "noise": 0.9919678568840027,
+            "blur": 0.9799196720123291
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.6200000047683716,
+              "routing_fractions_clean_noise_blur": [
+                0.6200000047683716,
+                0.20000000298023224,
+                0.18000000715255737
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.9397590160369873,
+              "routing_fractions_clean_noise_blur": [
+                0.048192769289016724,
+                0.012048192322254181,
+                0.9397590160369873
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.8983957171440125,
+          "macro_family_accuracy": 0.8985113700230917,
+          "family_accuracy": {
+            "clean": 0.8119999766349792,
+            "noise": 0.9759036302566528,
+            "blur": 0.9076305031776428
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.8119999766349792,
+              "routing_fractions_clean_noise_blur": [
+                0.8119999766349792,
+                0.08399999886751175,
+                0.10400000214576721
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.9759036302566528,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9518072009086609,
+              "routing_fractions_clean_noise_blur": [
+                0.048192769289016724,
+                0.9518072009086609,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.759036123752594,
+              "routing_fractions_clean_noise_blur": [
+                0.22891566157341003,
+                0.012048192322254181,
+                0.759036123752594
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9638554453849792,
+              "routing_fractions_clean_noise_blur": [
+                0.03614457696676254,
+                0.0,
+                0.9638554453849792
+              ]
+            }
+          }
+        },
+        "minimum_mean_noise_blur_accuracy": 0.9366465762257575
+      },
+      "heldout_validation_half": {
+        "original_argmax": {
+          "overall_accuracy": 0.885026752948761,
+          "macro_family_accuracy": 0.885263721148173,
+          "family_accuracy": {
+            "clean": 0.7080000042915344,
+            "noise": 0.9839357137680054,
+            "blur": 0.9638554453849792
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.7080000042915344,
+              "routing_fractions_clean_noise_blur": [
+                0.7080000042915344,
+                0.14800000190734863,
+                0.14399999380111694
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.9759036302566528,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.891566276550293,
+              "routing_fractions_clean_noise_blur": [
+                0.08433734625577927,
+                0.024096384644508362,
+                0.891566276550293
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.8917112350463867,
+          "macro_family_accuracy": 0.8917376200358073,
+          "family_accuracy": {
+            "clean": 0.871999979019165,
+            "noise": 0.9437751173973083,
+            "blur": 0.8594377636909485
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.871999979019165,
+              "routing_fractions_clean_noise_blur": [
+                0.871999979019165,
+                0.06400000303983688,
+                0.06400000303983688
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9036144614219666,
+              "routing_fractions_clean_noise_blur": [
+                0.09638553857803345,
+                0.9036144614219666,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9397590160369873,
+              "routing_fractions_clean_noise_blur": [
+                0.0602409653365612,
+                0.9397590160369873,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.6385542154312134,
+              "routing_fractions_clean_noise_blur": [
+                0.34939759969711304,
+                0.012048192322254181,
+                0.6385542154312134
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9397590160369873,
+              "routing_fractions_clean_noise_blur": [
+                0.0602409653365612,
+                0.0,
+                0.9397590160369873
+              ]
+            }
+          }
+        }
+      },
+      "unseen_routing": {
+        "jpeg": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.8059999942779541,
+            0.10000000149011612,
+            0.09399999678134918
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.4773349165916443,
+            0.25810861587524414,
+            0.2645564377307892
+          ]
+        },
+        "pixelate": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.4779999852180481,
+            0.019999999552965164,
+            0.5019999742507935
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.28729599714279175,
+            0.06779372692108154,
+            0.6449102163314819
+          ]
+        },
+        "brightness": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.8339999914169312,
+            0.014000000432133675,
+            0.15199999511241913
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.5764198899269104,
+            0.06841811537742615,
+            0.3551620543003082
+          ]
+        },
+        "contrast": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.6200000047683716,
+            0.009999999776482582,
+            0.3700000047683716
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.39066165685653687,
+            0.06873735040426254,
+            0.5406009554862976
+          ]
+        }
+      }
+    },
+    "1": {
+      "selected_clean_probability_threshold": 0.37,
+      "development": {
+        "original_argmax": {
+          "overall_accuracy": 0.8783422708511353,
+          "macro_family_accuracy": 0.8785970608393351,
+          "family_accuracy": {
+            "clean": 0.6880000233650208,
+            "noise": 0.9879518151283264,
+            "blur": 0.9598393440246582
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.6880000233650208,
+              "routing_fractions_clean_noise_blur": [
+                0.6880000233650208,
+                0.1720000058412552,
+                0.14000000059604645
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.9759036302566528,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.891566276550293,
+              "routing_fractions_clean_noise_blur": [
+                0.08433734625577927,
+                0.024096384644508362,
+                0.891566276550293
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.0,
+                0.9879518151283264
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.8810160160064697,
+          "macro_family_accuracy": 0.8812155326207479,
+          "family_accuracy": {
+            "clean": 0.7319999933242798,
+            "noise": 0.9799196720123291,
+            "blur": 0.9317269325256348
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.7319999933242798,
+              "routing_fractions_clean_noise_blur": [
+                0.7319999933242798,
+                0.14000000059604645,
+                0.12800000607967377
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9518072009086609,
+              "routing_fractions_clean_noise_blur": [
+                0.048192769289016724,
+                0.9518072009086609,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.8072289228439331,
+              "routing_fractions_clean_noise_blur": [
+                0.16867469251155853,
+                0.024096384644508362,
+                0.8072289228439331
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.0,
+                0.9879518151283264
+              ]
+            }
+          }
+        },
+        "minimum_mean_noise_blur_accuracy": 0.9252008005976676
+      },
+      "heldout_validation_half": {
+        "original_argmax": {
+          "overall_accuracy": 0.8676470518112183,
+          "macro_family_accuracy": 0.8679303924242655,
+          "family_accuracy": {
+            "clean": 0.656000018119812,
+            "noise": 0.9718875288963318,
+            "blur": 0.9759036302566528
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.656000018119812,
+              "routing_fractions_clean_noise_blur": [
+                0.656000018119812,
+                0.164000004529953,
+                0.18000000715255737
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.9879518151283264,
+                0.012048192322254181
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9759036302566528,
+                0.012048192322254181
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9518072009086609,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.9518072009086609,
+                0.024096384644508362
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.9277108311653137,
+              "routing_fractions_clean_noise_blur": [
+                0.07228915393352509,
+                0.0,
+                0.9277108311653137
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.893048107624054,
+          "macro_family_accuracy": 0.8932369550069174,
+          "family_accuracy": {
+            "clean": 0.7519999742507935,
+            "noise": 0.9638554453849792,
+            "blur": 0.9638554453849792
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.7519999742507935,
+              "routing_fractions_clean_noise_blur": [
+                0.7519999742507935,
+                0.12800000607967377,
+                0.11999999731779099
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.9879518151283264,
+                0.012048192322254181
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9759036302566528,
+                0.012048192322254181
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9277108311653137,
+              "routing_fractions_clean_noise_blur": [
+                0.048192769289016724,
+                0.9277108311653137,
+                0.024096384644508362
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.891566276550293,
+              "routing_fractions_clean_noise_blur": [
+                0.10843373835086823,
+                0.0,
+                0.891566276550293
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        }
+      },
+      "unseen_routing": {
+        "jpeg": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.6380000114440918,
+            0.18000000715255737,
+            0.18199999630451202
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.4800906777381897,
+            0.2640112638473511,
+            0.25589805841445923
+          ]
+        },
+        "pixelate": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.31200000643730164,
+            0.03400000184774399,
+            0.6539999842643738
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.28679949045181274,
+            0.07642100751399994,
+            0.6367794871330261
+          ]
+        },
+        "brightness": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.9359999895095825,
+            0.019999999552965164,
+            0.04399999976158142
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.7709629535675049,
+            0.07463433593511581,
+            0.1544027477502823
+          ]
+        },
+        "contrast": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.5559999942779541,
+            0.05999999865889549,
+            0.3840000033378601
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.44827112555503845,
+            0.11781413853168488,
+            0.4339147210121155
+          ]
+        }
+      }
+    },
+    "2": {
+      "selected_clean_probability_threshold": 0.23500000000000001,
+      "development": {
+        "original_argmax": {
+          "overall_accuracy": 0.8622994422912598,
+          "macro_family_accuracy": 0.8625917037328085,
+          "family_accuracy": {
+            "clean": 0.6439999938011169,
+            "noise": 0.9799196720123291,
+            "blur": 0.9638554453849792
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.6439999938011169,
+              "routing_fractions_clean_noise_blur": [
+                0.6439999938011169,
+                0.14399999380111694,
+                0.21199999749660492
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9638554453849792,
+              "routing_fractions_clean_noise_blur": [
+                0.03614457696676254,
+                0.9638554453849792,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.9759036302566528,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.9036144614219666,
+              "routing_fractions_clean_noise_blur": [
+                0.08433734625577927,
+                0.012048192322254181,
+                0.9036144614219666
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.0,
+                0.9879518151283264
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.9090909361839294,
+          "macro_family_accuracy": 0.9091352025667826,
+          "family_accuracy": {
+            "clean": 0.8759999871253967,
+            "noise": 0.9437751173973083,
+            "blur": 0.9076305031776428
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.8759999871253967,
+              "routing_fractions_clean_noise_blur": [
+                0.8759999871253967,
+                0.03999999910593033,
+                0.08399999886751175
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9036144614219666,
+              "routing_fractions_clean_noise_blur": [
+                0.09638553857803345,
+                0.9036144614219666,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9277108311653137,
+              "routing_fractions_clean_noise_blur": [
+                0.07228915393352509,
+                0.9277108311653137,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.7469879388809204,
+              "routing_fractions_clean_noise_blur": [
+                0.2530120611190796,
+                0.0,
+                0.7469879388809204
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9759036302566528,
+              "routing_fractions_clean_noise_blur": [
+                0.024096384644508362,
+                0.0,
+                0.9759036302566528
+              ]
+            }
+          }
+        },
+        "minimum_mean_noise_blur_accuracy": 0.9232931807637215
+      },
+      "heldout_validation_half": {
+        "original_argmax": {
+          "overall_accuracy": 0.8676470518112183,
+          "macro_family_accuracy": 0.8678821921348572,
+          "family_accuracy": {
+            "clean": 0.6919999718666077,
+            "noise": 0.9678714871406555,
+            "blur": 0.9437751173973083
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.6919999718666077,
+              "routing_fractions_clean_noise_blur": [
+                0.6919999718666077,
+                0.12800000607967377,
+                0.18000000715255737
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9638554453849792,
+              "routing_fractions_clean_noise_blur": [
+                0.03614457696676254,
+                0.9638554453849792,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9518072009086609,
+              "routing_fractions_clean_noise_blur": [
+                0.048192769289016724,
+                0.9518072009086609,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.8433734774589539,
+              "routing_fractions_clean_noise_blur": [
+                0.15662650763988495,
+                0.0,
+                0.8433734774589539
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.0,
+                0.9879518151283264
+              ]
+            }
+          }
+        },
+        "confidence_safe": {
+          "overall_accuracy": 0.8903743028640747,
+          "macro_family_accuracy": 0.8904417554537455,
+          "family_accuracy": {
+            "clean": 0.8399999737739563,
+            "noise": 0.9518072009086609,
+            "blur": 0.8795180916786194
+          },
+          "conditions": {
+            "clean": {
+              "samples": 250,
+              "accuracy": 0.8399999737739563,
+              "routing_fractions_clean_noise_blur": [
+                0.8399999737739563,
+                0.07599999755620956,
+                0.08399999886751175
+              ]
+            },
+            "gaussian_noise": {
+              "samples": 83,
+              "accuracy": 0.9879518151283264,
+              "routing_fractions_clean_noise_blur": [
+                0.012048192322254181,
+                0.9879518151283264,
+                0.0
+              ]
+            },
+            "shot_noise": {
+              "samples": 83,
+              "accuracy": 0.9277108311653137,
+              "routing_fractions_clean_noise_blur": [
+                0.07228915393352509,
+                0.9277108311653137,
+                0.0
+              ]
+            },
+            "impulse_noise": {
+              "samples": 83,
+              "accuracy": 0.9397590160369873,
+              "routing_fractions_clean_noise_blur": [
+                0.0602409653365612,
+                0.9397590160369873,
+                0.0
+              ]
+            },
+            "gaussian_blur": {
+              "samples": 83,
+              "accuracy": 1.0,
+              "routing_fractions_clean_noise_blur": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            "disk_blur": {
+              "samples": 83,
+              "accuracy": 0.6746987700462341,
+              "routing_fractions_clean_noise_blur": [
+                0.3253012001514435,
+                0.0,
+                0.6746987700462341
+              ]
+            },
+            "motion_blur": {
+              "samples": 83,
+              "accuracy": 0.9638554453849792,
+              "routing_fractions_clean_noise_blur": [
+                0.03614457696676254,
+                0.0,
+                0.9638554453849792
+              ]
+            }
+          }
+        }
+      },
+      "unseen_routing": {
+        "jpeg": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.7200000286102295,
+            0.12600000202655792,
+            0.15399999916553497
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.4387705624103546,
+            0.28002533316612244,
+            0.28120410442352295
+          ]
+        },
+        "pixelate": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.46000000834465027,
+            0.01600000075995922,
+            0.5239999890327454
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.28543469309806824,
+            0.07675564289093018,
+            0.637809693813324
+          ]
+        },
+        "brightness": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.7239999771118164,
+            0.02800000086426735,
+            0.24799999594688416
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.47268199920654297,
+            0.10177977383136749,
+            0.42553821206092834
+          ]
+        },
+        "contrast": {
+          "samples": 500,
+          "routing_fractions_clean_noise_blur": [
+            0.492000013589859,
+            0.035999998450279236,
+            0.47200000286102295
+          ],
+          "mean_probabilities_clean_noise_blur": [
+            0.30350926518440247,
+            0.12773942947387695,
+            0.5687512755393982
+          ]
+        }
+      }
+    }
+  },
+  "guardrails": [
+    "Threshold selection and reported held-out evaluation use disjoint image halves.",
+    "The threshold is selected independently for each seed.",
+    "Unseen-corruption routing is descriptive because no correct expert label is defined.",
+    "No final reserve, ImageNetV2, or ImageNet-Sketch data are accessed."
+  ]
+}

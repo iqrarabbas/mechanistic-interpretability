@@ -1,0 +1,205 @@
+{
+  "configuration": {
+    "inputs": {
+      "clean": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment32_multirandom_subspaces/clean_noise_features_3seeds_20controls/paired_outcomes.npz",
+      "noise4": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment32_multirandom_subspaces/full_3seeds_20controls/paired_outcomes.npz",
+      "blur4": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment32_multirandom_subspaces/blur4_noise_features_3seeds_20controls/paired_outcomes.npz"
+    },
+    "adapter_seeds": [
+      0,
+      1,
+      2
+    ],
+    "samples": 10000,
+    "bootstrap_repetitions": 10000,
+    "seed": 2026,
+    "random_null": "all 20x20 pairs of independently sampled clean and corrupt energy-matched random subspaces per adapter seed"
+  },
+  "results": {
+    "noise4": {
+      "per_seed": {
+        "0": {
+          "clean_harmful_removal_cost": 0.0127,
+          "corrupt_harmful_removal_cost": 0.0184,
+          "corruption_amplification": 0.0057,
+          "amplification_95ci": [
+            -0.0005,
+            0.0118
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.00182,
+          "random_null_95percent_range": [
+            -0.0042074999999999994,
+            0.007302499999999998
+          ],
+          "empirical_one_sided_pvalue": 0.057356608478802994,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 324,
+            "full_wrong_to_removed_correct": 197
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 407,
+            "full_wrong_to_removed_correct": 223
+          }
+        },
+        "1": {
+          "clean_harmful_removal_cost": 0.012,
+          "corrupt_harmful_removal_cost": 0.0187,
+          "corruption_amplification": 0.0067,
+          "amplification_95ci": [
+            0.0005,
+            0.013
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.0008249999999999999,
+          "random_null_95percent_range": [
+            -0.0051,
+            0.0076
+          ],
+          "empirical_one_sided_pvalue": 0.04738154613466334,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 323,
+            "full_wrong_to_removed_correct": 203
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 425,
+            "full_wrong_to_removed_correct": 238
+          }
+        },
+        "2": {
+          "clean_harmful_removal_cost": 0.0178,
+          "corrupt_harmful_removal_cost": 0.0229,
+          "corruption_amplification": 0.0051,
+          "amplification_95ci": [
+            -0.0015,
+            0.0116
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.00041,
+          "random_null_95percent_range": [
+            -0.0145075,
+            0.006402499999999998
+          ],
+          "empirical_one_sided_pvalue": 0.08478802992518704,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 376,
+            "full_wrong_to_removed_correct": 198
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 454,
+            "full_wrong_to_removed_correct": 225
+          }
+        }
+      },
+      "pooled": {
+        "mean_corruption_amplification": 0.005833333333333333,
+        "amplification_95ci": [
+          0.0007999999999999999,
+          0.01100083333333332
+        ],
+        "positive_for_every_adapter_seed": true,
+        "all_pairs_random_null_count": 1200,
+        "all_pairs_random_null_mean": 0.0010183333333333333,
+        "all_pairs_random_null_95percent_range": [
+          -0.0059025,
+          0.007102499999999986
+        ],
+        "empirical_one_sided_pvalue": 0.04995836802664446,
+        "fraction_random_null_below_harmful": 0.9508333333333333
+      }
+    },
+    "blur4": {
+      "per_seed": {
+        "0": {
+          "clean_harmful_removal_cost": 0.0127,
+          "corrupt_harmful_removal_cost": 0.0383,
+          "corruption_amplification": 0.0256,
+          "amplification_95ci": [
+            0.019,
+            0.0321
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.003135,
+          "random_null_95percent_range": [
+            -0.0031099999999999995,
+            0.008307499999999994
+          ],
+          "empirical_one_sided_pvalue": 0.0024937655860349127,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 324,
+            "full_wrong_to_removed_correct": 197
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 552,
+            "full_wrong_to_removed_correct": 169
+          }
+        },
+        "1": {
+          "clean_harmful_removal_cost": 0.012,
+          "corrupt_harmful_removal_cost": 0.0413,
+          "corruption_amplification": 0.0293,
+          "amplification_95ci": [
+            0.0225,
+            0.036
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.0035499999999999998,
+          "random_null_95percent_range": [
+            -0.0027025,
+            0.011202499999999997
+          ],
+          "empirical_one_sided_pvalue": 0.0024937655860349127,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 323,
+            "full_wrong_to_removed_correct": 203
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 585,
+            "full_wrong_to_removed_correct": 172
+          }
+        },
+        "2": {
+          "clean_harmful_removal_cost": 0.0178,
+          "corrupt_harmful_removal_cost": 0.0454,
+          "corruption_amplification": 0.0276,
+          "amplification_95ci": [
+            0.0205,
+            0.0346
+          ],
+          "random_all_pairs_null_count": 400,
+          "random_null_mean": 0.0015949999999999998,
+          "random_null_95percent_range": [
+            -0.0146,
+            0.015307499999999993
+          ],
+          "empirical_one_sided_pvalue": 0.0024937655860349127,
+          "clean_transitions": {
+            "full_correct_to_removed_wrong": 376,
+            "full_wrong_to_removed_correct": 198
+          },
+          "corrupt_transitions": {
+            "full_correct_to_removed_wrong": 625,
+            "full_wrong_to_removed_correct": 171
+          }
+        }
+      },
+      "pooled": {
+        "mean_corruption_amplification": 0.0275,
+        "amplification_95ci": [
+          0.021966666666666666,
+          0.03326666666666666
+        ],
+        "positive_for_every_adapter_seed": true,
+        "all_pairs_random_null_count": 1200,
+        "all_pairs_random_null_mean": 0.0027600000000000003,
+        "all_pairs_random_null_95percent_range": [
+          -0.0053025,
+          0.012602499999999987
+        ],
+        "empirical_one_sided_pvalue": 0.0008326394671107411,
+        "fraction_random_null_below_harmful": 1.0
+      }
+    }
+  },
+  "decision_rule": "A positive paired interaction with CI excluding zero and an extreme random-null percentile supports disproportionate corruption dependence."
+}

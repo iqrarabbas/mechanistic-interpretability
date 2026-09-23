@@ -1,0 +1,27 @@
+{
+  "calibration_samples": 4,
+  "validation_samples": 2,
+  "evaluation_samples": 2,
+  "calibration_start": 41400,
+  "validation_start": 41404,
+  "evaluation_start": 41406,
+  "patches_per_calibration_image": 2,
+  "quantiles": [
+    0.99
+  ],
+  "alpha_maxes": [
+    0.25
+  ],
+  "adaptive_widths": [
+    0.001
+  ],
+  "clean_loss_penalty": 2.0,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "run_name": "smoke_quantile_2",
+  "resume": false,
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/clean_base_vanilla_paper",
+  "status": "exploratory; local ImageNet validation images were used previously"
+}

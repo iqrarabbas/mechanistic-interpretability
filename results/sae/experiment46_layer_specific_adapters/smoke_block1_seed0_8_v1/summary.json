@@ -1,0 +1,131 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "layers": [
+      1
+    ],
+    "seeds": [
+      0
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 2,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "image_batch_size": 4,
+    "num_workers": 0,
+    "bootstrap_repetitions": 5000,
+    "max_samples": 8,
+    "run_name": "smoke_block1_seed0_8_v1",
+    "resume": false,
+    "device": "cuda",
+    "frozen_components": [
+      "ViT"
+    ],
+    "adapter_trainable_parameters": 741120,
+    "adapter_scope": "patch tokens only",
+    "block_definition": "adapter applied after the numbered transformer block",
+    "block12_limitation": "patch-only correction after the final block cannot alter CLS logits; included as a negative control",
+    "persistent_hidden_caches_created": false,
+    "imageNetV2_accessed": false,
+    "status": "development comparison only"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "best_validation_total": {
+        "1": 0.2557215616106987
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "1": {
+              "total": 0.3112323582172394,
+              "residual": 0.2717995420098305,
+              "classification": 0.7866944968700409,
+              "preservation": 0.001961827278137207
+            }
+          },
+          "validation": {
+            "1": {
+              "total": 0.2557215616106987,
+              "residual": 0.2439284324645996,
+              "classification": 0.20970236137509346,
+              "preservation": 0.02616029977798462
+            }
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 0.875,
+      "baseline_noise4_accuracy": 0.875,
+      "blocks": {
+        "1": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "1": {
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise4_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    }
+  },
+  "best_layer": 1
+}

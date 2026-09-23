@@ -1,0 +1,108 @@
+{
+  "status": "complete",
+  "candidate": {
+    "kind": "vanilla",
+    "l1_coefficient": 0.01
+  },
+  "candidate_name": "vanilla_lambda_1em02",
+  "initialization_seed": 2000,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "objective": 2207.9795943603517,
+        "training_reconstruction_term": 2189.797620544434,
+        "sparsity_term": 1818.1971667480468,
+        "auxiliary_term": 0.0,
+        "active_features": 3067.870252441406,
+        "normalized_mse": 0.032312430437111024,
+        "explained_variance": 0.9676871733559572,
+        "features_active_at_least_once": 24576,
+        "features_never_active": 0,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 654.8578753662109,
+        "training_reconstruction_term": 640.2824926757812,
+        "sparsity_term": 1457.5381274414062,
+        "auxiliary_term": 0.0,
+        "active_features": 1914.3536608886718,
+        "normalized_mse": 0.009298811146758469,
+        "explained_variance": 0.9907011007882366,
+        "features_active_at_least_once": 24572,
+        "features_never_active": 4,
+        "patches": 39200,
+        "baseline_clean_accuracy": 0.8,
+        "full_reconstruction_clean_accuracy": 0.81,
+        "full_reconstruction_clean_accuracy_change": 0.01,
+        "images": 200
+      }
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "objective": 542.7475734863282,
+        "training_reconstruction_term": 527.3439337768555,
+        "sparsity_term": 1540.3639182128907,
+        "auxiliary_term": 0.0,
+        "active_features": 1879.074333984375,
+        "normalized_mse": 0.007781433449431886,
+        "explained_variance": 0.9922184711570472,
+        "features_active_at_least_once": 24576,
+        "features_never_active": 0,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 359.73881103515623,
+        "training_reconstruction_term": 343.0620184326172,
+        "sparsity_term": 1667.6792431640624,
+        "auxiliary_term": 0.0,
+        "active_features": 1845.056876220703,
+        "normalized_mse": 0.00498228353993148,
+        "explained_variance": 0.9950176561639359,
+        "features_active_at_least_once": 24521,
+        "features_never_active": 55,
+        "patches": 39200,
+        "baseline_clean_accuracy": 0.8,
+        "full_reconstruction_clean_accuracy": 0.785,
+        "full_reconstruction_clean_accuracy_change": -0.015,
+        "images": 200
+      }
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "objective": 214.46890180969237,
+        "training_reconstruction_term": 194.73765556335448,
+        "sparsity_term": 1973.1246726074219,
+        "auxiliary_term": 0.0,
+        "active_features": 2010.1761076660157,
+        "normalized_mse": 0.0028735290566691057,
+        "explained_variance": 0.9971264358500891,
+        "features_active_at_least_once": 24575,
+        "features_never_active": 1,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 144.72044075012207,
+        "training_reconstruction_term": 122.04343444824218,
+        "sparsity_term": 2267.7006787109376,
+        "auxiliary_term": 0.0,
+        "active_features": 2108.7945861816406,
+        "normalized_mse": 0.0017724346013463994,
+        "explained_variance": 0.9982275721931536,
+        "features_active_at_least_once": 24261,
+        "features_never_active": 315,
+        "patches": 39200,
+        "baseline_clean_accuracy": 0.8,
+        "full_reconstruction_clean_accuracy": 0.8,
+        "full_reconstruction_clean_accuracy_change": 0.0,
+        "images": 200
+      }
+    }
+  ],
+  "best_validation_normalized_mse": 0.0017724346013463994,
+  "best_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed0_1000train_200val_3epoch_v1/vanilla_lambda_1em02/model.pt",
+  "latest_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed0_1000train_200val_3epoch_v1/vanilla_lambda_1em02/latest.pt",
+  "completed_epochs": 3
+}

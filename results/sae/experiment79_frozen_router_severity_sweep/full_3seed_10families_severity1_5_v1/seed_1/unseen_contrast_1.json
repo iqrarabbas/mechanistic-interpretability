@@ -1,0 +1,56 @@
+{
+  "methods": {
+    "mixed": {
+      "reference_accuracy": 0.793,
+      "candidate_accuracy": 0.7983333333333333,
+      "accuracy_difference": 0.005333333333333333,
+      "accuracy_difference_95ci": [
+        -0.0023333333333333335,
+        0.013
+      ],
+      "reference_wrong_candidate_correct": 75,
+      "reference_correct_candidate_wrong": 59,
+      "mcnemar_exact_pvalue": 0.19485665950707512
+    },
+    "uniform": {
+      "reference_accuracy": 0.793,
+      "candidate_accuracy": 0.7953333333333333,
+      "accuracy_difference": 0.0023333333333333335,
+      "accuracy_difference_95ci": [
+        -0.0023333333333333335,
+        0.007
+      ],
+      "reference_wrong_candidate_correct": 30,
+      "reference_correct_candidate_wrong": 23,
+      "mcnemar_exact_pvalue": 0.4101027163746913
+    },
+    "router_soft": {
+      "reference_accuracy": 0.793,
+      "candidate_accuracy": 0.7996666666666666,
+      "accuracy_difference": 0.006666666666666667,
+      "accuracy_difference_95ci": [
+        0.0013333333333333333,
+        0.012
+      ],
+      "reference_wrong_candidate_correct": 45,
+      "reference_correct_candidate_wrong": 25,
+      "mcnemar_exact_pvalue": 0.022462895492509273
+    },
+    "router_hard": {
+      "reference_accuracy": 0.793,
+      "candidate_accuracy": 0.7986666666666666,
+      "accuracy_difference": 0.005666666666666667,
+      "accuracy_difference_95ci": [
+        0.0,
+        0.011333333333333334
+      ],
+      "reference_wrong_candidate_correct": 46,
+      "reference_correct_candidate_wrong": 29,
+      "mcnemar_exact_pvalue": 0.06394991646706692
+    }
+  },
+  "routing": {
+    "mean_noise_probability": 0.25410959124565125,
+    "hard_noise_fraction": 0.239
+  }
+}

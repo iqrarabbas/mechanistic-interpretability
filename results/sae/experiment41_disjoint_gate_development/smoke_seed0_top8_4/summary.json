@@ -1,0 +1,193 @@
+{
+  "configuration": {
+    "adapter_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/supervisor_disjoint_feature_dev_v1/summary.json",
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "feature_counts": [
+      8
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "max_scale": 2.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "predictor_batch_size": 2,
+    "bootstrap_repetitions": 100,
+    "clean_penalty": 2.0,
+    "run_name": "smoke_seed0_top8_4",
+    "resume": false,
+    "max_cache_samples": 4,
+    "device": "cuda",
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT",
+      "clean SAE",
+      "three residual adapters"
+    ],
+    "imageNetV2_accessed": false,
+    "status": "gate development only; final evaluation remains untouched"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "feature_ranking": [
+    14024,
+    14852,
+    4889,
+    11406,
+    18955,
+    22608,
+    6757,
+    8139
+  ],
+  "training": {
+    "seed_0": {
+      "gate_top8": {
+        "best_validation_total": 2.8078160285949707,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 3.1869046688079834,
+              "residual": 3.141338586807251,
+              "classification": 0.9113220684230328,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 2.8078160285949707,
+              "residual": 2.792185664176941,
+              "classification": 0.1011464111506939,
+              "preservation": 0.21145939826965332
+            }
+          }
+        ],
+        "features": [
+          14024,
+          14852,
+          4889,
+          11406,
+          18955,
+          22608,
+          6757,
+          8139
+        ]
+      }
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 1.0,
+      "baseline_noise4_accuracy": 1.0,
+      "methods": {
+        "adapter": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.25,
+            "accuracy_difference_95ci": [
+              -0.75,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "gate_top8": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.25,
+            "accuracy_difference_95ci": [
+              -0.5,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "gate_top8": {
+      "mean_noise4_accuracy": 1.0,
+      "mean_clean_accuracy": 0.75,
+      "mean_clean_baseline_accuracy": 1.0,
+      "selection_score": 0.5
+    }
+  },
+  "selected_gate": "gate_top8"
+}

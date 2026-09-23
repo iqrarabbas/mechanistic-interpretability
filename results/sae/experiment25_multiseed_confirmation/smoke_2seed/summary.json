@@ -1,0 +1,214 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "independent_samples": 2,
+    "independent_start": 0,
+    "seeds": [
+      0,
+      1
+    ],
+    "train_samples": 4,
+    "validation_samples": 2,
+    "development_start": 100,
+    "split_stride": 6,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "alpha": 1.0,
+    "train_alpha": 0.5,
+    "initial_checkpoint": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment23_noise_residual_predictor/full_noise_predictor/hidden_linear.pt",
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "predictor_batch_size": 2,
+    "image_batch_size": 2,
+    "num_workers": 0,
+    "noise_seed": 2026,
+    "bootstrap_repetitions": 20,
+    "run_name": "smoke_2seed",
+    "resume": false,
+    "device": "cpu",
+    "fixed_without_retuning": true,
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT",
+      "SAE"
+    ]
+  },
+  "development_splits": {
+    "0": {
+      "train_start": 100,
+      "train_end": 104,
+      "validation_start": 104,
+      "validation_end": 106
+    },
+    "1": {
+      "train_start": 106,
+      "train_end": 110,
+      "validation_start": 110,
+      "validation_end": 112
+    }
+  },
+  "training": {
+    "seed_0": {
+      "classification_weight": 0.05,
+      "preservation_weight": 0.05,
+      "train_alpha": 0.5,
+      "smooth_l1_beta": 1.0,
+      "best_validation_total": 2.9887800216674805,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 3.2089016437530518,
+            "residual": 3.188630223274231,
+            "classification": 0.13480796106159687,
+            "preservation": 0.2706204652786255
+          },
+          "validation": {
+            "total": 2.9887800216674805,
+            "residual": 2.823122501373291,
+            "classification": 3.3131513595581055,
+            "preservation": 0.0
+          }
+        }
+      ]
+    },
+    "seed_1": {
+      "classification_weight": 0.05,
+      "preservation_weight": 0.05,
+      "train_alpha": 0.5,
+      "smooth_l1_beta": 1.0,
+      "best_validation_total": 2.9314541816711426,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 2.9321634769439697,
+            "residual": 2.8896435499191284,
+            "classification": 0.6825245767831802,
+            "preservation": 0.16787266731262207
+          },
+          "validation": {
+            "total": 2.9314541816711426,
+            "residual": 2.925297737121582,
+            "classification": 0.1231304183602333,
+            "preservation": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "validation_monitoring_only": {
+    "seed_0": {
+      "original_vit": {
+        "noise4_accuracy": 0.5,
+        "clean_accuracy": 0.5,
+        "mean_noise4_margin": -2.2042973041534424
+      },
+      "fixed_configuration": {
+        "noise4_accuracy": 0.5,
+        "noise4_accuracy_gain": 0.0,
+        "mean_margin_change": 1.2071845531463623,
+        "mean_true_logit_change": 0.6322696208953857,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      }
+    },
+    "seed_1": {
+      "original_vit": {
+        "noise4_accuracy": 1.0,
+        "clean_accuracy": 1.0,
+        "mean_noise4_margin": 2.94291615486145
+      },
+      "fixed_configuration": {
+        "noise4_accuracy": 1.0,
+        "noise4_accuracy_gain": 0.0,
+        "mean_margin_change": 0.9976847171783447,
+        "mean_true_logit_change": 1.4282913208007812,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      }
+    }
+  },
+  "independent_evaluation": {
+    "original_vit": {
+      "noise4_accuracy": 1.0,
+      "clean_accuracy": 1.0,
+      "samples": 2
+    },
+    "seed_0": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.6456758975982666,
+      "mean_true_logit_change": -1.3852758407592773,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 1.0,
+      "clean_accuracy_gain_if_applied": 0.0
+    },
+    "seed_1": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.7085714340209961,
+      "mean_true_logit_change": -1.5624032020568848,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 1.0,
+      "clean_accuracy_gain_if_applied": 0.0
+    },
+    "ensemble": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": -0.6747653484344482,
+      "mean_true_logit_change": -1.4686522483825684,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 1.0,
+      "clean_accuracy_gain_if_applied": 0.0
+    },
+    "paired_clean_oracle": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin_change": 0.6090595722198486,
+      "mean_true_logit_change": 0.8149294853210449,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 1.0,
+      "clean_accuracy_gain_if_applied": 0.0
+    }
+  },
+  "aggregate_confirmation": {
+    "mean_seed_accuracy_gain": 0.0,
+    "seed_accuracy_gain_standard_deviation": 0.0,
+    "all_seed_gains_positive": false,
+    "positive_seed_count": 0,
+    "seed_count": 2,
+    "ensemble_gain": 0.0,
+    "ensemble_ci_excludes_zero": false,
+    "ensemble_mcnemar_below_0.05": false
+  }
+}

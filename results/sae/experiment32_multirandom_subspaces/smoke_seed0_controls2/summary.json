@@ -1,0 +1,97 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/noise_bidirectional_development_gpu/summary.json",
+    "adapter_seeds": [
+      0
+    ],
+    "control_seeds": [
+      101
+    ],
+    "random_controls": 2,
+    "feature_count": 16,
+    "samples": 2,
+    "start_index": 0,
+    "noise_seed": 2026,
+    "batch_size": 2,
+    "variant_chunk_size": 2,
+    "num_workers": 0,
+    "run_name": "smoke_seed0_controls2",
+    "device": "cpu",
+    "harmful_features": [
+      14024,
+      14852,
+      11406,
+      4889,
+      8139,
+      17892,
+      18955,
+      3893,
+      6757,
+      17227,
+      12743,
+      12135,
+      8903,
+      3867,
+      22608,
+      8779
+    ],
+    "same_noise_stream_across_all_tests": true
+  },
+  "seed_results": {
+    "0": {
+      "rank_matched": {
+        "full_accuracy": 1.0,
+        "harmful_removed_accuracy": 1.0,
+        "harmful_removal_cost": 0.0,
+        "random_removed_accuracy_mean": 1.0,
+        "random_removed_accuracy_std": 0.0,
+        "random_removal_cost_mean": 0.0,
+        "random_removal_cost_std": 0.0,
+        "random_removal_costs": [
+          0.0,
+          0.0
+        ],
+        "harmful_cost_percentile_among_random": 0.0,
+        "empirical_one_sided_pvalue": 1.0,
+        "harmful_exceeds_all_random_controls": false
+      },
+      "energy_matched": {
+        "full_accuracy": 1.0,
+        "harmful_removed_accuracy": 1.0,
+        "harmful_removal_cost": 0.0,
+        "random_removed_accuracy_mean": 1.0,
+        "random_removed_accuracy_std": 0.0,
+        "random_removal_cost_mean": 0.0,
+        "random_removal_cost_std": 0.0,
+        "random_removal_costs": [
+          0.0,
+          0.0
+        ],
+        "harmful_cost_percentile_among_random": 0.0,
+        "empirical_one_sided_pvalue": 1.0,
+        "harmful_exceeds_all_random_controls": false
+      },
+      "mean_harmful_component_energy": 507142.421875,
+      "mean_random_component_energies": [
+        1353010.8125,
+        1287133.6875
+      ]
+    }
+  },
+  "aggregate": {
+    "rank_matched": {
+      "mean_harmful_removal_cost": 0.0,
+      "mean_random_removal_cost": 0.0,
+      "random_controls_total": 2,
+      "fraction_random_costs_below_corresponding_harmful_cost": 0.0
+    },
+    "energy_matched": {
+      "mean_harmful_removal_cost": 0.0,
+      "mean_random_removal_cost": 0.0,
+      "random_controls_total": 2,
+      "fraction_random_costs_below_corresponding_harmful_cost": 0.0
+    }
+  },
+  "interpretation_rule": "Specificity is supported when harmful removal cost exceeds the random null distribution for every adapter seed, especially after energy matching."
+}

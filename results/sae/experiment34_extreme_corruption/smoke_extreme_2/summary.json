@@ -1,0 +1,105 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "blur_radii": [
+      6.0
+    ],
+    "noise_stds": [
+      0.5
+    ],
+    "adapter_seeds": [
+      0
+    ],
+    "samples": 2,
+    "start_index": 0,
+    "noise_seed": 2026,
+    "batch_size": 2,
+    "num_workers": 0,
+    "bootstrap_repetitions": 20,
+    "run_name": "smoke_extreme_2",
+    "resume": false,
+    "device": "cpu",
+    "fixed_without_retuning": true,
+    "stress_level_status": "explicit parameters beyond the predefined severity-1-to-5 scale",
+    "predefined_severity5_reference": {
+      "blur_radius": 5.0,
+      "noise_std": 0.38
+    }
+  },
+  "conditions": {
+    "blur_radius_6": {
+      "corruption": "blur",
+      "strength": 6.0,
+      "baseline_accuracy": 1.0,
+      "adapters": {
+        "0": {
+          "accuracy": 0.5,
+          "accuracy_gain": -0.5,
+          "accuracy_gain_95ci": [
+            -1.0,
+            0.0
+          ],
+          "mean_margin_change": -0.7878358364105225,
+          "mean_true_logit_change": -0.3682575225830078,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 1,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      }
+    },
+    "noise_std_0.5": {
+      "corruption": "noise",
+      "strength": 0.5,
+      "baseline_accuracy": 1.0,
+      "adapters": {
+        "0": {
+          "accuracy": 1.0,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": -0.9352314472198486,
+          "mean_true_logit_change": -1.0765876770019531,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      }
+    }
+  },
+  "trends": {
+    "blur": {
+      "strengths": [
+        6.0
+      ],
+      "baseline_accuracies": [
+        1.0
+      ],
+      "mean_adapter_gains": [
+        -0.5
+      ],
+      "all_seed_gains": {
+        "blur_radius_6": {
+          "0": -0.5
+        }
+      }
+    },
+    "noise": {
+      "strengths": [
+        0.5
+      ],
+      "baseline_accuracies": [
+        1.0
+      ],
+      "mean_adapter_gains": [
+        0.0
+      ],
+      "all_seed_gains": {
+        "noise_std_0.5": {
+          "0": 0.0
+        }
+      }
+    }
+  }
+}

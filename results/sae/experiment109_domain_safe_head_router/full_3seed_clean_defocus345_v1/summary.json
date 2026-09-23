@@ -1,0 +1,200 @@
+{
+  "configuration": {
+    "run_name": "full_3seed_clean_defocus345_v1",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "severities": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "batch_size": 8,
+    "workers": 2,
+    "resume": false,
+    "router": "linear attention-head router with explicit no-repair class calibrated on clean photos plus previously used clean Sketch images",
+    "old_sketch_train_validation": [
+      2000,
+      1000
+    ],
+    "fresh_sketch_evaluation_samples": 1000,
+    "vit_and_repairs_frozen": true,
+    "clean_counterpart_used_at_inference": false,
+    "post_hoc_status": "router designed after Experiment 107 failure; fresh images are disjoint but reused for this post-hoc diagnostic"
+  },
+  "calibration": {
+    "0": {
+      "best_combined_validation_accuracy": 0.9391025900840759,
+      "photo_validation_accuracy": 0.8983957171440125,
+      "old_sketch_unknown_no_repair_fraction": 1.0
+    },
+    "1": {
+      "best_combined_validation_accuracy": 0.9362980723381042,
+      "photo_validation_accuracy": 0.8957219123840332,
+      "old_sketch_unknown_no_repair_fraction": 0.996999979019165
+    },
+    "2": {
+      "best_combined_validation_accuracy": 0.9242788553237915,
+      "photo_validation_accuracy": 0.875668466091156,
+      "old_sketch_unknown_no_repair_fraction": 0.996999979019165
+    }
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "baseline_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "recovered": 0,
+        "damaged": 0,
+        "routing_fractions_unknown_noise_blur": [
+          0.995,
+          0.002,
+          0.003
+        ]
+      },
+      "defocus_blur_3": {
+        "baseline_accuracy": 0.153,
+        "candidate_accuracy": 0.171,
+        "accuracy_difference": 0.018000000000000016,
+        "recovered": 27,
+        "damaged": 9,
+        "routing_fractions_unknown_noise_blur": [
+          0.164,
+          0.001,
+          0.835
+        ]
+      },
+      "defocus_blur_4": {
+        "baseline_accuracy": 0.09,
+        "candidate_accuracy": 0.106,
+        "accuracy_difference": 0.016,
+        "recovered": 27,
+        "damaged": 11,
+        "routing_fractions_unknown_noise_blur": [
+          0.204,
+          0.001,
+          0.795
+        ]
+      },
+      "defocus_blur_5": {
+        "baseline_accuracy": 0.054,
+        "candidate_accuracy": 0.067,
+        "accuracy_difference": 0.013000000000000005,
+        "recovered": 20,
+        "damaged": 7,
+        "routing_fractions_unknown_noise_blur": [
+          0.216,
+          0.001,
+          0.783
+        ]
+      }
+    },
+    "1": {
+      "clean": {
+        "baseline_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "recovered": 1,
+        "damaged": 1,
+        "routing_fractions_unknown_noise_blur": [
+          0.995,
+          0.0,
+          0.005
+        ]
+      },
+      "defocus_blur_3": {
+        "baseline_accuracy": 0.153,
+        "candidate_accuracy": 0.171,
+        "accuracy_difference": 0.018000000000000016,
+        "recovered": 29,
+        "damaged": 11,
+        "routing_fractions_unknown_noise_blur": [
+          0.402,
+          0.0,
+          0.598
+        ]
+      },
+      "defocus_blur_4": {
+        "baseline_accuracy": 0.09,
+        "candidate_accuracy": 0.101,
+        "accuracy_difference": 0.01100000000000001,
+        "recovered": 18,
+        "damaged": 7,
+        "routing_fractions_unknown_noise_blur": [
+          0.431,
+          0.0,
+          0.569
+        ]
+      },
+      "defocus_blur_5": {
+        "baseline_accuracy": 0.054,
+        "candidate_accuracy": 0.063,
+        "accuracy_difference": 0.009000000000000001,
+        "recovered": 12,
+        "damaged": 3,
+        "routing_fractions_unknown_noise_blur": [
+          0.407,
+          0.0,
+          0.593
+        ]
+      }
+    },
+    "2": {
+      "clean": {
+        "baseline_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "recovered": 0,
+        "damaged": 0,
+        "routing_fractions_unknown_noise_blur": [
+          0.996,
+          0.0,
+          0.004
+        ]
+      },
+      "defocus_blur_3": {
+        "baseline_accuracy": 0.153,
+        "candidate_accuracy": 0.188,
+        "accuracy_difference": 0.035,
+        "recovered": 47,
+        "damaged": 12,
+        "routing_fractions_unknown_noise_blur": [
+          0.16,
+          0.0,
+          0.84
+        ]
+      },
+      "defocus_blur_4": {
+        "baseline_accuracy": 0.09,
+        "candidate_accuracy": 0.109,
+        "accuracy_difference": 0.019000000000000003,
+        "recovered": 31,
+        "damaged": 12,
+        "routing_fractions_unknown_noise_blur": [
+          0.199,
+          0.0,
+          0.801
+        ]
+      },
+      "defocus_blur_5": {
+        "baseline_accuracy": 0.054,
+        "candidate_accuracy": 0.077,
+        "accuracy_difference": 0.023,
+        "recovered": 26,
+        "damaged": 3,
+        "routing_fractions_unknown_noise_blur": [
+          0.227,
+          0.0,
+          0.773
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "A further untouched dataset is required to confirm this revised router."
+  ]
+}

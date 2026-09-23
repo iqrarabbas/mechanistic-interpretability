@@ -1,0 +1,32 @@
+{
+  "calibration_samples": 2,
+  "validation_samples": 2,
+  "evaluation_samples": 2,
+  "calibration_start": 41300,
+  "validation_start": 41302,
+  "evaluation_start": 41304,
+  "patches_per_calibration_image": 2,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "taus": [
+    3.0
+  ],
+  "kappas": [
+    2.0
+  ],
+  "alpha_maxes": [
+    0.25
+  ],
+  "adaptive_scales": [
+    0.1
+  ],
+  "clean_loss_penalty": 2.0,
+  "sae_source": "clean",
+  "clean_sae_tag": "smoke_clean4",
+  "run_name": "smoke_clean_sae_end_to_end",
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/clean_base_vanilla_paper_smoke_clean4",
+  "status": "exploratory; all local ImageNet validation images were used previously",
+  "limitation": "None from corruption exposure: the selected SAE was trained only on clean activations"
+}

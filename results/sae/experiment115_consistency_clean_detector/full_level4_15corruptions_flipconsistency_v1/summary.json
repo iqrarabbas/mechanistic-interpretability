@@ -1,0 +1,106 @@
+{
+  "configuration": {
+    "run_name": "full_level4_15corruptions_flipconsistency_v1",
+    "severity": 4,
+    "corruption_seed": 115000,
+    "batch_size": 8,
+    "workers": 2,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "1f6ac387a080206db9061222cc2f13e79ce0b8ab21870883a9d7c7959becb16f",
+    "feature_dimension": 176,
+    "features": "Experiment 114 multi-signal features plus flip-based logits/CLS/patch consistency",
+    "detector": "minimum photo/sketch Ledoit-Wolf Mahalanobis distance",
+    "threshold": "95th percentile of clean-only validation distances",
+    "corruptions_used_for_fitting_or_threshold": false,
+    "repair_applied": false,
+    "benchmark_label": "ImageNet-C algorithms on a new hash-disjoint ImageNet-Sketch slice"
+  },
+  "threshold": 253.17330423908038,
+  "results": {
+    "clean": {
+      "false_positive_rate": 0.04312938816449348,
+      "samples": 997
+    },
+    "gaussian_noise": {
+      "recall": 1.0,
+      "auroc": 0.991389413979149,
+      "samples": 997
+    },
+    "shot_noise": {
+      "recall": 1.0,
+      "auroc": 0.995544808950422,
+      "samples": 997
+    },
+    "impulse_noise": {
+      "recall": 1.0,
+      "auroc": 0.9942897901326849,
+      "samples": 997
+    },
+    "defocus_blur": {
+      "recall": 0.7773319959879639,
+      "auroc": 0.968591330661996,
+      "samples": 997
+    },
+    "glass_blur": {
+      "recall": 0.26278836509528586,
+      "auroc": 0.879059948149363,
+      "samples": 997
+    },
+    "motion_blur": {
+      "recall": 0.2688064192577733,
+      "auroc": 0.8683779523123031,
+      "samples": 997
+    },
+    "zoom_blur": {
+      "recall": 0.09027081243731194,
+      "auroc": 0.7265170637287992,
+      "samples": 997
+    },
+    "snow": {
+      "recall": 0.1945837512537613,
+      "auroc": 0.6382920074164319,
+      "samples": 997
+    },
+    "frost": {
+      "recall": 0.283851554663992,
+      "auroc": 0.8197098819024777,
+      "samples": 997
+    },
+    "fog": {
+      "recall": 0.17953861584754263,
+      "auroc": 0.8815709918119454,
+      "samples": 997
+    },
+    "brightness": {
+      "recall": 0.2176529588766299,
+      "auroc": 0.6752826181654292,
+      "samples": 997
+    },
+    "contrast": {
+      "recall": 0.5977933801404213,
+      "auroc": 0.949053278189634,
+      "samples": 997
+    },
+    "elastic_transform": {
+      "recall": 0.06318956870611836,
+      "auroc": 0.5765224459738292,
+      "samples": 997
+    },
+    "pixelate": {
+      "recall": 0.062186559679037114,
+      "auroc": 0.7582340803755299,
+      "samples": 997
+    },
+    "jpeg_compression": {
+      "recall": 0.07723169508525576,
+      "auroc": 0.698914697955451,
+      "samples": 997
+    }
+  },
+  "limitations": [
+    "Horizontal flip approximately doubles ViT inference cost.",
+    "No method can guarantee detection of every possible attack; this tests the 15 standard severity-4 corruptions.",
+    "No repair is applied in this detection experiment."
+  ]
+}

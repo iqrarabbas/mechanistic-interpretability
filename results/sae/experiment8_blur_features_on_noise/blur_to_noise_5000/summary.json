@@ -1,0 +1,393 @@
+{
+  "configuration": {
+    "samples": 5000,
+    "start_index": 45000,
+    "batch_size": 2,
+    "num_workers": 0,
+    "seed": 0,
+    "alpha": 0.75,
+    "random_controls": 20,
+    "run_name": "blur_to_noise_5000",
+    "model": "google/vit-base-patch16-224",
+    "blur_feature_source": "results/sae/experiment5_correction_strategies/full_strategies_5000",
+    "noise_mapping_source": "results/sae/experiment7_noise_finetuning_features/full_noise_ft_5000",
+    "test_data": "Fresh indices; no clean counterpart used to compute correction"
+  },
+  "mechanism_overlap": {
+    "blur_features": 32,
+    "matched_features": 32,
+    "matched_noise_failure_associated": 4,
+    "mean_decoder_cosine": 0.459883866365999,
+    "alignments": [
+      {
+        "blur_feature": 22739,
+        "matched_noise_feature": 2339,
+        "decoder_cosine": 0.331826388835907,
+        "noise_mean_change": 1.8002564907073975,
+        "noise_direction_consistency": 0.797,
+        "noise_margin_correlation": -0.1455956995487213,
+        "noise_margin_qvalue": 9.221664124479841e-22,
+        "noise_failure_associated": true
+      },
+      {
+        "blur_feature": 6966,
+        "matched_noise_feature": 6966,
+        "decoder_cosine": 0.724854588508606,
+        "noise_mean_change": 1.5296547412872314,
+        "noise_direction_consistency": 0.7486,
+        "noise_margin_correlation": -0.13911211490631104,
+        "noise_margin_qvalue": 5.345994722189132e-20,
+        "noise_failure_associated": true
+      },
+      {
+        "blur_feature": 17814,
+        "matched_noise_feature": 17814,
+        "decoder_cosine": 0.8260523080825806,
+        "noise_mean_change": 0.8963491320610046,
+        "noise_direction_consistency": 0.6,
+        "noise_margin_correlation": -0.11178307980298996,
+        "noise_margin_qvalue": 1.93137014483841e-12,
+        "noise_failure_associated": true
+      },
+      {
+        "blur_feature": 16639,
+        "matched_noise_feature": 16639,
+        "decoder_cosine": 0.4318277835845947,
+        "noise_mean_change": -0.24252991378307343,
+        "noise_direction_consistency": 0.5692,
+        "noise_margin_correlation": -0.015542753040790558,
+        "noise_margin_qvalue": 0.9733200620813488,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 4877,
+        "matched_noise_feature": 4877,
+        "decoder_cosine": 0.4820351302623749,
+        "noise_mean_change": -0.10172522813081741,
+        "noise_direction_consistency": 0.519,
+        "noise_margin_correlation": -0.002509585814550519,
+        "noise_margin_qvalue": 0.9975714498509674,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 16319,
+        "matched_noise_feature": 16319,
+        "decoder_cosine": 0.35704389214515686,
+        "noise_mean_change": 0.27412644028663635,
+        "noise_direction_consistency": 0.5746,
+        "noise_margin_correlation": -0.04274239018559456,
+        "noise_margin_qvalue": 0.05826107477769256,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 23934,
+        "matched_noise_feature": 23934,
+        "decoder_cosine": 0.23699158430099487,
+        "noise_mean_change": 0.0,
+        "noise_direction_consistency": 0.0,
+        "noise_margin_correlation": 0.0,
+        "noise_margin_qvalue": 1.0,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 24140,
+        "matched_noise_feature": 24140,
+        "decoder_cosine": 0.45764943957328796,
+        "noise_mean_change": -0.06329048424959183,
+        "noise_direction_consistency": 0.5158,
+        "noise_margin_correlation": -0.02456534467637539,
+        "noise_margin_qvalue": 0.4949315184911757,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 4110,
+        "matched_noise_feature": 4110,
+        "decoder_cosine": 0.3540397882461548,
+        "noise_mean_change": -0.14560477435588837,
+        "noise_direction_consistency": 0.5428,
+        "noise_margin_correlation": -0.03712346404790878,
+        "noise_margin_qvalue": 0.12317675921688045,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 14024,
+        "matched_noise_feature": 14024,
+        "decoder_cosine": 0.6354833245277405,
+        "noise_mean_change": 2.3645541667938232,
+        "noise_direction_consistency": 0.8504,
+        "noise_margin_correlation": -0.15758951008319855,
+        "noise_margin_qvalue": 1.5577528144803293e-25,
+        "noise_failure_associated": true
+      },
+      {
+        "blur_feature": 24203,
+        "matched_noise_feature": 24203,
+        "decoder_cosine": 0.41982728242874146,
+        "noise_mean_change": -0.4052702486515045,
+        "noise_direction_consistency": 0.611,
+        "noise_margin_correlation": -0.016635654494166374,
+        "noise_margin_qvalue": 0.9138646038674976,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 4211,
+        "matched_noise_feature": 4211,
+        "decoder_cosine": 0.5502813458442688,
+        "noise_mean_change": -0.9257633686065674,
+        "noise_direction_consistency": 0.7248,
+        "noise_margin_correlation": -0.015164087526500225,
+        "noise_margin_qvalue": 0.9835607971450173,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 4802,
+        "matched_noise_feature": 15058,
+        "decoder_cosine": 0.6478419899940491,
+        "noise_mean_change": -0.022013777866959572,
+        "noise_direction_consistency": 0.5136,
+        "noise_margin_correlation": -0.037550512701272964,
+        "noise_margin_qvalue": 0.12317675921688045,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 6095,
+        "matched_noise_feature": 6095,
+        "decoder_cosine": 0.43021833896636963,
+        "noise_mean_change": -0.32545870542526245,
+        "noise_direction_consistency": 0.578,
+        "noise_margin_correlation": -0.03410898149013519,
+        "noise_margin_qvalue": 0.17563421035946794,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 21781,
+        "matched_noise_feature": 21781,
+        "decoder_cosine": 0.63805091381073,
+        "noise_mean_change": -0.2585061192512512,
+        "noise_direction_consistency": 0.552,
+        "noise_margin_correlation": 0.018347781151533127,
+        "noise_margin_qvalue": 0.8110706895618679,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 21607,
+        "matched_noise_feature": 21607,
+        "decoder_cosine": 0.3518991470336914,
+        "noise_mean_change": 0.0,
+        "noise_direction_consistency": 0.0,
+        "noise_margin_correlation": 0.0,
+        "noise_margin_qvalue": 1.0,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 23241,
+        "matched_noise_feature": 23241,
+        "decoder_cosine": 0.5149686336517334,
+        "noise_mean_change": -0.12910638749599457,
+        "noise_direction_consistency": 0.544,
+        "noise_margin_correlation": -0.0077740405686199665,
+        "noise_margin_qvalue": 0.9975714498509674,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 19138,
+        "matched_noise_feature": 19138,
+        "decoder_cosine": 0.4379764795303345,
+        "noise_mean_change": 0.04008069634437561,
+        "noise_direction_consistency": 0.5012,
+        "noise_margin_correlation": -0.04025159776210785,
+        "noise_margin_qvalue": 0.09059088066486376,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 8155,
+        "matched_noise_feature": 8155,
+        "decoder_cosine": 0.3830050826072693,
+        "noise_mean_change": 0.29114142060279846,
+        "noise_direction_consistency": 0.5696,
+        "noise_margin_correlation": -0.0484289675951004,
+        "noise_margin_qvalue": 0.019860643864595295,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 14446,
+        "matched_noise_feature": 14446,
+        "decoder_cosine": 0.4883112907409668,
+        "noise_mean_change": 0.13419003784656525,
+        "noise_direction_consistency": 0.5448,
+        "noise_margin_correlation": 0.034927066415548325,
+        "noise_margin_qvalue": 0.15521148086587588,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 15296,
+        "matched_noise_feature": 15296,
+        "decoder_cosine": 0.22590842843055725,
+        "noise_mean_change": 0.0,
+        "noise_direction_consistency": 0.0,
+        "noise_margin_correlation": 0.0,
+        "noise_margin_qvalue": 1.0,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 15982,
+        "matched_noise_feature": 15982,
+        "decoder_cosine": 0.6127036809921265,
+        "noise_mean_change": -0.9073224663734436,
+        "noise_direction_consistency": 0.6964,
+        "noise_margin_correlation": 0.007386961951851845,
+        "noise_margin_qvalue": 0.9975714498509674,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 8984,
+        "matched_noise_feature": 8984,
+        "decoder_cosine": 0.4617675542831421,
+        "noise_mean_change": -9.776514708903505e-09,
+        "noise_direction_consistency": 0.0002,
+        "noise_margin_correlation": 0.0004051169380545616,
+        "noise_margin_qvalue": 0.9975714498509674,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 21588,
+        "matched_noise_feature": 21588,
+        "decoder_cosine": 0.589032769203186,
+        "noise_mean_change": 0.35013121366500854,
+        "noise_direction_consistency": 0.568,
+        "noise_margin_correlation": -0.050629016011953354,
+        "noise_margin_qvalue": 0.012470599040448255,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 13096,
+        "matched_noise_feature": 13096,
+        "decoder_cosine": 0.49213796854019165,
+        "noise_mean_change": -0.06052425503730774,
+        "noise_direction_consistency": 0.5122,
+        "noise_margin_correlation": -0.01886066608130932,
+        "noise_margin_qvalue": 0.801391227087196,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 489,
+        "matched_noise_feature": 489,
+        "decoder_cosine": 0.4732215404510498,
+        "noise_mean_change": -0.1340315341949463,
+        "noise_direction_consistency": 0.5396,
+        "noise_margin_correlation": -0.023890165612101555,
+        "noise_margin_qvalue": 0.5257067895198921,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 20540,
+        "matched_noise_feature": 20540,
+        "decoder_cosine": 0.43068045377731323,
+        "noise_mean_change": 0.21942831575870514,
+        "noise_direction_consistency": 0.5518,
+        "noise_margin_correlation": -0.009753001853823662,
+        "noise_margin_qvalue": 0.9975714498509674,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 3414,
+        "matched_noise_feature": 3414,
+        "decoder_cosine": 0.2954184412956238,
+        "noise_mean_change": 0.0,
+        "noise_direction_consistency": 0.0,
+        "noise_margin_correlation": 0.0,
+        "noise_margin_qvalue": 1.0,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 14190,
+        "matched_noise_feature": 24467,
+        "decoder_cosine": 0.1563623994588852,
+        "noise_mean_change": 0.0,
+        "noise_direction_consistency": 0.0,
+        "noise_margin_correlation": 0.0,
+        "noise_margin_qvalue": 1.0,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 22566,
+        "matched_noise_feature": 22566,
+        "decoder_cosine": 0.34517574310302734,
+        "noise_mean_change": 0.11851134151220322,
+        "noise_direction_consistency": 0.5412,
+        "noise_margin_correlation": 0.0234663262963295,
+        "noise_margin_qvalue": 0.5414761093386087,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 3050,
+        "matched_noise_feature": 3050,
+        "decoder_cosine": 0.5091814994812012,
+        "noise_mean_change": 0.318241149187088,
+        "noise_direction_consistency": 0.581,
+        "noise_margin_correlation": -0.060981493443250656,
+        "noise_margin_qvalue": 0.0014318881418754852,
+        "noise_failure_associated": false
+      },
+      {
+        "blur_feature": 13386,
+        "matched_noise_feature": 13386,
+        "decoder_cosine": 0.4245085120201111,
+        "noise_mean_change": -0.31115859746932983,
+        "noise_direction_consistency": 0.5796,
+        "noise_margin_correlation": -0.019728753715753555,
+        "noise_margin_qvalue": 0.742258935221658,
+        "noise_failure_associated": false
+      }
+    ]
+  },
+  "locked_test": {
+    "original_vit": {
+      "clean_accuracy": 0.8104,
+      "noise4_accuracy": 0.713,
+      "mean_clean_margin": 3.7651831901550294,
+      "mean_noise_margin": 2.4755355642318726,
+      "samples": 5000
+    },
+    "baseline": {
+      "clean_accuracy": 0.8108,
+      "noise4_accuracy": 0.7128,
+      "mean_clean_margin": 3.765558413934708,
+      "mean_noise_margin": 2.475428030061722,
+      "samples": 5000
+    },
+    "blur_transferred_all32": {
+      "clean_accuracy": 0.8078,
+      "noise4_accuracy": 0.7114,
+      "mean_clean_margin": 3.7722676706790925,
+      "mean_noise_margin": 2.4905299488067625,
+      "samples": 5000
+    },
+    "blur_transferred_noise_significant": {
+      "clean_accuracy": 0.8098,
+      "noise4_accuracy": 0.7128,
+      "mean_clean_margin": 3.7717867274284362,
+      "mean_noise_margin": 2.4904308886528015,
+      "samples": 5000
+    },
+    "noise_specific_top32": {
+      "clean_accuracy": 0.8116,
+      "noise4_accuracy": 0.7148,
+      "mean_clean_margin": 3.7606690477371214,
+      "mean_noise_margin": 2.4900582693099977,
+      "samples": 5000
+    },
+    "reverse_blur_transferred_all32": {
+      "clean_accuracy": 0.81,
+      "noise4_accuracy": 0.7114,
+      "mean_clean_margin": 3.748374256849289,
+      "mean_noise_margin": 2.449855055475235,
+      "samples": 5000
+    },
+    "blur_transferred_gain": -0.0013999999999999568,
+    "random_control_mean_gain": -3.999999999999559e-05,
+    "random_empirical_pvalue": 1.0,
+    "magnitude_matched_mean_gain": -0.00021999999999998686,
+    "magnitude_matched_empirical_pvalue": 0.9523809523809523
+  }
+}

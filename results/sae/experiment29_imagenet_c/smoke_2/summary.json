@@ -1,0 +1,78 @@
+{
+  "configuration": {
+    "imagenet_c_root": "/tmp/imagenetc_smoke",
+    "imagenet_train_root": null,
+    "statistics": "/home/dr-yougart/Desktop/vit_mi/checkpoints/cfa/hf_vit_imagenet_train_statistics.pt",
+    "checkpoint": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_2/classification_weight_0.05.pt",
+    "corruptions": [
+      "gaussian_noise"
+    ],
+    "severities": [
+      1
+    ],
+    "samples_per_condition": 2,
+    "start_index": 0,
+    "source_samples": 1281167,
+    "source_batch_size": 64,
+    "batch_size": 2,
+    "alpha": 1.0,
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "full_max_moment": 3,
+    "class_max_moment": 1,
+    "max_grad_norm": 1.0,
+    "bootstrap_repetitions": 20,
+    "num_workers": 0,
+    "skip_cfa": true,
+    "run_name": "smoke_2",
+    "resume": false,
+    "device": "cpu",
+    "official_cfa_repository_commit": "c89c573bb4e3b0fbd1fefa5c3f4b94254d1bf5b7",
+    "cfa_reset_between_conditions": true
+  },
+  "protocol": {
+    "backbone": "google/vit-base-patch16-224",
+    "same_samples_order_and_batch_size_for_all_methods": true,
+    "adapter_fixed_without_retuning": true,
+    "cfa_online_updates": false
+  },
+  "conditions": {
+    "gaussian_noise": {
+      "1": {
+        "baseline_accuracy": 1.0,
+        "fixed_adapter": {
+          "accuracy": 1.0,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": 0.5635743141174316,
+          "mean_true_logit_change": 0.4444584846496582,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "fixed_adapter": {
+      "mean_corruption_accuracy": 1.0,
+      "mean_corruption_error": 0.0,
+      "mean_accuracy_gain": 0.0,
+      "per_corruption": {
+        "gaussian_noise": {
+          "mean_accuracy": 1.0,
+          "mean_error": 0.0,
+          "mean_accuracy_gain": 0.0
+        }
+      }
+    },
+    "baseline": {
+      "mean_corruption_accuracy": 1.0,
+      "mean_corruption_error": 0.0
+    }
+  }
+}

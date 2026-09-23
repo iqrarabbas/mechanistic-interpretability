@@ -1,0 +1,358 @@
+{
+  "configuration": {
+    "adapter_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/supervisor_disjoint_feature_dev_v1/summary.json",
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "coordinate_count": 4,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "batch_size": 1,
+    "bootstrap_repetitions": 100,
+    "max_cache_samples": 4,
+    "run_name": "smoke_seed0_four_coordinates_v1",
+    "resume": false,
+    "device": "cpu",
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT",
+      "clean SAE",
+      "coordinate bases"
+    ],
+    "trainable_parameters_per_method": 804,
+    "intervention": "residual decoder delta; no SAE reconstruction replacement",
+    "imageNetV2_accessed": false,
+    "status": "development comparison only"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "harmful_features": [
+    14024,
+    14852,
+    4889,
+    11406
+  ],
+  "controls": {
+    "seed_0": {
+      "random_sae_features": [
+        2566,
+        8736,
+        2580,
+        4243
+      ],
+      "raw_top_variance_dimensions": [
+        187,
+        382,
+        759,
+        183
+      ]
+    }
+  },
+  "training": {
+    "seed_0": {
+      "harmful_sae": {
+        "best_validation_total": 2.9258391857147217,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 4.34996098279953,
+              "coordinate": 4.3007665276527405,
+              "classification": 0.9838890957180411,
+              "preservation": 9.5367431640625e-07
+            },
+            "validation": {
+              "total": 2.9258391857147217,
+              "coordinate": 2.921595811843872,
+              "classification": 0.08485882023524027,
+              "preservation": 8.463859558105469e-06
+            }
+          }
+        ]
+      },
+      "random_sae": {
+        "best_validation_total": 0.004243183584321741,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.049194566687219776,
+              "coordinate": 1.4732077113777109e-08,
+              "classification": 0.9838895839639008,
+              "preservation": 1.430511474609375e-06
+            },
+            "validation": {
+              "total": 0.004243183584321741,
+              "coordinate": 2.8746192981543572e-08,
+              "classification": 0.08485856691549998,
+              "preservation": 4.5299530029296875e-06
+            }
+          }
+        ]
+      },
+      "raw_hidden": {
+        "best_validation_total": 68.47690200805664,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 78.45812606811523,
+              "coordinate": 78.40893268585205,
+              "classification": 0.9838892943225801,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 68.47690200805664,
+              "coordinate": 68.47265911102295,
+              "classification": 0.0848582726175664,
+              "preservation": 2.7418136596679688e-06
+            }
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 1.0,
+      "baseline_noise4_accuracy": 1.0,
+      "methods": {
+        "adapter": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.25,
+            "accuracy_difference_95ci": [
+              -0.63125,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "harmful_sae": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "random_sae": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "raw_hidden": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "harmful_sae": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    },
+    "random_sae": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    },
+    "raw_hidden": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    }
+  },
+  "sae_direct_repair_supported": false
+}

@@ -1,0 +1,96 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "alpha": 1.0,
+    "train_alpha": 0.5,
+    "initialization": "zero",
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "predictor_batch_size": 2,
+    "image_batch_size": 2,
+    "num_workers": 0,
+    "run_name": "smoke_zero_init_seed0_4",
+    "resume": false,
+    "max_samples": 4,
+    "device": "cuda",
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT"
+    ],
+    "initialization_checkpoint": null,
+    "imageNetV2_accessed": false,
+    "status": "adapter development only; final evaluation remains untouched"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "initialization": "zero",
+      "classification_weight": 0.05,
+      "preservation_weight": 0.05,
+      "train_alpha": 0.5,
+      "smooth_l1_beta": 1.0,
+      "best_validation_total": 3.136899709701538,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 3.628345012664795,
+            "residual": 3.579280376434326,
+            "classification": 0.981292475014925,
+            "preservation": 0.0
+          },
+          "validation": {
+            "total": 3.136899709701538,
+            "residual": 3.1323007345199585,
+            "classification": 0.08368387445807457,
+            "preservation": 0.008295536041259766
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "original_vit": {
+        "noise4_accuracy": 1.0,
+        "clean_accuracy": 1.0,
+        "mean_noise4_margin": 5.696352005004883
+      },
+      "fixed_configuration": {
+        "noise4_accuracy": 1.0,
+        "noise4_accuracy_gain": 0.0,
+        "mean_margin_change": 0.009720087051391602,
+        "mean_true_logit_change": 0.0061511993408203125,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      }
+    }
+  }
+}

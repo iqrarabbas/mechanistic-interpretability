@@ -1,0 +1,117 @@
+{
+  "configuration": {
+    "discovery_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment71_downstream_circuit_recovery/full_3seed_noise_blur_2000_v1/summary.json",
+    "seeds": [
+      0
+    ],
+    "corruptions": [
+      "noise"
+    ],
+    "start_index": 47990,
+    "samples": 4,
+    "random_controls": 2,
+    "batch_size": 1,
+    "workers": 0,
+    "bootstrap": 100,
+    "run_name": "smoke_4_seed0_noise_v1",
+    "model": "google/vit-base-patch16-224",
+    "adapter_paths": {
+      "0": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment67_mixed_noise_blur_block6/full_3seed_noise_blur_identity0p2_v1/seed_0/mixed_identity0p2.pt"
+    },
+    "seed_specific_heads": {
+      "0": {
+        "7": [
+          0,
+          11
+        ],
+        "9": [
+          4
+        ]
+      }
+    },
+    "common_heads": {
+      "7": [
+        0,
+        11
+      ],
+      "9": [
+        4
+      ]
+    },
+    "selection_rule": "Within each adapter seed, select two unique Block-7 heads and one unique Block-9 head by maximum recovery across routing, CLS routing, and content over Noise-4 and Blur-4 discovery data.",
+    "candidate_source_range": [
+      36000,
+      38000
+    ],
+    "confirmation_range": [
+      47990,
+      47994
+    ],
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "uses_clean_counterpart_for_intervention": false,
+    "imageNetV2_accessed": false,
+    "imageNetSketch_accessed": false,
+    "status": "disjoint seed-specific causal circuit confirmation"
+  },
+  "results": {
+    "0": {
+      "noise": {
+        "baseline_to_full": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 1.0,
+          "accuracy_difference": 0.25,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.75
+          ],
+          "reference_wrong_candidate_correct": 1,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "seed_specific_ablation": {
+          "reference_accuracy": 1.0,
+          "candidate_accuracy": 1.0,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "common_ablation": {
+          "reference_accuracy": 1.0,
+          "candidate_accuracy": 1.0,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "seed_specific_removal_cost": -0.0,
+        "common_removal_cost": -0.0,
+        "seed_specific_minus_common_cost": 0.0,
+        "random_mean_removal_cost": 0.0,
+        "random_costs": [
+          -0.0,
+          -0.0
+        ],
+        "seed_specific_exceeds_random": 0,
+        "common_exceeds_random": 0,
+        "seed_specific_empirical_pvalue": 1.0,
+        "replay_max_absolute_logit_error": 3.337860107421875e-06
+      }
+    }
+  },
+  "guardrails": [
+    "Candidate selection was frozen before confirmation inference.",
+    "Every random set matches the candidate block distribution and removed projected-output norm per token.",
+    "This tests necessity, not sufficiency or circuit completeness.",
+    "The ImageNet validation confirmation range was used in older unrelated diagnostics, so this is mechanistic development rather than a final independent benchmark."
+  ]
+}

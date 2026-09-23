@@ -1,0 +1,461 @@
+{
+  "configuration": {
+    "run_name": "full_1000_disjoint_clean_defocus345_3seed_v1",
+    "images_per_class": 1,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "severities": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "corruption_seed": 107000,
+    "batch_size": 8,
+    "workers": 2,
+    "bootstrap": 5000,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "3bd4753304be93cc7afbedd71bce7af9c2e1ce00465d6e0954de1bbd7060731a",
+    "prior_manifest_sha256": "f3e8820dcc71fa119c7638dcf43321abaacacb3f588ddda2d99f9fd44c4ccb09",
+    "data_root": "/media/dr-yougart/Iqrar/datasets/imagenet_sketch/extracted/sketch",
+    "benchmark_label": "fresh disjoint ImageNet-Sketch images; ImageNet-C-compatible defocus transform, not official ImageNet-C JPEGs",
+    "all_components_frozen": true,
+    "clean_counterpart_used_at_inference": false
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "samples": 1000,
+        "baseline_accuracy": 0.361,
+        "safe_router_fractions_clean_noise_blur": [
+          0.288,
+          0.613,
+          0.099
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.344,
+            "accuracy_difference": -0.017,
+            "accuracy_difference_95ci": [
+              -0.03,
+              -0.004
+            ],
+            "reference_wrong_candidate_correct": 13,
+            "reference_correct_candidate_wrong": 30,
+            "mcnemar_exact_pvalue": 0.0137181850586785
+          },
+          "always_blur": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.348,
+            "accuracy_difference": -0.013,
+            "accuracy_difference_95ci": [
+              -0.028,
+              0.002
+            ],
+            "reference_wrong_candidate_correct": 23,
+            "reference_correct_candidate_wrong": 36,
+            "mcnemar_exact_pvalue": 0.11747735024505848
+          }
+        }
+      },
+      "defocus_blur_3": {
+        "samples": 1000,
+        "baseline_accuracy": 0.153,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.17,
+            "accuracy_difference": 0.017,
+            "accuracy_difference_95ci": [
+              0.005,
+              0.029
+            ],
+            "reference_wrong_candidate_correct": 29,
+            "reference_correct_candidate_wrong": 12,
+            "mcnemar_exact_pvalue": 0.011507789735333063
+          },
+          "always_blur": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.17,
+            "accuracy_difference": 0.017,
+            "accuracy_difference_95ci": [
+              0.005,
+              0.03
+            ],
+            "reference_wrong_candidate_correct": 29,
+            "reference_correct_candidate_wrong": 12,
+            "mcnemar_exact_pvalue": 0.011507789735333063
+          }
+        }
+      },
+      "defocus_blur_4": {
+        "samples": 1000,
+        "baseline_accuracy": 0.09,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.109,
+            "accuracy_difference": 0.019,
+            "accuracy_difference_95ci": [
+              0.007,
+              0.032
+            ],
+            "reference_wrong_candidate_correct": 31,
+            "reference_correct_candidate_wrong": 12,
+            "mcnemar_exact_pvalue": 0.005401572654591291
+          },
+          "always_blur": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.109,
+            "accuracy_difference": 0.019,
+            "accuracy_difference_95ci": [
+              0.007,
+              0.032
+            ],
+            "reference_wrong_candidate_correct": 31,
+            "reference_correct_candidate_wrong": 12,
+            "mcnemar_exact_pvalue": 0.005401572654591291
+          }
+        }
+      },
+      "defocus_blur_5": {
+        "samples": 1000,
+        "baseline_accuracy": 0.054,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.076,
+            "accuracy_difference": 0.022,
+            "accuracy_difference_95ci": [
+              0.011,
+              0.034
+            ],
+            "reference_wrong_candidate_correct": 29,
+            "reference_correct_candidate_wrong": 7,
+            "mcnemar_exact_pvalue": 0.00031255115754902363
+          },
+          "always_blur": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.076,
+            "accuracy_difference": 0.022,
+            "accuracy_difference_95ci": [
+              0.01,
+              0.034
+            ],
+            "reference_wrong_candidate_correct": 29,
+            "reference_correct_candidate_wrong": 7,
+            "mcnemar_exact_pvalue": 0.00031255115754902363
+          }
+        }
+      }
+    },
+    "1": {
+      "clean": {
+        "samples": 1000,
+        "baseline_accuracy": 0.361,
+        "safe_router_fractions_clean_noise_blur": [
+          0.104,
+          0.703,
+          0.193
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.335,
+            "accuracy_difference": -0.026,
+            "accuracy_difference_95ci": [
+              -0.039,
+              -0.013975000000000364
+            ],
+            "reference_wrong_candidate_correct": 9,
+            "reference_correct_candidate_wrong": 35,
+            "mcnemar_exact_pvalue": 0.00010604466626773501
+          },
+          "always_blur": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.349,
+            "accuracy_difference": -0.012,
+            "accuracy_difference_95ci": [
+              -0.025,
+              0.001
+            ],
+            "reference_wrong_candidate_correct": 17,
+            "reference_correct_candidate_wrong": 29,
+            "mcnemar_exact_pvalue": 0.10380535550410741
+          }
+        }
+      },
+      "defocus_blur_3": {
+        "samples": 1000,
+        "baseline_accuracy": 0.153,
+        "safe_router_fractions_clean_noise_blur": [
+          0.008,
+          0.0,
+          0.992
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.179,
+            "accuracy_difference": 0.026,
+            "accuracy_difference_95ci": [
+              0.011,
+              0.041
+            ],
+            "reference_wrong_candidate_correct": 40,
+            "reference_correct_candidate_wrong": 14,
+            "mcnemar_exact_pvalue": 0.0005354355028570622
+          },
+          "always_blur": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.179,
+            "accuracy_difference": 0.026,
+            "accuracy_difference_95ci": [
+              0.011975000000000008,
+              0.041
+            ],
+            "reference_wrong_candidate_correct": 40,
+            "reference_correct_candidate_wrong": 14,
+            "mcnemar_exact_pvalue": 0.0005354355028570622
+          }
+        }
+      },
+      "defocus_blur_4": {
+        "samples": 1000,
+        "baseline_accuracy": 0.09,
+        "safe_router_fractions_clean_noise_blur": [
+          0.011,
+          0.0,
+          0.989
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.111,
+            "accuracy_difference": 0.021,
+            "accuracy_difference_95ci": [
+              0.009975000000000008,
+              0.033
+            ],
+            "reference_wrong_candidate_correct": 29,
+            "reference_correct_candidate_wrong": 8,
+            "mcnemar_exact_pvalue": 0.0007528970600105822
+          },
+          "always_blur": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.112,
+            "accuracy_difference": 0.022,
+            "accuracy_difference_95ci": [
+              0.011,
+              0.034
+            ],
+            "reference_wrong_candidate_correct": 30,
+            "reference_correct_candidate_wrong": 8,
+            "mcnemar_exact_pvalue": 0.0004719867429230362
+          }
+        }
+      },
+      "defocus_blur_5": {
+        "samples": 1000,
+        "baseline_accuracy": 0.054,
+        "safe_router_fractions_clean_noise_blur": [
+          0.005,
+          0.0,
+          0.995
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.071,
+            "accuracy_difference": 0.017,
+            "accuracy_difference_95ci": [
+              0.008,
+              0.027
+            ],
+            "reference_wrong_candidate_correct": 21,
+            "reference_correct_candidate_wrong": 4,
+            "mcnemar_exact_pvalue": 0.0009105205535888672
+          },
+          "always_blur": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.071,
+            "accuracy_difference": 0.017,
+            "accuracy_difference_95ci": [
+              0.008,
+              0.027
+            ],
+            "reference_wrong_candidate_correct": 21,
+            "reference_correct_candidate_wrong": 4,
+            "mcnemar_exact_pvalue": 0.0009105205535888672
+          }
+        }
+      }
+    },
+    "2": {
+      "clean": {
+        "samples": 1000,
+        "baseline_accuracy": 0.361,
+        "safe_router_fractions_clean_noise_blur": [
+          0.127,
+          0.826,
+          0.047
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.336,
+            "accuracy_difference": -0.025,
+            "accuracy_difference_95ci": [
+              -0.04,
+              -0.010975000000000363
+            ],
+            "reference_wrong_candidate_correct": 15,
+            "reference_correct_candidate_wrong": 40,
+            "mcnemar_exact_pvalue": 0.0010158471941252854
+          },
+          "always_blur": {
+            "reference_accuracy": 0.361,
+            "candidate_accuracy": 0.356,
+            "accuracy_difference": -0.005,
+            "accuracy_difference_95ci": [
+              -0.02,
+              0.01
+            ],
+            "reference_wrong_candidate_correct": 26,
+            "reference_correct_candidate_wrong": 31,
+            "mcnemar_exact_pvalue": 0.5966417603730826
+          }
+        }
+      },
+      "defocus_blur_3": {
+        "samples": 1000,
+        "baseline_accuracy": 0.153,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.01,
+          0.99
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.192,
+            "accuracy_difference": 0.039,
+            "accuracy_difference_95ci": [
+              0.023,
+              0.055
+            ],
+            "reference_wrong_candidate_correct": 54,
+            "reference_correct_candidate_wrong": 15,
+            "mcnemar_exact_pvalue": 2.612848003590018e-06
+          },
+          "always_blur": {
+            "reference_accuracy": 0.153,
+            "candidate_accuracy": 0.192,
+            "accuracy_difference": 0.039,
+            "accuracy_difference_95ci": [
+              0.023,
+              0.055
+            ],
+            "reference_wrong_candidate_correct": 54,
+            "reference_correct_candidate_wrong": 15,
+            "mcnemar_exact_pvalue": 2.612848003590018e-06
+          }
+        }
+      },
+      "defocus_blur_4": {
+        "samples": 1000,
+        "baseline_accuracy": 0.09,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.016,
+          0.984
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.113,
+            "accuracy_difference": 0.023,
+            "accuracy_difference_95ci": [
+              0.009,
+              0.037
+            ],
+            "reference_wrong_candidate_correct": 37,
+            "reference_correct_candidate_wrong": 14,
+            "mcnemar_exact_pvalue": 0.0017691971837869858
+          },
+          "always_blur": {
+            "reference_accuracy": 0.09,
+            "candidate_accuracy": 0.113,
+            "accuracy_difference": 0.023,
+            "accuracy_difference_95ci": [
+              0.009,
+              0.037
+            ],
+            "reference_wrong_candidate_correct": 37,
+            "reference_correct_candidate_wrong": 14,
+            "mcnemar_exact_pvalue": 0.0017691971837869858
+          }
+        }
+      },
+      "defocus_blur_5": {
+        "samples": 1000,
+        "baseline_accuracy": 0.054,
+        "safe_router_fractions_clean_noise_blur": [
+          0.0,
+          0.02,
+          0.98
+        ],
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.086,
+            "accuracy_difference": 0.032,
+            "accuracy_difference_95ci": [
+              0.02,
+              0.044
+            ],
+            "reference_wrong_candidate_correct": 36,
+            "reference_correct_candidate_wrong": 4,
+            "mcnemar_exact_pvalue": 1.8570244719740003e-07
+          },
+          "always_blur": {
+            "reference_accuracy": 0.054,
+            "candidate_accuracy": 0.086,
+            "accuracy_difference": 0.032,
+            "accuracy_difference_95ci": [
+              0.02,
+              0.044
+            ],
+            "reference_wrong_candidate_correct": 36,
+            "reference_correct_candidate_wrong": 4,
+            "mcnemar_exact_pvalue": 1.8570244719740003e-07
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "The images are disjoint from the earlier 3000-image Sketch manifest by path and SHA-256, but the Sketch dataset/domain has been studied earlier.",
+    "This is independent image-level confirmation, not a pristine new-dataset or official ImageNet-C benchmark."
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "layers": [
+      1,
+      6
+    ],
+    "seeds": [
+      0
+    ],
+    "identity_weight": 0.2,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "batch_size": 2,
+    "workers": 0,
+    "bootstrap": 20,
+    "max_samples": 4,
+    "run_name": "smoke_gpu_blocks1_6_identity0p2_v1",
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "device": "cuda",
+    "vit_frozen": true,
+    "adapter_parameters_per_layer": 741120,
+    "training_corruptions": [
+      "noise4",
+      "blur4"
+    ],
+    "adapter_scope": "patch tokens only",
+    "imageNetV2_accessed": false,
+    "status": "development layer selection; not final evaluation"
+  },
+  "splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "1": {
+        "best_validation_total": 0.21663708239793777,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3339659124612808,
+              "residual": 0.2722024619579315,
+              "classification": 1.2342196553945541,
+              "preservation": 0.0009819269180297852,
+              "identity": 1.68546503118705e-05
+            },
+            "validation": {
+              "total": 0.21663708239793777,
+              "residual": 0.19994106143712997,
+              "classification": 0.3260653540492058,
+              "preservation": 0.007508635520935059,
+              "identity": 8.663035623612814e-05
+            }
+          }
+        ]
+      },
+      "6": {
+        "best_validation_total": 0.9498577117919922,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 1.3064724206924438,
+              "residual": 1.2440569400787354,
+              "classification": 1.2349098473787308,
+              "preservation": 0.007891297340393066,
+              "identity": 0.0013768728822469711
+            },
+            "validation": {
+              "total": 0.9498577117919922,
+              "residual": 0.9308614432811737,
+              "classification": 0.3324018754065037,
+              "preservation": 0.02417469024658203,
+              "identity": 0.005837185075506568
+            }
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline": {
+        "clean": 1.0,
+        "noise": 1.0,
+        "blur": 0.75
+      },
+      "blocks": {
+        "1": {
+          "clean": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "6": {
+          "clean": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "1": {
+      "clean": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "noise": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    },
+    "6": {
+      "clean": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "noise": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    }
+  },
+  "best_layer": 1,
+  "limitations": [
+    "The same locked development validation partitions are used for layer selection.",
+    "A selected winner requires confirmation on data not used for layer selection.",
+    "Block 12 is excluded because a patch-only intervention after the final block cannot alter the final CLS logits."
+  ]
+}

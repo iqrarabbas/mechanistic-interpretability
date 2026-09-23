@@ -1,0 +1,78 @@
+{
+  "versus_baseline": {
+    "always_noise": {
+      "reference_accuracy": 0.787,
+      "candidate_accuracy": 0.787,
+      "accuracy_difference": 0.0,
+      "accuracy_difference_95ci": [
+        -0.01,
+        0.01
+      ],
+      "reference_wrong_candidate_correct": 13,
+      "reference_correct_candidate_wrong": 13,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "always_blur": {
+      "reference_accuracy": 0.787,
+      "candidate_accuracy": 0.795,
+      "accuracy_difference": 0.008,
+      "accuracy_difference_95ci": [
+        -0.002,
+        0.018
+      ],
+      "reference_wrong_candidate_correct": 17,
+      "reference_correct_candidate_wrong": 9,
+      "mcnemar_exact_pvalue": 0.16863754391670227
+    }
+  },
+  "mechanism_router_comparisons": {
+    "always_noise": {
+      "reference_accuracy": 0.787,
+      "candidate_accuracy": 0.793,
+      "accuracy_difference": 0.006,
+      "accuracy_difference_95ci": [
+        -0.006,
+        0.018
+      ],
+      "reference_wrong_candidate_correct": 21,
+      "reference_correct_candidate_wrong": 15,
+      "mcnemar_exact_pvalue": 0.4050322461407632
+    },
+    "always_blur": {
+      "reference_accuracy": 0.795,
+      "candidate_accuracy": 0.793,
+      "accuracy_difference": -0.002,
+      "accuracy_difference_95ci": [
+        -0.005,
+        0.0
+      ],
+      "reference_wrong_candidate_correct": 0,
+      "reference_correct_candidate_wrong": 2,
+      "mcnemar_exact_pvalue": 0.5
+    },
+    "family_router": {
+      "reference_accuracy": 0.791,
+      "candidate_accuracy": 0.793,
+      "accuracy_difference": 0.002,
+      "accuracy_difference_95ci": [
+        -0.006,
+        0.01
+      ],
+      "reference_wrong_candidate_correct": 9,
+      "reference_correct_candidate_wrong": 7,
+      "mcnemar_exact_pvalue": 0.803619384765625
+    },
+    "uniform": {
+      "reference_accuracy": 0.792,
+      "candidate_accuracy": 0.793,
+      "accuracy_difference": 0.001,
+      "accuracy_difference_95ci": [
+        -0.007,
+        0.01
+      ],
+      "reference_wrong_candidate_correct": 10,
+      "reference_correct_candidate_wrong": 9,
+      "mcnemar_exact_pvalue": 1.0
+    }
+  }
+}

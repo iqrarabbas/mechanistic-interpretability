@@ -1,0 +1,17 @@
+{
+  "samples": 5000,
+  "start_index": 40000,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "top_features": 32,
+  "run_name": "full_noise_ft_5000",
+  "corruption": "Gaussian noise",
+  "severity": 4,
+  "base_model": "google/vit-base-patch16-224",
+  "fine_tuned_model": "checkpoints/vit_noise4_best",
+  "base_sae": "checkpoints/sae/noise4_base_vanilla_paper",
+  "fine_tuned_sae": "checkpoints/sae/noise4_fine_tuned_vanilla_paper",
+  "layer": "hidden_states[-2], 196 patch tokens",
+  "alignment": "greedy one-to-one maximum positive decoder cosine"
+}

@@ -1,0 +1,344 @@
+{
+  "configuration": {
+    "image_root": "/media/dr-yougart/Iqrar/vit_mi/external_data/imagenet-a-hf",
+    "meta_path": "/media/dr-yougart/Iqrar/vit_mi/Dataset/ILSVRC2012_devkit_t12/data/meta.mat",
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment50_block6_clean_preservation/full_3seed_identity_sweep_v1",
+    "selected_variant": "identity_0p2",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "alpha": 1.0,
+    "corruption_seed": 2060,
+    "batch_size": 2,
+    "num_workers": 0,
+    "bootstrap_repetitions": 20,
+    "max_samples": 8,
+    "run_name": "smoke_8_all3_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "adapter_training_corruption": "Noise-4",
+    "adapter_training_dataset": "ImageNet-1K validation development splits",
+    "evaluation_dataset": "ImageNet-A",
+    "evaluation_samples": 8,
+    "evaluation_used_for_selection_or_tuning": false,
+    "deployment_uses_clean_counterpart": false,
+    "standard_primary_protocol": "masked_200",
+    "secondary_protocol": "full_1k",
+    "status": "independent frozen OOD evaluation"
+  },
+  "results": {
+    "full_1k": {
+      "native": {
+        "baseline_accuracy": 0.125,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.125,
+            "candidate_accuracy": 0.125,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.125,
+            "candidate_accuracy": 0.25,
+            "accuracy_difference": 0.125,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.3156249999999998
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_2": {
+            "reference_accuracy": 0.125,
+            "candidate_accuracy": 0.125,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0,
+            0.125,
+            0.0
+          ],
+          "mean_gain": 0.041666666666666664,
+          "all_seed_gains_positive": false
+        }
+      },
+      "noise4": {
+        "baseline_accuracy": 0.25,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.25,
+            "candidate_accuracy": 0.25,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.25,
+            "candidate_accuracy": 0.125,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.63125,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_2": {
+            "reference_accuracy": 0.25,
+            "candidate_accuracy": 0.125,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.25,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0,
+            -0.125,
+            -0.125
+          ],
+          "mean_gain": -0.08333333333333333,
+          "all_seed_gains_positive": false
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.0,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_2": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_gain": 0.0,
+          "all_seed_gains_positive": false
+        }
+      }
+    },
+    "masked_200": {
+      "native": {
+        "baseline_accuracy": 0.375,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.375,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.375,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_2": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.125,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.3156249999999998
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0,
+            0.0,
+            0.125
+          ],
+          "mean_gain": 0.041666666666666664,
+          "all_seed_gains_positive": false
+        }
+      },
+      "noise4": {
+        "baseline_accuracy": 0.375,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.25,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.315625,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.125,
+            "accuracy_difference": -0.25,
+            "accuracy_difference_95ci": [
+              -0.5,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 2,
+            "mcnemar_exact_pvalue": 0.5
+          },
+          "seed_2": {
+            "reference_accuracy": 0.375,
+            "candidate_accuracy": 0.25,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.315625,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            -0.125,
+            -0.25,
+            -0.125
+          ],
+          "mean_gain": -0.16666666666666666,
+          "all_seed_gains_positive": false
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.0,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_1": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "seed_2": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean_gain": 0.0,
+          "all_seed_gains_positive": false
+        }
+      }
+    }
+  },
+  "limitations": [
+    "ImageNet-A contains 200 ImageNet classes and naturally difficult examples.",
+    "Masked-200 accuracy is the standard primary protocol; full-1K accuracy is also reported.",
+    "No hyperparameter, adapter, seed, or threshold may be selected using these results."
+  ]
+}

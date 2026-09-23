@@ -1,0 +1,139 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "identity_weight": 0.2,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 2,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "batch_size": 4,
+    "workers": 0,
+    "bootstrap": 100,
+    "max_samples": 8,
+    "run_name": "smoke_seed0_8_v1",
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "vit_frozen": true,
+    "adapter_parameters": 741120,
+    "training_corruptions": [
+      "noise4",
+      "blur4"
+    ],
+    "imageNetV2_accessed": false,
+    "status": "development comparison"
+  },
+  "splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "0": {
+      "best_validation_total": 1.01173335313797,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 1.1936825513839722,
+            "residual": 1.125442922115326,
+            "classification": 1.3553608059883118,
+            "preservation": 0.0028983752708882093,
+            "identity": 0.0016335812397301197
+          },
+          "validation": {
+            "total": 1.01173335313797,
+            "residual": 0.991447925567627,
+            "classification": 0.36018842458724976,
+            "preservation": 0.011294783093035221,
+            "identity": 0.00855620251968503
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "0": {
+      "clean": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.875,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0
+      },
+      "noise": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.875,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0
+      },
+      "blur": {
+        "reference_accuracy": 0.75,
+        "candidate_accuracy": 0.75,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0
+      }
+    }
+  },
+  "aggregate": {
+    "clean": {
+      "gains_by_seed": [
+        0.0
+      ],
+      "mean_gain": 0.0
+    },
+    "noise": {
+      "gains_by_seed": [
+        0.0
+      ],
+      "mean_gain": 0.0
+    },
+    "blur": {
+      "gains_by_seed": [
+        0.0
+      ],
+      "mean_gain": 0.0
+    }
+  },
+  "limitations": [
+    "Only Noise-4 and Blur-4 are implemented online; unseen corruption families require a separate standardized benchmark."
+  ]
+}

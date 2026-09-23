@@ -1,0 +1,221 @@
+{
+  "configuration": {
+    "cache_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_2",
+    "initial_adapter": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_2/classification_weight_0.05.pt",
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "feature_counts": [
+      8,
+      16
+    ],
+    "max_scales": [
+      1.5,
+      2.0
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "predictor_batch_size": 4,
+    "image_batch_size": 2,
+    "samples": 2,
+    "noise_seed": 2026,
+    "seed": 37,
+    "num_workers": 0,
+    "bootstrap_repetitions": 20,
+    "max_cache_samples": 8,
+    "run_name": "smoke_grid_8",
+    "device": "cpu",
+    "selection_data": "seed-2 ImageNet validation cache only; held-out ImageNetV2 untouched until final evaluation",
+    "ordered_feature_dictionary": [
+      14024,
+      14852,
+      11406,
+      4889,
+      8139,
+      17892,
+      18955,
+      3893,
+      6757,
+      17227,
+      12743,
+      12135,
+      8903,
+      3867,
+      22608,
+      8779
+    ]
+  },
+  "training": {
+    "features_8": {
+      "best_validation_total": 2.9864718914031982,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 2.8881866931915283,
+            "residual": 2.822216510772705,
+            "classification": 1.3194051682949066,
+            "preservation": 0.0
+          },
+          "validation": {
+            "total": 2.9864718914031982,
+            "residual": 2.948569893836975,
+            "classification": 0.592048317193985,
+            "preservation": 0.16599265858530998
+          }
+        }
+      ]
+    },
+    "features_16": {
+      "best_validation_total": 2.986467719078064,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 2.8881704807281494,
+            "residual": 2.822201728820801,
+            "classification": 1.3193761110305786,
+            "preservation": 0.0
+          },
+          "validation": {
+            "total": 2.986467719078064,
+            "residual": 2.9485623836517334,
+            "classification": 0.5920569151639938,
+            "preservation": 0.16605011746287346
+          }
+        }
+      ]
+    }
+  },
+  "validation_grid": {
+    "features8_scale1.5": {
+      "noise4_accuracy": 0.75,
+      "noise4_gain": 0.0,
+      "clean_accuracy": 0.875,
+      "clean_gain": -0.125,
+      "mean_margin_change": -0.034365057945251465,
+      "selection_score": 0.5,
+      "feature_count": 8,
+      "max_scale": 1.5
+    },
+    "features8_scale2": {
+      "noise4_accuracy": 0.75,
+      "noise4_gain": 0.0,
+      "clean_accuracy": 0.875,
+      "clean_gain": -0.125,
+      "mean_margin_change": -0.23704731464385986,
+      "selection_score": 0.5,
+      "feature_count": 8,
+      "max_scale": 2.0
+    },
+    "features16_scale1.5": {
+      "noise4_accuracy": 0.75,
+      "noise4_gain": 0.0,
+      "clean_accuracy": 0.875,
+      "clean_gain": -0.125,
+      "mean_margin_change": -0.03416544198989868,
+      "selection_score": 0.5,
+      "feature_count": 16,
+      "max_scale": 1.5
+    },
+    "features16_scale2": {
+      "noise4_accuracy": 0.75,
+      "noise4_gain": 0.0,
+      "clean_accuracy": 0.875,
+      "clean_gain": -0.125,
+      "mean_margin_change": -0.23686689138412476,
+      "selection_score": 0.5,
+      "feature_count": 16,
+      "max_scale": 2.0
+    }
+  },
+  "selected": {
+    "name": "features16_scale1.5",
+    "noise4_accuracy": 0.75,
+    "noise4_gain": 0.0,
+    "clean_accuracy": 0.875,
+    "clean_gain": -0.125,
+    "mean_margin_change": -0.03416544198989868,
+    "selection_score": 0.5,
+    "feature_count": 16,
+    "max_scale": 1.5
+  },
+  "held_out_evaluation": {
+    "noise4": {
+      "baseline_accuracy": 1.0,
+      "clean_baseline_accuracy": 1.0,
+      "methods": {
+        "existing_adapter": {
+          "accuracy": 1.0,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": -0.0425412654876709,
+          "mean_true_logit_change": -0.7224845886230469,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0,
+          "clean_accuracy": 1.0,
+          "clean_accuracy_gain": 0.0
+        },
+        "selected_sae_gate": {
+          "accuracy": 1.0,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": 0.52044677734375,
+          "mean_true_logit_change": -0.1462855339050293,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0,
+          "clean_accuracy": 1.0,
+          "clean_accuracy_gain": 0.0
+        }
+      }
+    },
+    "blur4": {
+      "baseline_accuracy": 0.5,
+      "clean_baseline_accuracy": 1.0,
+      "methods": {
+        "existing_adapter": {
+          "accuracy": 0.5,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": -0.25809717178344727,
+          "mean_true_logit_change": -0.1349339485168457,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0,
+          "clean_accuracy": 1.0,
+          "clean_accuracy_gain": 0.0
+        },
+        "selected_sae_gate": {
+          "accuracy": 0.5,
+          "accuracy_gain": 0.0,
+          "accuracy_gain_95ci": [
+            0.0,
+            0.0
+          ],
+          "mean_margin_change": -0.14887690544128418,
+          "mean_true_logit_change": 0.018567562103271484,
+          "predictions_recovered": 0,
+          "originally_correct_damaged": 0,
+          "mcnemar_exact_pvalue": 1.0,
+          "clean_accuracy": 1.0,
+          "clean_accuracy_gain": 0.0
+        }
+      }
+    }
+  }
+}

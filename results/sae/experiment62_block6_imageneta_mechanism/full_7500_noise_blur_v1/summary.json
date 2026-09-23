@@ -1,0 +1,362 @@
+{
+  "configuration": {
+    "image_root": "/media/dr-yougart/Iqrar/vit_mi/external_data/imagenet-a-hf",
+    "meta_path": "/media/dr-yougart/Iqrar/vit_mi/Dataset/ILSVRC2012_devkit_t12/data/meta.mat",
+    "samples": 7500,
+    "batch_size": 4,
+    "num_workers": 0,
+    "corruption_seed": 2062,
+    "bootstrap_repetitions": 10000,
+    "run_name": "full_7500_noise_blur_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "dataset": "ImageNet-A",
+    "primary_protocol": "masked_200",
+    "corruptions": [
+      "Noise-4",
+      "Blur-4"
+    ],
+    "patch_location": "per-head A/V before concatenation and o_proj",
+    "uses_paired_clean_oracle": true,
+    "training_or_tuning": false,
+    "status": "frozen cross-dataset mechanistic replication"
+  },
+  "results": {
+    "masked_200": {
+      "noise4": {
+        "baseline_accuracy": 0.13933333333333334,
+        "clean_correct_corrupted_wrong_images": 1114,
+        "conditions": {
+          "clean_attention_corrupt_values": {
+            "reference_accuracy": 0.13933333333333334,
+            "candidate_accuracy": 0.14026666666666668,
+            "accuracy_difference": 0.0009333333333333333,
+            "accuracy_difference_95ci": [
+              -0.0033333333333333335,
+              0.0054666666666666665
+            ],
+            "reference_wrong_candidate_correct": 147,
+            "reference_correct_candidate_wrong": 140,
+            "mcnemar_exact_pvalue": 0.7232801695517791,
+            "failure_recovery_count": 104,
+            "failure_recovery_rate": 0.0933572710951526,
+            "fraction_of_full_block6_accuracy_gain": 0.008284023668639054,
+            "mean_margin_change": 0.03413117141723633
+          },
+          "corrupt_attention_clean_values": {
+            "reference_accuracy": 0.13933333333333334,
+            "candidate_accuracy": 0.15266666666666667,
+            "accuracy_difference": 0.013333333333333334,
+            "accuracy_difference_95ci": [
+              0.008,
+              0.018666666666666668
+            ],
+            "reference_wrong_candidate_correct": 259,
+            "reference_correct_candidate_wrong": 159,
+            "mcnemar_exact_pvalue": 1.1482183976842946e-06,
+            "failure_recovery_count": 179,
+            "failure_recovery_rate": 0.1606822262118492,
+            "fraction_of_full_block6_accuracy_gain": 0.1183431952662722,
+            "mean_margin_change": 0.20705492060979208
+          },
+          "clean_attention_clean_values": {
+            "reference_accuracy": 0.13933333333333334,
+            "candidate_accuracy": 0.16733333333333333,
+            "accuracy_difference": 0.028,
+            "accuracy_difference_95ci": [
+              0.022133333333333335,
+              0.034
+            ],
+            "reference_wrong_candidate_correct": 364,
+            "reference_correct_candidate_wrong": 154,
+            "mcnemar_exact_pvalue": 1.2321189267941344e-20,
+            "failure_recovery_count": 275,
+            "failure_recovery_rate": 0.24685816876122083,
+            "fraction_of_full_block6_accuracy_gain": 0.24852071005917162,
+            "mean_margin_change": 0.35309960187276207
+          },
+          "wrong_pair_clean_attention_values": {
+            "reference_accuracy": 0.13933333333333334,
+            "candidate_accuracy": 0.09973333333333333,
+            "accuracy_difference": -0.0396,
+            "accuracy_difference_95ci": [
+              -0.046533333333333336,
+              -0.0328
+            ],
+            "reference_wrong_candidate_correct": 206,
+            "reference_correct_candidate_wrong": 503,
+            "mcnemar_exact_pvalue": 1.5091921894807577e-29,
+            "failure_recovery_count": 92,
+            "failure_recovery_rate": 0.08258527827648116,
+            "mean_margin_change": -0.532939883518219
+          },
+          "clean_block6_output": {
+            "reference_accuracy": 0.13933333333333334,
+            "candidate_accuracy": 0.252,
+            "accuracy_difference": 0.11266666666666666,
+            "accuracy_difference_95ci": [
+              0.10346666666666667,
+              0.12213333333333333
+            ],
+            "reference_wrong_candidate_correct": 1114,
+            "reference_correct_candidate_wrong": 269,
+            "mcnemar_exact_pvalue": 2.836088282166422e-122,
+            "failure_recovery_count": 1114,
+            "failure_recovery_rate": 1.0,
+            "mean_margin_change": 1.2799199501991272
+          }
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.09853333333333333,
+        "clean_correct_corrupted_wrong_images": 1307,
+        "conditions": {
+          "clean_attention_corrupt_values": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.0988,
+            "accuracy_difference": 0.0002666666666666667,
+            "accuracy_difference_95ci": [
+              -0.0032,
+              0.0036
+            ],
+            "reference_wrong_candidate_correct": 86,
+            "reference_correct_candidate_wrong": 84,
+            "mcnemar_exact_pvalue": 0.9388949735923955,
+            "failure_recovery_count": 55,
+            "failure_recovery_rate": 0.042081101759755164,
+            "fraction_of_full_block6_accuracy_gain": 0.001737619461337967,
+            "mean_margin_change": 0.008374097156524658
+          },
+          "corrupt_attention_clean_values": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.11426666666666667,
+            "accuracy_difference": 0.015733333333333332,
+            "accuracy_difference_95ci": [
+              0.0116,
+              0.019866666666666668
+            ],
+            "reference_wrong_candidate_correct": 186,
+            "reference_correct_candidate_wrong": 68,
+            "mcnemar_exact_pvalue": 7.455506299069318e-14,
+            "failure_recovery_count": 141,
+            "failure_recovery_rate": 0.10788064269319052,
+            "fraction_of_full_block6_accuracy_gain": 0.10251954821894003,
+            "mean_margin_change": 0.14606820012728372
+          },
+          "clean_attention_clean_values": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.12386666666666667,
+            "accuracy_difference": 0.025333333333333333,
+            "accuracy_difference_95ci": [
+              0.020533333333333334,
+              0.030133333333333335
+            ],
+            "reference_wrong_candidate_correct": 263,
+            "reference_correct_candidate_wrong": 73,
+            "mcnemar_exact_pvalue": 2.4855475854140535e-26,
+            "failure_recovery_count": 199,
+            "failure_recovery_rate": 0.15225707727620505,
+            "fraction_of_full_block6_accuracy_gain": 0.16507384882710685,
+            "mean_margin_change": 0.22757136260668437
+          },
+          "wrong_pair_clean_attention_values": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.07533333333333334,
+            "accuracy_difference": -0.0232,
+            "accuracy_difference_95ci": [
+              -0.0288,
+              -0.0176
+            ],
+            "reference_wrong_candidate_correct": 156,
+            "reference_correct_candidate_wrong": 330,
+            "mcnemar_exact_pvalue": 2.1401853402888495e-15,
+            "failure_recovery_count": 72,
+            "failure_recovery_rate": 0.05508798775822494,
+            "mean_margin_change": -0.3100651628653208
+          },
+          "clean_block6_output": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.252,
+            "accuracy_difference": 0.15346666666666667,
+            "accuracy_difference_95ci": [
+              0.144,
+              0.1628
+            ],
+            "reference_wrong_candidate_correct": 1307,
+            "reference_correct_candidate_wrong": 156,
+            "mcnemar_exact_pvalue": 1.3510164838875953e-226,
+            "failure_recovery_count": 1307,
+            "failure_recovery_rate": 1.0,
+            "mean_margin_change": 1.41838529214859
+          }
+        }
+      }
+    },
+    "full_1k": {
+      "noise4": {
+        "baseline_accuracy": 0.06866666666666667,
+        "clean_correct_corrupted_wrong_images": 628,
+        "conditions": {
+          "clean_attention_corrupt_values": {
+            "reference_accuracy": 0.06866666666666667,
+            "candidate_accuracy": 0.07213333333333333,
+            "accuracy_difference": 0.0034666666666666665,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.006933333333333333
+            ],
+            "reference_wrong_candidate_correct": 96,
+            "reference_correct_candidate_wrong": 70,
+            "mcnemar_exact_pvalue": 0.05200575499696481,
+            "failure_recovery_count": 56,
+            "failure_recovery_rate": 0.08917197452229299,
+            "fraction_of_full_block6_accuracy_gain": 0.05701754385964912
+          },
+          "corrupt_attention_clean_values": {
+            "reference_accuracy": 0.06866666666666667,
+            "candidate_accuracy": 0.07586666666666667,
+            "accuracy_difference": 0.0072,
+            "accuracy_difference_95ci": [
+              0.0030666666666666668,
+              0.011466666666666667
+            ],
+            "reference_wrong_candidate_correct": 154,
+            "reference_correct_candidate_wrong": 100,
+            "mcnemar_exact_pvalue": 0.0008478992047401564,
+            "failure_recovery_count": 96,
+            "failure_recovery_rate": 0.15286624203821655,
+            "fraction_of_full_block6_accuracy_gain": 0.11842105263157894
+          },
+          "clean_attention_clean_values": {
+            "reference_accuracy": 0.06866666666666667,
+            "candidate_accuracy": 0.08346666666666666,
+            "accuracy_difference": 0.0148,
+            "accuracy_difference_95ci": [
+              0.010533333333333334,
+              0.019066666666666666
+            ],
+            "reference_wrong_candidate_correct": 196,
+            "reference_correct_candidate_wrong": 85,
+            "mcnemar_exact_pvalue": 2.954587717584527e-11,
+            "failure_recovery_count": 127,
+            "failure_recovery_rate": 0.20222929936305734,
+            "fraction_of_full_block6_accuracy_gain": 0.24342105263157895
+          },
+          "wrong_pair_clean_attention_values": {
+            "reference_accuracy": 0.06866666666666667,
+            "candidate_accuracy": 0.04346666666666667,
+            "accuracy_difference": -0.0252,
+            "accuracy_difference_95ci": [
+              -0.0304,
+              -0.020133333333333333
+            ],
+            "reference_wrong_candidate_correct": 103,
+            "reference_correct_candidate_wrong": 292,
+            "mcnemar_exact_pvalue": 4.8107328871776165e-22,
+            "failure_recovery_count": 39,
+            "failure_recovery_rate": 0.06210191082802548
+          },
+          "clean_block6_output": {
+            "reference_accuracy": 0.06866666666666667,
+            "candidate_accuracy": 0.12946666666666667,
+            "accuracy_difference": 0.0608,
+            "accuracy_difference_95ci": [
+              0.05346666666666667,
+              0.06813333333333334
+            ],
+            "reference_wrong_candidate_correct": 628,
+            "reference_correct_candidate_wrong": 172,
+            "mcnemar_exact_pvalue": 9.845686858601163e-62,
+            "failure_recovery_count": 628,
+            "failure_recovery_rate": 1.0
+          }
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.0416,
+        "clean_correct_corrupted_wrong_images": 723,
+        "conditions": {
+          "clean_attention_corrupt_values": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.04226666666666667,
+            "accuracy_difference": 0.0006666666666666666,
+            "accuracy_difference_95ci": [
+              -0.0016,
+              0.0029333333333333334
+            ],
+            "reference_wrong_candidate_correct": 41,
+            "reference_correct_candidate_wrong": 36,
+            "mcnemar_exact_pvalue": 0.6487911623106449,
+            "failure_recovery_count": 26,
+            "failure_recovery_rate": 0.035961272475795295,
+            "fraction_of_full_block6_accuracy_gain": 0.007587253414264037
+          },
+          "corrupt_attention_clean_values": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.05,
+            "accuracy_difference": 0.0084,
+            "accuracy_difference_95ci": [
+              0.0056,
+              0.011333333333333334
+            ],
+            "reference_wrong_candidate_correct": 93,
+            "reference_correct_candidate_wrong": 30,
+            "mcnemar_exact_pvalue": 1.0837914423674379e-08,
+            "failure_recovery_count": 64,
+            "failure_recovery_rate": 0.08852005532503458,
+            "fraction_of_full_block6_accuracy_gain": 0.09559939301972686
+          },
+          "clean_attention_clean_values": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.05226666666666667,
+            "accuracy_difference": 0.010666666666666666,
+            "accuracy_difference_95ci": [
+              0.007466666666666667,
+              0.013866666666666666
+            ],
+            "reference_wrong_candidate_correct": 113,
+            "reference_correct_candidate_wrong": 33,
+            "mcnemar_exact_pvalue": 1.9020908976366846e-11,
+            "failure_recovery_count": 83,
+            "failure_recovery_rate": 0.11479944674965421,
+            "fraction_of_full_block6_accuracy_gain": 0.12139605462822459
+          },
+          "wrong_pair_clean_attention_values": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.029866666666666666,
+            "accuracy_difference": -0.011733333333333333,
+            "accuracy_difference_95ci": [
+              -0.0156,
+              -0.008
+            ],
+            "reference_wrong_candidate_correct": 62,
+            "reference_correct_candidate_wrong": 150,
+            "mcnemar_exact_pvalue": 1.343366575651016e-09,
+            "failure_recovery_count": 26,
+            "failure_recovery_rate": 0.035961272475795295
+          },
+          "clean_block6_output": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.12946666666666667,
+            "accuracy_difference": 0.08786666666666666,
+            "accuracy_difference_95ci": [
+              0.08066666666666666,
+              0.09493333333333333
+            ],
+            "reference_wrong_candidate_correct": 723,
+            "reference_correct_candidate_wrong": 64,
+            "mcnemar_exact_pvalue": 3.356021919703695e-142,
+            "failure_recovery_count": 723,
+            "failure_recovery_rate": 1.0
+          }
+        }
+      }
+    }
+  },
+  "guardrails": [
+    "This is an oracle causal analysis, not a deployable intervention.",
+    "ImageNet-A had already been used for frozen adapter evaluation before this analysis.",
+    "No method parameter is selected or changed using these mechanistic results."
+  ]
+}

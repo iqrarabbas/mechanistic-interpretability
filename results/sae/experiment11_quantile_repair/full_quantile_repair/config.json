@@ -1,0 +1,33 @@
+{
+  "calibration_samples": 2000,
+  "validation_samples": 2000,
+  "evaluation_samples": 5000,
+  "calibration_start": 30000,
+  "validation_start": 32000,
+  "evaluation_start": 35000,
+  "patches_per_calibration_image": 4,
+  "quantiles": [
+    0.99,
+    0.995,
+    0.999
+  ],
+  "alpha_maxes": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "adaptive_widths": [
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "clean_loss_penalty": 2.0,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "run_name": "full_quantile_repair",
+  "resume": false,
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/clean_base_vanilla_paper",
+  "status": "exploratory; local ImageNet validation images were used previously"
+}

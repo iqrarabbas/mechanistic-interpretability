@@ -1,0 +1,459 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "lora_rank": 5,
+    "lora_alpha": 5.0,
+    "batch_size": 8,
+    "num_workers": 0,
+    "bootstrap_repetitions": 50,
+    "max_samples": 8,
+    "run_name": "smoke_batch8_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "identity_weight": 0.2,
+    "frozen_components": [
+      "ViT backbone"
+    ],
+    "imageNetV2_accessed": false,
+    "status": "leakage-free development architecture control"
+  },
+  "method_definitions": {
+    "rank8_position": "Current post-Block-6 low-rank residual with learned rank-8 patch positions.",
+    "linear_rank9": "Post-Block-6 linear bottleneck residual without activation or position embedding.",
+    "mlp_rank9": "Post-Block-6 GELU bottleneck residual without position embedding.",
+    "random_projection_rank14": "Fixed random orthogonal down-projection with learned low-rank positions and up-projection.",
+    "lora_qv": "Rank-5 LoRA updates inside Block-6 attention query and value projections."
+  },
+  "parameter_counts": {
+    "rank8_position": 14632,
+    "linear_rank9": 14601,
+    "mlp_rank9": 14601,
+    "random_projection_rank14": 14264,
+    "lora_qv": 15360
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "best_validation_total": {
+        "rank8_position": 1.181518793106079,
+        "linear_rank9": 1.1815006732940674,
+        "mlp_rank9": 1.181561827659607,
+        "random_projection_rank14": 1.1812222003936768,
+        "lora_qv": 1.1816620826721191
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "rank8_position": {
+              "total": 1.2849088907241821,
+              "residual": 1.2455086708068848,
+              "classification": 0.7880035638809204,
+              "preservation": 0.0,
+              "clean_identity": 0.0
+            },
+            "mlp_rank9": {
+              "total": 1.2849088907241821,
+              "residual": 1.2455086708068848,
+              "classification": 0.7880035638809204,
+              "preservation": 0.0,
+              "clean_identity": 0.0
+            },
+            "linear_rank9": {
+              "total": 1.2849088907241821,
+              "residual": 1.2455086708068848,
+              "classification": 0.7880035638809204,
+              "preservation": 0.0,
+              "clean_identity": 0.0
+            },
+            "random_projection_rank14": {
+              "total": 1.2849088907241821,
+              "residual": 1.2455086708068848,
+              "classification": 0.7880035638809204,
+              "preservation": 0.0,
+              "clean_identity": 0.0
+            },
+            "lora_qv": {
+              "total": 1.2849088907241821,
+              "residual": 1.2455086708068848,
+              "classification": 0.7880034446716309,
+              "preservation": 2.7247838829680404e-07,
+              "clean_identity": 2.0594335264911834e-11
+            }
+          },
+          "validation": {
+            "rank8_position": {
+              "total": 1.181518793106079,
+              "residual": 1.1707115173339844,
+              "classification": 0.21586981415748596,
+              "preservation": 0.00027200154727324843,
+              "clean_identity": 9.848272384260781e-07
+            },
+            "mlp_rank9": {
+              "total": 1.181561827659607,
+              "residual": 1.170743465423584,
+              "classification": 0.2158687710762024,
+              "preservation": 0.0004963874816894531,
+              "clean_identity": 6.738957836205373e-07
+            },
+            "linear_rank9": {
+              "total": 1.1815006732940674,
+              "residual": 1.170681357383728,
+              "classification": 0.21587200462818146,
+              "preservation": 0.0005110332276672125,
+              "clean_identity": 1.443553969693312e-06
+            },
+            "random_projection_rank14": {
+              "total": 1.1812222003936768,
+              "residual": 1.1703760623931885,
+              "classification": 0.21578803658485413,
+              "preservation": 0.0010954312747344375,
+              "clean_identity": 9.83769950835267e-06
+            },
+            "lora_qv": {
+              "total": 1.1816620826721191,
+              "residual": 1.1708675622940063,
+              "classification": 0.21586668491363525,
+              "preservation": 2.4659293558215722e-05,
+              "clean_identity": 7.21173210038728e-09
+            }
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "clean": {
+        "rank8_position": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      },
+      "noise4": {
+        "rank8_position": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      },
+      "blur4": {
+        "rank8_position": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "rank8_position": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14632,
+      "parameter_ratio_to_rank8": 1.0
+    },
+    "linear_rank9": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14601,
+      "parameter_ratio_to_rank8": 0.9978813559322034
+    },
+    "mlp_rank9": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14601,
+      "parameter_ratio_to_rank8": 0.9978813559322034
+    },
+    "random_projection_rank14": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14264,
+      "parameter_ratio_to_rank8": 0.9748496446145435
+    },
+    "lora_qv": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 15360,
+      "parameter_ratio_to_rank8": 1.0497539639147075
+    }
+  },
+  "interpretation_rule": "The mechanistically localized rank-8 architecture has architecture-specific support only if it consistently exceeds parameter-matched controls while preserving clean accuracy."
+}

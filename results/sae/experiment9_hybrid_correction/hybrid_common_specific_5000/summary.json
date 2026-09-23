@@ -1,0 +1,210 @@
+{
+  "configuration": {
+    "samples": 5000,
+    "start_index": 45000,
+    "batch_size": 2,
+    "num_workers": 0,
+    "seed": 0,
+    "alpha_common": 0.25,
+    "alpha_blur": 0.75,
+    "alpha_noise": 0.75,
+    "run_name": "hybrid_common_specific_5000",
+    "status": "exploratory; images were used by Experiment 8 and are not a new locked test",
+    "model": "google/vit-base-patch16-224",
+    "common_semantic_features": [
+      6966,
+      17814,
+      14024
+    ],
+    "blur_sae": "checkpoints/sae/blur4_base_vanilla_paper",
+    "noise_sae": "checkpoints/sae/noise4_base_vanilla_paper"
+  },
+  "feature_sets": {
+    "blur_common": [
+      6966,
+      17814,
+      14024
+    ],
+    "blur_specific": [
+      22739,
+      16639,
+      4877,
+      16319,
+      23934,
+      24140,
+      4110,
+      24203,
+      4211,
+      4802,
+      6095,
+      21781,
+      21607,
+      23241,
+      19138,
+      8155,
+      14446,
+      15296,
+      15982,
+      8984,
+      21588,
+      13096,
+      489,
+      20540,
+      3414,
+      14190,
+      22566,
+      3050,
+      13386
+    ],
+    "noise_common": [
+      6966,
+      17814,
+      14024
+    ],
+    "noise_specific": [
+      23037,
+      2339,
+      66,
+      5230,
+      17581,
+      23603,
+      11406,
+      21053,
+      12873,
+      10151,
+      5878,
+      8904,
+      10752,
+      23756,
+      3893,
+      17400,
+      16938,
+      4889,
+      7166,
+      9489,
+      3763,
+      10585,
+      19674,
+      3867,
+      4705,
+      7331,
+      6553,
+      682,
+      14190
+    ]
+  },
+  "branches": {
+    "blur": {
+      "baseline": {
+        "clean_accuracy": 0.8102,
+        "blur4_accuracy": 0.644,
+        "mean_clean_margin": 3.7656678206920624,
+        "mean_blur_margin": 1.69898823094368,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0,
+        "clean_accuracy_change_vs_baseline": 0.0
+      },
+      "common_only": {
+        "clean_accuracy": 0.8106,
+        "blur4_accuracy": 0.6454,
+        "mean_clean_margin": 3.769651382446289,
+        "mean_blur_margin": 1.7231279159069062,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0013999999999999568,
+        "clean_accuracy_change_vs_baseline": 0.00039999999999995595
+      },
+      "specific_only": {
+        "clean_accuracy": 0.8092,
+        "blur4_accuracy": 0.6502,
+        "mean_clean_margin": 3.7749539853572847,
+        "mean_blur_margin": 1.7638709197044373,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.006199999999999983,
+        "clean_accuracy_change_vs_baseline": -0.0010000000000000009
+      },
+      "hybrid": {
+        "clean_accuracy": 0.81,
+        "blur4_accuracy": 0.6512,
+        "mean_clean_margin": 3.778820972442627,
+        "mean_blur_margin": 1.7853445332050324,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.007199999999999984,
+        "clean_accuracy_change_vs_baseline": -0.00019999999999997797
+      },
+      "hybrid_reverse_common": {
+        "clean_accuracy": 0.8088,
+        "blur4_accuracy": 0.6472,
+        "mean_clean_margin": 3.770554537153244,
+        "mean_blur_margin": 1.7395109647274016,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0031999999999999806,
+        "clean_accuracy_change_vs_baseline": -0.0014000000000000679
+      },
+      "original_vit": {
+        "clean_accuracy": 0.8104,
+        "blur4_accuracy": 0.6438,
+        "mean_clean_margin": 3.7651831901550294,
+        "mean_blur_margin": 1.699063106060028,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": -0.00019999999999997797,
+        "clean_accuracy_change_vs_baseline": 0.00019999999999997797
+      }
+    },
+    "noise": {
+      "baseline": {
+        "clean_accuracy": 0.8108,
+        "noise4_accuracy": 0.7128,
+        "mean_clean_margin": 3.765558413934708,
+        "mean_noise_margin": 2.475428030061722,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0,
+        "clean_accuracy_change_vs_baseline": 0.0
+      },
+      "common_only": {
+        "clean_accuracy": 0.811,
+        "noise4_accuracy": 0.7128,
+        "mean_clean_margin": 3.7667492097854613,
+        "mean_noise_margin": 2.478581400823593,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0,
+        "clean_accuracy_change_vs_baseline": 0.000200000000000089
+      },
+      "specific_only": {
+        "clean_accuracy": 0.8112,
+        "noise4_accuracy": 0.7138,
+        "mean_clean_margin": 3.7585141202449797,
+        "mean_noise_margin": 2.481732843399048,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0010000000000000009,
+        "clean_accuracy_change_vs_baseline": 0.00040000000000006697
+      },
+      "hybrid": {
+        "clean_accuracy": 0.8116,
+        "noise4_accuracy": 0.7128,
+        "mean_clean_margin": 3.759564085483551,
+        "mean_noise_margin": 2.484917390871048,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.0,
+        "clean_accuracy_change_vs_baseline": 0.0008000000000000229
+      },
+      "hybrid_reverse_common": {
+        "clean_accuracy": 0.8106,
+        "noise4_accuracy": 0.7132,
+        "mean_clean_margin": 3.757109550333023,
+        "mean_noise_margin": 2.4781673884868622,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.00039999999999995595,
+        "clean_accuracy_change_vs_baseline": -0.00019999999999997797
+      },
+      "original_vit": {
+        "clean_accuracy": 0.8104,
+        "noise4_accuracy": 0.713,
+        "mean_clean_margin": 3.7651831901550294,
+        "mean_noise_margin": 2.4755355642318726,
+        "samples": 5000,
+        "corruption_accuracy_gain_vs_baseline": 0.00019999999999997797,
+        "clean_accuracy_change_vs_baseline": -0.00039999999999995595
+      }
+    }
+  }
+}

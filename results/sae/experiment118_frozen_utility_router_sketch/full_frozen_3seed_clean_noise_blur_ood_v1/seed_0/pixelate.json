@@ -1,0 +1,102 @@
+{
+  "methods": {
+    "mixed": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.37349397590361444,
+      "accuracy_difference": 0.002008032128514056,
+      "accuracy_difference_95ci": [
+        -0.014056224899598393,
+        0.018072289156626505
+      ],
+      "reference_wrong_candidate_correct": 35,
+      "reference_correct_candidate_wrong": 33,
+      "mcnemar_exact_pvalue": 0.9035973456835127
+    },
+    "uniform": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.3755020080321285,
+      "accuracy_difference": 0.004016064257028112,
+      "accuracy_difference_95ci": [
+        -0.008032128514056224,
+        0.01606425702811245
+      ],
+      "reference_wrong_candidate_correct": 19,
+      "reference_correct_candidate_wrong": 15,
+      "mcnemar_exact_pvalue": 0.6075913612730801
+    },
+    "family_router": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.3755020080321285,
+      "accuracy_difference": 0.004016064257028112,
+      "accuracy_difference_95ci": [
+        -0.007028112449799197,
+        0.015060240963855422
+      ],
+      "reference_wrong_candidate_correct": 19,
+      "reference_correct_candidate_wrong": 15,
+      "mcnemar_exact_pvalue": 0.6075913612730801
+    },
+    "early_utility": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.3714859437751004,
+      "accuracy_difference": 0.0,
+      "accuracy_difference_95ci": [
+        -0.012048192771084338,
+        0.012073293172690626
+      ],
+      "reference_wrong_candidate_correct": 19,
+      "reference_correct_candidate_wrong": 19,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "mechanism_utility": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.3744979919678715,
+      "accuracy_difference": 0.0030120481927710845,
+      "accuracy_difference_95ci": [
+        -0.008032128514056224,
+        0.014056224899598393
+      ],
+      "reference_wrong_candidate_correct": 19,
+      "reference_correct_candidate_wrong": 16,
+      "mcnemar_exact_pvalue": 0.735878800856881
+    },
+    "oracle_margin": {
+      "reference_accuracy": 0.3714859437751004,
+      "candidate_accuracy": 0.4026104417670683,
+      "accuracy_difference": 0.03112449799196787,
+      "accuracy_difference_95ci": [
+        0.02108433734939759,
+        0.04317269076305221
+      ],
+      "reference_wrong_candidate_correct": 31,
+      "reference_correct_candidate_wrong": 0,
+      "mcnemar_exact_pvalue": 9.313225746154785e-10
+    }
+  },
+  "routing": {
+    "family_router": {
+      "none": 0.0,
+      "noise": 0.05923694779116466,
+      "blur": 0.9407630522088354
+    },
+    "early_utility": {
+      "none": 0.001004016064257028,
+      "noise": 0.8855421686746988,
+      "blur": 0.11345381526104417
+    },
+    "mechanism_utility": {
+      "none": 0.0,
+      "noise": 0.06325301204819277,
+      "blur": 0.9367469879518072
+    },
+    "oracle_margin": {
+      "none": 0.2540160642570281,
+      "noise": 0.31626506024096385,
+      "blur": 0.42971887550200805
+    }
+  },
+  "condition": "pixelate",
+  "samples": 996,
+  "baseline_accuracy": 0.3714859437751004,
+  "deployable_router_selection_is_image_only": true
+}

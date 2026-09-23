@@ -1,0 +1,114 @@
+{
+  "configuration": {
+    "dataset_dir": "/media/dr-yougart/Iqrar/vit_mi/Dataset",
+    "samples": 3000,
+    "start_index": 47000,
+    "corruption_seed": 2061,
+    "batch_size": 4,
+    "num_workers": 2,
+    "bootstrap_repetitions": 10000,
+    "run_name": "full_noise4_unused3000_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "corruption": "Noise-4",
+    "block": 6,
+    "patch_location": "per-head attention probabilities and value vectors before concatenation/o_proj",
+    "evaluation_split_status": "previously unused mechanistic analysis split",
+    "deployment_method": false,
+    "uses_paired_clean_oracle": true,
+    "imageNetV2_accessed": false,
+    "imageNetA_accessed": false
+  },
+  "results": {
+    "clean_accuracy": 0.8113333333333334,
+    "corrupted_baseline_accuracy": 0.7136666666666667,
+    "clean_correct_noise_wrong_images": 387,
+    "conditions": {
+      "clean_attention_corrupt_values": {
+        "reference_accuracy": 0.7136666666666667,
+        "candidate_accuracy": 0.7173333333333334,
+        "accuracy_difference": 0.0036666666666666666,
+        "accuracy_difference_95ci": [
+          -0.004666666666666667,
+          0.011666666666666667
+        ],
+        "reference_wrong_candidate_correct": 84,
+        "reference_correct_candidate_wrong": 73,
+        "mcnemar_exact_pvalue": 0.4249115601338558,
+        "mean_margin_change": 0.034329429268836975,
+        "failure_recovery_count": 65,
+        "failure_recovery_rate": 0.16795865633074936,
+        "fraction_of_full_block6_accuracy_gain": 0.03754266211604095
+      },
+      "corrupt_attention_clean_values": {
+        "reference_accuracy": 0.7136666666666667,
+        "candidate_accuracy": 0.7473333333333333,
+        "accuracy_difference": 0.033666666666666664,
+        "accuracy_difference_95ci": [
+          0.024,
+          0.043
+        ],
+        "reference_wrong_candidate_correct": 160,
+        "reference_correct_candidate_wrong": 59,
+        "mcnemar_exact_pvalue": 5.9056933755353805e-12,
+        "mean_margin_change": 0.3402459919452667,
+        "failure_recovery_count": 134,
+        "failure_recovery_rate": 0.3462532299741602,
+        "fraction_of_full_block6_accuracy_gain": 0.34470989761092147
+      },
+      "clean_attention_clean_values": {
+        "reference_accuracy": 0.7136666666666667,
+        "candidate_accuracy": 0.7483333333333333,
+        "accuracy_difference": 0.034666666666666665,
+        "accuracy_difference_95ci": [
+          0.025,
+          0.04466666666666667
+        ],
+        "reference_wrong_candidate_correct": 166,
+        "reference_correct_candidate_wrong": 62,
+        "mcnemar_exact_pvalue": 3.8058361606666455e-12,
+        "mean_margin_change": 0.4705583453178406,
+        "failure_recovery_count": 143,
+        "failure_recovery_rate": 0.3695090439276486,
+        "fraction_of_full_block6_accuracy_gain": 0.35494880546075086
+      },
+      "wrong_pair_clean_attention_values": {
+        "reference_accuracy": 0.7136666666666667,
+        "candidate_accuracy": 0.6273333333333333,
+        "accuracy_difference": -0.08633333333333333,
+        "accuracy_difference_95ci": [
+          -0.10033333333333333,
+          -0.07266666666666667
+        ],
+        "reference_wrong_candidate_correct": 105,
+        "reference_correct_candidate_wrong": 364,
+        "mcnemar_exact_pvalue": 1.67377477501603e-34,
+        "mean_margin_change": -1.0194493532180786,
+        "failure_recovery_count": 70,
+        "failure_recovery_rate": 0.18087855297157623
+      },
+      "clean_block6_output": {
+        "reference_accuracy": 0.7136666666666667,
+        "candidate_accuracy": 0.8113333333333334,
+        "accuracy_difference": 0.09766666666666667,
+        "accuracy_difference_95ci": [
+          0.08433333333333333,
+          0.11166666666666666
+        ],
+        "reference_wrong_candidate_correct": 387,
+        "reference_correct_candidate_wrong": 94,
+        "mcnemar_exact_pvalue": 3.021961152275429e-43,
+        "mean_margin_change": 1.267184853553772,
+        "failure_recovery_count": 387,
+        "failure_recovery_rate": 1.0
+      }
+    }
+  },
+  "interpretation_guardrails": [
+    "Clean activation patching is an oracle causal diagnostic, not an inference-time method.",
+    "Attention probabilities isolate routing (Q/K-derived A); values isolate transported content (V).",
+    "The full clean Block-6 output is an upper bound that also restores the residual stream and MLP output.",
+    "The wrong-pair control tests whether arbitrary clean attention content causes recovery."
+  ]
+}

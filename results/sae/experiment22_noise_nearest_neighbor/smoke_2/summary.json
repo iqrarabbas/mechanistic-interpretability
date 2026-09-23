@@ -1,0 +1,151 @@
+{
+  "configuration": {
+    "memory_samples": 2,
+    "validation_samples": 2,
+    "evaluation_samples": 2,
+    "memory_start": 100,
+    "validation_start": 102,
+    "evaluation_start": 104,
+    "key_features": 8,
+    "neighbors": [
+      1
+    ],
+    "alphas": [
+      0.1
+    ],
+    "batch_size": 2,
+    "num_workers": 0,
+    "seed": 0,
+    "run_name": "smoke_2",
+    "resume": false,
+    "device": "cpu",
+    "vit_block": 11,
+    "method": "frozen ViT and SAE; exact nearest-neighbor retrieval; no learned parameters"
+  },
+  "memory": {
+    "samples": 2,
+    "latent_dim": 24576,
+    "key_features": 8,
+    "residual_shape": [
+      2,
+      196,
+      768
+    ],
+    "residual_dtype": "float16",
+    "latent_means_size_gib": 9.1552734375e-05,
+    "residual_size_gib": 0.000560760498046875
+  },
+  "selected": {
+    "validation_name": "sae_neighbors1_alpha0.1",
+    "space": "sae",
+    "conditioned": false,
+    "neighbors": 1,
+    "alpha": 0.1
+  },
+  "validation": {
+    "original_vit": {
+      "noise4_accuracy": 1.0,
+      "clean_accuracy": 1.0,
+      "mean_noise4_margin": 3.3067009449005127
+    },
+    "sae_neighbors1_alpha0.1": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": -0.5,
+      "mean_margin_change": -3.2869796752929688,
+      "mean_true_logit_change": -9.674722671508789,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 1,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "sae_class_neighbors1_alpha0.1": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": -0.5,
+      "mean_margin_change": -3.2869796752929688,
+      "mean_true_logit_change": -9.674722671508789,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 1,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "hidden_neighbors1_alpha0.1": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": -0.5,
+      "mean_margin_change": -3.2869796752929688,
+      "mean_true_logit_change": -9.674722671508789,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 1,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "hidden_class_neighbors1_alpha0.1": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": -0.5,
+      "mean_margin_change": -3.2869796752929688,
+      "mean_true_logit_change": -9.674722671508789,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 1,
+      "mcnemar_exact_pvalue": 1.0
+    }
+  },
+  "evaluation": {
+    "original_vit": {
+      "noise4_accuracy": 0.5,
+      "clean_accuracy": 0.5,
+      "mean_noise4_margin": -2.2041006088256836
+    },
+    "selected_neighbors": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 1.5917954444885254,
+      "mean_true_logit_change": -4.30185067653656,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 0.5,
+      "clean_accuracy_gain_if_applied": 0.0
+    },
+    "random_neighbors": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 1.5917954444885254,
+      "mean_true_logit_change": -4.30185067653656,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "reverse_direction": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 1.262623906135559,
+      "mean_true_logit_change": -3.8296910524368286,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "mean_memory_residual": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 0.7102687358856201,
+      "mean_true_logit_change": -1.0759143829345703,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "paired_clean_oracle": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 4.022093296051025,
+      "mean_true_logit_change": 2.155303955078125,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "residual_identity": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 0.0,
+      "mean_true_logit_change": 0.0,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    }
+  }
+}

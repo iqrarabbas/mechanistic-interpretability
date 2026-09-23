@@ -1,0 +1,129 @@
+{
+  "configuration": {
+    "accuracy_sources": [
+      "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment41_disjoint_gate_development/full_top8_top16_3seed_v1/summary.json",
+      "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment43_direct_latent_repair/full_3seed_matched_direct_repair_optimized_v2/summary.json",
+      "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment45_sae_hidden_subspace/full_3seed_rank16_normalized_v1/summary.json"
+    ],
+    "resource_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment47_resource_audit/frozen_methods_pre_latency_v2/summary.json",
+    "baseline_clean_accuracy": 0.8043333333333335,
+    "baseline_noise4_accuracy": 0.6975000000000001,
+    "split_status": "leakage-free disjoint development validation",
+    "imageNetV2_accessed_for_new_analysis": false,
+    "inference_rerun": false,
+    "latency_status": "pending"
+  },
+  "methods": [
+    {
+      "method": "Frozen ViT baseline",
+      "noise4_accuracy_percent": 69.75000000000001,
+      "noise4_gain_pp": 0.0,
+      "clean_accuracy_percent": 80.43333333333335,
+      "clean_change_pp": 0.0,
+      "positive_seeds": "0/3",
+      "noise4_gains_by_seed_pp": "[0.0, 0.0, 0.0]",
+      "trainable_parameters": 0,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.0,
+      "checkpoint_mib": null,
+      "inference_requires_sae": false,
+      "evidence_status": "Reference"
+    },
+    {
+      "method": "Full 768D residual adapter",
+      "noise4_accuracy_percent": 70.76666666666668,
+      "noise4_gain_pp": 1.0166666666666668,
+      "clean_accuracy_percent": 80.15,
+      "clean_change_pp": -0.2833333333333333,
+      "positive_seeds": "3/3",
+      "noise4_gains_by_seed_pp": "[1.4500000000000002, 1.25, 0.35000000000000003]",
+      "trainable_parameters": 741120,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.115605504,
+      "checkpoint_mib": 2.829540252685547,
+      "inference_requires_sae": false,
+      "evidence_status": "Supported development method"
+    },
+    {
+      "method": "16D raw-hidden repair",
+      "noise4_accuracy_percent": 70.18333333333334,
+      "noise4_gain_pp": 0.4333333333333333,
+      "clean_accuracy_percent": 80.50000000000001,
+      "clean_change_pp": 0.06666666666666667,
+      "positive_seeds": "3/3",
+      "noise4_gains_by_seed_pp": "[0.5, 0.65, 0.15]",
+      "trainable_parameters": 3408,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.004816896,
+      "checkpoint_mib": 0.015193939208984375,
+      "inference_requires_sae": false,
+      "evidence_status": "Promising; paired CIs cross zero"
+    },
+    {
+      "method": "16D SAE-discovered hybrid",
+      "noise4_accuracy_percent": 70.01666666666668,
+      "noise4_gain_pp": 0.26666666666666666,
+      "clean_accuracy_percent": 80.50000000000001,
+      "clean_change_pp": 0.06666666666666667,
+      "positive_seeds": "3/3",
+      "noise4_gains_by_seed_pp": "[0.15, 0.25, 0.4]",
+      "trainable_parameters": 15440,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.004816896,
+      "checkpoint_mib": 0.11503314971923828,
+      "inference_requires_sae": false,
+      "evidence_status": "Suggestive; not best matched basis"
+    },
+    {
+      "method": "16D high-variance raw subspace",
+      "noise4_accuracy_percent": 70.31666666666668,
+      "noise4_gain_pp": 0.5666666666666667,
+      "clean_accuracy_percent": 80.38333333333335,
+      "clean_change_pp": -0.05000000000000001,
+      "positive_seeds": "2/3",
+      "noise4_gains_by_seed_pp": "[1.0999999999999999, 0.8, -0.2]",
+      "trainable_parameters": 15440,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.004816896,
+      "checkpoint_mib": 0.11503314971923828,
+      "inference_requires_sae": false,
+      "evidence_status": "Highest small mean; fails one seed"
+    },
+    {
+      "method": "16-feature SAE direct repair",
+      "noise4_accuracy_percent": 69.86666666666667,
+      "noise4_gain_pp": 0.11666666666666668,
+      "clean_accuracy_percent": 80.31666666666668,
+      "clean_change_pp": -0.11666666666666668,
+      "positive_seeds": "2/3",
+      "noise4_gains_by_seed_pp": "[-0.05, 0.35000000000000003, 0.05]",
+      "trainable_parameters": 3408,
+      "frozen_auxiliary_parameters": 0,
+      "added_gmac_per_image": 0.004816896,
+      "checkpoint_mib": 0.015193939208984375,
+      "inference_requires_sae": false,
+      "evidence_status": "Not supported"
+    },
+    {
+      "method": "Leakage-free top-16 SAE gate",
+      "noise4_accuracy_percent": 70.56666666666666,
+      "noise4_gain_pp": 0.8166666666666544,
+      "clean_accuracy_percent": 80.15,
+      "clean_change_pp": -0.28333333333334654,
+      "positive_seeds": "3/3",
+      "noise4_gains_by_seed_pp": "[1.35, 1.0, 0.1]",
+      "trainable_parameters": 17,
+      "frozen_auxiliary_parameters": 37774080,
+      "added_gmac_per_image": 3.699379264,
+      "checkpoint_mib": 144.0988245010376,
+      "inference_requires_sae": true,
+      "evidence_status": "Below ungated adapter; not supported"
+    }
+  ],
+  "limitations": [
+    "Methods share the same split protocol, but were trained in separate experiments.",
+    "Small-repair paired confidence intervals generally include zero.",
+    "The SAE gate is an addition to the full adapter, not a standalone correction.",
+    "Exact CUDA latency is not yet included."
+  ]
+}

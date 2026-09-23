@@ -1,0 +1,221 @@
+{
+  "configuration": {
+    "seeds": [
+      0
+    ],
+    "corruptions": [
+      "noise"
+    ],
+    "start_index": 46990,
+    "samples": 4,
+    "random_controls": 2,
+    "batch_size": 1,
+    "workers": 0,
+    "bootstrap": 100,
+    "run_name": "smoke_4_seed0_noise_v2",
+    "model": "google/vit-base-patch16-224",
+    "adapter_paths": {
+      "0": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment67_mixed_noise_blur_block6/full_3seed_noise_blur_identity0p2_v1/seed_0/mixed_identity0p2.pt"
+    },
+    "adapter_location": "after Block 6",
+    "target_heads": {
+      "7": [
+        0,
+        11
+      ],
+      "9": [
+        4
+      ]
+    },
+    "target_neurons": {
+      "7": [
+        2343,
+        2923,
+        3005
+      ],
+      "8": [
+        1840
+      ],
+      "9": [
+        1775
+      ]
+    },
+    "candidate_source": "Experiment 71, [36000,38000)",
+    "confirmation_split": [
+      46990,
+      46994
+    ],
+    "energy_matching": "per-token norm of removed projected output contribution",
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "uses_clean_counterpart_for_intervention": false,
+    "imageNetV2_accessed": false,
+    "imageNetSketch_accessed": false,
+    "status": "disjoint causal circuit confirmation"
+  },
+  "results": {
+    "0": {
+      "noise": {
+        "baseline_to_full": {
+          "reference_accuracy": 0.5,
+          "candidate_accuracy": 0.5,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "ablations": {
+          "target_heads": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "target_neurons": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "target_both": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_heads_0": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.5
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_neurons_0": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_both_0": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.5
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_heads_1": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_neurons_1": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_both_1": {
+            "reference_accuracy": 0.5,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "unsuppressed_replay_max_absolute_logit_error": 2.384185791015625e-06,
+        "heads_test": {
+          "target_removal_cost": -0.0,
+          "random_mean_removal_cost": -0.25,
+          "random_costs": [
+            -0.25,
+            -0.25
+          ],
+          "target_exceeds_random": 2,
+          "empirical_one_sided_pvalue": 0.3333333333333333
+        },
+        "neurons_test": {
+          "target_removal_cost": -0.0,
+          "random_mean_removal_cost": 0.0,
+          "random_costs": [
+            -0.0,
+            -0.0
+          ],
+          "target_exceeds_random": 0,
+          "empirical_one_sided_pvalue": 1.0
+        },
+        "both_test": {
+          "target_removal_cost": -0.0,
+          "random_mean_removal_cost": -0.25,
+          "random_costs": [
+            -0.25,
+            -0.25
+          ],
+          "target_exceeds_random": 2,
+          "empirical_one_sided_pvalue": 0.3333333333333333
+        }
+      }
+    }
+  },
+  "guardrails": [
+    "Target circuits were fixed before confirmation-set evaluation.",
+    "Random controls match the number and block location of suppressed components and their removed output norm per token.",
+    "Ablation establishes necessity only if targeted removal consistently exceeds controls; it does not establish sufficiency or a complete circuit.",
+    "The confirmation images appeared in older unrelated diagnostics, so this remains mechanistic development rather than an independent final benchmark."
+  ]
+}

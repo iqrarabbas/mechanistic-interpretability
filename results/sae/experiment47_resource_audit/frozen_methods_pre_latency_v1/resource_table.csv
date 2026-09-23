@@ -1,0 +1,6 @@
+method,trainable_parameters,frozen_auxiliary_parameters,added_macs_per_image,added_flops_per_image_two_per_mac,inference_requires_sae,checkpoint_path,checkpoint_bytes,checkpoint_mb_decimal,checkpoint_mib
+Frozen ViT baseline,0,0,0,0,False,/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1/seed_0/classification_weight_0.05.pt,2966988,2.966988,2.829540252685547
+Full 768D residual adapter,741120,0,115605504,231211008,False,/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1/seed_0/classification_weight_0.05.pt,2966988,2.966988,2.829540252685547
+16D raw-hidden repair,3408,0,4816896,9633792,False,/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1/seed_0/classification_weight_0.05.pt,2966988,2.966988,2.829540252685547
+16D shared-input subspace repair,15440,0,4816896,9633792,False,/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1/seed_0/classification_weight_0.05.pt,2966988,2.966988,2.829540252685547
+17-parameter SAE gate,17,37774080,3699379264,7398758528,True,/home/dr-yougart/Desktop/vit_mi/checkpoints/sae/clean_base_vanilla_paper/model.pt,151098569,151.098569,144.0988245010376

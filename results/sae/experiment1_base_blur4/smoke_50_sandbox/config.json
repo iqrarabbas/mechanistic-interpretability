@@ -1,0 +1,19 @@
+{
+  "samples": 50,
+  "start_index": 11000,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "run_name": "smoke_50_sandbox",
+  "scatter_samples": 200000,
+  "model": "google/vit-base-patch16-224",
+  "sae_checkpoint": "checkpoints/sae/blur4_base_vanilla_paper",
+  "sae_type": "Vanilla/ReLU",
+  "sae_expansion_factor": 32,
+  "sae_latent_dimension": 24576,
+  "sae_k": null,
+  "activation_layer": "hidden_states[-2]",
+  "tokens": "196 patch tokens; CLS excluded",
+  "image_summary": "mean of corresponding-patch metrics",
+  "active_threshold": "z > 0"
+}

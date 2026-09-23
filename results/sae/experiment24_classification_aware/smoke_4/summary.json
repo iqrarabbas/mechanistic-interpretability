@@ -1,0 +1,147 @@
+{
+  "configuration": {
+    "train_samples": 4,
+    "validation_samples": 2,
+    "evaluation_samples": 2,
+    "train_start": 100,
+    "validation_start": 104,
+    "evaluation_start": 106,
+    "initial_checkpoint": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment23_noise_residual_predictor/full_noise_predictor/hidden_linear.pt",
+    "classification_weights": [
+      0.01
+    ],
+    "preservation_ratio": 1.0,
+    "train_alpha": 0.5,
+    "alphas": [
+      0.5
+    ],
+    "smooth_l1_beta": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "predictor_batch_size": 2,
+    "image_batch_size": 2,
+    "num_workers": 0,
+    "seed": 0,
+    "run_name": "smoke_4",
+    "resume": false,
+    "device": "cpu",
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT",
+      "SAE"
+    ]
+  },
+  "predictor_parameters": 741120,
+  "training": {
+    "weight_0.01": {
+      "classification_weight": 0.01,
+      "preservation_weight": 0.01,
+      "train_alpha": 0.5,
+      "smooth_l1_beta": 1.0,
+      "best_validation_total": 2.8565144538879395,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "total": 3.1925889253616333,
+            "residual": 3.188365340232849,
+            "classification": 0.1348089650273323,
+            "preservation": 0.28754913806915283
+          },
+          "validation": {
+            "total": 2.8565144538879395,
+            "residual": 2.823317289352417,
+            "classification": 3.3197193145751953,
+            "preservation": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "selected": {
+    "validation_name": "weight_0.01_alpha0.5",
+    "predictor": "weight_0.01",
+    "alpha": 0.5
+  },
+  "validation": {
+    "original_vit": {
+      "noise4_accuracy": 0.5,
+      "clean_accuracy": 0.5,
+      "mean_noise4_margin": -2.2042973041534424
+    },
+    "weight_0.01_alpha0.5": {
+      "noise4_accuracy": 0.5,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 0.8172414302825928,
+      "mean_true_logit_change": 0.8301079273223877,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    }
+  },
+  "evaluation": {
+    "original_vit": {
+      "noise4_accuracy": 1.0,
+      "clean_accuracy": 1.0,
+      "mean_noise4_margin": 4.881340503692627
+    },
+    "selected_classification_aware": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": -0.3716564178466797,
+      "mean_true_logit_change": 0.15604400634765625,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "clean_accuracy_if_applied": 1.0,
+      "clean_accuracy_gain_if_applied": 0.0
+    },
+    "experiment23_residual_only": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": -0.3822140693664551,
+      "mean_true_logit_change": 0.14936113357543945,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "shuffled_prediction": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": -4.243718147277832,
+      "mean_true_logit_change": -10.967159748077393,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "reverse_prediction": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": -0.1325690746307373,
+      "mean_true_logit_change": -0.5141611099243164,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "paired_clean_oracle": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 0.025360107421875,
+      "mean_true_logit_change": 0.5146546363830566,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "residual_identity": {
+      "noise4_accuracy": 1.0,
+      "noise4_accuracy_gain": 0.0,
+      "mean_margin_change": 0.0,
+      "mean_true_logit_change": 0.0,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0
+    }
+  }
+}

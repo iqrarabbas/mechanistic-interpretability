@@ -1,0 +1,265 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "batch_size": 8,
+    "workers": 2,
+    "bootstrap": 5000,
+    "max_samples": null,
+    "evaluation_mode": "gaussian_blur_remainder",
+    "methods": [
+      "safe_router",
+      "always_blur"
+    ],
+    "run_name": "full_3seed_gaussian_blur_remainder_v1",
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "rank": 16,
+    "router_source": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment99_attention_head_corruption_detector/full_3seed_clean_noise_blur_v1",
+    "threshold_source": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment100_confidence_safe_attention_router/full_3seed_95pct_retention_v1/summary.json",
+    "repair_sources": {
+      "blur": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment96_block6_batchtopk_blur_hidden_subspace/full_3seed_rank16_v1",
+      "noise": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment98_block6_batchtopk_noise_hidden_subspace/full_3seed_rank16_v1"
+    },
+    "vit_frozen": true,
+    "saes_frozen": true,
+    "repairs_frozen": true,
+    "router_frozen": true,
+    "clean_counterpart_used_at_inference": false,
+    "corruption_label_used_by_routed_methods": false,
+    "imageNetV2_accessed": false,
+    "status": "held-out development-half evaluation; no tuning permitted from these outcomes"
+  },
+  "evaluation_ranges": {
+    "0": {
+      "clean": [
+        20500,
+        22000
+      ],
+      "gaussian_blur": [
+        20166,
+        22000
+      ]
+    },
+    "1": {
+      "clean": [
+        27500,
+        29000
+      ],
+      "gaussian_blur": [
+        27166,
+        29000
+      ]
+    },
+    "2": {
+      "clean": [
+        34500,
+        36000
+      ],
+      "gaussian_blur": [
+        34166,
+        36000
+      ]
+    }
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "samples": 1500,
+        "baseline_accuracy": 0.8073333333333333,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.8073333333333333,
+            "candidate_accuracy": 0.8126666666666666,
+            "accuracy_difference": 0.005333333333333333,
+            "accuracy_difference_95ci": [
+              0.0013333333333333333,
+              0.01
+            ],
+            "reference_wrong_candidate_correct": 10,
+            "reference_correct_candidate_wrong": 2,
+            "mcnemar_exact_pvalue": 0.03857421875
+          },
+          "always_blur": {
+            "reference_accuracy": 0.8073333333333333,
+            "candidate_accuracy": 0.812,
+            "accuracy_difference": 0.004666666666666667,
+            "accuracy_difference_95ci": [
+              -0.006,
+              0.015333333333333332
+            ],
+            "reference_wrong_candidate_correct": 38,
+            "reference_correct_candidate_wrong": 31,
+            "mcnemar_exact_pvalue": 0.47036853185814453
+          }
+        }
+      },
+      "gaussian_blur": {
+        "samples": 1834,
+        "baseline_accuracy": 0.6395856052344602,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.6395856052344602,
+            "candidate_accuracy": 0.6668484187568157,
+            "accuracy_difference": 0.027262813522355506,
+            "accuracy_difference_95ci": [
+              0.015267175572519083,
+              0.03980370774263904
+            ],
+            "reference_wrong_candidate_correct": 92,
+            "reference_correct_candidate_wrong": 42,
+            "mcnemar_exact_pvalue": 1.8706159525938893e-05
+          },
+          "always_blur": {
+            "reference_accuracy": 0.6395856052344602,
+            "candidate_accuracy": 0.6668484187568157,
+            "accuracy_difference": 0.027262813522355506,
+            "accuracy_difference_95ci": [
+              0.015267175572519083,
+              0.03980370774263904
+            ],
+            "reference_wrong_candidate_correct": 92,
+            "reference_correct_candidate_wrong": 42,
+            "mcnemar_exact_pvalue": 1.8706159525938893e-05
+          }
+        }
+      }
+    },
+    "1": {
+      "clean": {
+        "samples": 1500,
+        "baseline_accuracy": 0.808,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.8113333333333334,
+            "accuracy_difference": 0.0033333333333333335,
+            "accuracy_difference_95ci": [
+              -0.002,
+              0.008666666666666666
+            ],
+            "reference_wrong_candidate_correct": 10,
+            "reference_correct_candidate_wrong": 5,
+            "mcnemar_exact_pvalue": 0.30175781249999994
+          },
+          "always_blur": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.804,
+            "accuracy_difference": -0.004,
+            "accuracy_difference_95ci": [
+              -0.013333333333333334,
+              0.005333333333333333
+            ],
+            "reference_wrong_candidate_correct": 23,
+            "reference_correct_candidate_wrong": 29,
+            "mcnemar_exact_pvalue": 0.48845566937989204
+          }
+        }
+      },
+      "gaussian_blur": {
+        "samples": 1834,
+        "baseline_accuracy": 0.6444929116684842,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.6444929116684842,
+            "candidate_accuracy": 0.6701199563794984,
+            "accuracy_difference": 0.025627044711014176,
+            "accuracy_difference_95ci": [
+              0.013086150490730643,
+              0.03871319520174482
+            ],
+            "reference_wrong_candidate_correct": 92,
+            "reference_correct_candidate_wrong": 45,
+            "mcnemar_exact_pvalue": 7.306832561012004e-05
+          },
+          "always_blur": {
+            "reference_accuracy": 0.6444929116684842,
+            "candidate_accuracy": 0.6701199563794984,
+            "accuracy_difference": 0.025627044711014176,
+            "accuracy_difference_95ci": [
+              0.013086150490730643,
+              0.03816793893129771
+            ],
+            "reference_wrong_candidate_correct": 92,
+            "reference_correct_candidate_wrong": 45,
+            "mcnemar_exact_pvalue": 7.306832561012004e-05
+          }
+        }
+      }
+    },
+    "2": {
+      "clean": {
+        "samples": 1500,
+        "baseline_accuracy": 0.808,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.804,
+            "accuracy_difference": -0.004,
+            "accuracy_difference_95ci": [
+              -0.009333333333333334,
+              0.0013333333333333333
+            ],
+            "reference_wrong_candidate_correct": 6,
+            "reference_correct_candidate_wrong": 12,
+            "mcnemar_exact_pvalue": 0.237884521484375
+          },
+          "always_blur": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.8026666666666666,
+            "accuracy_difference": -0.005333333333333333,
+            "accuracy_difference_95ci": [
+              -0.016,
+              0.006
+            ],
+            "reference_wrong_candidate_correct": 31,
+            "reference_correct_candidate_wrong": 39,
+            "mcnemar_exact_pvalue": 0.40296307504607976
+          }
+        }
+      },
+      "gaussian_blur": {
+        "samples": 1834,
+        "baseline_accuracy": 0.6428571428571429,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.6428571428571429,
+            "candidate_accuracy": 0.6761177753544165,
+            "accuracy_difference": 0.03326063249727372,
+            "accuracy_difference_95ci": [
+              0.021264994547437296,
+              0.04525627044711014
+            ],
+            "reference_wrong_candidate_correct": 96,
+            "reference_correct_candidate_wrong": 35,
+            "mcnemar_exact_pvalue": 9.39531721168893e-08
+          },
+          "always_blur": {
+            "reference_accuracy": 0.6428571428571429,
+            "candidate_accuracy": 0.6761177753544165,
+            "accuracy_difference": 0.03326063249727372,
+            "accuracy_difference_95ci": [
+              0.021264994547437296,
+              0.04525627044711014
+            ],
+            "reference_wrong_candidate_correct": 96,
+            "reference_correct_candidate_wrong": 35,
+            "mcnemar_exact_pvalue": 9.39531721168893e-08
+          }
+        }
+      }
+    }
+  },
+  "guardrails": [
+    "The safe threshold was selected on earlier validation-prefix images and is frozen here.",
+    "All ViT, SAE, repair, router, and threshold parameters are frozen.",
+    "Oracle uses corruption family only as a diagnostic ceiling; routed methods do not.",
+    "No clean counterpart is used by any deployment-style method.",
+    "ImageNetV2, ImageNet-Sketch, and the final reserve are not accessed."
+  ]
+}

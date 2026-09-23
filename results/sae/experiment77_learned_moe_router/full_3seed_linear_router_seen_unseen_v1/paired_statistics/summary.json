@@ -1,0 +1,510 @@
+{
+  "configuration": {
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment77_learned_moe_router/full_3seed_linear_router_seen_unseen_v1",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 7800,
+    "inference_rerun": false,
+    "primary_comparison": "learned soft router versus monolithic mixed adapter"
+  },
+  "aggregate": {
+    "development_seen": {
+      "router_soft": {
+        "0": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.008,
+          "image_clustered_bootstrap_95ci": [
+            0.003416666666666666,
+            0.012833333333333332
+          ]
+        },
+        "1": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.00625,
+          "image_clustered_bootstrap_95ci": [
+            0.0019166666666666666,
+            0.010666666666666666
+          ]
+        },
+        "2": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.005416666666666667,
+          "image_clustered_bootstrap_95ci": [
+            0.0005,
+            0.010333333333333332
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.006555555555555555,
+          "disjoint_image_bootstrap_95ci": [
+            0.0038888888888888888,
+            0.009222916666666657
+          ],
+          "note": "Development seed validation ranges are disjoint."
+        }
+      },
+      "router_hard": {
+        "0": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.008,
+          "image_clustered_bootstrap_95ci": [
+            0.0032499999999999994,
+            0.012833333333333332
+          ]
+        },
+        "1": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.00625,
+          "image_clustered_bootstrap_95ci": [
+            0.0018312500000000015,
+            0.010583333333333332
+          ]
+        },
+        "2": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": 0.005416666666666667,
+          "image_clustered_bootstrap_95ci": [
+            0.000497916666666668,
+            0.01025
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.006555555555555555,
+          "disjoint_image_bootstrap_95ci": [
+            0.003833333333333333,
+            0.009222222222222222
+          ],
+          "note": "Development seed validation ranges are disjoint."
+        }
+      },
+      "uniform": {
+        "0": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": -0.001,
+          "image_clustered_bootstrap_95ci": [
+            -0.00575,
+            0.003666666666666666
+          ]
+        },
+        "1": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": -0.005,
+          "image_clustered_bootstrap_95ci": [
+            -0.009668749999999999,
+            -0.0003333333333333335
+          ]
+        },
+        "2": {
+          "conditions": [
+            "disk_blur",
+            "gaussian_blur",
+            "gaussian_noise",
+            "impulse_noise",
+            "motion_blur",
+            "shot_noise"
+          ],
+          "images": 2000,
+          "mean_difference": -0.00375,
+          "image_clustered_bootstrap_95ci": [
+            -0.008833333333333332,
+            0.001333333333333334
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": -0.00325,
+          "disjoint_image_bootstrap_95ci": [
+            -0.006083333333333333,
+            -0.0004999999999999998
+          ],
+          "note": "Development seed validation ranges are disjoint."
+        }
+      }
+    },
+    "reserve_unseen": {
+      "router_soft": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.001,
+          "image_clustered_bootstrap_95ci": [
+            -0.003,
+            0.005
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0025,
+          "image_clustered_bootstrap_95ci": [
+            -0.0015,
+            0.006583333333333333
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0018333333333333333,
+          "image_clustered_bootstrap_95ci": [
+            -0.00225,
+            0.006
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0017777777777777779,
+          "image_clustered_across_adapter_seeds_95ci": [
+            -0.0015555555555555555,
+            0.005055555555555555
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      },
+      "router_hard": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0005833333333333334,
+          "image_clustered_bootstrap_95ci": [
+            -0.003416666666666667,
+            0.004583333333333333
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.00125,
+          "image_clustered_bootstrap_95ci": [
+            -0.00275,
+            0.00525
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0015,
+          "image_clustered_bootstrap_95ci": [
+            -0.0026666666666666666,
+            0.005583333333333333
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0011111111111111111,
+          "image_clustered_across_adapter_seeds_95ci": [
+            -0.00225,
+            0.004417361111111101
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      },
+      "uniform": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0008333333333333334,
+          "image_clustered_bootstrap_95ci": [
+            -0.0031666666666666666,
+            0.004916666666666666
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0014166666666666668,
+          "image_clustered_bootstrap_95ci": [
+            -0.0026666666666666666,
+            0.005333333333333333
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": -0.0014166666666666668,
+          "image_clustered_bootstrap_95ci": [
+            -0.005833333333333334,
+            0.002916666666666667
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0002777777777777778,
+          "image_clustered_across_adapter_seeds_95ci": [
+            -0.0030833333333333333,
+            0.0036666666666666666
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      }
+    },
+    "sketch_unseen": {
+      "router_soft": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.006416666666666667,
+          "image_clustered_bootstrap_95ci": [
+            0.00175,
+            0.011166666666666667
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.004583333333333333,
+          "image_clustered_bootstrap_95ci": [
+            0.0,
+            0.009166666666666667
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0036666666666666666,
+          "image_clustered_bootstrap_95ci": [
+            -0.0010833333333333333,
+            0.008666666666666666
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.004888888888888889,
+          "image_clustered_across_adapter_seeds_95ci": [
+            0.0010277777777777778,
+            0.008722222222222221
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      },
+      "router_hard": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.00625,
+          "image_clustered_bootstrap_95ci": [
+            0.0015,
+            0.011
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.00475,
+          "image_clustered_bootstrap_95ci": [
+            8.333333333333333e-05,
+            0.00925
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0033333333333333335,
+          "image_clustered_bootstrap_95ci": [
+            -0.0015833333333333333,
+            0.00825
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0047777777777777775,
+          "image_clustered_across_adapter_seeds_95ci": [
+            0.0009444444444444445,
+            0.008638888888888889
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      },
+      "uniform": {
+        "0": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0035833333333333333,
+          "image_clustered_bootstrap_95ci": [
+            -0.0008333333333333334,
+            0.008
+          ]
+        },
+        "1": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.00275,
+          "image_clustered_bootstrap_95ci": [
+            -0.0019166666666666666,
+            0.007333333333333333
+          ]
+        },
+        "2": {
+          "conditions": [
+            "brightness_4",
+            "contrast_4",
+            "jpeg_4",
+            "pixelate_4"
+          ],
+          "images": 3000,
+          "mean_difference": 0.0003333333333333333,
+          "image_clustered_bootstrap_95ci": [
+            -0.004333333333333333,
+            0.005
+          ]
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0022222222222222222,
+          "image_clustered_across_adapter_seeds_95ci": [
+            -0.0014166666666666668,
+            0.005861111111111111
+          ],
+          "note": "The same images are evaluated across adapter seeds, so bootstrap resamples images and keeps seed predictions clustered."
+        }
+      }
+    }
+  },
+  "condition_tests_csv": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment77_learned_moe_router/full_3seed_linear_router_seen_unseen_v1/paired_statistics/condition_tests.csv",
+  "statistical_rules": [
+    "McNemar exact tests use paired image outcomes within each seed and condition.",
+    "Aggregate confidence intervals cluster repeated corruption conditions by image.",
+    "Reserve and ImageNet-Sketch intervals additionally keep all three adapter-seed predictions for an image in the same bootstrap cluster.",
+    "No multiplicity-adjusted condition-level claims are made; aggregate soft-router comparisons are primary."
+  ]
+}

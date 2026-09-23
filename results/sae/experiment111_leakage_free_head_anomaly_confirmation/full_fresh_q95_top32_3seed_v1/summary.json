@@ -1,0 +1,228 @@
+{
+  "configuration": {
+    "run_name": "full_fresh_q95_top32_3seed_v1",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "severities": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "top_k": 32,
+    "clean_quantile": 0.95,
+    "corruption_seed": 113000,
+    "exclude_manifest": [
+      "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment111_leakage_free_head_anomaly_confirmation/full_fresh_eligible_classes_top32_q99_3seed_v1/frozen_manifest.json"
+    ],
+    "batch_size": 8,
+    "workers": 2,
+    "bootstrap": 5000,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "3d39cba3cc0fc613290e4fab00b83d157a935ca5ef8fef580e0430bdf6cf4bb0",
+    "protocol": "frozen Experiment 110 detector and repairs evaluated without tuning on a second SHA-disjoint image set",
+    "corruption_examples_used_to_fit_detector": false,
+    "clean_counterpart_used_at_inference": false,
+    "vit_and_repair_frozen": true
+  },
+  "calibration": {
+    "0": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.6581273078918457,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.444122314453125,
+      "clean_validation_score_std": 1.2397611141204834
+    },
+    "1": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.6386489868164062,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.440004825592041,
+      "clean_validation_score_std": 1.2420110702514648
+    },
+    "2": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.630824089050293,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.433544158935547,
+      "clean_validation_score_std": 1.2293187379837036
+    }
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "reference_accuracy": 0.3733733733733734,
+        "candidate_accuracy": 0.3733733733733734,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.003003003003003003
+        ],
+        "reference_wrong_candidate_correct": 1,
+        "reference_correct_candidate_wrong": 1,
+        "mcnemar_exact_pvalue": 1.0,
+        "detection_fraction": 0.03803803803803804
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.17017017017017017,
+        "candidate_accuracy": 0.17217217217217218,
+        "accuracy_difference": 0.002002002002002002,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.007007007007007007
+        ],
+        "reference_wrong_candidate_correct": 4,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 0.6875,
+        "detection_fraction": 0.16116116116116116
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.08708708708708708,
+        "candidate_accuracy": 0.09009009009009009,
+        "accuracy_difference": 0.003003003003003003,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.009009009009009009
+        ],
+        "reference_wrong_candidate_correct": 6,
+        "reference_correct_candidate_wrong": 3,
+        "mcnemar_exact_pvalue": 0.5078125,
+        "detection_fraction": 0.3173173173173173
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.05805805805805806,
+        "candidate_accuracy": 0.06306306306306306,
+        "accuracy_difference": 0.005005005005005005,
+        "accuracy_difference_95ci": [
+          -0.001001001001001001,
+          0.012012012012012012
+        ],
+        "reference_wrong_candidate_correct": 8,
+        "reference_correct_candidate_wrong": 3,
+        "mcnemar_exact_pvalue": 0.2265625,
+        "detection_fraction": 0.5235235235235235
+      }
+    },
+    "1": {
+      "clean": {
+        "reference_accuracy": 0.3733733733733734,
+        "candidate_accuracy": 0.37237237237237236,
+        "accuracy_difference": -0.001001001001001001,
+        "accuracy_difference_95ci": [
+          -0.005005005005005005,
+          0.002002002002002002
+        ],
+        "reference_wrong_candidate_correct": 1,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 1.0,
+        "detection_fraction": 0.03903903903903904
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.17017017017017017,
+        "candidate_accuracy": 0.17317317317317318,
+        "accuracy_difference": 0.003003003003003003,
+        "accuracy_difference_95ci": [
+          -0.002002002002002002,
+          0.009009009009009009
+        ],
+        "reference_wrong_candidate_correct": 5,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 0.453125,
+        "detection_fraction": 0.16016016016016016
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.08708708708708708,
+        "candidate_accuracy": 0.09009009009009009,
+        "accuracy_difference": 0.003003003003003003,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.01001001001001001
+        ],
+        "reference_wrong_candidate_correct": 7,
+        "reference_correct_candidate_wrong": 4,
+        "mcnemar_exact_pvalue": 0.548828125,
+        "detection_fraction": 0.32232232232232233
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.05805805805805806,
+        "candidate_accuracy": 0.06306306306306306,
+        "accuracy_difference": 0.005005005005005005,
+        "accuracy_difference_95ci": [
+          -0.001001001001001001,
+          0.011011011011011011
+        ],
+        "reference_wrong_candidate_correct": 7,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 0.1796875,
+        "detection_fraction": 0.5295295295295295
+      }
+    },
+    "2": {
+      "clean": {
+        "reference_accuracy": 0.3733733733733734,
+        "candidate_accuracy": 0.37237237237237236,
+        "accuracy_difference": -0.001001001001001001,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 1,
+        "mcnemar_exact_pvalue": 1.0,
+        "detection_fraction": 0.03903903903903904
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.17017017017017017,
+        "candidate_accuracy": 0.17117117117117117,
+        "accuracy_difference": 0.001001001001001001,
+        "accuracy_difference_95ci": [
+          -0.003003003003003003,
+          0.005005005005005005
+        ],
+        "reference_wrong_candidate_correct": 3,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 1.0,
+        "detection_fraction": 0.16316316316316315
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.08708708708708708,
+        "candidate_accuracy": 0.09109109109109109,
+        "accuracy_difference": 0.004004004004004004,
+        "accuracy_difference_95ci": [
+          -0.002002002002002002,
+          0.011011011011011011
+        ],
+        "reference_wrong_candidate_correct": 8,
+        "reference_correct_candidate_wrong": 4,
+        "mcnemar_exact_pvalue": 0.3876953125,
+        "detection_fraction": 0.32432432432432434
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.05805805805805806,
+        "candidate_accuracy": 0.06506506506506507,
+        "accuracy_difference": 0.007007007007007007,
+        "accuracy_difference_95ci": [
+          0.001001001001001001,
+          0.014014014014014014
+        ],
+        "reference_wrong_candidate_correct": 9,
+        "reference_correct_candidate_wrong": 2,
+        "mcnemar_exact_pvalue": 0.0654296875,
+        "detection_fraction": 0.5305305305305306
+      }
+    }
+  },
+  "data_independence": [
+    "All evaluation hashes are disjoint from the prior 3000-image Sketch calibration manifest.",
+    "All evaluation hashes are disjoint from the prior 1000-image Experiments 107-110 development/evaluation manifest.",
+    "The manifest was frozen before model inference and no threshold or hyperparameter will be changed from Experiment 110."
+  ],
+  "limitation": "ImageNet-Sketch as a dataset/domain was used previously; this is fresh image-level confirmation, not a new-dataset benchmark."
+}

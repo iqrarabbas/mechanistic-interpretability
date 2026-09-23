@@ -1,0 +1,471 @@
+{
+  "configuration": {
+    "adapter_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/supervisor_disjoint_feature_dev_v1/summary.json",
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "rank": 4,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "batch_size": 2,
+    "bootstrap_repetitions": 100,
+    "max_cache_samples": 4,
+    "run_name": "smoke_seed0_rank4_normalized_v2",
+    "resume": false,
+    "device": "cpu",
+    "vit_block": 11,
+    "shared_predictor_input": "standardized full 768-dimensional noisy hidden patch",
+    "trainable_parameters_per_matched_method": 3860,
+    "frozen_components": [
+      "ViT",
+      "clean SAE",
+      "all output bases"
+    ],
+    "intervention": "residual hidden-state delta",
+    "imageNetV2_accessed": false,
+    "status": "development comparison only"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "harmful_features": [
+    14024,
+    14852,
+    4889,
+    11406
+  ],
+  "controls": {
+    "seed_0": {
+      "random_sae_features": [
+        5765,
+        12853,
+        17367,
+        5323
+      ],
+      "high_variance_hidden_dimensions": [
+        187,
+        382,
+        759,
+        183
+      ],
+      "residual_pca_eigenvalues": [
+        284782.03125,
+        1636.1585693359375,
+        960.6358032226562,
+        931.2322998046875
+      ],
+      "output_coefficient_scales": {
+        "harmful_sae_decoder": [
+          24.527944564819336,
+          24.345678329467773,
+          5.659191131591797,
+          10.036231994628906
+        ],
+        "random_sae_decoder": [
+          5.762350559234619,
+          5.387549877166748,
+          16.451845169067383,
+          21.425609588623047
+        ],
+        "high_variance_hidden": [
+          369.1689147949219,
+          276.5365295410156,
+          238.40916442871094,
+          104.5423583984375
+        ],
+        "residual_pca": [
+          533.6497192382812,
+          40.449459075927734,
+          30.994125366210938,
+          30.516098022460938
+        ]
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "harmful_sae_decoder": {
+        "best_validation_total": 0.24100779742002487,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3596860319375992,
+              "coefficient": 0.3103567212820053,
+              "classification": 0.9844627603888512,
+              "preservation": 0.0021233558654785156
+            },
+            "validation": {
+              "total": 0.24100779742002487,
+              "coefficient": 0.23676829785108566,
+              "classification": 0.08478835225105286,
+              "preservation": 1.430511474609375e-06
+            }
+          }
+        ]
+      },
+      "random_sae_decoder": {
+        "best_validation_total": 0.25973761081695557,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.36979345977306366,
+              "coefficient": 0.3206038773059845,
+              "classification": 0.9837314486503601,
+              "preservation": 6.031990051269531e-05
+            },
+            "validation": {
+              "total": 0.25973761081695557,
+              "coefficient": 0.2554302215576172,
+              "classification": 0.08497956022620201,
+              "preservation": 0.001168370246887207
+            }
+          }
+        ]
+      },
+      "high_variance_hidden": {
+        "best_validation_total": 0.21163439750671387,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.294702373445034,
+              "coefficient": 0.24573616683483124,
+              "classification": 0.979324221611023,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 0.21163439750671387,
+              "coefficient": 0.20598074048757553,
+              "classification": 0.0869532935321331,
+              "preservation": 0.02611982822418213
+            }
+          }
+        ]
+      },
+      "residual_pca": {
+        "best_validation_total": 0.08124905452132225,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.40788866579532623,
+              "coefficient": 0.3589271605014801,
+              "classification": 0.9764864146709442,
+              "preservation": 0.002743959426879883
+            },
+            "validation": {
+              "total": 0.08124905452132225,
+              "coefficient": 0.07456982135772705,
+              "classification": 0.08979234099388123,
+              "preservation": 0.04379236698150635
+            }
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 1.0,
+      "baseline_noise4_accuracy": 1.0,
+      "methods": {
+        "adapter": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.25,
+            "accuracy_difference_95ci": [
+              -0.5,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "harmful_sae_decoder": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "random_sae_decoder": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "high_variance_hidden": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.75
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "residual_pca": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "clean_vs_adapter": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.25,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.6312499999999979
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_adapter": {
+            "reference_accuracy": 1.0,
+            "candidate_accuracy": 1.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "harmful_sae_decoder": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    },
+    "random_sae_decoder": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    },
+    "high_variance_hidden": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    },
+    "residual_pca": {
+      "mean_noise4_gain_vs_baseline": 0.0,
+      "mean_clean_gain_vs_baseline": 0.0,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "clean_gains_by_seed": [
+        0.0
+      ]
+    }
+  },
+  "sae_discovered_subspace_supported": false
+}

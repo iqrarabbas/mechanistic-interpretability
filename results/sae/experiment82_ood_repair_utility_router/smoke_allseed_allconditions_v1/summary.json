@@ -1,0 +1,3565 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "rank": 212,
+    "router_epochs": 2,
+    "router_patience": 1,
+    "router_learning_rate": 0.001,
+    "router_weight_decay": 0.0001,
+    "batch_size": 2,
+    "workers": 0,
+    "bootstrap": 20,
+    "ood_start": 14000,
+    "ood_samples": 2,
+    "severities": [
+      4
+    ],
+    "max_samples": 2,
+    "run_name": "smoke_allseed_allconditions_v1",
+    "model": "google/vit-base-patch16-224",
+    "vit_frozen": true,
+    "experts_frozen": true,
+    "mixed_adapter_frozen": true,
+    "seen_router_training_corruptions": [
+      "clean",
+      "gaussian_noise",
+      "shot_noise",
+      "impulse_noise",
+      "gaussian_blur",
+      "disk_blur",
+      "motion_blur"
+    ],
+    "unseen_evaluation_corruptions": [
+      "jpeg",
+      "pixelate",
+      "brightness",
+      "contrast"
+    ],
+    "utility_target": "argmax true-class margin improvement among none/noise/blur on development data",
+    "mechanism_router_input": "36 corrupted-image-only Block-7 response statistics from the two candidate expert corrections",
+    "router_parameters": {
+      "early": 6915,
+      "mechanism": 111
+    },
+    "router_uses_clean_counterpart": false,
+    "router_uses_corruption_label_at_inference": false,
+    "router_uses_ground_truth_at_inference": false,
+    "imageNetV2_accessed": false,
+    "imageNetSketch_accessed": false,
+    "status": "OOD development evaluation; not a pristine final benchmark"
+  },
+  "splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    },
+    "1": {
+      "train": {
+        "name": "adapter1_gate_train",
+        "dataset": "imagenet_val",
+        "start": 22000,
+        "end": 27000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter1_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 27000,
+        "end": 29000,
+        "isolation_group": "adapter_gate_development"
+      }
+    },
+    "2": {
+      "train": {
+        "name": "adapter2_gate_train",
+        "dataset": "imagenet_val",
+        "start": 29000,
+        "end": 34000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter2_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 34000,
+        "end": 36000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "checkpoints": {
+    "0": {
+      "experts": {
+        "noise": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_0/noise_rank212.pt",
+        "blur": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_0/blur_rank212.pt"
+      },
+      "family_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment77_learned_moe_router/full_3seed_linear_router_seen_unseen_v1/seed_0/linear_router.pt",
+      "early_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_0/early_utility_router.pt",
+      "mechanism_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_0/mechanism_utility_router.pt"
+    },
+    "1": {
+      "experts": {
+        "noise": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_1/noise_rank212.pt",
+        "blur": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_1/blur_rank212.pt"
+      },
+      "family_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment77_learned_moe_router/full_3seed_linear_router_seen_unseen_v1/seed_1/linear_router.pt",
+      "early_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_1/early_utility_router.pt",
+      "mechanism_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_1/mechanism_utility_router.pt"
+    },
+    "2": {
+      "experts": {
+        "noise": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_2/noise_rank212.pt",
+        "blur": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment76_parameter_matched_oracle_moe/full_3seed_rank212_oracle_v1/seed_2/blur_rank212.pt"
+      },
+      "family_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment77_learned_moe_router/full_3seed_linear_router_seen_unseen_v1/seed_2/linear_router.pt",
+      "early_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_2/early_utility_router.pt",
+      "mechanism_utility_router": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment82_ood_repair_utility_router/smoke_allseed_allconditions_v1/seed_2/mechanism_utility_router.pt"
+    }
+  },
+  "training": {
+    "0": {
+      "early": {
+        "best_validation_utility": 0.4594388008117676,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.1728659868240356,
+            "validation_mean_true_class_margin_utility": 0.4594388008117676,
+            "validation_best_action_accuracy": 0.5
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.21883732080459595,
+            "validation_mean_true_class_margin_utility": 0.4594388008117676,
+            "validation_best_action_accuracy": 0.5
+          }
+        ]
+      },
+      "mechanism": {
+        "best_validation_utility": 0.1670856475830078,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.2705485820770264,
+            "validation_mean_true_class_margin_utility": 0.1670856475830078,
+            "validation_best_action_accuracy": 0.5
+          },
+          {
+            "epoch": 2,
+            "train_loss": 1.2377233505249023,
+            "validation_mean_true_class_margin_utility": 0.1670856475830078,
+            "validation_best_action_accuracy": 0.5
+          }
+        ]
+      }
+    },
+    "1": {
+      "early": {
+        "best_validation_utility": 0.05913853645324707,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 0.9550852179527283,
+            "validation_mean_true_class_margin_utility": 0.05913853645324707,
+            "validation_best_action_accuracy": 0.0
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.3455542027950287,
+            "validation_mean_true_class_margin_utility": 0.05913853645324707,
+            "validation_best_action_accuracy": 0.0
+          }
+        ]
+      },
+      "mechanism": {
+        "best_validation_utility": 0.2434844970703125,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.0010011196136475,
+            "validation_mean_true_class_margin_utility": 0.2434844970703125,
+            "validation_best_action_accuracy": 0.5
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.9750494360923767,
+            "validation_mean_true_class_margin_utility": 0.2434844970703125,
+            "validation_best_action_accuracy": 0.5
+          }
+        ]
+      }
+    },
+    "2": {
+      "early": {
+        "best_validation_utility": 0.31319141387939453,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.858506441116333,
+            "validation_mean_true_class_margin_utility": 0.31319141387939453,
+            "validation_best_action_accuracy": 1.0
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.5325936079025269,
+            "validation_mean_true_class_margin_utility": 0.31319141387939453,
+            "validation_best_action_accuracy": 1.0
+          }
+        ]
+      },
+      "mechanism": {
+        "best_validation_utility": 0.21563959121704102,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.6063272953033447,
+            "validation_mean_true_class_margin_utility": 0.21563959121704102,
+            "validation_best_action_accuracy": 0.0
+          },
+          {
+            "epoch": 2,
+            "train_loss": 1.5722298622131348,
+            "validation_mean_true_class_margin_utility": 0.21563959121704102,
+            "validation_best_action_accuracy": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "results": {
+    "seen_validation": {
+      "0": {
+        "clean": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "gaussian_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "shot_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            }
+          }
+        },
+        "impulse_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            }
+          }
+        },
+        "gaussian_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "disk_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "motion_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        }
+      },
+      "1": {
+        "clean": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "gaussian_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "shot_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.5,
+              "accuracy_difference_95ci": [
+                0.0,
+                1.0
+              ],
+              "reference_wrong_candidate_correct": 1,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "impulse_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "gaussian_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "disk_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "motion_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        }
+      },
+      "2": {
+        "clean": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            }
+          }
+        },
+        "gaussian_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "shot_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            }
+          }
+        },
+        "impulse_noise": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "gaussian_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            }
+          }
+        },
+        "disk_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 1.0,
+              "candidate_accuracy": 1.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "motion_blur": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            }
+          }
+        }
+      }
+    },
+    "ood_unseen": {
+      "0": {
+        "jpeg_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "pixelate_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "brightness_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "contrast_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        }
+      },
+      "1": {
+        "jpeg_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            }
+          }
+        },
+        "pixelate_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            }
+          }
+        },
+        "brightness_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            }
+          }
+        },
+        "contrast_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        }
+      },
+      "2": {
+        "jpeg_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.5,
+              "candidate_accuracy": 0.5,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 0.5,
+              "noise": 0.5,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "pixelate_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.5,
+              "noise": 0.0,
+              "blur": 0.5
+            }
+          }
+        },
+        "brightness_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        },
+        "contrast_4": {
+          "methods": {
+            "mixed": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "uniform": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "family_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "early_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "mechanism_utility": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "oracle_margin": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          },
+          "routing": {
+            "family_router": {
+              "none": 0.0,
+              "noise": 0.0,
+              "blur": 1.0
+            },
+            "early_utility": {
+              "none": 0.0,
+              "noise": 1.0,
+              "blur": 0.0
+            },
+            "mechanism_utility": {
+              "none": 1.0,
+              "noise": 0.0,
+              "blur": 0.0
+            },
+            "oracle_margin": {
+              "none": 0.0,
+              "noise": 0.5,
+              "blur": 0.5
+            }
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "seen_validation": {
+      "mixed": {
+        "mean_accuracy": 0.7380952380952381,
+        "mean_gain": 0.023809523809523808
+      },
+      "uniform": {
+        "mean_accuracy": 0.7142857142857143,
+        "mean_gain": 0.0
+      },
+      "family_router": {
+        "mean_accuracy": 0.7142857142857143,
+        "mean_gain": 0.0
+      },
+      "early_utility": {
+        "mean_accuracy": 0.7142857142857143,
+        "mean_gain": 0.0
+      },
+      "mechanism_utility": {
+        "mean_accuracy": 0.7142857142857143,
+        "mean_gain": 0.0
+      },
+      "oracle_margin": {
+        "mean_accuracy": 0.7142857142857143,
+        "mean_gain": 0.0
+      }
+    },
+    "ood_unseen": {
+      "mixed": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      },
+      "uniform": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      },
+      "family_router": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      },
+      "early_utility": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      },
+      "mechanism_utility": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      },
+      "oracle_margin": {
+        "mean_accuracy": 0.125,
+        "mean_gain": 0.0
+      }
+    }
+  },
+  "leakage_guardrails": [
+    "Routers train only on clean and six seen corruption conditions from seed-specific adapter/gate development splits.",
+    "JPEG, pixelation, brightness, and contrast are completely absent from router fitting and checkpoint selection.",
+    "OOD corruption-instance evaluation is locked to [14000,15000), disjoint from all expert and router fitting ranges.",
+    "The source images in [14000,15000) were inspected in prior mechanistic work, so this is OOD corruption generalization development rather than a pristine final benchmark.",
+    "ImageNetV2 and ImageNet-Sketch are not accessed."
+  ],
+  "limitations": [
+    "Online corruptions are controlled approximations rather than official ImageNet-C.",
+    "The existing family router was selected on the seen validation ranges, so seen-validation comparisons are descriptive.",
+    "The six-corruption parameter-matched monolithic adapter remains a required architecture control.",
+    "Oracle-margin routing uses labels and is diagnostic only."
+  ]
+}

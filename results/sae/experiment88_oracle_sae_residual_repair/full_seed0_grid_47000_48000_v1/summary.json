@@ -1,0 +1,534 @@
+{
+  "configuration": {
+    "seed": 0,
+    "start": 47000,
+    "samples": 1000,
+    "reference_start": 10200,
+    "reference_samples": 800,
+    "alphas": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "taus": [
+      1.0,
+      2.0,
+      3.0
+    ],
+    "batch_size": 4,
+    "workers": 2,
+    "corruption_seed": 0,
+    "run_name": "full_seed0_grid_47000_48000_v1",
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed0_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+    "feature_source": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment86_batchtopk_seed_stability/full_top100_1000controls_v1/summary.json"
+  },
+  "results": {
+    "noise": {
+      "selected_features": {
+        "strengthened": [
+          18122,
+          16354,
+          22599,
+          22226,
+          19376,
+          21168,
+          20559,
+          8529,
+          5198,
+          21110,
+          19171,
+          7325,
+          19032,
+          22862,
+          13196,
+          8329,
+          1063
+        ],
+        "weakened": [
+          5348,
+          11454,
+          17974,
+          15185,
+          9287,
+          7279,
+          12545,
+          11705,
+          6394,
+          6154,
+          1998,
+          1555,
+          5153,
+          17597,
+          2885,
+          4879,
+          16020,
+          6944,
+          15358,
+          17098,
+          16119,
+          24192,
+          19974,
+          5242,
+          11263,
+          6978,
+          3516,
+          12378,
+          1208,
+          24260,
+          15958,
+          2741,
+          18098,
+          4957,
+          16839,
+          19248
+        ]
+      },
+      "corrupted": {
+        "baseline_accuracy": 0.718,
+        "methods": {
+          "alpha_0.25_tau_1": {
+            "accuracy": 0.716,
+            "accuracy_change_pp": -0.20000000000000018,
+            "recovered": 4,
+            "damaged": 6,
+            "changed_fraction_of_selected_active_coordinates": 0.6601808701964352,
+            "alpha": 0.25,
+            "tau": 1.0
+          },
+          "alpha_0.25_tau_2": {
+            "accuracy": 0.717,
+            "accuracy_change_pp": -0.10000000000000009,
+            "recovered": 3,
+            "damaged": 4,
+            "changed_fraction_of_selected_active_coordinates": 0.38882322695324223,
+            "alpha": 0.25,
+            "tau": 2.0
+          },
+          "alpha_0.25_tau_3": {
+            "accuracy": 0.718,
+            "accuracy_change_pp": 0.0,
+            "recovered": 3,
+            "damaged": 3,
+            "changed_fraction_of_selected_active_coordinates": 0.22534904876794684,
+            "alpha": 0.25,
+            "tau": 3.0
+          },
+          "alpha_0.5_tau_1": {
+            "accuracy": 0.717,
+            "accuracy_change_pp": -0.10000000000000009,
+            "recovered": 10,
+            "damaged": 11,
+            "changed_fraction_of_selected_active_coordinates": 0.6601808701964352,
+            "alpha": 0.5,
+            "tau": 1.0
+          },
+          "alpha_0.5_tau_2": {
+            "accuracy": 0.718,
+            "accuracy_change_pp": 0.0,
+            "recovered": 8,
+            "damaged": 8,
+            "changed_fraction_of_selected_active_coordinates": 0.38882322695324223,
+            "alpha": 0.5,
+            "tau": 2.0
+          },
+          "alpha_0.5_tau_3": {
+            "accuracy": 0.717,
+            "accuracy_change_pp": -0.10000000000000009,
+            "recovered": 3,
+            "damaged": 4,
+            "changed_fraction_of_selected_active_coordinates": 0.22534904876794684,
+            "alpha": 0.5,
+            "tau": 3.0
+          },
+          "alpha_1_tau_1": {
+            "accuracy": 0.7,
+            "accuracy_change_pp": -1.8000000000000016,
+            "recovered": 29,
+            "damaged": 47,
+            "changed_fraction_of_selected_active_coordinates": 0.6601808701964352,
+            "alpha": 1.0,
+            "tau": 1.0
+          },
+          "alpha_1_tau_2": {
+            "accuracy": 0.719,
+            "accuracy_change_pp": 0.10000000000000009,
+            "recovered": 18,
+            "damaged": 17,
+            "changed_fraction_of_selected_active_coordinates": 0.38882322695324223,
+            "alpha": 1.0,
+            "tau": 2.0
+          },
+          "alpha_1_tau_3": {
+            "accuracy": 0.72,
+            "accuracy_change_pp": 0.20000000000000018,
+            "recovered": 11,
+            "damaged": 9,
+            "changed_fraction_of_selected_active_coordinates": 0.22534904876794684,
+            "alpha": 1.0,
+            "tau": 3.0
+          }
+        },
+        "images": 1000
+      },
+      "clean": {
+        "baseline_accuracy": 0.818,
+        "methods": {
+          "alpha_0.25_tau_1": {
+            "accuracy": 0.821,
+            "accuracy_change_pp": 0.30000000000000027,
+            "recovered": 5,
+            "damaged": 2,
+            "changed_fraction_of_selected_active_coordinates": 0.679302258711126,
+            "alpha": 0.25,
+            "tau": 1.0
+          },
+          "alpha_0.25_tau_2": {
+            "accuracy": 0.819,
+            "accuracy_change_pp": 0.10000000000000009,
+            "recovered": 2,
+            "damaged": 1,
+            "changed_fraction_of_selected_active_coordinates": 0.42278766412999813,
+            "alpha": 0.25,
+            "tau": 2.0
+          },
+          "alpha_0.25_tau_3": {
+            "accuracy": 0.821,
+            "accuracy_change_pp": 0.30000000000000027,
+            "recovered": 3,
+            "damaged": 0,
+            "changed_fraction_of_selected_active_coordinates": 0.2605536795534688,
+            "alpha": 0.25,
+            "tau": 3.0
+          },
+          "alpha_0.5_tau_1": {
+            "accuracy": 0.817,
+            "accuracy_change_pp": -0.10000000000000009,
+            "recovered": 7,
+            "damaged": 8,
+            "changed_fraction_of_selected_active_coordinates": 0.679302258711126,
+            "alpha": 0.5,
+            "tau": 1.0
+          },
+          "alpha_0.5_tau_2": {
+            "accuracy": 0.821,
+            "accuracy_change_pp": 0.30000000000000027,
+            "recovered": 7,
+            "damaged": 4,
+            "changed_fraction_of_selected_active_coordinates": 0.42278766412999813,
+            "alpha": 0.5,
+            "tau": 2.0
+          },
+          "alpha_0.5_tau_3": {
+            "accuracy": 0.821,
+            "accuracy_change_pp": 0.30000000000000027,
+            "recovered": 4,
+            "damaged": 1,
+            "changed_fraction_of_selected_active_coordinates": 0.2605536795534688,
+            "alpha": 0.5,
+            "tau": 3.0
+          },
+          "alpha_1_tau_1": {
+            "accuracy": 0.803,
+            "accuracy_change_pp": -1.4999999999999902,
+            "recovered": 14,
+            "damaged": 29,
+            "changed_fraction_of_selected_active_coordinates": 0.679302258711126,
+            "alpha": 1.0,
+            "tau": 1.0
+          },
+          "alpha_1_tau_2": {
+            "accuracy": 0.818,
+            "accuracy_change_pp": 0.0,
+            "recovered": 9,
+            "damaged": 9,
+            "changed_fraction_of_selected_active_coordinates": 0.42278766412999813,
+            "alpha": 1.0,
+            "tau": 2.0
+          },
+          "alpha_1_tau_3": {
+            "accuracy": 0.819,
+            "accuracy_change_pp": 0.10000000000000009,
+            "recovered": 7,
+            "damaged": 6,
+            "changed_fraction_of_selected_active_coordinates": 0.2605536795534688,
+            "alpha": 1.0,
+            "tau": 3.0
+          }
+        },
+        "images": 1000
+      },
+      "development_winner": "alpha_1_tau_3"
+    },
+    "blur": {
+      "selected_features": {
+        "strengthened": [
+          22599,
+          5784,
+          13718,
+          17974,
+          8529,
+          2516,
+          19933,
+          5306,
+          8858,
+          6123,
+          9035,
+          10842,
+          20680,
+          1719,
+          2789,
+          5555,
+          6704,
+          21832,
+          4991,
+          10324,
+          18472,
+          12555,
+          18098,
+          5198,
+          16952,
+          20218,
+          14165,
+          5153,
+          1063,
+          18913
+        ],
+        "weakened": [
+          16014,
+          3516,
+          14092,
+          16168,
+          20361,
+          7069,
+          7279,
+          11579,
+          17597,
+          9287,
+          18446,
+          7548,
+          11294,
+          19376,
+          6154,
+          2318,
+          24325,
+          8478,
+          8114,
+          3214,
+          17098,
+          5242,
+          11790,
+          16435,
+          21441,
+          24330,
+          11653,
+          9619,
+          12273,
+          5801,
+          15358,
+          5797,
+          1208,
+          2144,
+          24458,
+          21448,
+          1948,
+          16323,
+          610,
+          24565,
+          22567,
+          42,
+          12987,
+          9328,
+          11263,
+          9900,
+          16269
+        ]
+      },
+      "corrupted": {
+        "baseline_accuracy": 0.676,
+        "methods": {
+          "alpha_0.25_tau_1": {
+            "accuracy": 0.67,
+            "accuracy_change_pp": -0.6000000000000005,
+            "recovered": 5,
+            "damaged": 11,
+            "changed_fraction_of_selected_active_coordinates": 0.6434404904345713,
+            "alpha": 0.25,
+            "tau": 1.0
+          },
+          "alpha_0.25_tau_2": {
+            "accuracy": 0.67,
+            "accuracy_change_pp": -0.6000000000000005,
+            "recovered": 1,
+            "damaged": 7,
+            "changed_fraction_of_selected_active_coordinates": 0.36966558637940006,
+            "alpha": 0.25,
+            "tau": 2.0
+          },
+          "alpha_0.25_tau_3": {
+            "accuracy": 0.673,
+            "accuracy_change_pp": -0.30000000000000027,
+            "recovered": 1,
+            "damaged": 4,
+            "changed_fraction_of_selected_active_coordinates": 0.21479623774771991,
+            "alpha": 0.25,
+            "tau": 3.0
+          },
+          "alpha_0.5_tau_1": {
+            "accuracy": 0.655,
+            "accuracy_change_pp": -2.100000000000002,
+            "recovered": 7,
+            "damaged": 28,
+            "changed_fraction_of_selected_active_coordinates": 0.6434404904345713,
+            "alpha": 0.5,
+            "tau": 1.0
+          },
+          "alpha_0.5_tau_2": {
+            "accuracy": 0.664,
+            "accuracy_change_pp": -1.200000000000001,
+            "recovered": 5,
+            "damaged": 17,
+            "changed_fraction_of_selected_active_coordinates": 0.36966558637940006,
+            "alpha": 0.5,
+            "tau": 2.0
+          },
+          "alpha_0.5_tau_3": {
+            "accuracy": 0.667,
+            "accuracy_change_pp": -0.9000000000000008,
+            "recovered": 2,
+            "damaged": 11,
+            "changed_fraction_of_selected_active_coordinates": 0.21479623774771991,
+            "alpha": 0.5,
+            "tau": 3.0
+          },
+          "alpha_1_tau_1": {
+            "accuracy": 0.618,
+            "accuracy_change_pp": -5.800000000000005,
+            "recovered": 20,
+            "damaged": 78,
+            "changed_fraction_of_selected_active_coordinates": 0.6434404904345713,
+            "alpha": 1.0,
+            "tau": 1.0
+          },
+          "alpha_1_tau_2": {
+            "accuracy": 0.652,
+            "accuracy_change_pp": -2.400000000000002,
+            "recovered": 15,
+            "damaged": 39,
+            "changed_fraction_of_selected_active_coordinates": 0.36966558637940006,
+            "alpha": 1.0,
+            "tau": 2.0
+          },
+          "alpha_1_tau_3": {
+            "accuracy": 0.657,
+            "accuracy_change_pp": -1.9000000000000017,
+            "recovered": 7,
+            "damaged": 26,
+            "changed_fraction_of_selected_active_coordinates": 0.21479623774771991,
+            "alpha": 1.0,
+            "tau": 3.0
+          }
+        },
+        "images": 1000
+      },
+      "clean": {
+        "baseline_accuracy": 0.818,
+        "methods": {
+          "alpha_0.25_tau_1": {
+            "accuracy": 0.816,
+            "accuracy_change_pp": -0.20000000000000018,
+            "recovered": 5,
+            "damaged": 7,
+            "changed_fraction_of_selected_active_coordinates": 0.6623643244673136,
+            "alpha": 0.25,
+            "tau": 1.0
+          },
+          "alpha_0.25_tau_2": {
+            "accuracy": 0.818,
+            "accuracy_change_pp": 0.0,
+            "recovered": 5,
+            "damaged": 5,
+            "changed_fraction_of_selected_active_coordinates": 0.3953613935499371,
+            "alpha": 0.25,
+            "tau": 2.0
+          },
+          "alpha_0.25_tau_3": {
+            "accuracy": 0.818,
+            "accuracy_change_pp": 0.0,
+            "recovered": 5,
+            "damaged": 5,
+            "changed_fraction_of_selected_active_coordinates": 0.23133608811026435,
+            "alpha": 0.25,
+            "tau": 3.0
+          },
+          "alpha_0.5_tau_1": {
+            "accuracy": 0.815,
+            "accuracy_change_pp": -0.30000000000000027,
+            "recovered": 9,
+            "damaged": 12,
+            "changed_fraction_of_selected_active_coordinates": 0.6623643244673136,
+            "alpha": 0.5,
+            "tau": 1.0
+          },
+          "alpha_0.5_tau_2": {
+            "accuracy": 0.816,
+            "accuracy_change_pp": -0.20000000000000018,
+            "recovered": 7,
+            "damaged": 9,
+            "changed_fraction_of_selected_active_coordinates": 0.3953613935499371,
+            "alpha": 0.5,
+            "tau": 2.0
+          },
+          "alpha_0.5_tau_3": {
+            "accuracy": 0.817,
+            "accuracy_change_pp": -0.10000000000000009,
+            "recovered": 5,
+            "damaged": 6,
+            "changed_fraction_of_selected_active_coordinates": 0.23133608811026435,
+            "alpha": 0.5,
+            "tau": 3.0
+          },
+          "alpha_1_tau_1": {
+            "accuracy": 0.803,
+            "accuracy_change_pp": -1.4999999999999902,
+            "recovered": 14,
+            "damaged": 29,
+            "changed_fraction_of_selected_active_coordinates": 0.6623643244673136,
+            "alpha": 1.0,
+            "tau": 1.0
+          },
+          "alpha_1_tau_2": {
+            "accuracy": 0.81,
+            "accuracy_change_pp": -0.7999999999999896,
+            "recovered": 9,
+            "damaged": 17,
+            "changed_fraction_of_selected_active_coordinates": 0.3953613935499371,
+            "alpha": 1.0,
+            "tau": 2.0
+          },
+          "alpha_1_tau_3": {
+            "accuracy": 0.815,
+            "accuracy_change_pp": -0.30000000000000027,
+            "recovered": 10,
+            "damaged": 13,
+            "changed_fraction_of_selected_active_coordinates": 0.23133608811026435,
+            "alpha": 1.0,
+            "tau": 3.0
+          }
+        },
+        "images": 1000
+      },
+      "development_winner": "alpha_0.25_tau_3"
+    }
+  },
+  "guardrails": [
+    "The ViT and SAE are frozen; no adapter is loaded.",
+    "The full SAE reconstruction never replaces the original hidden state.",
+    "Only residual decoder deltas from frozen Experiment-86 directions are added.",
+    "The clean counterpart is not used during inference; corruption family is supplied as an oracle capacity test.",
+    "Features were selected on [11000,12000), confirmed on [12000,13000), and correction hyperparameters are developed only on [47000,48000).",
+    "[48000,49000) remains reserved for frozen confirmation and [49000,50000) remains untouched."
+  ],
+  "status": "oracle-family development capacity test"
+}

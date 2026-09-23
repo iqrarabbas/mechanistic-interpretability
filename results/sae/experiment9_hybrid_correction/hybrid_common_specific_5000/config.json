@@ -1,0 +1,20 @@
+{
+  "samples": 5000,
+  "start_index": 45000,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "alpha_common": 0.25,
+  "alpha_blur": 0.75,
+  "alpha_noise": 0.75,
+  "run_name": "hybrid_common_specific_5000",
+  "status": "exploratory; images were used by Experiment 8 and are not a new locked test",
+  "model": "google/vit-base-patch16-224",
+  "common_semantic_features": [
+    6966,
+    17814,
+    14024
+  ],
+  "blur_sae": "checkpoints/sae/blur4_base_vanilla_paper",
+  "noise_sae": "checkpoints/sae/noise4_base_vanilla_paper"
+}

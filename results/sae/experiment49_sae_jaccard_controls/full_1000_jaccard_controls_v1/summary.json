@@ -1,0 +1,332 @@
+{
+  "status": "complete",
+  "configuration": {
+    "samples": 1000,
+    "start_index": 11000,
+    "batch_size": 2,
+    "num_workers": 2,
+    "corruption_seed": 0,
+    "control_seed": 4900,
+    "bootstrap_replicates": 10000,
+    "topk": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "run_name": "full_1000_jaccard_controls_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "sae_checkpoint": "checkpoints/sae/blur4_base_vanilla_paper",
+    "sae_expansion_factor": 32,
+    "sae_latent_dimension": 24576,
+    "activation_layer": "hidden_states[-2] (Block 11 output)",
+    "tokens": "196 patch tokens; corresponding spatial positions",
+    "positive_active_definition": "z > 0",
+    "unrelated_pairing": "seeded cyclic derangements without self-pairs"
+  },
+  "aggregate": {
+    "paired_clean_blur": {
+      "positive_jaccard": {
+        "mean": 0.9900231494307518,
+        "median": 0.9903475344181061
+      },
+      "weighted_jaccard": {
+        "mean": 0.7510231931209564,
+        "median": 0.7513860464096069
+      },
+      "cosine_similarity": {
+        "mean": 0.9285983038544655,
+        "median": 0.9296084642410278
+      },
+      "top16_jaccard": {
+        "mean": 0.330767444588244,
+        "median": 0.3228331655263901
+      },
+      "top32_jaccard": {
+        "mean": 0.32323286349326374,
+        "median": 0.3115931898355484
+      },
+      "top64_jaccard": {
+        "mean": 0.32989698063582185,
+        "median": 0.3160509467124939
+      },
+      "top128_jaccard": {
+        "mean": 0.3645488017499447,
+        "median": 0.3532962203025818
+      }
+    },
+    "unrelated_clean_clean": {
+      "positive_jaccard": {
+        "mean": 0.979368051469326,
+        "median": 0.9799500107765198
+      },
+      "weighted_jaccard": {
+        "mean": 0.6072433342337609,
+        "median": 0.6090424954891205
+      },
+      "cosine_similarity": {
+        "mean": 0.8079382860064507,
+        "median": 0.8099829852581024
+      },
+      "top16_jaccard": {
+        "mean": 0.049838584423065185,
+        "median": 0.04747762344777584
+      },
+      "top32_jaccard": {
+        "mean": 0.05064918981771916,
+        "median": 0.0491840373724699
+      },
+      "top64_jaccard": {
+        "mean": 0.06172397566959262,
+        "median": 0.06060756742954254
+      },
+      "top128_jaccard": {
+        "mean": 0.09505348936468362,
+        "median": 0.09415386617183685
+      }
+    },
+    "unrelated_clean_blur": {
+      "positive_jaccard": {
+        "mean": 0.9800624393224716,
+        "median": 0.9807990491390228
+      },
+      "weighted_jaccard": {
+        "mean": 0.6082819343805314,
+        "median": 0.6106502711772919
+      },
+      "cosine_similarity": {
+        "mean": 0.8119419659376145,
+        "median": 0.8135550618171692
+      },
+      "top16_jaccard": {
+        "mean": 0.053813012554310265,
+        "median": 0.05037752538919449
+      },
+      "top32_jaccard": {
+        "mean": 0.05330444549582899,
+        "median": 0.0513568427413702
+      },
+      "top64_jaccard": {
+        "mean": 0.0633391046077013,
+        "median": 0.061904363334178925
+      },
+      "top128_jaccard": {
+        "mean": 0.09590801627933979,
+        "median": 0.09509027004241943
+      }
+    },
+    "shuffled_clean_blur": {
+      "positive_jaccard": {
+        "mean": 0.9800494690537452,
+        "median": 0.9805329740047455
+      },
+      "weighted_jaccard": {
+        "mean": 0.6080004024505615,
+        "median": 0.6094911694526672
+      },
+      "cosine_similarity": {
+        "mean": 0.8119489180445671,
+        "median": 0.8133446872234344
+      },
+      "top16_jaccard": {
+        "mean": 0.05399740374274552,
+        "median": 0.05070370435714722
+      },
+      "top32_jaccard": {
+        "mean": 0.05326326587609947,
+        "median": 0.05185643769800663
+      },
+      "top64_jaccard": {
+        "mean": 0.0631654770076275,
+        "median": 0.06242416612803936
+      },
+      "top128_jaccard": {
+        "mean": 0.09574436851590871,
+        "median": 0.09503912553191185
+      }
+    }
+  },
+  "paired_clean_blur_minus_controls": {
+    "unrelated_clean_clean": {
+      "positive_jaccard": {
+        "mean_paired_difference": 0.010655097961425782,
+        "ci95": [
+          0.010334713625907897,
+          0.01097133844345808
+        ],
+        "fraction_paired_greater": 0.99
+      },
+      "weighted_jaccard": {
+        "mean_paired_difference": 0.14377985888719558,
+        "ci95": [
+          0.14112436944693327,
+          0.14647868980765344
+        ],
+        "fraction_paired_greater": 0.997
+      },
+      "cosine_similarity": {
+        "mean_paired_difference": 0.12066001784801483,
+        "ci95": [
+          0.1188555546194315,
+          0.12244619546532631
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top16_jaccard": {
+        "mean_paired_difference": 0.28092886016517876,
+        "ci95": [
+          0.27441757499729286,
+          0.28721403018205893
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top32_jaccard": {
+        "mean_paired_difference": 0.27258367367554454,
+        "ci95": [
+          0.26651108927770983,
+          0.2786479808395728
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top64_jaccard": {
+        "mean_paired_difference": 0.2681730049662292,
+        "ci95": [
+          0.2624198031979613,
+          0.27405377568202094
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top128_jaccard": {
+        "mean_paired_difference": 0.26949531238526103,
+        "ci95": [
+          0.2640017899231985,
+          0.2749098389526829
+        ],
+        "fraction_paired_greater": 1.0
+      }
+    },
+    "unrelated_clean_blur": {
+      "positive_jaccard": {
+        "mean_paired_difference": 0.009960710108280181,
+        "ci95": [
+          0.009640099570155145,
+          0.010287482750415801
+        ],
+        "fraction_paired_greater": 0.989
+      },
+      "weighted_jaccard": {
+        "mean_paired_difference": 0.14274125874042512,
+        "ci95": [
+          0.14008036688566208,
+          0.14543673983812333
+        ],
+        "fraction_paired_greater": 0.997
+      },
+      "cosine_similarity": {
+        "mean_paired_difference": 0.11665633791685104,
+        "ci95": [
+          0.11485559382885695,
+          0.11843914670944214
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top16_jaccard": {
+        "mean_paired_difference": 0.2769544320339337,
+        "ci95": [
+          0.2704412187166745,
+          0.2832258835146437
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top32_jaccard": {
+        "mean_paired_difference": 0.2699284179974347,
+        "ci95": [
+          0.2638604419730138,
+          0.2759507327140775
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top64_jaccard": {
+        "mean_paired_difference": 0.26655787602812053,
+        "ci95": [
+          0.26076210045367476,
+          0.2724386423379183
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top128_jaccard": {
+        "mean_paired_difference": 0.2686407854706049,
+        "ci95": [
+          0.2632002476623282,
+          0.27405959536191077
+        ],
+        "fraction_paired_greater": 1.0
+      }
+    },
+    "shuffled_clean_blur": {
+      "positive_jaccard": {
+        "mean_paired_difference": 0.00997368037700653,
+        "ci95": [
+          0.009658164620399475,
+          0.010285635685920714
+        ],
+        "fraction_paired_greater": 0.991
+      },
+      "weighted_jaccard": {
+        "mean_paired_difference": 0.1430227906703949,
+        "ci95": [
+          0.14041876412779092,
+          0.14565718024075033
+        ],
+        "fraction_paired_greater": 0.997
+      },
+      "cosine_similarity": {
+        "mean_paired_difference": 0.11664938580989838,
+        "ci95": [
+          0.1149173204883933,
+          0.11837806856632233
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top16_jaccard": {
+        "mean_paired_difference": 0.27677004084549844,
+        "ci95": [
+          0.27032668494980316,
+          0.28308800259034617
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top32_jaccard": {
+        "mean_paired_difference": 0.26996959761716427,
+        "ci95": [
+          0.26390590936853553,
+          0.2760462573017459
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top64_jaccard": {
+        "mean_paired_difference": 0.2667315036281943,
+        "ci95": [
+          0.2609730257846415,
+          0.27256520773917436
+        ],
+        "fraction_paired_greater": 1.0
+      },
+      "top128_jaccard": {
+        "mean_paired_difference": 0.26880443323403597,
+        "ci95": [
+          0.2633873608302325,
+          0.2742036670316011
+        ],
+        "fraction_paired_greater": 1.0
+      }
+    }
+  },
+  "interpretation_rule": {
+    "supported": "Paired clean/Blur overlap is materially above unrelated controls.",
+    "not_supported": "Paired and unrelated overlap are similar; metric reflects broad SAE overlap.",
+    "saturated_positive_jaccard": "Use top-k and weighted metrics if z>0 Jaccard saturates."
+  }
+}

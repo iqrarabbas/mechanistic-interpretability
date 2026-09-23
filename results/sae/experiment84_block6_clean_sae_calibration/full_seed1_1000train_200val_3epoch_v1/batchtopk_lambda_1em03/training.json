@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "candidate": {
+    "kind": "batchtopk",
+    "l1_coefficient": 0.001
+  },
+  "candidate_name": "batchtopk_lambda_1em03",
+  "initialization_seed": 9001,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "objective": 0.5732382551747925,
+        "training_reconstruction_term": 0.4907532464947019,
+        "sparsity_term": 63.72744306354134,
+        "auxiliary_term": 0.6002420142037528,
+        "active_features": 31.999688775510204,
+        "normalized_mse": 0.03547248917607747,
+        "explained_variance": 0.9645270754444145,
+        "features_active_at_least_once": 24576,
+        "features_never_active": 0,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 0.5843919956045491,
+        "training_reconstruction_term": 0.5092191007474856,
+        "sparsity_term": 58.67835393088205,
+        "auxiliary_term": 0.5278252370488279,
+        "active_features": 31.82359693877551,
+        "normalized_mse": 0.023597590209598753,
+        "explained_variance": 0.9764021530312077,
+        "features_active_at_least_once": 4124,
+        "features_never_active": 20452,
+        "patches": 39200,
+        "baseline_clean_accuracy": null,
+        "full_reconstruction_clean_accuracy": null,
+        "full_reconstruction_clean_accuracy_change": null,
+        "images": 200,
+        "downstream_accuracy_deferred_until_optimizer_unloaded": true
+      }
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "objective": 0.47993404132735973,
+        "training_reconstruction_term": 0.4012515482294316,
+        "sparsity_term": 66.17446755109515,
+        "auxiliary_term": 0.4002567287926771,
+        "active_features": 32.0,
+        "normalized_mse": 0.01999538035199296,
+        "explained_variance": 0.9800043755219178,
+        "features_active_at_least_once": 19631,
+        "features_never_active": 4945,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 0.5661801140648978,
+        "training_reconstruction_term": 0.49318096578121184,
+        "sparsity_term": 57.24452517762476,
+        "auxiliary_term": 0.5041478472035759,
+        "active_features": 31.94857142857143,
+        "normalized_mse": 0.023672428956022395,
+        "explained_variance": 0.976327281517087,
+        "features_active_at_least_once": 5019,
+        "features_never_active": 19557,
+        "patches": 39200,
+        "baseline_clean_accuracy": null,
+        "full_reconstruction_clean_accuracy": null,
+        "full_reconstruction_clean_accuracy_change": null,
+        "images": 200,
+        "downstream_accuracy_deferred_until_optimizer_unloaded": true
+      }
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "objective": 0.4089079829576064,
+        "training_reconstruction_term": 0.33116099878963157,
+        "sparsity_term": 67.44105206610232,
+        "auxiliary_term": 0.3297897360118068,
+        "active_features": 32.0,
+        "normalized_mse": 0.01636908253330303,
+        "explained_variance": 0.9836307181932761,
+        "features_active_at_least_once": 18469,
+        "features_never_active": 6107,
+        "patches": 196000
+      },
+      "validation": {
+        "objective": 0.5453483033089005,
+        "training_reconstruction_term": 0.47440667323616087,
+        "sparsity_term": 56.04352208429453,
+        "auxiliary_term": 0.47673938095721663,
+        "active_features": 31.995102040816327,
+        "normalized_mse": 0.022659449031968877,
+        "explained_variance": 0.9773402993045237,
+        "features_active_at_least_once": 8130,
+        "features_never_active": 16446,
+        "patches": 39200,
+        "baseline_clean_accuracy": 0.8,
+        "full_reconstruction_clean_accuracy": 0.705,
+        "full_reconstruction_clean_accuracy_change": -0.095,
+        "images": 200,
+        "downstream_accuracy_deferred_until_optimizer_unloaded": false
+      }
+    }
+  ],
+  "best_validation_normalized_mse": 0.022659449031968877,
+  "best_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed1_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+  "latest_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed1_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/latest.pt",
+  "completed_epochs": 3
+}

@@ -1,0 +1,1390 @@
+{
+  "configuration": {
+    "fit_start": 47000,
+    "fit_samples": 500,
+    "gate_start": 47500,
+    "gate_samples": 500,
+    "evaluation_start": 48000,
+    "evaluation_samples": 1000,
+    "batch_size": 4,
+    "workers": 2,
+    "corruption_seed": 0,
+    "run_name": "full_3seed_margin_gate_v1",
+    "model": "google/vit-base-patch16-224",
+    "block": 11,
+    "alpha": 0.5,
+    "vit_frozen": true,
+    "saes_frozen": true,
+    "gate_signal": "corrected minus baseline top1-minus-top2 logit margin"
+  },
+  "seed_artifacts": {
+    "0": {
+      "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment91_batchtopk_layer_screen/block11_seed0_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+      "diagnostic_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment85_block6_batchtopk_diagnostics/layer_screen_block11_seed0_noise4_blur4_v1/summary.json",
+      "features": {
+        "strengthened": [
+          8796,
+          22599,
+          19905,
+          11302,
+          18048,
+          21136,
+          17401,
+          22253,
+          3216,
+          19453,
+          3083,
+          1520,
+          15086,
+          5924,
+          24008,
+          9139,
+          12928,
+          12437,
+          23556,
+          5970,
+          21039,
+          17692,
+          24247,
+          10581,
+          19545,
+          24091,
+          20677,
+          4689,
+          19773,
+          10439,
+          18952,
+          14564,
+          18551,
+          2467,
+          10558,
+          2489,
+          7081,
+          20123,
+          7296,
+          15356,
+          18165,
+          20096,
+          20496,
+          3230,
+          23421,
+          6988,
+          17246,
+          13692,
+          9983,
+          22706,
+          16085,
+          18657,
+          16706,
+          5773,
+          13676,
+          1863,
+          6612,
+          8646,
+          14247,
+          4253,
+          1042,
+          22809,
+          12269,
+          21029,
+          20674,
+          1634,
+          6393,
+          24352,
+          22298,
+          17294,
+          2278,
+          70,
+          11227,
+          1020,
+          19435,
+          5295,
+          1076,
+          14682,
+          3518,
+          9935,
+          16280,
+          6456,
+          4468,
+          4479,
+          10926,
+          21520,
+          17777,
+          15939,
+          1447,
+          14721,
+          1956,
+          22249,
+          1410,
+          17509,
+          13623,
+          5888,
+          20163,
+          18132,
+          14553,
+          14638
+        ],
+        "weakened": [
+          10426,
+          14202,
+          5602,
+          20333,
+          1989,
+          15045,
+          15555,
+          2529,
+          15797,
+          8000,
+          11847,
+          15815,
+          8065,
+          13294,
+          17085,
+          21125,
+          2065,
+          171,
+          14119,
+          19300,
+          18212,
+          22718,
+          8605,
+          21201,
+          23243,
+          12291,
+          22145,
+          855,
+          9548,
+          19887,
+          14422,
+          21307,
+          11306,
+          5256,
+          1062,
+          18054,
+          17781,
+          21829,
+          1170,
+          6735,
+          8134,
+          12542,
+          15982,
+          11294,
+          15450,
+          13128,
+          19254,
+          17098,
+          21982,
+          14703,
+          14239,
+          8055,
+          885,
+          10503,
+          23400,
+          12748,
+          15533,
+          6677,
+          6490,
+          17795,
+          5346,
+          18541,
+          3353,
+          5048,
+          23529,
+          3729,
+          19440,
+          1495,
+          10935,
+          14236,
+          9489,
+          20217,
+          19285,
+          15033,
+          16501,
+          13572,
+          10058,
+          16520,
+          12717,
+          19161,
+          11703,
+          8498,
+          1593,
+          15314,
+          19100,
+          10975,
+          9249,
+          2108,
+          14124,
+          21651,
+          18125,
+          11301,
+          1127,
+          17316,
+          20762,
+          4856,
+          12170,
+          24343,
+          21376,
+          17930
+        ]
+      },
+      "fit_patches": 98000
+    },
+    "1": {
+      "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment91_batchtopk_layer_screen/block11_seed1_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+      "diagnostic_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment85_block6_batchtopk_diagnostics/layer_screen_block11_seed1_noise4_blur4_v1/summary.json",
+      "features": {
+        "strengthened": [
+          9041,
+          11789,
+          23006,
+          24135,
+          11258,
+          21023,
+          2094,
+          16935,
+          51,
+          20753,
+          5207,
+          13778,
+          21092,
+          6678,
+          10387,
+          19364,
+          20203,
+          7325,
+          17681,
+          6479,
+          13266,
+          12421,
+          5185,
+          18264,
+          12932,
+          19794,
+          13760,
+          19209,
+          24088,
+          21774,
+          23164,
+          18736,
+          11135,
+          16335,
+          21738,
+          11600,
+          20523,
+          17326,
+          11066,
+          4239,
+          17423,
+          16742,
+          19618,
+          19804,
+          2163,
+          14221,
+          22598,
+          21299,
+          11844,
+          21781,
+          14865,
+          15340,
+          20874,
+          7958,
+          17617,
+          5474,
+          14506,
+          16811,
+          21290,
+          1799,
+          15117,
+          6955,
+          6640,
+          2585,
+          18729,
+          17078,
+          17522,
+          16553,
+          17396,
+          8536,
+          23087,
+          1600,
+          23587,
+          22726,
+          20977,
+          23997,
+          9462,
+          14027,
+          6412,
+          2600,
+          7735,
+          3144,
+          643,
+          10201,
+          22383,
+          6662,
+          664,
+          23571,
+          16519,
+          14382,
+          8784,
+          9995,
+          17606,
+          20697,
+          12611,
+          21908,
+          16599,
+          17320,
+          9205,
+          19790
+        ],
+        "weakened": [
+          2259,
+          4395,
+          19477,
+          6611,
+          6607,
+          8730,
+          17543,
+          11588,
+          8646,
+          7777,
+          24459,
+          5099,
+          16126,
+          310,
+          14325,
+          694,
+          11145,
+          22747,
+          22718,
+          4313,
+          18219,
+          20112,
+          17221,
+          1531,
+          19375,
+          11110,
+          19592,
+          14584,
+          21348,
+          12266,
+          12388,
+          13442,
+          14008,
+          3522,
+          17931,
+          19557,
+          3520,
+          264,
+          8304,
+          6892,
+          9006,
+          17644,
+          22947,
+          2320,
+          18860,
+          10606,
+          5174,
+          9390,
+          16793,
+          3454,
+          23305,
+          680,
+          21465,
+          1188,
+          17909,
+          4141,
+          9450,
+          4797,
+          6405,
+          13751,
+          2269,
+          3748,
+          15006,
+          21912,
+          7412,
+          3499,
+          11010,
+          13101,
+          14076,
+          10570,
+          22836,
+          19438,
+          17977,
+          23044,
+          21622,
+          20473,
+          10523,
+          10882,
+          18389,
+          21755,
+          9540,
+          17266,
+          226,
+          3138,
+          16829,
+          801,
+          4462,
+          6027,
+          10350,
+          19945,
+          16889,
+          15094,
+          11886,
+          13068,
+          17878,
+          1968,
+          12360,
+          19799,
+          22817,
+          12880
+        ]
+      },
+      "fit_patches": 98000
+    },
+    "2": {
+      "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment91_batchtopk_layer_screen/block11_seed2_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+      "diagnostic_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment85_block6_batchtopk_diagnostics/layer_screen_block11_seed2_noise4_blur4_v1/summary.json",
+      "features": {
+        "strengthened": [
+          23479,
+          13669,
+          8561,
+          19862,
+          373,
+          18768,
+          8894,
+          2927,
+          17241,
+          7636,
+          18522,
+          16808,
+          6808,
+          1367,
+          1790,
+          21900,
+          15538,
+          23765,
+          9198,
+          14881,
+          1162,
+          14055,
+          20172,
+          1125,
+          22015,
+          13818,
+          20898,
+          16366,
+          16834,
+          3369,
+          18284,
+          16894,
+          11201,
+          15370,
+          3368,
+          23357,
+          1705,
+          18406,
+          9564,
+          1165,
+          3142,
+          14275,
+          16254,
+          1593,
+          15743,
+          16556,
+          13361,
+          13159,
+          18775,
+          12821,
+          10481,
+          13803,
+          24134,
+          5509,
+          19675,
+          19815,
+          18137,
+          11931,
+          2480,
+          14106,
+          12478,
+          18262,
+          15495,
+          19363,
+          23024,
+          20399,
+          13811,
+          3372,
+          12376,
+          7339,
+          5091,
+          16408,
+          17067,
+          2737,
+          19502,
+          18385,
+          303,
+          14080,
+          24354,
+          8564,
+          15874,
+          19874,
+          11761,
+          6893,
+          4987,
+          5130,
+          10769,
+          23456,
+          13659,
+          1140,
+          13737,
+          21771,
+          17445,
+          9684,
+          17207,
+          14472,
+          12330,
+          722,
+          17901,
+          17894
+        ],
+        "weakened": [
+          1496,
+          14305,
+          8504,
+          11798,
+          970,
+          14332,
+          18968,
+          4336,
+          5720,
+          3074,
+          8950,
+          19571,
+          9582,
+          12299,
+          14278,
+          4682,
+          15500,
+          3571,
+          9311,
+          24244,
+          10181,
+          8494,
+          4691,
+          5314,
+          3045,
+          12391,
+          7476,
+          6634,
+          22757,
+          10314,
+          20276,
+          21924,
+          23204,
+          4484,
+          3758,
+          7421,
+          17757,
+          10619,
+          23802,
+          12036,
+          13037,
+          16923,
+          7425,
+          14700,
+          2437,
+          12707,
+          7161,
+          21,
+          22421,
+          10437,
+          1811,
+          19677,
+          19703,
+          19709,
+          10972,
+          1375,
+          3667,
+          13632,
+          21122,
+          11154,
+          22797,
+          8602,
+          18600,
+          9309,
+          18034,
+          22174,
+          10071,
+          3961,
+          16616,
+          2091,
+          24206,
+          22541,
+          15058,
+          14607,
+          7617,
+          11884,
+          7775,
+          15171,
+          22231,
+          71,
+          22602,
+          9768,
+          21111,
+          6846,
+          3376,
+          6727,
+          13577,
+          21463,
+          15887,
+          17200,
+          21827,
+          16602,
+          17791,
+          14396,
+          10343,
+          14593,
+          9028,
+          21605,
+          17030,
+          1564
+        ]
+      },
+      "fit_patches": 98000
+    }
+  },
+  "selected_gate": {
+    "threshold": -0.05765739440917969,
+    "blur_gain_pp": 0.13333333333332975,
+    "clean_change_pp": 0.0,
+    "application_rate": 0.76
+  },
+  "development_grid": [
+    {
+      "threshold": -3.0564866065979004,
+      "blur_gain_pp": 0.20000000000000018,
+      "clean_change_pp": -0.20000000000000018,
+      "application_rate": 1.0
+    },
+    {
+      "threshold": -1.2985572814941404,
+      "blur_gain_pp": 0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.99
+    },
+    {
+      "threshold": -0.905097370147705,
+      "blur_gain_pp": 0.13333333333332975,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.98
+    },
+    {
+      "threshold": -0.6671632528305054,
+      "blur_gain_pp": 0.13333333333332975,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.97
+    },
+    {
+      "threshold": -0.5132958221435546,
+      "blur_gain_pp": 0.13333333333332975,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.96
+    },
+    {
+      "threshold": -0.4302517175674438,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.95
+    },
+    {
+      "threshold": -0.35998254776000976,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.94
+    },
+    {
+      "threshold": -0.29972105026245116,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.93
+    },
+    {
+      "threshold": -0.2620774078369141,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.92
+    },
+    {
+      "threshold": -0.23001729965209963,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.91
+    },
+    {
+      "threshold": -0.20475888252258298,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.9
+    },
+    {
+      "threshold": -0.1773550033569336,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.89
+    },
+    {
+      "threshold": -0.16194156646728516,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.88
+    },
+    {
+      "threshold": -0.1466318130493164,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.87
+    },
+    {
+      "threshold": -0.1332651901245117,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.86
+    },
+    {
+      "threshold": -0.12261180877685547,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.85
+    },
+    {
+      "threshold": -0.11127986907958984,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.84
+    },
+    {
+      "threshold": -0.10307147026062011,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.83
+    },
+    {
+      "threshold": -0.0948987102508545,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.82
+    },
+    {
+      "threshold": -0.0875711727142334,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.81
+    },
+    {
+      "threshold": -0.08110046386718747,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.8
+    },
+    {
+      "threshold": -0.07659220695495605,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.79
+    },
+    {
+      "threshold": -0.06905667304992677,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.78
+    },
+    {
+      "threshold": -0.0619853973388672,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.77
+    },
+    {
+      "threshold": -0.05765739440917969,
+      "blur_gain_pp": 0.13333333333332975,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.76
+    },
+    {
+      "threshold": -0.05275273323059082,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.75
+    },
+    {
+      "threshold": -0.047155513763427734,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.74
+    },
+    {
+      "threshold": -0.04173264026641846,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.73
+    },
+    {
+      "threshold": -0.037063064575195315,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.72
+    },
+    {
+      "threshold": -0.032003974914550815,
+      "blur_gain_pp": 0.06666666666665932,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.71
+    },
+    {
+      "threshold": -0.026602077484130866,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.7
+    },
+    {
+      "threshold": -0.02212005615234376,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.69
+    },
+    {
+      "threshold": -0.017933292388916007,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.68
+    },
+    {
+      "threshold": -0.013794546127319321,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.67
+    },
+    {
+      "threshold": -0.010167226791381823,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.66
+    },
+    {
+      "threshold": -0.00784201622009277,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.65
+    },
+    {
+      "threshold": -0.0033808135986328125,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.64
+    },
+    {
+      "threshold": 0.00016005516052245631,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.63
+    },
+    {
+      "threshold": 0.0038980579376220823,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.62
+    },
+    {
+      "threshold": 0.006738982200622567,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.61
+    },
+    {
+      "threshold": 0.009257698059082034,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.6
+    },
+    {
+      "threshold": 0.012818698883056645,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.59
+    },
+    {
+      "threshold": 0.01571052551269531,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.58
+    },
+    {
+      "threshold": 0.018626761436462393,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.57
+    },
+    {
+      "threshold": 0.022491836547851557,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.56
+    },
+    {
+      "threshold": 0.02601442337036132,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.55
+    },
+    {
+      "threshold": 0.028996419906616208,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.54
+    },
+    {
+      "threshold": 0.03282058715820314,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.53
+    },
+    {
+      "threshold": 0.03691867828369141,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.52
+    },
+    {
+      "threshold": 0.03958750247955322,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.51
+    },
+    {
+      "threshold": 0.04331398010253906,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.5
+    },
+    {
+      "threshold": 0.047469568252563474,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.49
+    },
+    {
+      "threshold": 0.051019172668457034,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.48
+    },
+    {
+      "threshold": 0.055719423294067386,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.47
+    },
+    {
+      "threshold": 0.059432573318481445,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.46
+    },
+    {
+      "threshold": 0.06335837841033937,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.45
+    },
+    {
+      "threshold": 0.06698173522949219,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.44
+    },
+    {
+      "threshold": 0.07147854804992679,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.43
+    },
+    {
+      "threshold": 0.07612834930419922,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.42
+    },
+    {
+      "threshold": 0.07918931007385252,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.41
+    },
+    {
+      "threshold": 0.08347816467285156,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.4
+    },
+    {
+      "threshold": 0.08744507789611815,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.39
+    },
+    {
+      "threshold": 0.09298160552978516,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.38
+    },
+    {
+      "threshold": 0.09703239917755128,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.37
+    },
+    {
+      "threshold": 0.10071964263916017,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.36
+    },
+    {
+      "threshold": 0.10492625236511231,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.35
+    },
+    {
+      "threshold": 0.11041538238525392,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.34
+    },
+    {
+      "threshold": 0.11563935279846191,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.33
+    },
+    {
+      "threshold": 0.11921478271484376,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.32
+    },
+    {
+      "threshold": 0.12287056922912602,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.31
+    },
+    {
+      "threshold": 0.12828941345214845,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.3
+    },
+    {
+      "threshold": 0.13278196334838865,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.29
+    },
+    {
+      "threshold": 0.13936496734619142,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.28
+    },
+    {
+      "threshold": 0.14599136352539063,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.27
+    },
+    {
+      "threshold": 0.15183454513549804,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.26
+    },
+    {
+      "threshold": 0.1592351198196411,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.25
+    },
+    {
+      "threshold": 0.16628351211547854,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.24
+    },
+    {
+      "threshold": 0.17443064212799073,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.23
+    },
+    {
+      "threshold": 0.1815931510925293,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.22
+    },
+    {
+      "threshold": 0.1885056734085083,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.21
+    },
+    {
+      "threshold": 0.1957329750061036,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.2
+    },
+    {
+      "threshold": 0.20661967754364013,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.19
+    },
+    {
+      "threshold": 0.21330778121948243,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.18
+    },
+    {
+      "threshold": 0.22330777645111083,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.17
+    },
+    {
+      "threshold": 0.23339454650878905,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.16
+    },
+    {
+      "threshold": 0.24274146556854254,
+      "blur_gain_pp": -0.2666666666666706,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.15
+    },
+    {
+      "threshold": 0.2590642166137695,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.14
+    },
+    {
+      "threshold": 0.272440004348755,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.13
+    },
+    {
+      "threshold": 0.2859002685546875,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": -0.06666666666667043,
+      "application_rate": 0.12
+    },
+    {
+      "threshold": 0.2994450187683106,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.11
+    },
+    {
+      "threshold": 0.31394014358520494,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.06666666666665932,
+      "application_rate": 0.1
+    },
+    {
+      "threshold": 0.32949106216430696,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.06666666666665932,
+      "application_rate": 0.09
+    },
+    {
+      "threshold": 0.3550401306152338,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.06666666666665932,
+      "application_rate": 0.08
+    },
+    {
+      "threshold": 0.397369956970215,
+      "blur_gain_pp": -0.06666666666667043,
+      "clean_change_pp": 0.06666666666665932,
+      "application_rate": 0.07
+    },
+    {
+      "threshold": 0.43591368675231995,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": 0.13333333333332975,
+      "application_rate": 0.06
+    },
+    {
+      "threshold": 0.48587512969970725,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": 0.13333333333332975,
+      "application_rate": 0.05
+    },
+    {
+      "threshold": 0.5456567764282225,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.04
+    },
+    {
+      "threshold": 0.6037100744247433,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.03
+    },
+    {
+      "threshold": 0.7245190906524658,
+      "blur_gain_pp": -0.20000000000000018,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.02
+    },
+    {
+      "threshold": 0.9028618431091295,
+      "blur_gain_pp": -0.13333333333334085,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.01
+    },
+    {
+      "threshold": 1.5020627975463867,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.0003333333333333333
+    },
+    {
+      "threshold": Infinity,
+      "blur_gain_pp": 0.0,
+      "clean_change_pp": 0.0,
+      "application_rate": 0.0
+    }
+  ],
+  "evaluation": {
+    "0": {
+      "blur": {
+        "images": 1000,
+        "baseline_accuracy": 0.652,
+        "gated_accuracy": 0.658,
+        "accuracy_change_pp": 0.6000000000000005,
+        "recovered": 8,
+        "damaged": 2,
+        "gate_application_rate": 0.776,
+        "mcnemar_exact_p": 0.109375,
+        "paired_bootstrap_ci95_pp": [
+          0.0,
+          1.3
+        ]
+      },
+      "clean": {
+        "images": 1000,
+        "baseline_accuracy": 0.806,
+        "gated_accuracy": 0.802,
+        "accuracy_change_pp": -0.40000000000000036,
+        "recovered": 1,
+        "damaged": 5,
+        "gate_application_rate": 0.75,
+        "mcnemar_exact_p": 0.21875,
+        "paired_bootstrap_ci95_pp": [
+          -0.8999999999999999,
+          0.0
+        ]
+      }
+    },
+    "1": {
+      "blur": {
+        "images": 1000,
+        "baseline_accuracy": 0.652,
+        "gated_accuracy": 0.656,
+        "accuracy_change_pp": 0.40000000000000036,
+        "recovered": 6,
+        "damaged": 2,
+        "gate_application_rate": 0.78,
+        "mcnemar_exact_p": 0.2890625,
+        "paired_bootstrap_ci95_pp": [
+          -0.1,
+          1.0
+        ]
+      },
+      "clean": {
+        "images": 1000,
+        "baseline_accuracy": 0.806,
+        "gated_accuracy": 0.803,
+        "accuracy_change_pp": -0.30000000000000027,
+        "recovered": 0,
+        "damaged": 3,
+        "gate_application_rate": 0.745,
+        "mcnemar_exact_p": 0.25,
+        "paired_bootstrap_ci95_pp": [
+          -0.7000000000000001,
+          0.0
+        ]
+      }
+    },
+    "2": {
+      "blur": {
+        "images": 1000,
+        "baseline_accuracy": 0.652,
+        "gated_accuracy": 0.656,
+        "accuracy_change_pp": 0.40000000000000036,
+        "recovered": 5,
+        "damaged": 1,
+        "gate_application_rate": 0.778,
+        "mcnemar_exact_p": 0.21875,
+        "paired_bootstrap_ci95_pp": [
+          0.0,
+          0.8999999999999999
+        ]
+      },
+      "clean": {
+        "images": 1000,
+        "baseline_accuracy": 0.806,
+        "gated_accuracy": 0.804,
+        "accuracy_change_pp": -0.20000000000000018,
+        "recovered": 2,
+        "damaged": 4,
+        "gate_application_rate": 0.739,
+        "mcnemar_exact_p": 0.6875,
+        "paired_bootstrap_ci95_pp": [
+          -0.7000000000000001,
+          0.3
+        ]
+      }
+    }
+  },
+  "aggregate": {
+    "blur_gain_pp_by_seed": [
+      0.6000000000000005,
+      0.40000000000000036,
+      0.40000000000000036
+    ],
+    "mean_blur_gain_pp": 0.46666666666666706,
+    "clean_change_pp_by_seed": [
+      -0.40000000000000036,
+      -0.30000000000000027,
+      -0.20000000000000018
+    ],
+    "mean_clean_change_pp": -0.30000000000000027,
+    "positive_blur_seeds": 3
+  },
+  "guardrails": [
+    "The gate threshold is selected jointly across three SAE seeds only on [47500,48000).",
+    "Gate selection requires non-negative pooled clean accuracy change on development data.",
+    "The frozen gate uses no label or clean counterpart at inference.",
+    "[48000,49000) is secondary confirmation previously used for ungated evaluation, not final evaluation.",
+    "[49000,50000) remains untouched and must only be used after the method is frozen.",
+    "Only residual decoder deltas are added; full SAE reconstructions are never inserted."
+  ]
+}

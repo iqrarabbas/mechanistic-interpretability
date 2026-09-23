@@ -1,0 +1,442 @@
+{
+  "configuration": {
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment79_frozen_router_severity_sweep/full_3seed_10families_severity1_5_v1",
+    "bootstrap_repetitions": 10,
+    "bootstrap_seed": 8000,
+    "inference_rerun": false,
+    "primary_comparison": "frozen soft router versus frozen monolithic mixed adapter"
+  },
+  "aggregate": {
+    "seen_development": {
+      "router_soft": {
+        "by_seed": {
+          "0": {
+            "mean_difference": 0.0054666666666666665,
+            "image_clustered_bootstrap_95ci": [
+              0.0025599999999999998,
+              0.009020416666666666
+            ]
+          },
+          "1": {
+            "mean_difference": 0.006166666666666667,
+            "image_clustered_bootstrap_95ci": [
+              0.0015579166666666662,
+              0.009138333333333335
+            ]
+          },
+          "2": {
+            "mean_difference": 0.004383333333333334,
+            "image_clustered_bootstrap_95ci": [
+              0.0029820833333333327,
+              0.007831250000000001
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.0023333333333333335,
+            "clustered_bootstrap_95ci": [
+              -0.0015506944444444444,
+              0.006268750000000001
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0028333333333333335,
+            "clustered_bootstrap_95ci": [
+              0.0007625000000000004,
+              0.003964583333333333
+            ]
+          },
+          "3": {
+            "mean_difference": 0.003444444444444444,
+            "clustered_bootstrap_95ci": [
+              0.0023312499999999996,
+              0.0060395833333333334
+            ]
+          },
+          "4": {
+            "mean_difference": 0.006555555555555555,
+            "clustered_bootstrap_95ci": [
+              0.0036236111111111104,
+              0.007911805555555556
+            ]
+          },
+          "5": {
+            "mean_difference": 0.011527777777777776,
+            "clustered_bootstrap_95ci": [
+              0.00973611111111111,
+              0.013370138888888888
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.005338888888888889,
+          "clustered_bootstrap_95ci": [
+            0.00360125,
+            0.006201944444444445
+          ],
+          "clustering": "Seed validation ranges are disjoint; images are clustered across corruption families and severities."
+        }
+      },
+      "router_hard": {
+        "by_seed": {
+          "0": {
+            "mean_difference": 0.00555,
+            "image_clustered_bootstrap_95ci": [
+              0.00223875,
+              0.00972625
+            ]
+          },
+          "1": {
+            "mean_difference": 0.0061333333333333335,
+            "image_clustered_bootstrap_95ci": [
+              0.0020308333333333333,
+              0.007424583333333333
+            ]
+          },
+          "2": {
+            "mean_difference": 0.004333333333333333,
+            "image_clustered_bootstrap_95ci": [
+              0.0015674999999999994,
+              0.008872083333333334
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.00225,
+            "clustered_bootstrap_95ci": [
+              0.0005402777777777774,
+              0.005197916666666666
+            ]
+          },
+          "2": {
+            "mean_difference": 0.002777777777777778,
+            "clustered_bootstrap_95ci": [
+              0.0008124999999999999,
+              0.005354861111111111
+            ]
+          },
+          "3": {
+            "mean_difference": 0.003555555555555555,
+            "clustered_bootstrap_95ci": [
+              0.0013083333333333332,
+              0.003974305555555555
+            ]
+          },
+          "4": {
+            "mean_difference": 0.006555555555555555,
+            "clustered_bootstrap_95ci": [
+              0.005463194444444444,
+              0.007800694444444443
+            ]
+          },
+          "5": {
+            "mean_difference": 0.011555555555555555,
+            "clustered_bootstrap_95ci": [
+              0.010970138888888889,
+              0.014957638888888888
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.005338888888888889,
+          "clustered_bootstrap_95ci": [
+            0.004391805555555555,
+            0.0063801388888888875
+          ],
+          "clustering": "Seed validation ranges are disjoint; images are clustered across corruption families and severities."
+        }
+      },
+      "uniform": {
+        "by_seed": {
+          "0": {
+            "mean_difference": -0.0005166666666666667,
+            "image_clustered_bootstrap_95ci": [
+              -0.003183333333333333,
+              0.003505
+            ]
+          },
+          "1": {
+            "mean_difference": -0.00095,
+            "image_clustered_bootstrap_95ci": [
+              -0.00390875,
+              0.00111625
+            ]
+          },
+          "2": {
+            "mean_difference": -0.0017666666666666666,
+            "image_clustered_bootstrap_95ci": [
+              -0.004823333333333333,
+              0.0024525000000000007
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.002083333333333333,
+            "clustered_bootstrap_95ci": [
+              -0.0003361111111111111,
+              0.0035861111111111107
+            ]
+          },
+          "2": {
+            "mean_difference": -0.001,
+            "clustered_bootstrap_95ci": [
+              -0.002834027777777778,
+              0.0013916666666666671
+            ]
+          },
+          "3": {
+            "mean_difference": -0.0026388888888888885,
+            "clustered_bootstrap_95ci": [
+              -0.0040375,
+              0.0007729166666666672
+            ]
+          },
+          "4": {
+            "mean_difference": -0.00325,
+            "clustered_bootstrap_95ci": [
+              -0.0052833333333333335,
+              -0.0016583333333333326
+            ]
+          },
+          "5": {
+            "mean_difference": -0.0005833333333333334,
+            "clustered_bootstrap_95ci": [
+              -0.0030652777777777774,
+              0.0010486111111111108
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": -0.0010777777777777775,
+          "clustered_bootstrap_95ci": [
+            -0.002827777777777778,
+            -0.0007718055555555559
+          ],
+          "clustering": "Seed validation ranges are disjoint; images are clustered across corruption families and severities."
+        }
+      }
+    },
+    "unseen_reserve": {
+      "router_soft": {
+        "by_seed": {
+          "0": {
+            "mean_difference": 0.0019666666666666665,
+            "image_clustered_bootstrap_95ci": [
+              0.0008604166666666669,
+              0.005004166666666666
+            ]
+          },
+          "1": {
+            "mean_difference": 0.0016,
+            "image_clustered_bootstrap_95ci": [
+              0.0004520833333333336,
+              0.003342083333333334
+            ]
+          },
+          "2": {
+            "mean_difference": 0.002616666666666667,
+            "image_clustered_bootstrap_95ci": [
+              -0.0005175,
+              0.004519166666666667
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.002611111111111111,
+            "clustered_bootstrap_95ci": [
+              -0.0011930555555555555,
+              0.004101388888888889
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0011111111111111111,
+            "clustered_bootstrap_95ci": [
+              -0.002352777777777778,
+              0.0057152777777777775
+            ]
+          },
+          "3": {
+            "mean_difference": 0.0020277777777777777,
+            "clustered_bootstrap_95ci": [
+              -6.25e-05,
+              0.005192361111111112
+            ]
+          },
+          "4": {
+            "mean_difference": 0.0017777777777777779,
+            "clustered_bootstrap_95ci": [
+              -0.001579861111111111,
+              0.0036812500000000005
+            ]
+          },
+          "5": {
+            "mean_difference": 0.002777777777777778,
+            "clustered_bootstrap_95ci": [
+              0.0006409722222222222,
+              0.0047083333333333335
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.002061111111111111,
+          "clustered_bootstrap_95ci": [
+            0.0008284722222222223,
+            0.004542916666666667
+          ],
+          "clustering": "The same reserve images occur across seeds; all seed, family, and severity outcomes remain clustered by image."
+        }
+      },
+      "router_hard": {
+        "by_seed": {
+          "0": {
+            "mean_difference": 0.0016833333333333333,
+            "image_clustered_bootstrap_95ci": [
+              0.00023458333333333371,
+              0.0037379166666666667
+            ]
+          },
+          "1": {
+            "mean_difference": 0.00115,
+            "image_clustered_bootstrap_95ci": [
+              -0.0016166666666666669,
+              0.0035341666666666672
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0026333333333333334,
+            "image_clustered_bootstrap_95ci": [
+              -0.0010399999999999997,
+              0.005863333333333334
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.0019166666666666666,
+            "clustered_bootstrap_95ci": [
+              -0.0005215277777777778,
+              0.004520833333333334
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0009166666666666666,
+            "clustered_bootstrap_95ci": [
+              -0.002890277777777778,
+              0.003718055555555556
+            ]
+          },
+          "3": {
+            "mean_difference": 0.002472222222222222,
+            "clustered_bootstrap_95ci": [
+              0.0002840277777777778,
+              0.0042652777777777776
+            ]
+          },
+          "4": {
+            "mean_difference": 0.0011111111111111111,
+            "clustered_bootstrap_95ci": [
+              0.0006513888888888889,
+              0.0032618055555555556
+            ]
+          },
+          "5": {
+            "mean_difference": 0.0026944444444444446,
+            "clustered_bootstrap_95ci": [
+              0.0015805555555555555,
+              0.006263194444444445
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0018222222222222225,
+          "clustered_bootstrap_95ci": [
+            0.0007045833333333331,
+            0.003376388888888889
+          ],
+          "clustering": "The same reserve images occur across seeds; all seed, family, and severity outcomes remain clustered by image."
+        }
+      },
+      "uniform": {
+        "by_seed": {
+          "0": {
+            "mean_difference": 0.00085,
+            "image_clustered_bootstrap_95ci": [
+              -0.0004570833333333335,
+              0.003205
+            ]
+          },
+          "1": {
+            "mean_difference": 0.0005833333333333334,
+            "image_clustered_bootstrap_95ci": [
+              -0.0027262499999999995,
+              0.0012625
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0002,
+            "image_clustered_bootstrap_95ci": [
+              -0.0018116666666666665,
+              0.0017979166666666666
+            ]
+          }
+        },
+        "by_severity": {
+          "1": {
+            "mean_difference": 0.0010833333333333333,
+            "clustered_bootstrap_95ci": [
+              -0.0014166666666666668,
+              0.004046527777777778
+            ]
+          },
+          "2": {
+            "mean_difference": 0.0011666666666666668,
+            "clustered_bootstrap_95ci": [
+              -0.0011201388888888888,
+              0.0034069444444444446
+            ]
+          },
+          "3": {
+            "mean_difference": 0.0015277777777777779,
+            "clustered_bootstrap_95ci": [
+              -0.001292361111111111,
+              0.0038069444444444453
+            ]
+          },
+          "4": {
+            "mean_difference": 0.0002777777777777778,
+            "clustered_bootstrap_95ci": [
+              -0.0021180555555555553,
+              0.003931250000000001
+            ]
+          },
+          "5": {
+            "mean_difference": -0.0013333333333333333,
+            "clustered_bootstrap_95ci": [
+              -0.005607638888888889,
+              0.001954166666666668
+            ]
+          }
+        },
+        "three_seed_mean": {
+          "mean_difference": 0.0005444444444444444,
+          "clustered_bootstrap_95ci": [
+            -0.0011943055555555557,
+            0.002699861111111111
+          ],
+          "clustering": "The same reserve images occur across seeds; all seed, family, and severity outcomes remain clustered by image."
+        }
+      }
+    }
+  },
+  "condition_tests_csv": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment79_frozen_router_severity_sweep/full_3seed_10families_severity1_5_v1/smoke_statistics_10_v1/condition_tests.csv",
+  "statistical_rules": [
+    "Exact McNemar tests preserve paired image outcomes within each seed-condition.",
+    "Bootstrap intervals cluster all corruption families and severities belonging to an image.",
+    "Reserve intervals also keep all three adapter-seed predictions for each image clustered.",
+    "Soft-router condition tests use Holm correction separately within seen and unseen sections."
+  ]
+}

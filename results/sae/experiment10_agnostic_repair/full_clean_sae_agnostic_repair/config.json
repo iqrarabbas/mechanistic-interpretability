@@ -1,0 +1,39 @@
+{
+  "calibration_samples": 2000,
+  "validation_samples": 2000,
+  "evaluation_samples": 5000,
+  "calibration_start": 30000,
+  "validation_start": 32000,
+  "evaluation_start": 35000,
+  "patches_per_calibration_image": 4,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "taus": [
+    3.0,
+    5.0
+  ],
+  "kappas": [
+    2.0,
+    5.0
+  ],
+  "alpha_maxes": [
+    0.25,
+    0.5
+  ],
+  "adaptive_scales": [
+    0.01,
+    0.025,
+    0.05,
+    0.1
+  ],
+  "clean_loss_penalty": 2.0,
+  "sae_source": "clean",
+  "clean_sae_tag": "",
+  "resume": true,
+  "run_name": "full_clean_sae_agnostic_repair",
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/clean_base_vanilla_paper",
+  "status": "exploratory; all local ImageNet validation images were used previously",
+  "limitation": "None from corruption exposure: the selected SAE was trained only on clean activations"
+}

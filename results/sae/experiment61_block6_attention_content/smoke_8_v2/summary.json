@@ -1,0 +1,114 @@
+{
+  "configuration": {
+    "dataset_dir": "/media/dr-yougart/Iqrar/vit_mi/Dataset",
+    "samples": 8,
+    "start_index": 47000,
+    "corruption_seed": 2061,
+    "batch_size": 4,
+    "num_workers": 0,
+    "bootstrap_repetitions": 20,
+    "run_name": "smoke_8_v2",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "corruption": "Noise-4",
+    "block": 6,
+    "patch_location": "per-head attention probabilities and value vectors before concatenation/o_proj",
+    "evaluation_split_status": "previously unused mechanistic analysis split",
+    "deployment_method": false,
+    "uses_paired_clean_oracle": true,
+    "imageNetV2_accessed": false,
+    "imageNetA_accessed": false
+  },
+  "results": {
+    "clean_accuracy": 0.875,
+    "corrupted_baseline_accuracy": 0.875,
+    "clean_correct_noise_wrong_images": 0,
+    "conditions": {
+      "clean_attention_corrupt_values": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.875,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_margin_change": -0.0387800931930542,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": NaN,
+        "fraction_of_full_block6_accuracy_gain": null
+      },
+      "corrupt_attention_clean_values": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.75,
+        "accuracy_difference": -0.125,
+        "accuracy_difference_95ci": [
+          -0.375,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 1,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_margin_change": 0.16896474361419678,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": NaN,
+        "fraction_of_full_block6_accuracy_gain": null
+      },
+      "clean_attention_clean_values": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.875,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_margin_change": 0.32872068881988525,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": NaN,
+        "fraction_of_full_block6_accuracy_gain": null
+      },
+      "wrong_pair_clean_attention_values": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.375,
+        "accuracy_difference": -0.5,
+        "accuracy_difference_95ci": [
+          -0.815625,
+          -0.375
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 4,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_margin_change": -3.273672580718994,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": NaN
+      },
+      "clean_block6_output": {
+        "reference_accuracy": 0.875,
+        "candidate_accuracy": 0.875,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_margin_change": -0.16736114025115967,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": NaN
+      }
+    }
+  },
+  "interpretation_guardrails": [
+    "Clean activation patching is an oracle causal diagnostic, not an inference-time method.",
+    "Attention probabilities isolate routing (Q/K-derived A); values isolate transported content (V).",
+    "The full clean Block-6 output is an upper bound that also restores the residual stream and MLP output.",
+    "The wrong-pair control tests whether arbitrary clean attention content causes recovery."
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "configuration": {
+    "dataset_dir": "/media/dr-yougart/Iqrar/vit_mi/Dataset",
+    "corruption": "noise",
+    "block": 4,
+    "samples": 3000,
+    "start_index": 47000,
+    "corruption_seed": 2063,
+    "batch_size": 4,
+    "num_workers": 2,
+    "bootstrap_repetitions": 10000,
+    "run_name": "full_noise4_block4_3000_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "components": {
+      "x": "Block-6 incoming residual stream",
+      "a": "Block-6 attention output after o_proj/dropout",
+      "m": "Block-6 MLP output after dropout"
+    },
+    "uses_paired_clean_oracle": true,
+    "evaluation_split_status": "reused mechanistic analysis split",
+    "imageNetV2_accessed": false,
+    "imageNetA_accessed": false,
+    "training_or_tuning": false
+  },
+  "results": {
+    "clean_accuracy": 0.8113333333333334,
+    "corrupted_baseline_accuracy": 0.7253333333333334,
+    "clean_correct_corrupted_wrong_images": 361,
+    "additive_reconstruction_max_absolute_error": 3.4332275390625e-05,
+    "conditions": {
+      "factorial_clean_x": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.7876666666666666,
+        "accuracy_difference": 0.06233333333333333,
+        "accuracy_difference_95ci": [
+          0.04965833333333334,
+          0.0750083333333332
+        ],
+        "reference_wrong_candidate_correct": 292,
+        "reference_correct_candidate_wrong": 105,
+        "mcnemar_exact_pvalue": 1.749587817595541e-21,
+        "mean_margin_change": 0.9340195059776306,
+        "failure_recovery_count": 270,
+        "failure_recovery_rate": 0.7479224376731302
+      },
+      "factorial_clean_a": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.741,
+        "accuracy_difference": 0.015666666666666666,
+        "accuracy_difference_95ci": [
+          0.006666666666666667,
+          0.024666666666666667
+        ],
+        "reference_wrong_candidate_correct": 118,
+        "reference_correct_candidate_wrong": 71,
+        "mcnemar_exact_pvalue": 0.0007755448948873905,
+        "mean_margin_change": 0.21519872546195984,
+        "failure_recovery_count": 103,
+        "failure_recovery_rate": 0.2853185595567867
+      },
+      "factorial_clean_m": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.7233333333333334,
+        "accuracy_difference": -0.002,
+        "accuracy_difference_95ci": [
+          -0.012341666666666659,
+          0.008666666666666666
+        ],
+        "reference_wrong_candidate_correct": 127,
+        "reference_correct_candidate_wrong": 133,
+        "mcnemar_exact_pvalue": 0.7565636522688661,
+        "mean_margin_change": -0.020565500482916832,
+        "failure_recovery_count": 107,
+        "failure_recovery_rate": 0.296398891966759
+      },
+      "factorial_clean_xa": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.786,
+        "accuracy_difference": 0.06066666666666667,
+        "accuracy_difference_95ci": [
+          0.04766666666666667,
+          0.07366666666666667
+        ],
+        "reference_wrong_candidate_correct": 305,
+        "reference_correct_candidate_wrong": 123,
+        "mcnemar_exact_pvalue": 6.290079246991542e-19,
+        "mean_margin_change": 0.9155673980712891,
+        "failure_recovery_count": 286,
+        "failure_recovery_rate": 0.7922437673130194
+      },
+      "factorial_clean_xm": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.8103333333333333,
+        "accuracy_difference": 0.085,
+        "accuracy_difference_95ci": [
+          0.07166666666666667,
+          0.09833333333333333
+        ],
+        "reference_wrong_candidate_correct": 351,
+        "reference_correct_candidate_wrong": 96,
+        "mcnemar_exact_pvalue": 3.362268737491832e-35,
+        "mean_margin_change": 1.2007495164871216,
+        "failure_recovery_count": 320,
+        "failure_recovery_rate": 0.8864265927977839
+      },
+      "factorial_clean_am": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.746,
+        "accuracy_difference": 0.020666666666666667,
+        "accuracy_difference_95ci": [
+          0.009666666666666667,
+          0.032
+        ],
+        "reference_wrong_candidate_correct": 181,
+        "reference_correct_candidate_wrong": 119,
+        "mcnemar_exact_pvalue": 0.0004106214129933644,
+        "mean_margin_change": 0.29080256819725037,
+        "failure_recovery_count": 158,
+        "failure_recovery_rate": 0.4376731301939058
+      },
+      "factorial_clean_xam": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.8113333333333334,
+        "accuracy_difference": 0.086,
+        "accuracy_difference_95ci": [
+          0.07233333333333333,
+          0.09966666666666667
+        ],
+        "reference_wrong_candidate_correct": 361,
+        "reference_correct_candidate_wrong": 103,
+        "mcnemar_exact_pvalue": 1.2540441759498522e-34,
+        "mean_margin_change": 1.2384508848190308,
+        "failure_recovery_count": 361,
+        "failure_recovery_rate": 1.0
+      },
+      "sequential_clean_a_recompute_m": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.7223333333333334,
+        "accuracy_difference": -0.003,
+        "accuracy_difference_95ci": [
+          -0.013333333333333334,
+          0.007
+        ],
+        "reference_wrong_candidate_correct": 122,
+        "reference_correct_candidate_wrong": 131,
+        "mcnemar_exact_pvalue": 0.615083111904954,
+        "mean_margin_change": 0.045974165201187134,
+        "failure_recovery_count": 100,
+        "failure_recovery_rate": 0.2770083102493075
+      },
+      "wrong_pair_full_block": {
+        "reference_accuracy": 0.7253333333333334,
+        "candidate_accuracy": 0.0013333333333333333,
+        "accuracy_difference": -0.724,
+        "accuracy_difference_95ci": [
+          -0.7396666666666667,
+          -0.708
+        ],
+        "reference_wrong_candidate_correct": 1,
+        "reference_correct_candidate_wrong": 2173,
+        "mcnemar_exact_pvalue": 0.0,
+        "mean_margin_change": -15.465189933776855,
+        "failure_recovery_count": 0,
+        "failure_recovery_rate": 0.0
+      }
+    },
+    "factorial_shapley_accuracy_contributions": {
+      "x": 0.06455555555555553,
+      "a": 0.009055555555555537,
+      "m": 0.012388888888888894
+    },
+    "factorial_coalition_accuracies": {
+      "corrupted_baseline": 0.7253333333333334,
+      "factorial_clean_x": 0.7876666666666666,
+      "factorial_clean_a": 0.741,
+      "factorial_clean_m": 0.7233333333333334,
+      "factorial_clean_xa": 0.786,
+      "factorial_clean_xm": 0.8103333333333333,
+      "factorial_clean_am": 0.746,
+      "factorial_clean_xam": 0.8113333333333334
+    }
+  },
+  "guardrails": [
+    "Factorial component swaps are additive path patches and can create hybrid off-manifold states.",
+    "Shapley values average each component contribution over all factorial contexts.",
+    "Sequential clean-attention patching recomputes the MLP to test a more on-path intervention.",
+    "This is an oracle mechanistic analysis, not a deployment method."
+  ]
+}

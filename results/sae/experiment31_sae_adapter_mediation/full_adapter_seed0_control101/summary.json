@@ -1,0 +1,158 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "checkpoint": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment25_multiseed_confirmation/imagenetv2_multiseed_confirmation/seed_0/classification_weight_0.05.pt",
+    "feature_source": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/noise_bidirectional_development_gpu/summary.json",
+    "samples": 10000,
+    "start_index": 0,
+    "severity": 4,
+    "feature_count": 16,
+    "alpha": 1.0,
+    "batch_size": 8,
+    "num_workers": 2,
+    "seed": 101,
+    "noise_seed": 2026,
+    "bootstrap_repetitions": 2000,
+    "run_name": "full_adapter_seed0_control101",
+    "device": "cuda",
+    "vit_block": 11,
+    "sae": "clean_base_vanilla_paper",
+    "harmful_features_locked_before_evaluation": [
+      14024,
+      14852,
+      11406,
+      4889,
+      8139,
+      17892,
+      18955,
+      3893,
+      6757,
+      17227,
+      12743,
+      12135,
+      8903,
+      3867,
+      22608,
+      8779
+    ],
+    "random_control_features": [
+      3310,
+      8950,
+      19061,
+      19281,
+      14528,
+      8983,
+      22674,
+      7619,
+      9791,
+      8829,
+      15223,
+      21364,
+      17111,
+      7230,
+      3308,
+      23175
+    ]
+  },
+  "baseline": {
+    "noise_accuracy": 0.5725,
+    "clean_accuracy": 0.6837
+  },
+  "interventions": {
+    "full_adapter": {
+      "accuracy": 0.5842,
+      "accuracy_gain": 0.0117,
+      "accuracy_gain_95ci": [
+        0.0066,
+        0.016902499999999984
+      ],
+      "mean_margin_change": 0.10116947442293167,
+      "mean_true_logit_change": 0.17299169301986694,
+      "predictions_recovered": 407,
+      "originally_correct_damaged": 290,
+      "mcnemar_exact_pvalue": 1.0650489540262038e-05
+    },
+    "sae_aligned_only": {
+      "accuracy": 0.5738,
+      "accuracy_gain": 0.0013,
+      "accuracy_gain_95ci": [
+        -0.0006,
+        0.0031024999999999863
+      ],
+      "mean_margin_change": 0.02202766016125679,
+      "mean_true_logit_change": 0.03939921408891678,
+      "predictions_recovered": 53,
+      "originally_correct_damaged": 40,
+      "mcnemar_exact_pvalue": 0.21315300096890785
+    },
+    "sae_orthogonal_only": {
+      "accuracy": 0.5658,
+      "accuracy_gain": -0.0067,
+      "accuracy_gain_95ci": [
+        -0.011802499999999999,
+        -0.0016
+      ],
+      "mean_margin_change": -0.08477993309497833,
+      "mean_true_logit_change": -1.0786527395248413,
+      "predictions_recovered": 321,
+      "originally_correct_damaged": 388,
+      "mcnemar_exact_pvalue": 0.013131422507623985
+    },
+    "random_aligned_only": {
+      "accuracy": 0.571,
+      "accuracy_gain": -0.0015,
+      "accuracy_gain_95ci": [
+        -0.0035025,
+        0.0005
+      ],
+      "mean_margin_change": -0.006744352634996176,
+      "mean_true_logit_change": -0.014782245270907879,
+      "predictions_recovered": 45,
+      "originally_correct_damaged": 60,
+      "mcnemar_exact_pvalue": 0.1715646971542424
+    },
+    "random_orthogonal_only": {
+      "accuracy": 0.5789,
+      "accuracy_gain": 0.0064,
+      "accuracy_gain_95ci": [
+        0.0012,
+        0.0112
+      ],
+      "mean_margin_change": -0.009763470850884914,
+      "mean_true_logit_change": -0.4935471713542938,
+      "predictions_recovered": 358,
+      "originally_correct_damaged": 294,
+      "mcnemar_exact_pvalue": 0.01355367424229175
+    }
+  },
+  "mediation": {
+    "harmful_clean_distance_before": 3.626709305036068,
+    "harmful_clean_distance_after_full_adapter": 3.5304116423130036,
+    "mean_harmful_normalization": 0.09629766272306442,
+    "normalization_vs_margin_gain": {
+      "pearson_r": 0.05866418370443832,
+      "pearson_p": 4.3385116416011e-09,
+      "spearman_r": 0.06433386986416374,
+      "spearman_p": 1.2006240849911596e-10
+    },
+    "normalization_by_outcome": {
+      "recovered": 0.1585942910988735,
+      "damaged": 0.0774197927836714,
+      "prediction_unchanged": 0.09416070201506374
+    },
+    "mean_residual_energy_fraction_in_harmful_span": 0.012265979070123285,
+    "mean_residual_energy_fraction_in_random_span": 0.03273399646393955,
+    "gain_removed_by_harmful_span_ablation": 0.0184,
+    "gain_retained_by_harmful_span_ablation_fraction": -0.5726495726495726,
+    "gain_explained_by_aligned_only": 0.0013
+  },
+  "decision_rules": {
+    "supports_sae_mediation_if": [
+      "full adapter moves harmful features closer to paired clean values",
+      "normalization predicts margin improvement and recovery",
+      "harmful-span removal reduces gain more than matched random-span removal",
+      "harmful-aligned component alone retains non-trivial gain"
+    ],
+    "generic_corrector_if": "gain remains in the SAE-orthogonal component and matched random ablation behaves similarly"
+  }
+}

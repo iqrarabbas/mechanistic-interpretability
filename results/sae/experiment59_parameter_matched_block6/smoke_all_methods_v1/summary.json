@@ -1,0 +1,459 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "lora_rank": 5,
+    "lora_alpha": 5.0,
+    "batch_size": 2,
+    "num_workers": 0,
+    "bootstrap_repetitions": 100,
+    "max_samples": 8,
+    "run_name": "smoke_all_methods_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "identity_weight": 0.2,
+    "frozen_components": [
+      "ViT backbone"
+    ],
+    "imageNetV2_accessed": false,
+    "status": "leakage-free development architecture control"
+  },
+  "method_definitions": {
+    "rank8_position": "Current post-Block-6 low-rank residual with learned rank-8 patch positions.",
+    "linear_rank9": "Post-Block-6 linear bottleneck residual without activation or position embedding.",
+    "mlp_rank9": "Post-Block-6 GELU bottleneck residual without position embedding.",
+    "random_projection_rank14": "Fixed random orthogonal down-projection with learned low-rank positions and up-projection.",
+    "lora_qv": "Rank-5 LoRA updates inside Block-6 attention query and value projections."
+  },
+  "parameter_counts": {
+    "rank8_position": 14632,
+    "linear_rank9": 14601,
+    "mlp_rank9": 14601,
+    "random_projection_rank14": 14264,
+    "lora_qv": 15360
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "best_validation_total": {
+        "rank8_position": 1.1812140047550201,
+        "linear_rank9": 1.181179016828537,
+        "mlp_rank9": 1.181302934885025,
+        "random_projection_rank14": 1.1802868247032166,
+        "lora_qv": 1.181652694940567
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "random_projection_rank14": {
+              "total": 1.2842122316360474,
+              "residual": 1.2448527812957764,
+              "classification": 0.786814896389842,
+              "preservation": 0.0002809762954711914,
+              "clean_identity": 2.3400295049214037e-05
+            },
+            "linear_rank9": {
+              "total": 1.2846551835536957,
+              "residual": 1.245268851518631,
+              "classification": 0.7875737571157515,
+              "preservation": 0.00013893842697143555,
+              "clean_identity": 3.3081875301377295e-06
+            },
+            "rank8_position": {
+              "total": 1.2846951484680176,
+              "residual": 1.2453058063983917,
+              "classification": 0.787626089877449,
+              "preservation": 0.00015109777450561523,
+              "clean_identity": 2.14392210295955e-06
+            },
+            "mlp_rank9": {
+              "total": 1.2847312986850739,
+              "residual": 1.2453391253948212,
+              "classification": 0.7877566183451563,
+              "preservation": 7.969141006469727e-05,
+              "clean_identity": 1.6071169000042573e-06
+            },
+            "lora_qv": {
+              "total": 1.2848981618881226,
+              "residual": 1.2455028295516968,
+              "classification": 0.7878867972176522,
+              "preservation": 2.008676528930664e-05,
+              "clean_identity": 1.1104461310868473e-08
+            }
+          },
+          "validation": {
+            "random_projection_rank14": {
+              "total": 1.1802868247032166,
+              "residual": 1.1694231629371643,
+              "classification": 0.21535415388643742,
+              "preservation": 0.0015926957130432129,
+              "clean_identity": 8.170107867044862e-05
+            },
+            "linear_rank9": {
+              "total": 1.181179016828537,
+              "residual": 1.170356273651123,
+              "classification": 0.21579987066797912,
+              "preservation": 0.0006081461906433105,
+              "clean_identity": 1.1602071253946633e-05
+            },
+            "rank8_position": {
+              "total": 1.1812140047550201,
+              "residual": 1.1704233288764954,
+              "classification": 0.21573680825531483,
+              "preservation": 4.500150680541992e-05,
+              "clean_identity": 8.001529181456135e-06
+            },
+            "mlp_rank9": {
+              "total": 1.181302934885025,
+              "residual": 1.170493632555008,
+              "classification": 0.21571287990082055,
+              "preservation": 0.0004487037658691406,
+              "clean_identity": 5.862676061951788e-06
+            },
+            "lora_qv": {
+              "total": 1.181652694940567,
+              "residual": 1.1708562076091766,
+              "classification": 0.21584515972062945,
+              "preservation": 8.45193862915039e-05,
+              "clean_identity": 6.99017670413582e-08
+            }
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "clean": {
+        "rank8_position": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      },
+      "noise4": {
+        "rank8_position": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.875,
+          "candidate_accuracy": 0.875,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      },
+      "blur4": {
+        "rank8_position": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "linear_rank9": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "mlp_rank9": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_projection_rank14": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "lora_qv": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "rank8_position": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14632,
+      "parameter_ratio_to_rank8": 1.0
+    },
+    "linear_rank9": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14601,
+      "parameter_ratio_to_rank8": 0.9978813559322034
+    },
+    "mlp_rank9": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14601,
+      "parameter_ratio_to_rank8": 0.9978813559322034
+    },
+    "random_projection_rank14": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 14264,
+      "parameter_ratio_to_rank8": 0.9748496446145435
+    },
+    "lora_qv": {
+      "clean": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "noise4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "blur4": {
+        "changes_by_seed": [
+          0.0
+        ],
+        "mean_change": 0.0
+      },
+      "trainable_parameters": 15360,
+      "parameter_ratio_to_rank8": 1.0497539639147075
+    }
+  },
+  "interpretation_rule": "The mechanistically localized rank-8 architecture has architecture-specific support only if it consistently exceeds parameter-matched controls while preserving clean accuracy."
+}

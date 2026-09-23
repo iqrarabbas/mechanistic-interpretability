@@ -1,0 +1,37 @@
+{
+  "discovery_samples": 3000,
+  "validation_samples": 2000,
+  "test_samples": 5000,
+  "discovery_start": 20000,
+  "validation_start": 23000,
+  "test_start": 25000,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "ridge": 0.05,
+  "minimum_consistency": 0.55,
+  "feature_counts": [
+    32,
+    64,
+    128,
+    256
+  ],
+  "alphas": [
+    0.5,
+    0.75,
+    1.0,
+    1.25
+  ],
+  "thresholds": [
+    1.0,
+    1.5,
+    2.0
+  ],
+  "clean_loss_penalty": 2.0,
+  "random_controls": 20,
+  "run_name": "full_strategies_5000",
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/blur4_base_vanilla_paper",
+  "sae_implementation": "paper_vanilla_literal_l2_v3",
+  "site": "hidden_states[-2], patch tokens; preserve original CLS"
+}

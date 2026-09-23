@@ -1,0 +1,90 @@
+{
+  "configuration": {
+    "backbone": "google/vit-base-patch16-224",
+    "input_resolution": 224,
+    "patches": 196,
+    "tokens": 197,
+    "mac_definition": "one multiply-accumulate",
+    "flop_conversion": "two FLOPs per MAC",
+    "latency_status": "pending until Experiment 46 releases CUDA",
+    "inference_rerun": false,
+    "device": "cpu"
+  },
+  "backbone": {
+    "parameters": 86567656,
+    "analytical_macs": {
+      "patch_embedding": 115605504,
+      "transformer_blocks": 17447454720,
+      "classifier": 768000,
+      "total": 17563828224
+    },
+    "analytical_flops_two_per_mac": 35127656448
+  },
+  "methods": [
+    {
+      "method": "Frozen ViT baseline",
+      "trainable_parameters": 0,
+      "frozen_auxiliary_parameters": 0,
+      "added_macs_per_image": 0,
+      "added_flops_per_image_two_per_mac": 0,
+      "inference_requires_sae": false,
+      "checkpoint_path": null,
+      "checkpoint_bytes": null,
+      "checkpoint_mb_decimal": null,
+      "checkpoint_mib": null
+    },
+    {
+      "method": "Full 768D residual adapter",
+      "trainable_parameters": 741120,
+      "frozen_auxiliary_parameters": 0,
+      "added_macs_per_image": 115605504,
+      "added_flops_per_image_two_per_mac": 231211008,
+      "inference_requires_sae": false,
+      "checkpoint_path": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1/seed_0/classification_weight_0.05.pt",
+      "checkpoint_bytes": 2966988,
+      "checkpoint_mb_decimal": 2.966988,
+      "checkpoint_mib": 2.829540252685547
+    },
+    {
+      "method": "16D raw-hidden repair",
+      "trainable_parameters": 3408,
+      "frozen_auxiliary_parameters": 0,
+      "added_macs_per_image": 4816896,
+      "added_flops_per_image_two_per_mac": 9633792,
+      "inference_requires_sae": false,
+      "checkpoint_path": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment43_direct_latent_repair/full_3seed_matched_direct_repair_optimized_v2/seed_0/raw_hidden.pt",
+      "checkpoint_bytes": 15932,
+      "checkpoint_mb_decimal": 0.015932,
+      "checkpoint_mib": 0.015193939208984375
+    },
+    {
+      "method": "16D shared-input subspace repair",
+      "trainable_parameters": 15440,
+      "frozen_auxiliary_parameters": 0,
+      "added_macs_per_image": 4816896,
+      "added_flops_per_image_two_per_mac": 9633792,
+      "inference_requires_sae": false,
+      "checkpoint_path": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment45_sae_hidden_subspace/full_3seed_rank16_normalized_v1/seed_0/harmful_sae_decoder.pt",
+      "checkpoint_bytes": 120621,
+      "checkpoint_mb_decimal": 0.120621,
+      "checkpoint_mib": 0.11503314971923828
+    },
+    {
+      "method": "17-parameter SAE gate",
+      "trainable_parameters": 17,
+      "frozen_auxiliary_parameters": 37774080,
+      "added_macs_per_image": 3699379264,
+      "added_flops_per_image_two_per_mac": 7398758528,
+      "inference_requires_sae": true,
+      "checkpoint_path": "/home/dr-yougart/Desktop/vit_mi/checkpoints/sae/clean_base_vanilla_paper/model.pt",
+      "checkpoint_bytes": 151098569,
+      "checkpoint_mb_decimal": 151.098569,
+      "checkpoint_mib": 144.0988245010376
+    }
+  ],
+  "limitations": [
+    "Dominant dense MACs only; elementwise operations and preprocessing are excluded.",
+    "Checkpoint size depends on serialization dtype and container overhead.",
+    "Latency must be measured empirically on the same GPU, batch size, and warmup protocol."
+  ]
+}

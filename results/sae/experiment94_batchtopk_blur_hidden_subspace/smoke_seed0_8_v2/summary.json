@@ -1,0 +1,462 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "rank": 16,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "predictor_batch_size": 4,
+    "image_batch_size": 2,
+    "workers": 0,
+    "bootstrap_repetitions": 100,
+    "max_samples": 8,
+    "run_name": "smoke_seed0_8_v2",
+    "resume": false,
+    "batch_size": 4,
+    "model": "google/vit-base-patch16-224",
+    "block": 11,
+    "training_corruption": "Blur-4",
+    "transfer_corruption": "Noise-4",
+    "feature_selection": "seed-specific top-8 strengthened plus top-8 weakened BatchTopK features",
+    "trainable_parameters_per_method": 15440,
+    "matched_parameter_count": true,
+    "frozen_components": [
+      "ViT",
+      "BatchTopK SAE",
+      "all output bases"
+    ],
+    "imageNetV2_accessed": false,
+    "final_reserve_49000_50000_accessed": false,
+    "status": "adapter-development comparison only"
+  },
+  "audit_of_experiment45": {
+    "valid_split_protocol": true,
+    "valid_parameter_matching": true,
+    "limitations_corrected_here": [
+      "Experiment 45 used an older fixed clean Vanilla SAE rather than seed-specific BatchTopK SAEs.",
+      "Experiment 45 trained and evaluated only Noise repair."
+    ],
+    "experiment45_not_repeated": true
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "controls": {
+    "0": {
+      "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment91_batchtopk_layer_screen/block11_seed0_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+      "diagnostic_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment85_block6_batchtopk_diagnostics/layer_screen_block11_seed0_noise4_blur4_v1/summary.json",
+      "blur_features": [
+        8796,
+        22599,
+        19905,
+        11302,
+        18048,
+        21136,
+        17401,
+        22253,
+        10426,
+        14202,
+        5602,
+        20333,
+        1989,
+        15045,
+        15555,
+        2529
+      ],
+      "random_features": [
+        15815,
+        10448,
+        19950,
+        9364,
+        19929,
+        10493,
+        3190,
+        23581,
+        2231,
+        23726,
+        17096,
+        9806,
+        9587,
+        10269,
+        20641,
+        14772
+      ],
+      "high_variance_dimensions": [
+        187,
+        382,
+        759,
+        183,
+        316,
+        86,
+        377,
+        660,
+        636,
+        670,
+        112,
+        535,
+        281,
+        387,
+        678,
+        358
+      ],
+      "pca_eigenvalues": [
+        131943.75,
+        2490.926025390625,
+        1006.7857055664062,
+        507.1838073730469,
+        452.86181640625,
+        388.03033447265625,
+        357.26953125,
+        339.9240417480469,
+        321.12060546875,
+        308.15081787109375,
+        268.94342041015625,
+        260.82037353515625,
+        239.80905151367188,
+        230.3305206298828,
+        213.34864807128906,
+        206.3883819580078
+      ]
+    }
+  },
+  "training": {
+    "0": {
+      "blur_batchtopk_decoder": {
+        "best_validation_total": 0.23895614594221115,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3533513993024826,
+              "coefficient": 0.25727495551109314,
+              "classification": 1.9215289205312729,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 0.23895614594221115,
+              "coefficient": 0.21315830945968628,
+              "classification": 0.5106105506420135,
+              "preservation": 0.0053461394272744656
+            }
+          }
+        ]
+      },
+      "random_batchtopk_decoder": {
+        "best_validation_total": 0.24253755062818527,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.37027116119861603,
+              "coefficient": 0.2741178125143051,
+              "classification": 1.923066720366478,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 0.24253755062818527,
+              "coefficient": 0.217058464884758,
+              "classification": 0.508762463927269,
+              "preservation": 0.0008192062377929688
+            }
+          }
+        ]
+      },
+      "high_variance_hidden": {
+        "best_validation_total": 0.22053956985473633,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3563767075538635,
+              "coefficient": 0.2602686434984207,
+              "classification": 1.9221610873937607,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 0.22053956985473633,
+              "coefficient": 0.1949165239930153,
+              "classification": 0.5098629742860794,
+              "preservation": 0.0025979678030125797
+            }
+          }
+        ]
+      },
+      "blur_residual_pca": {
+        "best_validation_total": 0.09811356291174889,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.46482041478157043,
+              "coefficient": 0.3687389940023422,
+              "classification": 1.9216283410787582,
+              "preservation": 0.0
+            },
+            "validation": {
+              "total": 0.09811356291174889,
+              "coefficient": 0.07233171537518501,
+              "classification": 0.5114515721797943,
+              "preservation": 0.004185358760878444
+            }
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "0": {
+      "blur": {
+        "baseline_accuracy": 0.75,
+        "paired_clean_accuracy": 0.875,
+        "methods": {
+          "blur_batchtopk_decoder": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur_residual_pca": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "noise": {
+        "baseline_accuracy": 0.875,
+        "paired_clean_accuracy": 0.875,
+        "methods": {
+          "blur_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur_residual_pca": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "clean": {
+        "baseline_accuracy": 0.875,
+        "methods": {
+          "blur_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur_residual_pca": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "blur_batchtopk_decoder": {
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "random_batchtopk_decoder": {
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "high_variance_hidden": {
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "blur_residual_pca": {
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    }
+  },
+  "guardrails": [
+    "SAE feature discovery [11000,12000) is disjoint from every seed-specific adapter train/validation split.",
+    "Every seed uses an independently initialized SAE and predictor.",
+    "All four methods have exactly the same trainable architecture and parameter count.",
+    "Clean counterparts provide training targets only; inference receives only the corrupted hidden state.",
+    "No full SAE reconstruction is inserted; corrections are residual hidden-state deltas.",
+    "ImageNetV2 and [49000,50000) are not accessed."
+  ]
+}

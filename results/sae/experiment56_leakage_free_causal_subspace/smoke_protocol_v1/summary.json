@@ -1,0 +1,268 @@
+{
+  "configuration": {
+    "feature_source": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment17_noise_bidirectional_repair/supervisor_disjoint_feature_dev_v1/summary.json",
+    "adapter_root": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment39_disjoint_adapter_training/full_disjoint_zero_init_3seed_v1",
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "adapter_seeds": [
+      0
+    ],
+    "feature_count": 16,
+    "primary_start": 36000,
+    "primary_samples": 8,
+    "null_start": 46000,
+    "null_samples": 8,
+    "random_controls": 3,
+    "corruption_seed": 2026,
+    "control_seed": 56000,
+    "batch_size": 2,
+    "variant_chunk_size": 8,
+    "control_basis_chunk": 20,
+    "num_workers": 0,
+    "bootstrap_repetitions": 100,
+    "phase": "all",
+    "run_name": "smoke_protocol_v1",
+    "resume": false,
+    "harmful_features": [
+      14024,
+      14852,
+      4889,
+      11406,
+      18955,
+      22608,
+      6757,
+      8139,
+      3893,
+      9977,
+      8779,
+      2664,
+      12743,
+      23000,
+      17227,
+      8903
+    ],
+    "vit_block": 11,
+    "frozen_components": [
+      "ViT",
+      "SAE",
+      "adapters"
+    ],
+    "imageNetV2_accessed": false
+  },
+  "protocol_verification": {
+    "reserve": {
+      "name": "unused_imagenet_reserve",
+      "dataset": "imagenet_val",
+      "start": 36000,
+      "end": 50000,
+      "isolation_group": "reserved"
+    },
+    "intervals": {
+      "primary": [
+        36000,
+        36008
+      ],
+      "random_null": [
+        46000,
+        46008
+      ]
+    }
+  },
+  "seed_results": {
+    "0": {
+      "clean": {
+        "primary_full_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_full": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_only_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_null": {
+          "images": 8,
+          "controls": 3,
+          "harmful_removal_cost": 0.0,
+          "random_removal_cost_mean": 0.0,
+          "random_removal_cost_std": 0.0,
+          "harmful_percentile": 0.0,
+          "empirical_one_sided_pvalue": 1.0,
+          "minimum_attainable_pvalue": 0.25
+        }
+      },
+      "noise": {
+        "primary_full_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_full": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_only_vs_baseline": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_null": {
+          "images": 8,
+          "controls": 3,
+          "harmful_removal_cost": 0.0,
+          "random_removal_cost_mean": 0.0,
+          "random_removal_cost_std": 0.0,
+          "harmful_percentile": 0.0,
+          "empirical_one_sided_pvalue": 1.0,
+          "minimum_attainable_pvalue": 0.25
+        }
+      },
+      "blur": {
+        "primary_full_vs_baseline": {
+          "reference_accuracy": 0.625,
+          "candidate_accuracy": 0.625,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_full": {
+          "reference_accuracy": 0.625,
+          "candidate_accuracy": 0.625,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_removed_vs_baseline": {
+          "reference_accuracy": 0.625,
+          "candidate_accuracy": 0.625,
+          "difference": 0.0,
+          "difference_pp": 0.0,
+          "difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "primary_harmful_only_vs_baseline": {
+          "reference_accuracy": 0.625,
+          "candidate_accuracy": 0.5,
+          "difference": -0.125,
+          "difference_pp": -12.5,
+          "difference_95ci": [
+            -0.375,
+            0.0
+          ],
+          "recovered": 0,
+          "damaged": 1,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "random_null": {
+          "images": 8,
+          "controls": 3,
+          "harmful_removal_cost": 0.0,
+          "random_removal_cost_mean": 0.0,
+          "random_removal_cost_std": 0.0,
+          "harmful_percentile": 0.0,
+          "empirical_one_sided_pvalue": 1.0,
+          "minimum_attainable_pvalue": 0.25
+        }
+      }
+    }
+  },
+  "claim_rule": "The historical causal claim is confirmed only if harmful-feature removal has a consistent corruption-specific cost across all three adapters and exceeds the 1,000-control energy-matched null."
+}

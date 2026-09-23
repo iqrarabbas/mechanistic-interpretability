@@ -1,0 +1,344 @@
+{
+  "configuration": {
+    "image_root": "/media/dr-yougart/Iqrar/vit_mi/external_data/imagenet-a-hf",
+    "meta_path": "/media/dr-yougart/Iqrar/vit_mi/Dataset/ILSVRC2012_devkit_t12/data/meta.mat",
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment50_block6_clean_preservation/full_3seed_identity_sweep_v1",
+    "selected_variant": "identity_0p2",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "alpha": 1.0,
+    "corruption_seed": 2060,
+    "batch_size": 2,
+    "num_workers": 0,
+    "bootstrap_repetitions": 10000,
+    "max_samples": null,
+    "run_name": "full_imageneta_7500_all3_v1",
+    "device": "cuda",
+    "model": "google/vit-base-patch16-224",
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "adapter_training_corruption": "Noise-4",
+    "adapter_training_dataset": "ImageNet-1K validation development splits",
+    "evaluation_dataset": "ImageNet-A",
+    "evaluation_samples": 7500,
+    "evaluation_used_for_selection_or_tuning": false,
+    "deployment_uses_clean_counterpart": false,
+    "standard_primary_protocol": "masked_200",
+    "secondary_protocol": "full_1k",
+    "status": "independent frozen OOD evaluation"
+  },
+  "results": {
+    "full_1k": {
+      "native": {
+        "baseline_accuracy": 0.12946666666666667,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.12946666666666667,
+            "candidate_accuracy": 0.13866666666666666,
+            "accuracy_difference": 0.0092,
+            "accuracy_difference_95ci": [
+              0.0044,
+              0.014
+            ],
+            "reference_wrong_candidate_correct": 212,
+            "reference_correct_candidate_wrong": 143,
+            "mcnemar_exact_pvalue": 0.00029529819702342713
+          },
+          "seed_1": {
+            "reference_accuracy": 0.12946666666666667,
+            "candidate_accuracy": 0.13653333333333334,
+            "accuracy_difference": 0.007066666666666666,
+            "accuracy_difference_95ci": [
+              0.0024,
+              0.011733333333333333
+            ],
+            "reference_wrong_candidate_correct": 187,
+            "reference_correct_candidate_wrong": 134,
+            "mcnemar_exact_pvalue": 0.0036374500611067776
+          },
+          "seed_2": {
+            "reference_accuracy": 0.12946666666666667,
+            "candidate_accuracy": 0.13626666666666667,
+            "accuracy_difference": 0.0068,
+            "accuracy_difference_95ci": [
+              0.002,
+              0.011733333333333333
+            ],
+            "reference_wrong_candidate_correct": 194,
+            "reference_correct_candidate_wrong": 143,
+            "mcnemar_exact_pvalue": 0.006371384036478817
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.0092,
+            0.007066666666666666,
+            0.0068
+          ],
+          "mean_gain": 0.007688888888888888,
+          "all_seed_gains_positive": true
+        }
+      },
+      "noise4": {
+        "baseline_accuracy": 0.06826666666666667,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.06826666666666667,
+            "candidate_accuracy": 0.0828,
+            "accuracy_difference": 0.014533333333333334,
+            "accuracy_difference_95ci": [
+              0.0096,
+              0.01933666666666662
+            ],
+            "reference_wrong_candidate_correct": 234,
+            "reference_correct_candidate_wrong": 125,
+            "mcnemar_exact_pvalue": 9.29503381431491e-09
+          },
+          "seed_1": {
+            "reference_accuracy": 0.06826666666666667,
+            "candidate_accuracy": 0.08306666666666666,
+            "accuracy_difference": 0.0148,
+            "accuracy_difference_95ci": [
+              0.009866666666666666,
+              0.0196
+            ],
+            "reference_wrong_candidate_correct": 238,
+            "reference_correct_candidate_wrong": 127,
+            "mcnemar_exact_pvalue": 6.577135441392489e-09
+          },
+          "seed_2": {
+            "reference_accuracy": 0.06826666666666667,
+            "candidate_accuracy": 0.0812,
+            "accuracy_difference": 0.012933333333333333,
+            "accuracy_difference_95ci": [
+              0.008,
+              0.017866666666666666
+            ],
+            "reference_wrong_candidate_correct": 226,
+            "reference_correct_candidate_wrong": 129,
+            "mcnemar_exact_pvalue": 2.962388137167478e-07
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.014533333333333334,
+            0.0148,
+            0.012933333333333333
+          ],
+          "mean_gain": 0.014088888888888889,
+          "all_seed_gains_positive": true
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.0416,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.04786666666666667,
+            "accuracy_difference": 0.006266666666666667,
+            "accuracy_difference_95ci": [
+              0.0033333333333333335,
+              0.009333333333333334
+            ],
+            "reference_wrong_candidate_correct": 90,
+            "reference_correct_candidate_wrong": 43,
+            "mcnemar_exact_pvalue": 5.6329665711642105e-05
+          },
+          "seed_1": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.048666666666666664,
+            "accuracy_difference": 0.007066666666666666,
+            "accuracy_difference_95ci": [
+              0.0041333333333333335,
+              0.010133333333333333
+            ],
+            "reference_wrong_candidate_correct": 90,
+            "reference_correct_candidate_wrong": 37,
+            "mcnemar_exact_pvalue": 2.872030486807259e-06
+          },
+          "seed_2": {
+            "reference_accuracy": 0.0416,
+            "candidate_accuracy": 0.047733333333333336,
+            "accuracy_difference": 0.0061333333333333335,
+            "accuracy_difference_95ci": [
+              0.0032,
+              0.0092
+            ],
+            "reference_wrong_candidate_correct": 88,
+            "reference_correct_candidate_wrong": 42,
+            "mcnemar_exact_pvalue": 6.738406993240589e-05
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.006266666666666667,
+            0.007066666666666666,
+            0.0061333333333333335
+          ],
+          "mean_gain": 0.006488888888888889,
+          "all_seed_gains_positive": true
+        }
+      }
+    },
+    "masked_200": {
+      "native": {
+        "baseline_accuracy": 0.252,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.252,
+            "candidate_accuracy": 0.26306666666666667,
+            "accuracy_difference": 0.011066666666666667,
+            "accuracy_difference_95ci": [
+              0.005066666666666666,
+              0.017066666666666667
+            ],
+            "reference_wrong_candidate_correct": 298,
+            "reference_correct_candidate_wrong": 215,
+            "mcnemar_exact_pvalue": 0.00028609560542637596
+          },
+          "seed_1": {
+            "reference_accuracy": 0.252,
+            "candidate_accuracy": 0.2676,
+            "accuracy_difference": 0.0156,
+            "accuracy_difference_95ci": [
+              0.009466666666666667,
+              0.021733333333333334
+            ],
+            "reference_wrong_candidate_correct": 326,
+            "reference_correct_candidate_wrong": 209,
+            "mcnemar_exact_pvalue": 4.795681106506267e-07
+          },
+          "seed_2": {
+            "reference_accuracy": 0.252,
+            "candidate_accuracy": 0.2637333333333333,
+            "accuracy_difference": 0.011733333333333333,
+            "accuracy_difference_95ci": [
+              0.005733333333333333,
+              0.017733333333333334
+            ],
+            "reference_wrong_candidate_correct": 309,
+            "reference_correct_candidate_wrong": 221,
+            "mcnemar_exact_pvalue": 0.00015247239746386926
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.011066666666666667,
+            0.0156,
+            0.011733333333333333
+          ],
+          "mean_gain": 0.012799999999999999,
+          "all_seed_gains_positive": true
+        }
+      },
+      "noise4": {
+        "baseline_accuracy": 0.14026666666666668,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.14026666666666668,
+            "candidate_accuracy": 0.1628,
+            "accuracy_difference": 0.022533333333333332,
+            "accuracy_difference_95ci": [
+              0.016266666666666665,
+              0.0288
+            ],
+            "reference_wrong_candidate_correct": 372,
+            "reference_correct_candidate_wrong": 203,
+            "mcnemar_exact_pvalue": 1.7077292319597664e-12
+          },
+          "seed_1": {
+            "reference_accuracy": 0.14026666666666668,
+            "candidate_accuracy": 0.16613333333333333,
+            "accuracy_difference": 0.025866666666666666,
+            "accuracy_difference_95ci": [
+              0.019333333333333334,
+              0.032266666666666666
+            ],
+            "reference_wrong_candidate_correct": 402,
+            "reference_correct_candidate_wrong": 208,
+            "mcnemar_exact_pvalue": 3.2503247679692104e-15
+          },
+          "seed_2": {
+            "reference_accuracy": 0.14026666666666668,
+            "candidate_accuracy": 0.16013333333333332,
+            "accuracy_difference": 0.019866666666666668,
+            "accuracy_difference_95ci": [
+              0.013733333333333334,
+              0.026
+            ],
+            "reference_wrong_candidate_correct": 357,
+            "reference_correct_candidate_wrong": 208,
+            "mcnemar_exact_pvalue": 3.8011704211988077e-10
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.022533333333333332,
+            0.025866666666666666,
+            0.019866666666666668
+          ],
+          "mean_gain": 0.022755555555555557,
+          "all_seed_gains_positive": true
+        }
+      },
+      "blur4": {
+        "baseline_accuracy": 0.09853333333333333,
+        "adapters": {
+          "seed_0": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.1064,
+            "accuracy_difference": 0.007866666666666666,
+            "accuracy_difference_95ci": [
+              0.0034666666666666665,
+              0.012266666666666667
+            ],
+            "reference_wrong_candidate_correct": 174,
+            "reference_correct_candidate_wrong": 115,
+            "mcnemar_exact_pvalue": 0.0006207398452744349
+          },
+          "seed_1": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.10946666666666667,
+            "accuracy_difference": 0.010933333333333333,
+            "accuracy_difference_95ci": [
+              0.006533333333333334,
+              0.015333333333333332
+            ],
+            "reference_wrong_candidate_correct": 184,
+            "reference_correct_candidate_wrong": 102,
+            "mcnemar_exact_pvalue": 1.4271465142290144e-06
+          },
+          "seed_2": {
+            "reference_accuracy": 0.09853333333333333,
+            "candidate_accuracy": 0.1068,
+            "accuracy_difference": 0.008266666666666667,
+            "accuracy_difference_95ci": [
+              0.0041333333333333335,
+              0.012533333333333334
+            ],
+            "reference_wrong_candidate_correct": 160,
+            "reference_correct_candidate_wrong": 98,
+            "mcnemar_exact_pvalue": 0.00013645891810110081
+          }
+        },
+        "aggregate": {
+          "gains_by_seed": [
+            0.007866666666666666,
+            0.010933333333333333,
+            0.008266666666666667
+          ],
+          "mean_gain": 0.009022222222222221,
+          "all_seed_gains_positive": true
+        }
+      }
+    }
+  },
+  "limitations": [
+    "ImageNet-A contains 200 ImageNet classes and naturally difficult examples.",
+    "Masked-200 accuracy is the standard primary protocol; full-1K accuracy is also reported.",
+    "No hyperparameter, adapter, seed, or threshold may be selected using these results."
+  ]
+}

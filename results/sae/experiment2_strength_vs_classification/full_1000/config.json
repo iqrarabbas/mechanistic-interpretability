@@ -1,0 +1,22 @@
+{
+  "samples": 1000,
+  "start_index": 11000,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "run_name": "full_1000",
+  "minimum_feature_support": 0,
+  "minimum_feature_support_effective": 50,
+  "model": "google/vit-base-patch16-224",
+  "sae_checkpoint": "checkpoints/sae/blur4_base_vanilla_paper",
+  "sae_implementation": "paper_vanilla_literal_l2_v3",
+  "layer": "hidden_states[-2]",
+  "tokens": "196 patches; CLS excluded",
+  "active_definition": "z > 0",
+  "feature_delta_definition": "mean Blur-4 minus clean activation across 196 patches per image",
+  "device": "cpu",
+  "python": "3.11.15",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.13.0",
+  "scipy": "1.17.1"
+}

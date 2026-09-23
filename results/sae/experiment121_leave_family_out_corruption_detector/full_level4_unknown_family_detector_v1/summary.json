@@ -1,0 +1,519 @@
+{
+  "configuration": {
+    "run_name": "full_level4_unknown_family_detector_v1",
+    "severity": 4,
+    "corruption_seed": 121000,
+    "batch_size": 8,
+    "workers": 2,
+    "bootstrap": 2000,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "feature_dimension": 152,
+    "test_manifest_sha256": "0c6693b814a136427c1a16971ece39b131ec52b07f7626c526632abbec3d0c31",
+    "train_images": 1000,
+    "clean_validation_images": 1000,
+    "test_images": 991,
+    "family_map": {
+      "noise": [
+        "gaussian_noise",
+        "shot_noise",
+        "impulse_noise"
+      ],
+      "blur": [
+        "defocus_blur",
+        "glass_blur",
+        "motion_blur",
+        "zoom_blur"
+      ],
+      "weather": [
+        "snow",
+        "frost",
+        "fog"
+      ],
+      "appearance": [
+        "brightness",
+        "contrast"
+      ],
+      "digital_geometry": [
+        "elastic_transform",
+        "pixelate",
+        "jpeg_compression"
+      ]
+    },
+    "threshold_rule": "95th percentile of disjoint clean validation scores for each detector",
+    "vit_frozen": true,
+    "clean_counterpart_at_inference": false,
+    "core_model_uses_corruption_name_at_inference": false,
+    "leave_one_family_out_model_selection": "offline evaluation protocol only; different frozen model per held-out family, not a deployable oracle router",
+    "benchmark": "online ImageNet-C algorithms applied to Sketch images at severity 4, not official ImageNet-C"
+  },
+  "clean_fpr": {
+    "noise": 0.04742684157416751,
+    "blur": 0.050454086781029264,
+    "weather": 0.04742684157416751,
+    "appearance": 0.05348133198789102,
+    "digital_geometry": 0.050454086781029264,
+    "all_seen": 0.04843592330978809,
+    "core_noise_blur": 0.04843592330978809,
+    "clean_only": 0.04641775983854692
+  },
+  "thresholds": {
+    "noise": 0.7980699293016355,
+    "blur": 0.7339968522251871,
+    "weather": 0.6884763008725509,
+    "appearance": 0.7274593598091923,
+    "digital_geometry": 0.6936015433375947,
+    "all_seen": 0.7429059601342082,
+    "core_noise_blur": 0.29773029406253115,
+    "clean_only": 194.14715026978587
+  },
+  "results": {
+    "gaussian_noise": {
+      "family": "noise",
+      "held_out_recall": 0.7124117053481333,
+      "held_out_auroc": 0.9533714632499763,
+      "all_seen_recall": 0.9979818365287588,
+      "core_recall": 1.0,
+      "core_auroc": 0.9991436551567539,
+      "clean_only_recall": 1.0,
+      "held_out_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 285,
+        "recall_difference_pp": -28.758829465186675,
+        "paired_bootstrap_95ci_pp": [
+          -31.58678102926337,
+          -26.034308779011095
+        ],
+        "exact_mcnemar_p": 3.217223493417518e-86
+      },
+      "core_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 0,
+        "recall_difference_pp": 0.0,
+        "paired_bootstrap_95ci_pp": [
+          0.0,
+          0.0
+        ],
+        "exact_mcnemar_p": 1.0
+      }
+    },
+    "shot_noise": {
+      "family": "noise",
+      "held_out_recall": 0.7346115035317861,
+      "held_out_auroc": 0.957897566494006,
+      "all_seen_recall": 0.9909182643794148,
+      "core_recall": 0.9949545913218971,
+      "core_auroc": 0.9990428488077867,
+      "clean_only_recall": 1.0,
+      "held_out_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 263,
+        "recall_difference_pp": -26.538849646821394,
+        "paired_bootstrap_95ci_pp": [
+          -29.16246215943491,
+          -23.71342078708375
+        ],
+        "exact_mcnemar_p": 1.349401336733507e-79
+      },
+      "core_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 5,
+        "recall_difference_pp": -0.5045408678102881,
+        "paired_bootstrap_95ci_pp": [
+          -1.0090817356205872,
+          -0.10090817356205317
+        ],
+        "exact_mcnemar_p": 0.0625
+      }
+    },
+    "impulse_noise": {
+      "family": "noise",
+      "held_out_recall": 0.7144298688193743,
+      "held_out_auroc": 0.9619929517015399,
+      "all_seen_recall": 0.9989909182643795,
+      "core_recall": 1.0,
+      "core_auroc": 0.9997291465775227,
+      "clean_only_recall": 1.0,
+      "held_out_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 283,
+        "recall_difference_pp": -28.557013118062567,
+        "paired_bootstrap_95ci_pp": [
+          -31.3824419778002,
+          -25.63067608476287
+        ],
+        "exact_mcnemar_p": 1.2868893973670072e-85
+      },
+      "core_vs_clean_only": {
+        "first_only": 0,
+        "second_only": 0,
+        "recall_difference_pp": 0.0,
+        "paired_bootstrap_95ci_pp": [
+          0.0,
+          0.0
+        ],
+        "exact_mcnemar_p": 1.0
+      }
+    },
+    "defocus_blur": {
+      "family": "blur",
+      "held_out_recall": 0.9798183652875883,
+      "held_out_auroc": 0.9918967987365603,
+      "all_seen_recall": 0.9959636730575177,
+      "core_recall": 1.0,
+      "core_auroc": 0.9995316068633849,
+      "clean_only_recall": 0.8728557013118062,
+      "held_out_vs_clean_only": {
+        "first_only": 119,
+        "second_only": 13,
+        "recall_difference_pp": 10.696266397578203,
+        "paired_bootstrap_95ci_pp": [
+          8.476286579212921,
+          12.81533804238143
+        ],
+        "exact_mcnemar_p": 1.3255152635342784e-22
+      },
+      "core_vs_clean_only": {
+        "first_only": 126,
+        "second_only": 0,
+        "recall_difference_pp": 12.714429868819376,
+        "paired_bootstrap_95ci_pp": [
+          10.696266397578203,
+          14.73259334006054
+        ],
+        "exact_mcnemar_p": 2.350988701644575e-38
+      }
+    },
+    "glass_blur": {
+      "family": "blur",
+      "held_out_recall": 0.9424823410696267,
+      "held_out_auroc": 0.9855918198193429,
+      "all_seen_recall": 0.9959636730575177,
+      "core_recall": 0.9989909182643795,
+      "core_auroc": 0.9987394115149362,
+      "clean_only_recall": 0.4026236125126135,
+      "held_out_vs_clean_only": {
+        "first_only": 546,
+        "second_only": 11,
+        "recall_difference_pp": 53.98587285570131,
+        "paired_bootstrap_95ci_pp": [
+          50.756811301715445,
+          57.31584258324924
+        ],
+        "exact_mcnemar_p": 1.5711723428950483e-145
+      },
+      "core_vs_clean_only": {
+        "first_only": 591,
+        "second_only": 0,
+        "recall_difference_pp": 59.6367305751766,
+        "paired_bootstrap_95ci_pp": [
+          56.609485368314836,
+          62.76740665993944
+        ],
+        "exact_mcnemar_p": 2.4677579418653533e-178
+      }
+    },
+    "motion_blur": {
+      "family": "blur",
+      "held_out_recall": 0.9041372351160444,
+      "held_out_auroc": 0.980821337547514,
+      "all_seen_recall": 0.992936427850656,
+      "core_recall": 1.0,
+      "core_auroc": 0.9984919777492894,
+      "clean_only_recall": 0.29061553985872857,
+      "held_out_vs_clean_only": {
+        "first_only": 617,
+        "second_only": 9,
+        "recall_difference_pp": 61.35216952573158,
+        "paired_bootstrap_95ci_pp": [
+          58.224016145307765,
+          64.37941473259335
+        ],
+        "exact_mcnemar_p": 2.7985302544779504e-169
+      },
+      "core_vs_clean_only": {
+        "first_only": 703,
+        "second_only": 0,
+        "recall_difference_pp": 70.93844601412714,
+        "paired_bootstrap_95ci_pp": [
+          67.91120080726539,
+          73.76387487386478
+        ],
+        "exact_mcnemar_p": 4.7527289157379e-212
+      }
+    },
+    "zoom_blur": {
+      "family": "blur",
+      "held_out_recall": 0.5943491422805247,
+      "held_out_auroc": 0.9189761333331975,
+      "all_seen_recall": 0.8809283551967709,
+      "core_recall": 0.9868819374369324,
+      "core_auroc": 0.9944322311499764,
+      "clean_only_recall": 0.11806256306760847,
+      "held_out_vs_clean_only": {
+        "first_only": 497,
+        "second_only": 25,
+        "recall_difference_pp": 47.62865792129162,
+        "paired_bootstrap_95ci_pp": [
+          44.500504540867816,
+          50.95862764883955
+        ],
+        "exact_mcnemar_p": 4.821842899573102e-115
+      },
+      "core_vs_clean_only": {
+        "first_only": 861,
+        "second_only": 0,
+        "recall_difference_pp": 86.8819374369324,
+        "paired_bootstrap_95ci_pp": [
+          84.76286579212916,
+          89.00100908173563
+        ],
+        "exact_mcnemar_p": 1.3007796349561859e-259
+      }
+    },
+    "snow": {
+      "family": "weather",
+      "held_out_recall": 0.6165489404641776,
+      "held_out_auroc": 0.8913439930107598,
+      "all_seen_recall": 0.6508577194752775,
+      "core_recall": 0.18869828456104945,
+      "core_auroc": 0.6878261569055912,
+      "clean_only_recall": 0.1715438950554995,
+      "held_out_vs_clean_only": {
+        "first_only": 458,
+        "second_only": 17,
+        "recall_difference_pp": 44.500504540867816,
+        "paired_bootstrap_95ci_pp": [
+          41.069626639757814,
+          47.72956609485368
+        ],
+        "exact_mcnemar_p": 1.4290444535878752e-112
+      },
+      "core_vs_clean_only": {
+        "first_only": 61,
+        "second_only": 44,
+        "recall_difference_pp": 1.7154389505549954,
+        "paired_bootstrap_95ci_pp": [
+          -0.30272452068617617,
+          3.7336024217961645
+        ],
+        "exact_mcnemar_p": 0.11799998150585847
+      }
+    },
+    "frost": {
+      "family": "weather",
+      "held_out_recall": 0.649848637739657,
+      "held_out_auroc": 0.9097090769498647,
+      "all_seen_recall": 0.8113017154389506,
+      "core_recall": 0.5247225025227044,
+      "core_auroc": 0.8919213384639353,
+      "clean_only_recall": 0.36629667003027244,
+      "held_out_vs_clean_only": {
+        "first_only": 346,
+        "second_only": 65,
+        "recall_difference_pp": 28.355196770938452,
+        "paired_bootstrap_95ci_pp": [
+          24.9217961654894,
+          31.886982845610497
+        ],
+        "exact_mcnemar_p": 2.1277481530007718e-47
+      },
+      "core_vs_clean_only": {
+        "first_only": 199,
+        "second_only": 42,
+        "recall_difference_pp": 15.84258324924319,
+        "paired_bootstrap_95ci_pp": [
+          13.115539858728557,
+          18.768920282542883
+        ],
+        "exact_mcnemar_p": 1.265209616602235e-25
+      }
+    },
+    "fog": {
+      "family": "weather",
+      "held_out_recall": 0.7699293642785066,
+      "held_out_auroc": 0.9475145125503904,
+      "all_seen_recall": 0.9162462159434914,
+      "core_recall": 0.9323915237134208,
+      "core_auroc": 0.9868911016504748,
+      "clean_only_recall": 0.3562058526740666,
+      "held_out_vs_clean_only": {
+        "first_only": 454,
+        "second_only": 44,
+        "recall_difference_pp": 41.37235116044399,
+        "paired_bootstrap_95ci_pp": [
+          37.638748738647834,
+          44.90413723511604
+        ],
+        "exact_mcnemar_p": 6.847268879551484e-87
+      },
+      "core_vs_clean_only": {
+        "first_only": 591,
+        "second_only": 20,
+        "recall_difference_pp": 57.618567103935426,
+        "paired_bootstrap_95ci_pp": [
+          54.18516649848638,
+          60.84762865792129
+        ],
+        "exact_mcnemar_p": 3.844057657890894e-147
+      }
+    },
+    "brightness": {
+      "family": "appearance",
+      "held_out_recall": 0.5227043390514632,
+      "held_out_auroc": 0.8488648085035757,
+      "all_seen_recall": 0.5842583249243188,
+      "core_recall": 0.3077699293642785,
+      "core_auroc": 0.7607671872279373,
+      "clean_only_recall": 0.2129162462159435,
+      "held_out_vs_clean_only": {
+        "first_only": 327,
+        "second_only": 20,
+        "recall_difference_pp": 30.978809283551968,
+        "paired_bootstrap_95ci_pp": [
+          27.951564076690218,
+          34.10696266397578
+        ],
+        "exact_mcnemar_p": 1.1192610323707486e-72
+      },
+      "core_vs_clean_only": {
+        "first_only": 127,
+        "second_only": 33,
+        "recall_difference_pp": 9.4853683148335,
+        "paired_bootstrap_95ci_pp": [
+          7.161957618567101,
+          11.907164480322907
+        ],
+        "exact_mcnemar_p": 3.3085267653952476e-14
+      }
+    },
+    "contrast": {
+      "family": "appearance",
+      "held_out_recall": 0.9767911200807265,
+      "held_out_auroc": 0.9924140676787353,
+      "all_seen_recall": 0.992936427850656,
+      "core_recall": 0.9919273461150353,
+      "core_auroc": 0.9927735084987898,
+      "clean_only_recall": 0.6871846619576185,
+      "held_out_vs_clean_only": {
+        "first_only": 299,
+        "second_only": 12,
+        "recall_difference_pp": 28.960645812310805,
+        "paired_bootstrap_95ci_pp": [
+          25.83249243188699,
+          31.88698284561049
+        ],
+        "exact_mcnemar_p": 6.88383334777728e-73
+      },
+      "core_vs_clean_only": {
+        "first_only": 308,
+        "second_only": 6,
+        "recall_difference_pp": 30.47426841574168,
+        "paired_bootstrap_95ci_pp": [
+          27.7497477295661,
+          33.50151362260344
+        ],
+        "exact_mcnemar_p": 7.75309691000671e-83
+      }
+    },
+    "elastic_transform": {
+      "family": "digital_geometry",
+      "held_out_recall": 0.20787083753784055,
+      "held_out_auroc": 0.8099667949995977,
+      "all_seen_recall": 0.49848637739656915,
+      "core_recall": 0.06760847628657922,
+      "core_auroc": 0.6772241800829055,
+      "clean_only_recall": 0.044399596367305755,
+      "held_out_vs_clean_only": {
+        "first_only": 189,
+        "second_only": 27,
+        "recall_difference_pp": 16.34712411705348,
+        "paired_bootstrap_95ci_pp": [
+          13.824419778002017,
+          19.07164480322906
+        ],
+        "exact_mcnemar_p": 3.99385225884109e-31
+      },
+      "core_vs_clean_only": {
+        "first_only": 53,
+        "second_only": 30,
+        "recall_difference_pp": 2.3208879919273464,
+        "paired_bootstrap_95ci_pp": [
+          0.5045408678102923,
+          4.139757820383438
+        ],
+        "exact_mcnemar_p": 0.015232201861994662
+      }
+    },
+    "pixelate": {
+      "family": "digital_geometry",
+      "held_out_recall": 0.42885973763874874,
+      "held_out_auroc": 0.8778227050518237,
+      "all_seen_recall": 0.8183652875882946,
+      "core_recall": 0.28557013118062563,
+      "core_auroc": 0.8159296432778967,
+      "clean_only_recall": 0.07366296670030273,
+      "held_out_vs_clean_only": {
+        "first_only": 380,
+        "second_only": 28,
+        "recall_difference_pp": 35.51967709384461,
+        "paired_bootstrap_95ci_pp": [
+          32.18970736629667,
+          38.74873864783047
+        ],
+        "exact_mcnemar_p": 5.205513032494138e-80
+      },
+      "core_vs_clean_only": {
+        "first_only": 243,
+        "second_only": 33,
+        "recall_difference_pp": 21.19071644803229,
+        "paired_bootstrap_95ci_pp": [
+          18.163471241170537,
+          24.220484359233087
+        ],
+        "exact_mcnemar_p": 1.0600144229539748e-40
+      }
+    },
+    "jpeg_compression": {
+      "family": "digital_geometry",
+      "held_out_recall": 0.1301715438950555,
+      "held_out_auroc": 0.6179398644307343,
+      "all_seen_recall": 0.44702320887991925,
+      "core_recall": 0.15338042381432895,
+      "core_auroc": 0.6425905806140226,
+      "clean_only_recall": 0.0958627648839556,
+      "held_out_vs_clean_only": {
+        "first_only": 94,
+        "second_only": 60,
+        "recall_difference_pp": 3.4308779011099895,
+        "paired_bootstrap_95ci_pp": [
+          1.009081735620586,
+          5.754288597376375
+        ],
+        "exact_mcnemar_p": 0.007628288247232723
+      },
+      "core_vs_clean_only": {
+        "first_only": 111,
+        "second_only": 54,
+        "recall_difference_pp": 5.7517658930373345,
+        "paired_bootstrap_95ci_pp": [
+          3.128153380423815,
+          8.176084762865779
+        ],
+        "exact_mcnemar_p": 1.0775645165689892e-05
+      }
+    }
+  },
+  "macro_held_out_recall": 0.6589976454759502,
+  "macro_all_seen_recall": 0.8382105617221661,
+  "macro_clean_only_recall": 0.4461486713757148,
+  "macro_core_unseen_recall": 0.4315085771947528,
+  "macro_core_seen_recall": 0.9972610638604584,
+  "limitations": [
+    "Previously studied Sketch development images are reused for fitting, but all test image hashes are excluded from prior frozen manifests.",
+    "Leave-one-family-out results test unknown corruption algorithms, not a guarantee for all possible image changes.",
+    "Only the core Noise+Blur model is a single fixed detector for all corruption families; LOFO rows use distinct offline-frozen models.",
+    "Only severity 4 is evaluated; clean images from different natural domains may have a different false-positive rate.",
+    "All-seen results are a supervised known-corruption ceiling, not an unknown-family test."
+  ]
+}

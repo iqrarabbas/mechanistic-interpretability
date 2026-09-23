@@ -1,0 +1,195 @@
+{
+  "configuration": {
+    "calibration_samples": 4,
+    "validation_samples": 2,
+    "evaluation_samples": 2,
+    "calibration_start": 41400,
+    "validation_start": 41404,
+    "evaluation_start": 41406,
+    "patch_counts": [
+      1
+    ],
+    "alphas": [
+      0.0
+    ],
+    "quantile": 0.99,
+    "batch_size": 2,
+    "seed": 0,
+    "run_name": "smoke_pareto_identity",
+    "device": "cpu",
+    "status": "exploratory: validation/evaluation indices were examined in Experiment 13",
+    "fixed_features": [
+      14852,
+      8823,
+      14024,
+      6757,
+      14984,
+      18955,
+      17814,
+      14474,
+      8994,
+      10300,
+      6730,
+      11406,
+      13749,
+      5554,
+      14655,
+      16081,
+      8672,
+      16426,
+      7015,
+      21185,
+      10763,
+      12345,
+      9686,
+      15982,
+      507,
+      10204,
+      20014,
+      23808,
+      7632,
+      3157,
+      12986,
+      8139,
+      16639,
+      7371,
+      12743,
+      18362,
+      18732,
+      13431,
+      1506,
+      5411,
+      4999,
+      5976,
+      12202,
+      19801,
+      13714,
+      6761,
+      9679,
+      10584,
+      4889,
+      14915,
+      8486,
+      18178,
+      2215,
+      21890,
+      20613,
+      17227,
+      14446,
+      13320,
+      17582,
+      13636,
+      23097,
+      23246,
+      5878,
+      13554
+    ]
+  },
+  "validation_selected": "patches1_alpha0",
+  "validation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 2.4422101974487305
+      },
+      "patches1_alpha0": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 2.4422106742858887,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 0.25066518783569336
+      },
+      "patches1_alpha0": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 0.25066375732421875,
+        "margin_change_vs_original": -1.430511474609375e-06,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    }
+  },
+  "evaluation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 2.540391445159912
+      },
+      "patches1_alpha0": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 2.5403919219970703,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.0,
+        "mean_margin": -1.2010159492492676
+      },
+      "patches1_alpha0": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": -1.2010159492492676,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    }
+  },
+  "blur4_pareto_front": [
+    {
+      "name": "patches1_alpha0",
+      "accuracy": 0.0,
+      "accuracy_gain_vs_original": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "mean_margin": -1.2010159492492676,
+      "margin_change_vs_original": 0.0,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "mean_changed_feature_patch_pairs": 0.0,
+      "mean_changed_patches": 0.0
+    }
+  ]
+}

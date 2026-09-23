@@ -1,0 +1,31 @@
+{
+  "calibration_samples": 8,
+  "validation_samples": 4,
+  "evaluation_samples": 4,
+  "calibration_start": 41000,
+  "validation_start": 41008,
+  "evaluation_start": 41012,
+  "patches_per_calibration_image": 2,
+  "batch_size": 2,
+  "num_workers": 0,
+  "seed": 0,
+  "taus": [
+    3.0
+  ],
+  "kappas": [
+    2.0
+  ],
+  "alpha_maxes": [
+    0.25
+  ],
+  "adaptive_scales": [
+    1.0
+  ],
+  "clean_loss_penalty": 2.0,
+  "sae_source": "blur",
+  "run_name": "smoke_agnostic_4",
+  "model": "google/vit-base-patch16-224",
+  "sae": "checkpoints/sae/blur4_base_vanilla_paper",
+  "status": "exploratory; all local ImageNet validation images were used previously",
+  "limitation": "The fixed SAE was originally trained with one corruption family; only the repair rule is corruption-agnostic"
+}

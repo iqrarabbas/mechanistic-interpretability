@@ -1,0 +1,224 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "calibration_samples": 4,
+    "train_samples_per_condition": 4,
+    "validation_samples_per_condition": 4,
+    "severity": 4,
+    "epochs": 2,
+    "patience": 1,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 2,
+    "router_batch_size": 128,
+    "workers": 0,
+    "resume": false,
+    "run_name": "smoke_seed0_4_v1",
+    "model": "google/vit-base-patch16-224",
+    "vit_frozen": true,
+    "attention_implementation": "eager",
+    "classes": {
+      "clean": 0,
+      "noise": 1,
+      "blur": 2
+    },
+    "features": [
+      "entropy",
+      "maximum",
+      "cls_entropy",
+      "cls_maximum",
+      "cls_patch_mass"
+    ],
+    "feature_dimension": 720,
+    "router_parameters": 2163,
+    "router_uses_only_test_image": true,
+    "clean_counterpart_used_at_inference": false,
+    "corruption_label_used_at_inference": false,
+    "imageNetV2_accessed": false,
+    "status": "development diagnostic only; no adapter routing or final evaluation"
+  },
+  "splits": {
+    "0": {
+      "clean_calibration": {
+        "start": 15000,
+        "end": 15004
+      },
+      "router_training": {
+        "start": 15004,
+        "end": 20000
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "0": {
+      "best_validation_accuracy": 0.3928571343421936,
+      "history": [
+        {
+          "epoch": 1,
+          "training_loss": 1.6323100328445435,
+          "validation_accuracy": 0.2857142984867096
+        },
+        {
+          "epoch": 2,
+          "training_loss": 1.2511894702911377,
+          "validation_accuracy": 0.3928571343421936
+        }
+      ]
+    }
+  },
+  "results": {
+    "0": {
+      "seen_validation": {
+        "accuracy": 0.3928571343421936,
+        "confusion_matrix_rows_true_columns_predicted": [
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            6,
+            0,
+            6
+          ],
+          [
+            3,
+            0,
+            9
+          ]
+        ],
+        "by_condition": {
+          "clean": {
+            "samples": 4,
+            "accuracy": 0.5,
+            "mean_probabilities_clean_noise_blur": [
+              0.36884602904319763,
+              0.1388145089149475,
+              0.49233949184417725
+            ],
+            "mean_clean_abnormality": 1.1013050079345703
+          },
+          "disk_blur": {
+            "samples": 4,
+            "accuracy": 0.75,
+            "mean_probabilities_clean_noise_blur": [
+              0.28814512491226196,
+              0.12785346806049347,
+              0.5840014219284058
+            ],
+            "mean_clean_abnormality": 1.1083438396453857
+          },
+          "gaussian_blur": {
+            "samples": 4,
+            "accuracy": 0.75,
+            "mean_probabilities_clean_noise_blur": [
+              0.22945758700370789,
+              0.11209122836589813,
+              0.6584511995315552
+            ],
+            "mean_clean_abnormality": 1.326867699623108
+          },
+          "gaussian_noise": {
+            "samples": 4,
+            "accuracy": 0.0,
+            "mean_probabilities_clean_noise_blur": [
+              0.38410404324531555,
+              0.2474181205034256,
+              0.36847782135009766
+            ],
+            "mean_clean_abnormality": 1.0380579233169556
+          },
+          "impulse_noise": {
+            "samples": 4,
+            "accuracy": 0.0,
+            "mean_probabilities_clean_noise_blur": [
+              0.46178463101387024,
+              0.135581374168396,
+              0.40263402462005615
+            ],
+            "mean_clean_abnormality": 1.013800859451294
+          },
+          "motion_blur": {
+            "samples": 4,
+            "accuracy": 0.75,
+            "mean_probabilities_clean_noise_blur": [
+              0.2759658098220825,
+              0.0928022712469101,
+              0.6312319040298462
+            ],
+            "mean_clean_abnormality": 1.18434476852417
+          },
+          "shot_noise": {
+            "samples": 4,
+            "accuracy": 0.0,
+            "mean_probabilities_clean_noise_blur": [
+              0.3951101005077362,
+              0.18398284912109375,
+              0.42090708017349243
+            ],
+            "mean_clean_abnormality": 1.0804455280303955
+          }
+        }
+      },
+      "unseen_validation": {
+        "jpeg": {
+          "samples": 4,
+          "accuracy": 0.5,
+          "mean_probabilities_clean_noise_blur": [
+            0.3276653587818146,
+            0.15885323286056519,
+            0.5134813785552979
+          ],
+          "mean_clean_abnormality": 1.0861155986785889
+        },
+        "pixelate": {
+          "samples": 4,
+          "accuracy": 0.25,
+          "mean_probabilities_clean_noise_blur": [
+            0.2815292179584503,
+            0.1476123332977295,
+            0.5708585381507874
+          ],
+          "mean_clean_abnormality": 1.1229698657989502
+        },
+        "brightness": {
+          "samples": 4,
+          "accuracy": 0.0,
+          "mean_probabilities_clean_noise_blur": [
+            0.1510455161333084,
+            0.29306742548942566,
+            0.5558871030807495
+          ],
+          "mean_clean_abnormality": 1.1746262311935425
+        },
+        "contrast": {
+          "samples": 4,
+          "accuracy": 0.0,
+          "mean_probabilities_clean_noise_blur": [
+            0.12358733266592026,
+            0.2773156464099884,
+            0.5990970134735107
+          ],
+          "mean_clean_abnormality": 1.2487761974334717
+        }
+      }
+    }
+  },
+  "guardrails": [
+    "Clean calibration, router training, and validation image ranges are disjoint within each seed.",
+    "Unseen corruption types are absent from fitting but evaluated on the development validation range.",
+    "This phase diagnoses routing information only and does not select or apply an adapter.",
+    "ImageNetV2 and the consumed final reserve are not accessed."
+  ]
+}

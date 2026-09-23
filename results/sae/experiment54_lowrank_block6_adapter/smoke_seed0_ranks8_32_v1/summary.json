@@ -1,0 +1,202 @@
+{
+  "configuration": {
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "full_reference": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment50_block6_clean_preservation/full_3seed_identity_sweep_v1/summary.json",
+    "seeds": [
+      0
+    ],
+    "ranks": [
+      8,
+      32
+    ],
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 2,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "image_batch_size": 2,
+    "num_workers": 0,
+    "bootstrap_repetitions": 100,
+    "max_samples": 8,
+    "clean_loss_tolerance": 0.005,
+    "retained_gain_fraction": 0.9,
+    "run_name": "smoke_seed0_ranks8_32_v1",
+    "device": "cuda",
+    "block": 6,
+    "model": "google/vit-base-patch16-224",
+    "frozen_components": [
+      "ViT"
+    ],
+    "identity_weight": 0.2,
+    "full_adapter_parameters": 741120,
+    "full_adapter_reference_mean_noise4_gain": 0.03133333333333333,
+    "imageNetV2_accessed": false,
+    "status": "development architecture sweep"
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "training": {
+    "seed_0": {
+      "best_validation_total": {
+        "rank_8": 1.1812891066074371,
+        "rank_32": 1.1778412461280823
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "rank_8": {
+              "total": 1.2847553193569183,
+              "residual": 1.245335966348648,
+              "classification": 0.7880629687570035,
+              "preservation": 0.0003160834312438965,
+              "clean_identity": 1.929515235588042e-06
+            },
+            "rank_32": {
+              "total": 1.2830807566642761,
+              "residual": 1.2436334788799286,
+              "classification": 0.7873357245698571,
+              "preservation": 0.0008231401443481445,
+              "clean_identity": 0.0001966692325368058
+            }
+          },
+          "validation": {
+            "rank_8": {
+              "total": 1.1812891066074371,
+              "residual": 1.1704919934272766,
+              "classification": 0.21582945878617465,
+              "preservation": 8.64267349243164e-05,
+              "clean_identity": 6.648007797593891e-06
+            },
+            "rank_32": {
+              "total": 1.1778412461280823,
+              "residual": 1.166646271944046,
+              "classification": 0.2155626608291641,
+              "preservation": 0.0054152607917785645,
+              "clean_identity": 0.0007303129968931898
+            }
+          }
+        }
+      ]
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 0.875,
+      "baseline_noise4_accuracy": 0.875,
+      "variants": {
+        "rank_8": {
+          "identity_weight": 0.2,
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "rank_32": {
+          "identity_weight": 0.2,
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "rank_8": {
+      "rank": 8,
+      "trainable_parameters": 14632,
+      "parameter_reduction_fraction": 0.9802569084628671,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise4_gain": 0.0,
+      "retained_full_gain_fraction": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0,
+      "eligible_clean_tolerance": true,
+      "eligible_retained_gain": false
+    },
+    "rank_32": {
+      "rank": 32,
+      "trainable_parameters": 56224,
+      "parameter_reduction_fraction": 0.9241364421416235,
+      "noise4_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise4_gain": 0.0,
+      "retained_full_gain_fraction": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0,
+      "eligible_clean_tolerance": true,
+      "eligible_retained_gain": false
+    }
+  },
+  "selection_rule": "Smallest adapter retaining at least 90.0% of the full adapter mean Noise-4 gain with mean clean loss no worse than -0.50 pp",
+  "selected_variant": null
+}

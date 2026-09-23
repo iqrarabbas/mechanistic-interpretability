@@ -1,0 +1,1647 @@
+{
+  "configuration": {
+    "calibration_samples": 2000,
+    "validation_samples": 2000,
+    "evaluation_samples": 5000,
+    "calibration_start": 30000,
+    "validation_start": 40000,
+    "evaluation_start": 45000,
+    "patch_counts": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      196
+    ],
+    "alphas": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "quantile": 0.99,
+    "batch_size": 2,
+    "seed": 0,
+    "run_name": "full_patch_budget_pareto_gpu",
+    "device": "cuda",
+    "status": "exploratory: validation/evaluation indices were examined in Experiment 13",
+    "fixed_features": [
+      14852,
+      8823,
+      14024,
+      6757,
+      14984,
+      18955,
+      17814,
+      14474,
+      8994,
+      10300,
+      6730,
+      11406,
+      13749,
+      5554,
+      14655,
+      16081,
+      8672,
+      16426,
+      7015,
+      21185,
+      10763,
+      12345,
+      9686,
+      15982,
+      507,
+      10204,
+      20014,
+      23808,
+      7632,
+      3157,
+      12986,
+      8139,
+      16639,
+      7371,
+      12743,
+      18362,
+      18732,
+      13431,
+      1506,
+      5411,
+      4999,
+      5976,
+      12202,
+      19801,
+      13714,
+      6761,
+      9679,
+      10584,
+      4889,
+      14915,
+      8486,
+      18178,
+      2215,
+      21890,
+      20613,
+      17227,
+      14446,
+      13320,
+      17582,
+      13636,
+      23097,
+      23246,
+      5878,
+      13554
+    ]
+  },
+  "validation_selected": "patches32_alpha1",
+  "validation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.795,
+        "mean_margin": 3.48117995262146
+      },
+      "patches4_alpha0.25": {
+        "accuracy": 0.795,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 3.481397867202759,
+        "margin_change_vs_original": 0.0002180418960051611,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 11.563,
+        "mean_changed_patches": 3.997
+      },
+      "patches4_alpha0.5": {
+        "accuracy": 0.795,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 3.481562614440918,
+        "margin_change_vs_original": 0.00038243125891312957,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 11.563,
+        "mean_changed_patches": 3.997
+      },
+      "patches4_alpha0.75": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.4817068576812744,
+        "margin_change_vs_original": 0.0005268526147119701,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 11.563,
+        "mean_changed_patches": 3.997
+      },
+      "patches4_alpha1": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.4818427562713623,
+        "margin_change_vs_original": 0.0006626852555200458,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 11.563,
+        "mean_changed_patches": 3.997
+      },
+      "patches8_alpha0.25": {
+        "accuracy": 0.795,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "mean_margin": 3.4815971851348877,
+        "margin_change_vs_original": 0.00041730786324478686,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 25.384,
+        "mean_changed_patches": 7.95
+      },
+      "patches8_alpha0.5": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.481929063796997,
+        "margin_change_vs_original": 0.0007489806157536805,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 25.384,
+        "mean_changed_patches": 7.95
+      },
+      "patches8_alpha0.75": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.48221492767334,
+        "margin_change_vs_original": 0.0010348481591790915,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 25.384,
+        "mean_changed_patches": 7.95
+      },
+      "patches8_alpha1": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.4824678897857666,
+        "margin_change_vs_original": 0.0012876731343567371,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 25.384,
+        "mean_changed_patches": 7.95
+      },
+      "patches16_alpha0.25": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.481611728668213,
+        "margin_change_vs_original": 0.00043151460704393685,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 47.696,
+        "mean_changed_patches": 15.5785
+      },
+      "patches16_alpha0.5": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.4819064140319824,
+        "margin_change_vs_original": 0.0007263958686962724,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 47.696,
+        "mean_changed_patches": 15.5785
+      },
+      "patches16_alpha0.75": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.4820926189422607,
+        "margin_change_vs_original": 0.0009125067153945565,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 47.696,
+        "mean_changed_patches": 15.5785
+      },
+      "patches16_alpha1": {
+        "accuracy": 0.7965,
+        "accuracy_gain_vs_original": 0.0015,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0035
+        ],
+        "mean_margin": 3.4822113513946533,
+        "margin_change_vs_original": 0.0010314075043424964,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.25,
+        "mean_changed_feature_patch_pairs": 47.696,
+        "mean_changed_patches": 15.5785
+      },
+      "patches32_alpha0.25": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.4817299842834473,
+        "margin_change_vs_original": 0.0005498316022567451,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 79.5345,
+        "mean_changed_patches": 28.974
+      },
+      "patches32_alpha0.5": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.482074737548828,
+        "margin_change_vs_original": 0.0008945302688516676,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 79.5345,
+        "mean_changed_patches": 28.974
+      },
+      "patches32_alpha0.75": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.48225474357605,
+        "margin_change_vs_original": 0.001074690604582429,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 79.5345,
+        "mean_changed_patches": 28.974
+      },
+      "patches32_alpha1": {
+        "accuracy": 0.7965,
+        "accuracy_gain_vs_original": 0.0015,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0035
+        ],
+        "mean_margin": 3.482295513153076,
+        "margin_change_vs_original": 0.001115481136366725,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.25,
+        "mean_changed_feature_patch_pairs": 79.5345,
+        "mean_changed_patches": 28.974
+      },
+      "patches64_alpha0.25": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.481943368911743,
+        "margin_change_vs_original": 0.000763445277698338,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 114.8175,
+        "mean_changed_patches": 47.207
+      },
+      "patches64_alpha0.5": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.4824514389038086,
+        "margin_change_vs_original": 0.0012713124742731452,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 114.8175,
+        "mean_changed_patches": 47.207
+      },
+      "patches64_alpha0.75": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.482734203338623,
+        "margin_change_vs_original": 0.00155406235717237,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 114.8175,
+        "mean_changed_patches": 47.207
+      },
+      "patches64_alpha1": {
+        "accuracy": 0.7965,
+        "accuracy_gain_vs_original": 0.0015,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0035
+        ],
+        "mean_margin": 3.4828150272369385,
+        "margin_change_vs_original": 0.0016350914957001805,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.25,
+        "mean_changed_feature_patch_pairs": 114.8175,
+        "mean_changed_patches": 47.207
+      },
+      "patches196_alpha0.25": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.482052803039551,
+        "margin_change_vs_original": 0.0008727239328436553,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 135.136,
+        "mean_changed_patches": 60.4675
+      },
+      "patches196_alpha0.5": {
+        "accuracy": 0.7955,
+        "accuracy_gain_vs_original": 0.0005,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0015
+        ],
+        "mean_margin": 3.482649326324463,
+        "margin_change_vs_original": 0.0014692277181893587,
+        "predictions_recovered": 1,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 135.136,
+        "mean_changed_patches": 60.4675
+      },
+      "patches196_alpha0.75": {
+        "accuracy": 0.796,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0025
+        ],
+        "mean_margin": 3.482999563217163,
+        "margin_change_vs_original": 0.00181951851118356,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 135.136,
+        "mean_changed_patches": 60.4675
+      },
+      "patches196_alpha1": {
+        "accuracy": 0.797,
+        "accuracy_gain_vs_original": 0.002,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.004
+        ],
+        "mean_margin": 3.4831018447875977,
+        "margin_change_vs_original": 0.001921817776747048,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 135.136,
+        "mean_changed_patches": 60.4675
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.628,
+        "mean_margin": 1.3872157335281372
+      },
+      "patches4_alpha0.25": {
+        "accuracy": 0.63,
+        "accuracy_gain_vs_original": 0.002,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.004
+        ],
+        "mean_margin": 1.3940848112106323,
+        "margin_change_vs_original": 0.00686919130384922,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 52.958,
+        "mean_changed_patches": 3.9985
+      },
+      "patches4_alpha0.5": {
+        "accuracy": 0.6305,
+        "accuracy_gain_vs_original": 0.0025,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.005
+        ],
+        "mean_margin": 1.3992608785629272,
+        "margin_change_vs_original": 0.012045148760080338,
+        "predictions_recovered": 5,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.0625,
+        "mean_changed_feature_patch_pairs": 52.958,
+        "mean_changed_patches": 3.9985
+      },
+      "patches4_alpha0.75": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.0055
+        ],
+        "mean_margin": 1.403024673461914,
+        "margin_change_vs_original": 0.015809064731001854,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.03125,
+        "mean_changed_feature_patch_pairs": 52.958,
+        "mean_changed_patches": 3.9985
+      },
+      "patches4_alpha1": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.0055
+        ],
+        "mean_margin": 1.405832290649414,
+        "margin_change_vs_original": 0.018616707995533943,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.03125,
+        "mean_changed_feature_patch_pairs": 52.958,
+        "mean_changed_patches": 3.9985
+      },
+      "patches8_alpha0.25": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.0055
+        ],
+        "mean_margin": 1.3977913856506348,
+        "margin_change_vs_original": 0.010575688444077969,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.03125,
+        "mean_changed_feature_patch_pairs": 87.2715,
+        "mean_changed_patches": 7.991
+      },
+      "patches8_alpha0.5": {
+        "accuracy": 0.6315,
+        "accuracy_gain_vs_original": 0.0035,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.4062843322753906,
+        "margin_change_vs_original": 0.019068580120801926,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.0390625,
+        "mean_changed_feature_patch_pairs": 87.2715,
+        "mean_changed_patches": 7.991
+      },
+      "patches8_alpha0.75": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.006
+        ],
+        "mean_margin": 1.412847876548767,
+        "margin_change_vs_original": 0.02563222125172615,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.109375,
+        "mean_changed_feature_patch_pairs": 87.2715,
+        "mean_changed_patches": 7.991
+      },
+      "patches8_alpha1": {
+        "accuracy": 0.6315,
+        "accuracy_gain_vs_original": 0.0035,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.007
+        ],
+        "mean_margin": 1.4178035259246826,
+        "margin_change_vs_original": 0.030587824061512947,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.0654296875,
+        "mean_changed_feature_patch_pairs": 87.2715,
+        "mean_changed_patches": 7.991
+      },
+      "patches16_alpha0.25": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.0055
+        ],
+        "mean_margin": 1.401031494140625,
+        "margin_change_vs_original": 0.013815799728035927,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 0.03125,
+        "mean_changed_feature_patch_pairs": 133.8355,
+        "mean_changed_patches": 15.8945
+      },
+      "patches16_alpha0.5": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.006
+        ],
+        "mean_margin": 1.4126718044281006,
+        "margin_change_vs_original": 0.025456050410866737,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.109375,
+        "mean_changed_feature_patch_pairs": 133.8355,
+        "mean_changed_patches": 15.8945
+      },
+      "patches16_alpha0.75": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          -1.2499999999999289e-05,
+          0.0065
+        ],
+        "mean_margin": 1.421881079673767,
+        "margin_change_vs_original": 0.03466540575027466,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 0.14599609375,
+        "mean_changed_feature_patch_pairs": 133.8355,
+        "mean_changed_patches": 15.8945
+      },
+      "patches16_alpha1": {
+        "accuracy": 0.6325,
+        "accuracy_gain_vs_original": 0.0045,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.0085
+        ],
+        "mean_margin": 1.4290817975997925,
+        "margin_change_vs_original": 0.04186602681875229,
+        "predictions_recovered": 12,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 0.03515625,
+        "mean_changed_feature_patch_pairs": 133.8355,
+        "mean_changed_patches": 15.8945
+      },
+      "patches32_alpha0.25": {
+        "accuracy": 0.6305,
+        "accuracy_gain_vs_original": 0.0025,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.005
+        ],
+        "mean_margin": 1.402371883392334,
+        "margin_change_vs_original": 0.015156001783907413,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 188.881,
+        "mean_changed_patches": 30.826
+      },
+      "patches32_alpha0.5": {
+        "accuracy": 0.6315,
+        "accuracy_gain_vs_original": 0.0035,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.4152154922485352,
+        "margin_change_vs_original": 0.027999764308333397,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.0654296875,
+        "mean_changed_feature_patch_pairs": 188.881,
+        "mean_changed_patches": 30.826
+      },
+      "patches32_alpha0.75": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          -0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.425402045249939,
+        "margin_change_vs_original": 0.03818649798631668,
+        "predictions_recovered": 10,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.1795654296875,
+        "mean_changed_feature_patch_pairs": 188.881,
+        "mean_changed_patches": 30.826
+      },
+      "patches32_alpha1": {
+        "accuracy": 0.6345,
+        "accuracy_gain_vs_original": 0.0065,
+        "accuracy_gain_95ci": [
+          0.002,
+          0.011
+        ],
+        "mean_margin": 1.4336457252502441,
+        "margin_change_vs_original": 0.046430040150880814,
+        "predictions_recovered": 17,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.007197380065917969,
+        "mean_changed_feature_patch_pairs": 188.881,
+        "mean_changed_patches": 30.826
+      },
+      "patches64_alpha0.25": {
+        "accuracy": 0.6305,
+        "accuracy_gain_vs_original": 0.0025,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.005
+        ],
+        "mean_margin": 1.402315378189087,
+        "margin_change_vs_original": 0.015099678188562393,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 243.376,
+        "mean_changed_patches": 53.9945
+      },
+      "patches64_alpha0.5": {
+        "accuracy": 0.6315,
+        "accuracy_gain_vs_original": 0.0035,
+        "accuracy_gain_95ci": [
+          0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.41523015499115,
+        "margin_change_vs_original": 0.028014471754431725,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.0654296875,
+        "mean_changed_feature_patch_pairs": 243.376,
+        "mean_changed_patches": 53.9945
+      },
+      "patches64_alpha0.75": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          -0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.4255422353744507,
+        "margin_change_vs_original": 0.03832662105560303,
+        "predictions_recovered": 10,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.1795654296875,
+        "mean_changed_feature_patch_pairs": 243.376,
+        "mean_changed_patches": 53.9945
+      },
+      "patches64_alpha1": {
+        "accuracy": 0.634,
+        "accuracy_gain_vs_original": 0.006,
+        "accuracy_gain_95ci": [
+          0.0015,
+          0.0105
+        ],
+        "mean_margin": 1.4337987899780273,
+        "margin_change_vs_original": 0.046583086252212524,
+        "predictions_recovered": 16,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.01181793212890625,
+        "mean_changed_feature_patch_pairs": 243.376,
+        "mean_changed_patches": 53.9945
+      },
+      "patches196_alpha0.25": {
+        "accuracy": 0.6305,
+        "accuracy_gain_vs_original": 0.0025,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.005
+        ],
+        "mean_margin": 1.4024136066436768,
+        "margin_change_vs_original": 0.015197984874248505,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 277.531,
+        "mean_changed_patches": 74.637
+      },
+      "patches196_alpha0.5": {
+        "accuracy": 0.631,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          -0.0005,
+          0.0065
+        ],
+        "mean_margin": 1.415406584739685,
+        "margin_change_vs_original": 0.02819092944264412,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 0.14599609375,
+        "mean_changed_feature_patch_pairs": 277.531,
+        "mean_changed_patches": 74.637
+      },
+      "patches196_alpha0.75": {
+        "accuracy": 0.6305,
+        "accuracy_gain_vs_original": 0.0025,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.006
+        ],
+        "mean_margin": 1.4258006811141968,
+        "margin_change_vs_original": 0.03858499601483345,
+        "predictions_recovered": 9,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.266845703125,
+        "mean_changed_feature_patch_pairs": 277.531,
+        "mean_changed_patches": 74.637
+      },
+      "patches196_alpha1": {
+        "accuracy": 0.6335,
+        "accuracy_gain_vs_original": 0.0055,
+        "accuracy_gain_95ci": [
+          0.001,
+          0.01
+        ],
+        "mean_margin": 1.4341418743133545,
+        "margin_change_vs_original": 0.046926070004701614,
+        "predictions_recovered": 15,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 0.0192108154296875,
+        "mean_changed_feature_patch_pairs": 277.531,
+        "mean_changed_patches": 74.637
+      }
+    }
+  },
+  "evaluation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.8104,
+        "mean_margin": 3.765183210372925
+      },
+      "patches4_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.765475034713745,
+        "margin_change_vs_original": 0.00029180626734159887,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 12.2612,
+        "mean_changed_patches": 3.9978
+      },
+      "patches4_alpha0.5": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0006,
+          0.001
+        ],
+        "mean_margin": 3.765737533569336,
+        "margin_change_vs_original": 0.0005545254098251462,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 12.2612,
+        "mean_changed_patches": 3.9978
+      },
+      "patches4_alpha0.75": {
+        "accuracy": 0.8104,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.001
+        ],
+        "mean_margin": 3.7659835815429688,
+        "margin_change_vs_original": 0.000800074078142643,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 12.2612,
+        "mean_changed_patches": 3.9978
+      },
+      "patches4_alpha1": {
+        "accuracy": 0.8102,
+        "accuracy_gain_vs_original": -0.0002,
+        "accuracy_gain_95ci": [
+          -0.0014,
+          0.0008
+        ],
+        "mean_margin": 3.766207695007324,
+        "margin_change_vs_original": 0.0010244135046377778,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 12.2612,
+        "mean_changed_patches": 3.9978
+      },
+      "patches8_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.765613555908203,
+        "margin_change_vs_original": 0.0004303170717321336,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 26.503,
+        "mean_changed_patches": 7.9578
+      },
+      "patches8_alpha0.5": {
+        "accuracy": 0.8104,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          -0.0008,
+          0.0008
+        ],
+        "mean_margin": 3.765981912612915,
+        "margin_change_vs_original": 0.0007986479322426021,
+        "predictions_recovered": 2,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 26.503,
+        "mean_changed_patches": 7.9578
+      },
+      "patches8_alpha0.75": {
+        "accuracy": 0.8104,
+        "accuracy_gain_vs_original": 0.0,
+        "accuracy_gain_95ci": [
+          -0.0012,
+          0.001
+        ],
+        "mean_margin": 3.7662951946258545,
+        "margin_change_vs_original": 0.0011124054435640574,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 26.503,
+        "mean_changed_patches": 7.9578
+      },
+      "patches8_alpha1": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0014
+        ],
+        "mean_margin": 3.7665610313415527,
+        "margin_change_vs_original": 0.0013777372660115361,
+        "predictions_recovered": 5,
+        "originally_correct_damaged": 4,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 26.503,
+        "mean_changed_patches": 7.9578
+      },
+      "patches16_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.765864849090576,
+        "margin_change_vs_original": 0.0006816653185524046,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 49.3038,
+        "mean_changed_patches": 15.5724
+      },
+      "patches16_alpha0.5": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0008,
+          0.0012
+        ],
+        "mean_margin": 3.7664248943328857,
+        "margin_change_vs_original": 0.0012420887360349298,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 49.3038,
+        "mean_changed_patches": 15.5724
+      },
+      "patches16_alpha0.75": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0012,
+          0.0014
+        ],
+        "mean_margin": 3.7668774127960205,
+        "margin_change_vs_original": 0.0016940634232014418,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 49.3038,
+        "mean_changed_patches": 15.5724
+      },
+      "patches16_alpha1": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0018
+        ],
+        "mean_margin": 3.7672157287597656,
+        "margin_change_vs_original": 0.0020327235106378794,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 6,
+        "mcnemar_exact_pvalue": 0.79052734375,
+        "mean_changed_feature_patch_pairs": 49.3038,
+        "mean_changed_patches": 15.5724
+      },
+      "patches32_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.766028881072998,
+        "margin_change_vs_original": 0.0008453708724118769,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 82.1488,
+        "mean_changed_patches": 28.9518
+      },
+      "patches32_alpha0.5": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0008,
+          0.0012
+        ],
+        "mean_margin": 3.766688585281372,
+        "margin_change_vs_original": 0.001505445223301649,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 82.1488,
+        "mean_changed_patches": 28.9518
+      },
+      "patches32_alpha0.75": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0016
+        ],
+        "mean_margin": 3.7671656608581543,
+        "margin_change_vs_original": 0.0019820115994662046,
+        "predictions_recovered": 7,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.7744140625,
+        "mean_changed_feature_patch_pairs": 82.1488,
+        "mean_changed_patches": 28.9518
+      },
+      "patches32_alpha1": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0018
+        ],
+        "mean_margin": 3.7674739360809326,
+        "margin_change_vs_original": 0.0022905233781784773,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 6,
+        "mcnemar_exact_pvalue": 0.79052734375,
+        "mean_changed_feature_patch_pairs": 82.1488,
+        "mean_changed_patches": 28.9518
+      },
+      "patches64_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.766225814819336,
+        "margin_change_vs_original": 0.0010428898967802525,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 119.173,
+        "mean_changed_patches": 47.402
+      },
+      "patches64_alpha0.5": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0008,
+          0.0012
+        ],
+        "mean_margin": 3.767035484313965,
+        "margin_change_vs_original": 0.0018522327300161123,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 119.173,
+        "mean_changed_patches": 47.402
+      },
+      "patches64_alpha0.75": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0016
+        ],
+        "mean_margin": 3.7676069736480713,
+        "margin_change_vs_original": 0.002423719270154834,
+        "predictions_recovered": 7,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.7744140625,
+        "mean_changed_feature_patch_pairs": 119.173,
+        "mean_changed_patches": 47.402
+      },
+      "patches64_alpha1": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0018
+        ],
+        "mean_margin": 3.767953872680664,
+        "margin_change_vs_original": 0.002771033439785242,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 6,
+        "mcnemar_exact_pvalue": 0.79052734375,
+        "mean_changed_feature_patch_pairs": 119.173,
+        "mean_changed_patches": 47.402
+      },
+      "patches196_alpha0.25": {
+        "accuracy": 0.81,
+        "accuracy_gain_vs_original": -0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0
+        ],
+        "mean_margin": 3.766364336013794,
+        "margin_change_vs_original": 0.0011811187723651528,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.5,
+        "mean_changed_feature_patch_pairs": 142.8058,
+        "mean_changed_patches": 61.663
+      },
+      "patches196_alpha0.5": {
+        "accuracy": 0.8106,
+        "accuracy_gain_vs_original": 0.0002,
+        "accuracy_gain_95ci": [
+          -0.0008,
+          0.0012
+        ],
+        "mean_margin": 3.7672998905181885,
+        "margin_change_vs_original": 0.0021167201921343803,
+        "predictions_recovered": 4,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_changed_feature_patch_pairs": 142.8058,
+        "mean_changed_patches": 61.663
+      },
+      "patches196_alpha0.75": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0016
+        ],
+        "mean_margin": 3.7679874897003174,
+        "margin_change_vs_original": 0.002804596908390522,
+        "predictions_recovered": 7,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.7744140625,
+        "mean_changed_feature_patch_pairs": 142.8058,
+        "mean_changed_patches": 61.663
+      },
+      "patches196_alpha1": {
+        "accuracy": 0.8108,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.001,
+          0.0018
+        ],
+        "mean_margin": 3.7684407234191895,
+        "margin_change_vs_original": 0.0032570380717515945,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 6,
+        "mcnemar_exact_pvalue": 0.79052734375,
+        "mean_changed_feature_patch_pairs": 142.8058,
+        "mean_changed_patches": 61.663
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.6438,
+        "mean_margin": 1.6990630626678467
+      },
+      "patches4_alpha0.25": {
+        "accuracy": 0.6442,
+        "accuracy_gain_vs_original": 0.0004,
+        "accuracy_gain_95ci": [
+          -0.0004,
+          0.0012
+        ],
+        "mean_margin": 1.7057539224624634,
+        "margin_change_vs_original": 0.006690747104585171,
+        "predictions_recovered": 3,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.625,
+        "mean_changed_feature_patch_pairs": 54.2876,
+        "mean_changed_patches": 3.9996
+      },
+      "patches4_alpha0.5": {
+        "accuracy": 0.6448,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.002004999999999973
+        ],
+        "mean_margin": 1.7108218669891357,
+        "margin_change_vs_original": 0.01175886020064354,
+        "predictions_recovered": 6,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.125,
+        "mean_changed_feature_patch_pairs": 54.2876,
+        "mean_changed_patches": 3.9996
+      },
+      "patches4_alpha0.75": {
+        "accuracy": 0.645,
+        "accuracy_gain_vs_original": 0.0012,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0026
+        ],
+        "mean_margin": 1.7146191596984863,
+        "margin_change_vs_original": 0.015556057915091515,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 2,
+        "mcnemar_exact_pvalue": 0.109375,
+        "mean_changed_feature_patch_pairs": 54.2876,
+        "mean_changed_patches": 3.9996
+      },
+      "patches4_alpha1": {
+        "accuracy": 0.6448,
+        "accuracy_gain_vs_original": 0.001,
+        "accuracy_gain_95ci": [
+          -0.0004,
+          0.0024
+        ],
+        "mean_margin": 1.7174310684204102,
+        "margin_change_vs_original": 0.018367916345596313,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 0.2265625,
+        "mean_changed_feature_patch_pairs": 54.2876,
+        "mean_changed_patches": 3.9996
+      },
+      "patches8_alpha0.25": {
+        "accuracy": 0.6446,
+        "accuracy_gain_vs_original": 0.0008,
+        "accuracy_gain_95ci": [
+          -0.0002,
+          0.0018
+        ],
+        "mean_margin": 1.7095460891723633,
+        "margin_change_vs_original": 0.01048303209245205,
+        "predictions_recovered": 5,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.21875,
+        "mean_changed_feature_patch_pairs": 89.502,
+        "mean_changed_patches": 7.9954
+      },
+      "patches8_alpha0.5": {
+        "accuracy": 0.6456,
+        "accuracy_gain_vs_original": 0.0018,
+        "accuracy_gain_95ci": [
+          0.0006,
+          0.0032
+        ],
+        "mean_margin": 1.7176847457885742,
+        "margin_change_vs_original": 0.018621578812599182,
+        "predictions_recovered": 10,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.01171875,
+        "mean_changed_feature_patch_pairs": 89.502,
+        "mean_changed_patches": 7.9954
+      },
+      "patches8_alpha0.75": {
+        "accuracy": 0.6456,
+        "accuracy_gain_vs_original": 0.0018,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0036
+        ],
+        "mean_margin": 1.7239714860916138,
+        "margin_change_vs_original": 0.024908397346735,
+        "predictions_recovered": 14,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.063568115234375,
+        "mean_changed_feature_patch_pairs": 89.502,
+        "mean_changed_patches": 7.9954
+      },
+      "patches8_alpha1": {
+        "accuracy": 0.646,
+        "accuracy_gain_vs_original": 0.0022,
+        "accuracy_gain_95ci": [
+          0.0002,
+          0.0044
+        ],
+        "mean_margin": 1.728751540184021,
+        "margin_change_vs_original": 0.029688360169529915,
+        "predictions_recovered": 19,
+        "originally_correct_damaged": 8,
+        "mcnemar_exact_pvalue": 0.052238985896110535,
+        "mean_changed_feature_patch_pairs": 89.502,
+        "mean_changed_patches": 7.9954
+      },
+      "patches16_alpha0.25": {
+        "accuracy": 0.6452,
+        "accuracy_gain_vs_original": 0.0014,
+        "accuracy_gain_95ci": [
+          0.0004,
+          0.0028
+        ],
+        "mean_margin": 1.7131528854370117,
+        "margin_change_vs_original": 0.014089941047132015,
+        "predictions_recovered": 8,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.0390625,
+        "mean_changed_feature_patch_pairs": 138.2432,
+        "mean_changed_patches": 15.8838
+      },
+      "patches16_alpha0.5": {
+        "accuracy": 0.6462,
+        "accuracy_gain_vs_original": 0.0024,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0042
+        ],
+        "mean_margin": 1.724380612373352,
+        "margin_change_vs_original": 0.025317711755633354,
+        "predictions_recovered": 15,
+        "originally_correct_damaged": 3,
+        "mcnemar_exact_pvalue": 0.007537841796875,
+        "mean_changed_feature_patch_pairs": 138.2432,
+        "mean_changed_patches": 15.8838
+      },
+      "patches16_alpha0.75": {
+        "accuracy": 0.6466,
+        "accuracy_gain_vs_original": 0.0028,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0052
+        ],
+        "mean_margin": 1.73331618309021,
+        "margin_change_vs_original": 0.034253135323524475,
+        "predictions_recovered": 21,
+        "originally_correct_damaged": 7,
+        "mcnemar_exact_pvalue": 0.012540951371192932,
+        "mean_changed_feature_patch_pairs": 138.2432,
+        "mean_changed_patches": 15.8838
+      },
+      "patches16_alpha1": {
+        "accuracy": 0.6474,
+        "accuracy_gain_vs_original": 0.0036,
+        "accuracy_gain_95ci": [
+          0.0014,
+          0.006
+        ],
+        "mean_margin": 1.7404617071151733,
+        "margin_change_vs_original": 0.041398730129003525,
+        "predictions_recovered": 26,
+        "originally_correct_damaged": 8,
+        "mcnemar_exact_pvalue": 0.0029350556433200836,
+        "mean_changed_feature_patch_pairs": 138.2432,
+        "mean_changed_patches": 15.8838
+      },
+      "patches32_alpha0.25": {
+        "accuracy": 0.6458,
+        "accuracy_gain_vs_original": 0.002,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0034
+        ],
+        "mean_margin": 1.7152371406555176,
+        "margin_change_vs_original": 0.016173992305994034,
+        "predictions_recovered": 11,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.00634765625,
+        "mean_changed_feature_patch_pairs": 196.1506,
+        "mean_changed_patches": 30.7434
+      },
+      "patches32_alpha0.5": {
+        "accuracy": 0.646,
+        "accuracy_gain_vs_original": 0.0022,
+        "accuracy_gain_95ci": [
+          0.0004,
+          0.004
+        ],
+        "mean_margin": 1.7284144163131714,
+        "margin_change_vs_original": 0.02935115434229374,
+        "predictions_recovered": 16,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.02660369873046875,
+        "mean_changed_feature_patch_pairs": 196.1506,
+        "mean_changed_patches": 30.7434
+      },
+      "patches32_alpha0.75": {
+        "accuracy": 0.6474,
+        "accuracy_gain_vs_original": 0.0036,
+        "accuracy_gain_95ci": [
+          0.0014,
+          0.006
+        ],
+        "mean_margin": 1.7392257452011108,
+        "margin_change_vs_original": 0.040162596851587296,
+        "predictions_recovered": 25,
+        "originally_correct_damaged": 7,
+        "mcnemar_exact_pvalue": 0.0021024015732109547,
+        "mean_changed_feature_patch_pairs": 196.1506,
+        "mean_changed_patches": 30.7434
+      },
+      "patches32_alpha1": {
+        "accuracy": 0.648,
+        "accuracy_gain_vs_original": 0.0042,
+        "accuracy_gain_95ci": [
+          0.0018,
+          0.0068
+        ],
+        "mean_margin": 1.7480472326278687,
+        "margin_change_vs_original": 0.04898431524634361,
+        "predictions_recovered": 31,
+        "originally_correct_damaged": 10,
+        "mcnemar_exact_pvalue": 0.0014504910141113214,
+        "mean_changed_feature_patch_pairs": 196.1506,
+        "mean_changed_patches": 30.7434
+      },
+      "patches64_alpha0.25": {
+        "accuracy": 0.6458,
+        "accuracy_gain_vs_original": 0.002,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0034
+        ],
+        "mean_margin": 1.7157962322235107,
+        "margin_change_vs_original": 0.016733288764953613,
+        "predictions_recovered": 11,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.00634765625,
+        "mean_changed_feature_patch_pairs": 253.0334,
+        "mean_changed_patches": 54.1472
+      },
+      "patches64_alpha0.5": {
+        "accuracy": 0.6462,
+        "accuracy_gain_vs_original": 0.0024,
+        "accuracy_gain_95ci": [
+          0.0006,
+          0.0042
+        ],
+        "mean_margin": 1.7295681238174438,
+        "margin_change_vs_original": 0.030505016446113586,
+        "predictions_recovered": 17,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.01690053939819336,
+        "mean_changed_feature_patch_pairs": 253.0334,
+        "mean_changed_patches": 54.1472
+      },
+      "patches64_alpha0.75": {
+        "accuracy": 0.647,
+        "accuracy_gain_vs_original": 0.0032,
+        "accuracy_gain_95ci": [
+          0.001195,
+          0.0054
+        ],
+        "mean_margin": 1.7410047054290771,
+        "margin_change_vs_original": 0.041941508650779724,
+        "predictions_recovered": 23,
+        "originally_correct_damaged": 7,
+        "mcnemar_exact_pvalue": 0.005222879350185395,
+        "mean_changed_feature_patch_pairs": 253.0334,
+        "mean_changed_patches": 54.1472
+      },
+      "patches64_alpha1": {
+        "accuracy": 0.648,
+        "accuracy_gain_vs_original": 0.0042,
+        "accuracy_gain_95ci": [
+          0.0018,
+          0.0068
+        ],
+        "mean_margin": 1.7503141164779663,
+        "margin_change_vs_original": 0.05125095322728157,
+        "predictions_recovered": 31,
+        "originally_correct_damaged": 10,
+        "mcnemar_exact_pvalue": 0.0014504910141113214,
+        "mean_changed_feature_patch_pairs": 253.0334,
+        "mean_changed_patches": 54.1472
+      },
+      "patches196_alpha0.25": {
+        "accuracy": 0.6458,
+        "accuracy_gain_vs_original": 0.002,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0034
+        ],
+        "mean_margin": 1.7158775329589844,
+        "margin_change_vs_original": 0.01681435853242874,
+        "predictions_recovered": 11,
+        "originally_correct_damaged": 1,
+        "mcnemar_exact_pvalue": 0.00634765625,
+        "mean_changed_feature_patch_pairs": 289.033,
+        "mean_changed_patches": 75.4464
+      },
+      "patches196_alpha0.5": {
+        "accuracy": 0.6462,
+        "accuracy_gain_vs_original": 0.0024,
+        "accuracy_gain_95ci": [
+          0.0006,
+          0.0042
+        ],
+        "mean_margin": 1.7297351360321045,
+        "margin_change_vs_original": 0.03067186288535595,
+        "predictions_recovered": 17,
+        "originally_correct_damaged": 5,
+        "mcnemar_exact_pvalue": 0.01690053939819336,
+        "mean_changed_feature_patch_pairs": 289.033,
+        "mean_changed_patches": 75.4464
+      },
+      "patches196_alpha0.75": {
+        "accuracy": 0.6468,
+        "accuracy_gain_vs_original": 0.003,
+        "accuracy_gain_95ci": [
+          0.0008,
+          0.0054
+        ],
+        "mean_margin": 1.741250991821289,
+        "margin_change_vs_original": 0.042187876999378204,
+        "predictions_recovered": 23,
+        "originally_correct_damaged": 8,
+        "mcnemar_exact_pvalue": 0.010673840530216694,
+        "mean_changed_feature_patch_pairs": 289.033,
+        "mean_changed_patches": 75.4464
+      },
+      "patches196_alpha1": {
+        "accuracy": 0.6482,
+        "accuracy_gain_vs_original": 0.0044,
+        "accuracy_gain_95ci": [
+          0.002,
+          0.007004999999999973
+        ],
+        "mean_margin": 1.750624179840088,
+        "margin_change_vs_original": 0.051561139523983,
+        "predictions_recovered": 32,
+        "originally_correct_damaged": 10,
+        "mcnemar_exact_pvalue": 0.0009406740282429382,
+        "mean_changed_feature_patch_pairs": 289.033,
+        "mean_changed_patches": 75.4464
+      }
+    }
+  },
+  "blur4_pareto_front": [
+    {
+      "name": "patches4_alpha0.75",
+      "accuracy": 0.645,
+      "accuracy_gain_vs_original": 0.0012,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0026
+      ],
+      "mean_margin": 1.7146191596984863,
+      "margin_change_vs_original": 0.015556057915091515,
+      "predictions_recovered": 8,
+      "originally_correct_damaged": 2,
+      "mcnemar_exact_pvalue": 0.109375,
+      "mean_changed_feature_patch_pairs": 54.2876,
+      "mean_changed_patches": 3.9996
+    },
+    {
+      "name": "patches8_alpha1",
+      "accuracy": 0.646,
+      "accuracy_gain_vs_original": 0.0022,
+      "accuracy_gain_95ci": [
+        0.0002,
+        0.0044
+      ],
+      "mean_margin": 1.728751540184021,
+      "margin_change_vs_original": 0.029688360169529915,
+      "predictions_recovered": 19,
+      "originally_correct_damaged": 8,
+      "mcnemar_exact_pvalue": 0.052238985896110535,
+      "mean_changed_feature_patch_pairs": 89.502,
+      "mean_changed_patches": 7.9954
+    },
+    {
+      "name": "patches16_alpha1",
+      "accuracy": 0.6474,
+      "accuracy_gain_vs_original": 0.0036,
+      "accuracy_gain_95ci": [
+        0.0014,
+        0.006
+      ],
+      "mean_margin": 1.7404617071151733,
+      "margin_change_vs_original": 0.041398730129003525,
+      "predictions_recovered": 26,
+      "originally_correct_damaged": 8,
+      "mcnemar_exact_pvalue": 0.0029350556433200836,
+      "mean_changed_feature_patch_pairs": 138.2432,
+      "mean_changed_patches": 15.8838
+    },
+    {
+      "name": "patches32_alpha1",
+      "accuracy": 0.648,
+      "accuracy_gain_vs_original": 0.0042,
+      "accuracy_gain_95ci": [
+        0.0018,
+        0.0068
+      ],
+      "mean_margin": 1.7480472326278687,
+      "margin_change_vs_original": 0.04898431524634361,
+      "predictions_recovered": 31,
+      "originally_correct_damaged": 10,
+      "mcnemar_exact_pvalue": 0.0014504910141113214,
+      "mean_changed_feature_patch_pairs": 196.1506,
+      "mean_changed_patches": 30.7434
+    },
+    {
+      "name": "patches196_alpha1",
+      "accuracy": 0.6482,
+      "accuracy_gain_vs_original": 0.0044,
+      "accuracy_gain_95ci": [
+        0.002,
+        0.007004999999999973
+      ],
+      "mean_margin": 1.750624179840088,
+      "margin_change_vs_original": 0.051561139523983,
+      "predictions_recovered": 32,
+      "originally_correct_damaged": 10,
+      "mcnemar_exact_pvalue": 0.0009406740282429382,
+      "mean_changed_feature_patch_pairs": 289.033,
+      "mean_changed_patches": 75.4464
+    }
+  ]
+}

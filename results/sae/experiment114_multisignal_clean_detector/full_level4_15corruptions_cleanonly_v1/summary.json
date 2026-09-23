@@ -1,0 +1,106 @@
+{
+  "configuration": {
+    "run_name": "full_level4_15corruptions_cleanonly_v1",
+    "severity": 4,
+    "corruption_seed": 114000,
+    "batch_size": 8,
+    "workers": 2,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "73481d0fa0f318edb4b46cd07ea0d2041cdb532ae7a8d787a4d1044af07eaf80",
+    "feature_dimension": 152,
+    "features": "signed per-block head means/dispersion, patch-token moments, image gradients/frequencies",
+    "detector": "minimum of photo/sketch Ledoit-Wolf Mahalanobis distances",
+    "threshold": "95th percentile on clean-only photo and sketch validation",
+    "corruptions_used_for_fitting_or_threshold": false,
+    "repair_applied": false,
+    "benchmark_label": "ImageNet-C algorithms on hash-disjoint ImageNet-Sketch, not official ImageNet-C JPEGs"
+  },
+  "threshold": 217.20113362112505,
+  "results": {
+    "clean": {
+      "false_positive_rate": 0.031031031031031032,
+      "samples": 999
+    },
+    "gaussian_noise": {
+      "recall": 1.0,
+      "auroc": 0.9959328698067437,
+      "samples": 999
+    },
+    "shot_noise": {
+      "recall": 1.0,
+      "auroc": 0.9979363748132517,
+      "samples": 999
+    },
+    "impulse_noise": {
+      "recall": 1.0,
+      "auroc": 0.9974819664509355,
+      "samples": 999
+    },
+    "defocus_blur": {
+      "recall": 0.8168168168168168,
+      "auroc": 0.9782169556944332,
+      "samples": 999
+    },
+    "glass_blur": {
+      "recall": 0.3053053053053053,
+      "auroc": 0.8978533087642195,
+      "samples": 999
+    },
+    "motion_blur": {
+      "recall": 0.2042042042042042,
+      "auroc": 0.8538603668733799,
+      "samples": 999
+    },
+    "zoom_blur": {
+      "recall": 0.05805805805805806,
+      "auroc": 0.7341380419458498,
+      "samples": 999
+    },
+    "snow": {
+      "recall": 0.15615615615615616,
+      "auroc": 0.611092574055537,
+      "samples": 999
+    },
+    "frost": {
+      "recall": 0.2912912912912913,
+      "auroc": 0.8331504677851024,
+      "samples": 999
+    },
+    "fog": {
+      "recall": 0.1781781781781782,
+      "auroc": 0.8947851755659564,
+      "samples": 999
+    },
+    "brightness": {
+      "recall": 0.2002002002002002,
+      "auroc": 0.6686506326145966,
+      "samples": 999
+    },
+    "contrast": {
+      "recall": 0.6386386386386387,
+      "auroc": 0.9620676732788843,
+      "samples": 999
+    },
+    "elastic_transform": {
+      "recall": 0.031031031031031032,
+      "auroc": 0.5369979589198808,
+      "samples": 999
+    },
+    "pixelate": {
+      "recall": 0.06406406406406406,
+      "auroc": 0.7726500274047821,
+      "samples": 999
+    },
+    "jpeg_compression": {
+      "recall": 0.08808808808808809,
+      "auroc": 0.7217472727983238,
+      "samples": 999
+    }
+  },
+  "limitations": [
+    "One deterministic detector, not three independently trained adapters.",
+    "ImageNet-Sketch is a previously studied domain, though this image set excludes prior frozen manifests by SHA-256.",
+    "No repair is applied; this tests detection only."
+  ]
+}

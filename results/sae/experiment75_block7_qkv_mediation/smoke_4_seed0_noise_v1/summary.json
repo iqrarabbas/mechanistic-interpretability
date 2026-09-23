@@ -1,0 +1,290 @@
+{
+  "configuration": {
+    "seeds": [
+      0
+    ],
+    "corruptions": [
+      "noise"
+    ],
+    "start_index": 38990,
+    "samples": 4,
+    "batch_size": 4,
+    "workers": 0,
+    "bootstrap": 100,
+    "run_name": "smoke_4_seed0_noise_v1",
+    "model": "google/vit-base-patch16-224",
+    "adapter_paths": {
+      "0": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment67_mixed_noise_blur_block6/full_3seed_noise_blur_identity0p2_v1/seed_0/mixed_identity0p2.pt"
+    },
+    "adapter_location": "after Block 6",
+    "decomposed_layer": 7,
+    "confirmation_range": [
+      38990,
+      38994
+    ],
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "uses_clean_counterpart": false,
+    "imageNetV2_accessed": false,
+    "imageNetSketch_accessed": false,
+    "status": "causal computational-path mediation analysis"
+  },
+  "results": {
+    "0": {
+      "noise": {
+        "baseline_to_full": {
+          "reference_accuracy": 0.75,
+          "candidate_accuracy": 0.75,
+          "accuracy_difference": 0.0,
+          "accuracy_difference_95ci": [
+            0.0,
+            0.0
+          ],
+          "reference_wrong_candidate_correct": 0,
+          "reference_correct_candidate_wrong": 0,
+          "mcnemar_exact_pvalue": 1.0
+        },
+        "conditions": {
+          "revert_q": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.012486100196838379,
+              "ci95": [
+                -0.20882248878479004,
+                0.20467257499694824
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "revert_k": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": -0.06827235221862793,
+              "ci95": [
+                -0.41212689876556396,
+                0.20723205506801562
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "revert_v": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.20838403701782227,
+              "ci95": [
+                -0.2686500549316406,
+                0.6854181289672852
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "revert_qk": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": -0.15715503692626953,
+              "ci95": [
+                -0.40847349166870117,
+                0.09780097603797906
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "revert_qkv": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.0570218563079834,
+              "ci95": [
+                -0.2565621882677078,
+                0.5526545733213423
+              ],
+              "fraction_paired_greater": 0.25
+            }
+          },
+          "revert_attention_output": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.0570218563079834,
+              "ci95": [
+                -0.25374889373779297,
+                0.3402807205915449
+              ],
+              "fraction_paired_greater": 0.25
+            }
+          },
+          "revert_mlp_output": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.03904926776885986,
+              "ci95": [
+                -0.40581631660461426,
+                0.5461891889572144
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "wrong_q": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.2660406827926636,
+              "ci95": [
+                -0.7874977588653564,
+                1.3465677887201304
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "wrong_k": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": 0.19341349601745605,
+              "ci95": [
+                -0.6036443442106247,
+                0.8785885572433472
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "wrong_v": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": -0.01905059814453125,
+              "ci95": [
+                -2.148946762084961,
+                2.1838306725025167
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          },
+          "wrong_qkv": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "adapter_gain_lost": -0.0,
+            "margin_change_from_full": {
+              "mean_paired_difference": -0.3823128938674927,
+              "ci95": [
+                -1.8970065116882324,
+                1.3539046049118042
+              ],
+              "fraction_paired_greater": 0.5
+            }
+          }
+        },
+        "full_replay_max_absolute_logit_error": 0.0
+      }
+    }
+  },
+  "guardrails": [
+    "No paired clean activation is used; components are reverted to the corresponding noisy-pass values.",
+    "Wrong-image substitutions test whether arbitrary noisy components reproduce a reversion effect.",
+    "Component substitution creates hybrid states and tests causal mediation/necessity, not sufficiency.",
+    "This is mechanistic development on previously used ImageNet validation images, not final independent evaluation."
+  ]
+}

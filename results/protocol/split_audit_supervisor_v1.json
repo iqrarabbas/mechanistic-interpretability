@@ -1,0 +1,108 @@
+{
+  "manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+  "manifest_version": "supervisor_v1",
+  "current": {
+    "protocol": "current_protocol",
+    "status": "historical audit only; contains forbidden overlap",
+    "split_count": 14,
+    "invalid_ranges": [],
+    "forbidden_overlaps": [
+      {
+        "dataset": "imagenet_val",
+        "left": "sae_train",
+        "right": "adapter0_gate_train",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          0,
+          5000
+        ],
+        "images": 5000
+      },
+      {
+        "dataset": "imagenet_val",
+        "left": "sae_train",
+        "right": "adapter0_gate_validation",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          5000,
+          7000
+        ],
+        "images": 2000
+      },
+      {
+        "dataset": "imagenet_val",
+        "left": "sae_train",
+        "right": "adapter1_gate_train",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          7000,
+          10000
+        ],
+        "images": 3000
+      },
+      {
+        "dataset": "imagenet_val",
+        "left": "sae_validation",
+        "right": "adapter1_gate_train",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          10000,
+          11000
+        ],
+        "images": 1000
+      },
+      {
+        "dataset": "imagenet_val",
+        "left": "harmful_feature_discovery",
+        "right": "initial_adapter_train",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          25000,
+          30000
+        ],
+        "images": 5000
+      },
+      {
+        "dataset": "imagenet_val",
+        "left": "harmful_feature_validation",
+        "right": "initial_adapter_validation",
+        "left_group": "feature_development",
+        "right_group": "adapter_gate_development",
+        "intersection": [
+          30000,
+          32000
+        ],
+        "images": 2000
+      }
+    ],
+    "allowed_within_group_overlaps": [],
+    "passes_isolation": false
+  },
+  "proposed": {
+    "protocol": "proposed_protocol",
+    "status": "locked candidate protocol; must be used for clean confirmation",
+    "split_count": 13,
+    "invalid_ranges": [],
+    "forbidden_overlaps": [],
+    "allowed_within_group_overlaps": [
+      {
+        "dataset": "imagenet_val",
+        "left": "sae_train",
+        "right": "harmful_feature_discovery",
+        "left_group": "feature_development",
+        "right_group": "feature_development",
+        "intersection": [
+          0,
+          5000
+        ],
+        "images": 5000
+      }
+    ],
+    "passes_isolation": true
+  }
+}

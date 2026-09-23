@@ -1,0 +1,97 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "severities": [
+      1
+    ],
+    "corruptions": [
+      "defocus_blur"
+    ],
+    "start_offset": 0,
+    "samples": 1,
+    "corruption_seed": 106000,
+    "batch_size": 8,
+    "workers": 0,
+    "bootstrap": 100,
+    "run_name": "smoke_seed0_defocus_s1_v1",
+    "model": "google/vit-base-patch16-224",
+    "evaluation_start": 36000,
+    "evaluation_end": 36001,
+    "corruption_library": "imagecorruptions",
+    "corruption_library_protocol": "224x224 uint8 input; official corruption names and severities",
+    "benchmark_label": "ImageNet-C-compatible corruptions generated on held-out ImageNet validation images; not the pre-generated official ImageNet-C archive",
+    "all_components_frozen": true,
+    "clean_counterpart_used_at_inference": false,
+    "identical_corrupted_images_across_repair_seeds": true,
+    "imageNetV2_accessed": false
+  },
+  "reserved_split": {
+    "name": "unused_imagenet_reserve",
+    "dataset": "imagenet_val",
+    "start": 36000,
+    "end": 50000,
+    "isolation_group": "reserved"
+  },
+  "results": {
+    "0": {
+      "defocus_blur": {
+        "1": {
+          "samples": 1,
+          "baseline_accuracy": 0.0,
+          "safe_router_fractions_clean_noise_blur": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "methods": {
+            "safe_router": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            },
+            "always_blur": {
+              "reference_accuracy": 0.0,
+              "candidate_accuracy": 0.0,
+              "accuracy_difference": 0.0,
+              "accuracy_difference_95ci": [
+                0.0,
+                0.0
+              ],
+              "reference_wrong_candidate_correct": 0,
+              "reference_correct_candidate_wrong": 0,
+              "mcnemar_exact_pvalue": 1.0
+            }
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "defocus_blur": {
+      "1": {
+        "mean_baseline_accuracy": 0.0,
+        "safe_router_gains_by_seed": [
+          0.0
+        ],
+        "mean_safe_router_gain": 0.0,
+        "mean_blur_route_fraction": 1.0
+      }
+    }
+  },
+  "limitations": [
+    "This uses the standardized imagecorruptions implementation, not the downloaded official ImageNet-C JPEG archive.",
+    "The reserved ImageNet validation range is disjoint from the locked SAE, adapter, and router development splits.",
+    "Later exploratory work may have inspected parts of the nominal reserve, so this is a controlled confirmation benchmark rather than a pristine final test set."
+  ]
+}

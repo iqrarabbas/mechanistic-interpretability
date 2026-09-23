@@ -1,0 +1,268 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "statistics": "/home/dr-yougart/Desktop/vit_mi/checkpoints/cfa/hf_vit_imagenet_val_statistics.pt",
+    "locked_root": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment27_corruption_transfer/fixed_noise_adapter_transfer/conditions",
+    "samples": 2,
+    "start_index": 0,
+    "corruptions": [
+      "blur",
+      "noise"
+    ],
+    "severities": [
+      1
+    ],
+    "noise_seed": 2026,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "full_max_moment": 3,
+    "class_max_moment": 1,
+    "max_grad_norm": 1.0,
+    "bootstrap_repetitions": 20,
+    "num_workers": 0,
+    "run_name": "smoke_2",
+    "resume": false,
+    "device": "cpu",
+    "official_cfa_repository_commit": "c89c573bb4e3b0fbd1fefa5c3f4b94254d1bf5b7"
+  },
+  "protocol": {
+    "same_backbone_images_order_and_corruptions": true,
+    "cfa_reset_for_every_corruption_severity": true,
+    "cfa_official_target_batch_size": false,
+    "cfa_official_optimizer_defaults": true,
+    "resource_constraint": "ImageNet validation source statistics replace ImageNet train statistics",
+    "claim": "controlled ImageNetV2 CFA comparison, not official ImageNet-C reproduction"
+  },
+  "conditions": {
+    "blur1": {
+      "corruption": "blur",
+      "severity": 1,
+      "baseline_accuracy": 1.0,
+      "fixed_adapter": {
+        "accuracy": 1.0,
+        "accuracy_gain": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      },
+      "cfa": {
+        "accuracy": 1.0,
+        "accuracy_gain": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_cfa_loss": 13.359664916992188,
+        "mean_global_loss": 9.701715469360352,
+        "mean_class_loss": 3.6579489707946777,
+        "adapted_parameter_count": 38400,
+        "adapted_parameter_names": [
+          "vit.layers.0.layernorm_before.weight",
+          "vit.layers.0.layernorm_before.bias",
+          "vit.layers.0.layernorm_after.weight",
+          "vit.layers.0.layernorm_after.bias",
+          "vit.layers.1.layernorm_before.weight",
+          "vit.layers.1.layernorm_before.bias",
+          "vit.layers.1.layernorm_after.weight",
+          "vit.layers.1.layernorm_after.bias",
+          "vit.layers.2.layernorm_before.weight",
+          "vit.layers.2.layernorm_before.bias",
+          "vit.layers.2.layernorm_after.weight",
+          "vit.layers.2.layernorm_after.bias",
+          "vit.layers.3.layernorm_before.weight",
+          "vit.layers.3.layernorm_before.bias",
+          "vit.layers.3.layernorm_after.weight",
+          "vit.layers.3.layernorm_after.bias",
+          "vit.layers.4.layernorm_before.weight",
+          "vit.layers.4.layernorm_before.bias",
+          "vit.layers.4.layernorm_after.weight",
+          "vit.layers.4.layernorm_after.bias",
+          "vit.layers.5.layernorm_before.weight",
+          "vit.layers.5.layernorm_before.bias",
+          "vit.layers.5.layernorm_after.weight",
+          "vit.layers.5.layernorm_after.bias",
+          "vit.layers.6.layernorm_before.weight",
+          "vit.layers.6.layernorm_before.bias",
+          "vit.layers.6.layernorm_after.weight",
+          "vit.layers.6.layernorm_after.bias",
+          "vit.layers.7.layernorm_before.weight",
+          "vit.layers.7.layernorm_before.bias",
+          "vit.layers.7.layernorm_after.weight",
+          "vit.layers.7.layernorm_after.bias",
+          "vit.layers.8.layernorm_before.weight",
+          "vit.layers.8.layernorm_before.bias",
+          "vit.layers.8.layernorm_after.weight",
+          "vit.layers.8.layernorm_after.bias",
+          "vit.layers.9.layernorm_before.weight",
+          "vit.layers.9.layernorm_before.bias",
+          "vit.layers.9.layernorm_after.weight",
+          "vit.layers.9.layernorm_after.bias",
+          "vit.layers.10.layernorm_before.weight",
+          "vit.layers.10.layernorm_before.bias",
+          "vit.layers.10.layernorm_after.weight",
+          "vit.layers.10.layernorm_after.bias",
+          "vit.layers.11.layernorm_before.weight",
+          "vit.layers.11.layernorm_before.bias",
+          "vit.layers.11.layernorm_after.weight",
+          "vit.layers.11.layernorm_after.bias",
+          "vit.layernorm.weight",
+          "vit.layernorm.bias"
+        ]
+      },
+      "winner": "fixed_adapter"
+    },
+    "noise1": {
+      "corruption": "noise",
+      "severity": 1,
+      "baseline_accuracy": 1.0,
+      "fixed_adapter": {
+        "accuracy": 1.0,
+        "accuracy_gain": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      },
+      "cfa": {
+        "accuracy": 1.0,
+        "accuracy_gain": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "mean_cfa_loss": 13.325460433959961,
+        "mean_global_loss": 9.905919075012207,
+        "mean_class_loss": 3.419541597366333,
+        "adapted_parameter_count": 38400,
+        "adapted_parameter_names": [
+          "vit.layers.0.layernorm_before.weight",
+          "vit.layers.0.layernorm_before.bias",
+          "vit.layers.0.layernorm_after.weight",
+          "vit.layers.0.layernorm_after.bias",
+          "vit.layers.1.layernorm_before.weight",
+          "vit.layers.1.layernorm_before.bias",
+          "vit.layers.1.layernorm_after.weight",
+          "vit.layers.1.layernorm_after.bias",
+          "vit.layers.2.layernorm_before.weight",
+          "vit.layers.2.layernorm_before.bias",
+          "vit.layers.2.layernorm_after.weight",
+          "vit.layers.2.layernorm_after.bias",
+          "vit.layers.3.layernorm_before.weight",
+          "vit.layers.3.layernorm_before.bias",
+          "vit.layers.3.layernorm_after.weight",
+          "vit.layers.3.layernorm_after.bias",
+          "vit.layers.4.layernorm_before.weight",
+          "vit.layers.4.layernorm_before.bias",
+          "vit.layers.4.layernorm_after.weight",
+          "vit.layers.4.layernorm_after.bias",
+          "vit.layers.5.layernorm_before.weight",
+          "vit.layers.5.layernorm_before.bias",
+          "vit.layers.5.layernorm_after.weight",
+          "vit.layers.5.layernorm_after.bias",
+          "vit.layers.6.layernorm_before.weight",
+          "vit.layers.6.layernorm_before.bias",
+          "vit.layers.6.layernorm_after.weight",
+          "vit.layers.6.layernorm_after.bias",
+          "vit.layers.7.layernorm_before.weight",
+          "vit.layers.7.layernorm_before.bias",
+          "vit.layers.7.layernorm_after.weight",
+          "vit.layers.7.layernorm_after.bias",
+          "vit.layers.8.layernorm_before.weight",
+          "vit.layers.8.layernorm_before.bias",
+          "vit.layers.8.layernorm_after.weight",
+          "vit.layers.8.layernorm_after.bias",
+          "vit.layers.9.layernorm_before.weight",
+          "vit.layers.9.layernorm_before.bias",
+          "vit.layers.9.layernorm_after.weight",
+          "vit.layers.9.layernorm_after.bias",
+          "vit.layers.10.layernorm_before.weight",
+          "vit.layers.10.layernorm_before.bias",
+          "vit.layers.10.layernorm_after.weight",
+          "vit.layers.10.layernorm_after.bias",
+          "vit.layers.11.layernorm_before.weight",
+          "vit.layers.11.layernorm_before.bias",
+          "vit.layers.11.layernorm_after.weight",
+          "vit.layers.11.layernorm_after.bias",
+          "vit.layernorm.weight",
+          "vit.layernorm.bias"
+        ]
+      },
+      "winner": "fixed_adapter"
+    }
+  },
+  "aggregate": {
+    "baseline": {
+      "mean_corruption_accuracy": 1.0,
+      "mean_corruption_error": 0.0
+    },
+    "fixed_adapter": {
+      "mean_corruption_accuracy": 1.0,
+      "mean_corruption_error": 0.0,
+      "mean_accuracy_gain": 0.0,
+      "per_corruption": {
+        "blur": {
+          "accuracy_by_severity": {
+            "1": 1.0
+          },
+          "gain_by_severity": {
+            "1": 0.0
+          },
+          "mean_accuracy": 1.0,
+          "mean_gain": 0.0
+        },
+        "noise": {
+          "accuracy_by_severity": {
+            "1": 1.0
+          },
+          "gain_by_severity": {
+            "1": 0.0
+          },
+          "mean_accuracy": 1.0,
+          "mean_gain": 0.0
+        }
+      }
+    },
+    "cfa": {
+      "mean_corruption_accuracy": 1.0,
+      "mean_corruption_error": 0.0,
+      "mean_accuracy_gain": 0.0,
+      "per_corruption": {
+        "blur": {
+          "accuracy_by_severity": {
+            "1": 1.0
+          },
+          "gain_by_severity": {
+            "1": 0.0
+          },
+          "mean_accuracy": 1.0,
+          "mean_gain": 0.0
+        },
+        "noise": {
+          "accuracy_by_severity": {
+            "1": 1.0
+          },
+          "gain_by_severity": {
+            "1": 0.0
+          },
+          "mean_accuracy": 1.0,
+          "mean_gain": 0.0
+        }
+      }
+    }
+  }
+}

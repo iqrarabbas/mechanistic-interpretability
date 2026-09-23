@@ -1,0 +1,98 @@
+{
+  "methods": {
+    "mixed": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.727,
+      "accuracy_difference": -0.007,
+      "accuracy_difference_95ci": [
+        -0.023,
+        0.009
+      ],
+      "reference_wrong_candidate_correct": 30,
+      "reference_correct_candidate_wrong": 37,
+      "mcnemar_exact_pvalue": 0.46381761789686937
+    },
+    "uniform": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.735,
+      "accuracy_difference": 0.001,
+      "accuracy_difference_95ci": [
+        -0.011,
+        0.013
+      ],
+      "reference_wrong_candidate_correct": 19,
+      "reference_correct_candidate_wrong": 18,
+      "mcnemar_exact_pvalue": 1.0
+    },
+    "family_router": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.732,
+      "accuracy_difference": -0.002,
+      "accuracy_difference_95ci": [
+        -0.015,
+        0.011
+      ],
+      "reference_wrong_candidate_correct": 21,
+      "reference_correct_candidate_wrong": 23,
+      "mcnemar_exact_pvalue": 0.880395821280672
+    },
+    "early_utility": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.732,
+      "accuracy_difference": -0.002,
+      "accuracy_difference_95ci": [
+        -0.015,
+        0.011
+      ],
+      "reference_wrong_candidate_correct": 21,
+      "reference_correct_candidate_wrong": 23,
+      "mcnemar_exact_pvalue": 0.880395821280672
+    },
+    "mechanism_utility": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.73,
+      "accuracy_difference": -0.004,
+      "accuracy_difference_95ci": [
+        -0.017,
+        0.009
+      ],
+      "reference_wrong_candidate_correct": 20,
+      "reference_correct_candidate_wrong": 24,
+      "mcnemar_exact_pvalue": 0.651587827208914
+    },
+    "oracle_margin": {
+      "reference_accuracy": 0.734,
+      "candidate_accuracy": 0.767,
+      "accuracy_difference": 0.033,
+      "accuracy_difference_95ci": [
+        0.023,
+        0.044024999999999634
+      ],
+      "reference_wrong_candidate_correct": 33,
+      "reference_correct_candidate_wrong": 0,
+      "mcnemar_exact_pvalue": 2.3283064365386963e-10
+    }
+  },
+  "routing": {
+    "family_router": {
+      "none": 0.0,
+      "noise": 0.045,
+      "blur": 0.955
+    },
+    "early_utility": {
+      "none": 0.0,
+      "noise": 0.206,
+      "blur": 0.794
+    },
+    "mechanism_utility": {
+      "none": 0.0,
+      "noise": 0.003,
+      "blur": 0.997
+    },
+    "oracle_margin": {
+      "none": 0.242,
+      "noise": 0.315,
+      "blur": 0.443
+    }
+  }
+}

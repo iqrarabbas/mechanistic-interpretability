@@ -1,0 +1,119 @@
+{
+  "configuration": {
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment50_block6_clean_preservation/full_3seed_identity_sweep_v1",
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "selected_variant": "identity_0p2",
+    "include_no_identity_control": true,
+    "alpha": 1.0,
+    "image_batch_size": 4,
+    "num_workers": 0,
+    "bootstrap_repetitions": 200,
+    "max_samples": 8,
+    "run_name": "smoke_seed0_8_v1",
+    "device": "cuda",
+    "block": 6,
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "adapter_frozen": true,
+    "adapter_training_corruption": "Noise-4",
+    "evaluation_corruption": "Blur-4",
+    "blur_used_for_selection": false,
+    "imageNetV2_accessed": false,
+    "status": "development transfer evaluation"
+  },
+  "development_splits": {
+    "0": {
+      "name": "adapter0_gate_validation",
+      "dataset": "imagenet_val",
+      "start": 20000,
+      "end": 22000,
+      "isolation_group": "adapter_gate_development"
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 0.875,
+      "baseline_blur4_accuracy": 0.75,
+      "variants": {
+        "identity_0p2": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.375,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        },
+        "identity_0": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.375,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "identity_0p2": {
+      "blur4_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur4_gain": 0.0,
+      "clean_gains_by_seed": [
+        -0.125
+      ],
+      "mean_clean_gain": -0.125
+    },
+    "identity_0": {
+      "blur4_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur4_gain": 0.0,
+      "clean_gains_by_seed": [
+        -0.125
+      ],
+      "mean_clean_gain": -0.125
+    }
+  }
+}

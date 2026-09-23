@@ -1,0 +1,572 @@
+{
+  "configuration": {
+    "run_name": "full_15corruptions_level4_q95_v1",
+    "severity": 4,
+    "top_k": 32,
+    "clean_quantile": 0.95,
+    "corruption_seed": 113000,
+    "batch_size": 8,
+    "workers": 2,
+    "resume": true,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "e04adc67251b0b0f06072c69cfc463a30397d8c02b188cbb8036cbb15f06f56f",
+    "corruptions": [
+      "gaussian_noise",
+      "shot_noise",
+      "impulse_noise",
+      "defocus_blur",
+      "glass_blur",
+      "motion_blur",
+      "zoom_blur",
+      "snow",
+      "frost",
+      "fog",
+      "brightness",
+      "contrast",
+      "elastic_transform",
+      "pixelate",
+      "jpeg_compression"
+    ],
+    "detector": "frozen clean-only top-32 head-z-score detector with clean-validation q95 threshold",
+    "detector_training_or_threshold_tuning_on_this_set": false,
+    "benchmark_label": "imagecorruptions algorithms on disjoint ImageNet-Sketch images; not pre-generated official ImageNet-C JPEGs",
+    "repair_applied": false,
+    "numpy2_fog_compatibility": "np.float_ alias to np.float64"
+  },
+  "calibration": {
+    "0": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.6581273078918457,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.444122314453125,
+      "clean_validation_score_std": 1.2397611141204834
+    },
+    "1": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.6386489868164062,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.440004825592041,
+      "clean_validation_score_std": 1.2420110702514648
+    },
+    "2": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 3.630824089050293,
+      "clean_validation_false_positive_rate": 0.05000000074505806,
+      "clean_validation_score_mean": 2.433544158935547,
+      "clean_validation_score_std": 1.2293187379837036
+    }
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "samples": 999,
+        "false_positive_rate": 0.026026026026026026,
+        "mean_anomaly_score": 2.232504367828369
+      },
+      "gaussian_noise": {
+        "samples": 999,
+        "detection_recall": 0.07307307307307308,
+        "auroc_vs_paired_clean_images": 0.8795953110267425,
+        "mean_anomaly_score": 2.977116346359253
+      },
+      "shot_noise": {
+        "samples": 999,
+        "detection_recall": 0.3913913913913914,
+        "auroc_vs_paired_clean_images": 0.9557360162965769,
+        "mean_anomaly_score": 3.6684536933898926
+      },
+      "impulse_noise": {
+        "samples": 999,
+        "detection_recall": 0.6456456456456456,
+        "auroc_vs_paired_clean_images": 0.966385805224644,
+        "mean_anomaly_score": 3.9679293632507324
+      },
+      "defocus_blur": {
+        "samples": 999,
+        "detection_recall": 0.34434434434434436,
+        "auroc_vs_paired_clean_images": 0.9250456662869075,
+        "mean_anomaly_score": 3.55428147315979
+      },
+      "glass_blur": {
+        "samples": 999,
+        "detection_recall": 0.12912912912912913,
+        "auroc_vs_paired_clean_images": 0.7931610288967647,
+        "mean_anomaly_score": 2.885253429412842
+      },
+      "motion_blur": {
+        "samples": 999,
+        "detection_recall": 0.04504504504504504,
+        "auroc_vs_paired_clean_images": 0.7166891616341066,
+        "mean_anomaly_score": 2.592601776123047
+      },
+      "zoom_blur": {
+        "samples": 999,
+        "detection_recall": 0.02902902902902903,
+        "auroc_vs_paired_clean_images": 0.5956161366571777,
+        "mean_anomaly_score": 2.345048666000366
+      },
+      "snow": {
+        "samples": 999,
+        "detection_recall": 0.17317317317317318,
+        "auroc_vs_paired_clean_images": 0.6622237853469084,
+        "mean_anomaly_score": 2.900590419769287
+      },
+      "frost": {
+        "samples": 999,
+        "detection_recall": 0.1091091091091091,
+        "auroc_vs_paired_clean_images": 0.7559792024256489,
+        "mean_anomaly_score": 2.776120901107788
+      },
+      "fog": {
+        "samples": 999,
+        "detection_recall": 0.05305305305305305,
+        "auroc_vs_paired_clean_images": 0.8429565701837973,
+        "mean_anomaly_score": 2.9128901958465576
+      },
+      "brightness": {
+        "samples": 999,
+        "detection_recall": 0.23123123123123124,
+        "auroc_vs_paired_clean_images": 0.7238990742494247,
+        "mean_anomaly_score": 3.290665626525879
+      },
+      "contrast": {
+        "samples": 999,
+        "detection_recall": 0.5425425425425425,
+        "auroc_vs_paired_clean_images": 0.9582239897555214,
+        "mean_anomaly_score": 4.218438148498535
+      },
+      "elastic_transform": {
+        "samples": 999,
+        "detection_recall": 0.03003003003003003,
+        "auroc_vs_paired_clean_images": 0.46297047798549296,
+        "mean_anomaly_score": 2.1721489429473877
+      },
+      "pixelate": {
+        "samples": 999,
+        "detection_recall": 0.018018018018018018,
+        "auroc_vs_paired_clean_images": 0.49014930846762683,
+        "mean_anomaly_score": 2.1766726970672607
+      },
+      "jpeg_compression": {
+        "samples": 999,
+        "detection_recall": 0.03403403403403404,
+        "auroc_vs_paired_clean_images": 0.5175370565760956,
+        "mean_anomaly_score": 2.267047882080078
+      }
+    },
+    "1": {
+      "clean": {
+        "samples": 999,
+        "false_positive_rate": 0.02702702702702703,
+        "mean_anomaly_score": 2.22648286819458
+      },
+      "gaussian_noise": {
+        "samples": 999,
+        "detection_recall": 0.07207207207207207,
+        "auroc_vs_paired_clean_images": 0.8757375994613231,
+        "mean_anomaly_score": 2.955801486968994
+      },
+      "shot_noise": {
+        "samples": 999,
+        "detection_recall": 0.3893893893893894,
+        "auroc_vs_paired_clean_images": 0.953966478991504,
+        "mean_anomaly_score": 3.644473075866699
+      },
+      "impulse_noise": {
+        "samples": 999,
+        "detection_recall": 0.6446446446446447,
+        "auroc_vs_paired_clean_images": 0.9649870090310531,
+        "mean_anomaly_score": 3.9404962062835693
+      },
+      "defocus_blur": {
+        "samples": 999,
+        "detection_recall": 0.34634634634634637,
+        "auroc_vs_paired_clean_images": 0.9244244244244245,
+        "mean_anomaly_score": 3.540900230407715
+      },
+      "glass_blur": {
+        "samples": 999,
+        "detection_recall": 0.13113113113113112,
+        "auroc_vs_paired_clean_images": 0.7930838746654562,
+        "mean_anomaly_score": 2.8761110305786133
+      },
+      "motion_blur": {
+        "samples": 999,
+        "detection_recall": 0.04704704704704705,
+        "auroc_vs_paired_clean_images": 0.7162262362462563,
+        "mean_anomaly_score": 2.5831522941589355
+      },
+      "zoom_blur": {
+        "samples": 999,
+        "detection_recall": 0.02902902902902903,
+        "auroc_vs_paired_clean_images": 0.5969437906374844,
+        "mean_anomaly_score": 2.3405606746673584
+      },
+      "snow": {
+        "samples": 999,
+        "detection_recall": 0.17417417417417416,
+        "auroc_vs_paired_clean_images": 0.6626766907047187,
+        "mean_anomaly_score": 2.8921000957489014
+      },
+      "frost": {
+        "samples": 999,
+        "detection_recall": 0.1111111111111111,
+        "auroc_vs_paired_clean_images": 0.7575513451389326,
+        "mean_anomaly_score": 2.7720727920532227
+      },
+      "fog": {
+        "samples": 999,
+        "detection_recall": 0.05805805805805806,
+        "auroc_vs_paired_clean_images": 0.8458293127962798,
+        "mean_anomaly_score": 2.920193672180176
+      },
+      "brightness": {
+        "samples": 999,
+        "detection_recall": 0.23423423423423423,
+        "auroc_vs_paired_clean_images": 0.7253359465571678,
+        "mean_anomaly_score": 3.282660961151123
+      },
+      "contrast": {
+        "samples": 999,
+        "detection_recall": 0.5535535535535535,
+        "auroc_vs_paired_clean_images": 0.958786113440768,
+        "mean_anomaly_score": 4.2157769203186035
+      },
+      "elastic_transform": {
+        "samples": 999,
+        "detection_recall": 0.03003003003003003,
+        "auroc_vs_paired_clean_images": 0.4642049456864272,
+        "mean_anomaly_score": 2.168313980102539
+      },
+      "pixelate": {
+        "samples": 999,
+        "detection_recall": 0.01901901901901902,
+        "auroc_vs_paired_clean_images": 0.49184870556241933,
+        "mean_anomaly_score": 2.1731460094451904
+      },
+      "jpeg_compression": {
+        "samples": 999,
+        "detection_recall": 0.03403403403403404,
+        "auroc_vs_paired_clean_images": 0.5183536890243596,
+        "mean_anomaly_score": 2.26236891746521
+      }
+    },
+    "2": {
+      "clean": {
+        "samples": 999,
+        "false_positive_rate": 0.026026026026026026,
+        "mean_anomaly_score": 2.223331928253174
+      },
+      "gaussian_noise": {
+        "samples": 999,
+        "detection_recall": 0.07507507507507508,
+        "auroc_vs_paired_clean_images": 0.8800391983575166,
+        "mean_anomaly_score": 2.9659714698791504
+      },
+      "shot_noise": {
+        "samples": 999,
+        "detection_recall": 0.4014014014014014,
+        "auroc_vs_paired_clean_images": 0.9559123688252817,
+        "mean_anomaly_score": 3.654083251953125
+      },
+      "impulse_noise": {
+        "samples": 999,
+        "detection_recall": 0.6516516516516516,
+        "auroc_vs_paired_clean_images": 0.966589211834457,
+        "mean_anomaly_score": 3.9507622718811035
+      },
+      "defocus_blur": {
+        "samples": 999,
+        "detection_recall": 0.35135135135135137,
+        "auroc_vs_paired_clean_images": 0.9251498745993242,
+        "mean_anomaly_score": 3.539796829223633
+      },
+      "glass_blur": {
+        "samples": 999,
+        "detection_recall": 0.13513513513513514,
+        "auroc_vs_paired_clean_images": 0.7941830719608497,
+        "mean_anomaly_score": 2.8759119510650635
+      },
+      "motion_blur": {
+        "samples": 999,
+        "detection_recall": 0.04804804804804805,
+        "auroc_vs_paired_clean_images": 0.7186500815129444,
+        "mean_anomaly_score": 2.5860097408294678
+      },
+      "zoom_blur": {
+        "samples": 999,
+        "detection_recall": 0.03003003003003003,
+        "auroc_vs_paired_clean_images": 0.5984988992997001,
+        "mean_anomaly_score": 2.340825319290161
+      },
+      "snow": {
+        "samples": 999,
+        "detection_recall": 0.17517517517517517,
+        "auroc_vs_paired_clean_images": 0.6624051478906333,
+        "mean_anomaly_score": 2.8887572288513184
+      },
+      "frost": {
+        "samples": 999,
+        "detection_recall": 0.11211211211211211,
+        "auroc_vs_paired_clean_images": 0.7579100622143665,
+        "mean_anomaly_score": 2.7689592838287354
+      },
+      "fog": {
+        "samples": 999,
+        "detection_recall": 0.06406406406406406,
+        "auroc_vs_paired_clean_images": 0.8499435371307243,
+        "mean_anomaly_score": 2.9304375648498535
+      },
+      "brightness": {
+        "samples": 999,
+        "detection_recall": 0.23123123123123124,
+        "auroc_vs_paired_clean_images": 0.7244156067979891,
+        "mean_anomaly_score": 3.2766623497009277
+      },
+      "contrast": {
+        "samples": 999,
+        "detection_recall": 0.5575575575575575,
+        "auroc_vs_paired_clean_images": 0.9593161730298867,
+        "mean_anomaly_score": 4.212343215942383
+      },
+      "elastic_transform": {
+        "samples": 999,
+        "detection_recall": 0.031031031031031032,
+        "auroc_vs_paired_clean_images": 0.463968973978984,
+        "mean_anomaly_score": 2.164823055267334
+      },
+      "pixelate": {
+        "samples": 999,
+        "detection_recall": 0.01901901901901902,
+        "auroc_vs_paired_clean_images": 0.4914469023578133,
+        "mean_anomaly_score": 2.1703507900238037
+      },
+      "jpeg_compression": {
+        "samples": 999,
+        "detection_recall": 0.03403403403403404,
+        "auroc_vs_paired_clean_images": 0.5184739293848404,
+        "mean_anomaly_score": 2.2594034671783447
+      }
+    }
+  },
+  "aggregate": {
+    "gaussian_noise": {
+      "recall_by_seed": [
+        0.07307307307307308,
+        0.07207207207207207,
+        0.07507507507507508
+      ],
+      "mean_recall": 0.07340674007340674,
+      "auroc_by_seed": [
+        0.8795953110267425,
+        0.8757375994613231,
+        0.8800391983575166
+      ],
+      "mean_auroc": 0.878457369615194
+    },
+    "shot_noise": {
+      "recall_by_seed": [
+        0.3913913913913914,
+        0.3893893893893894,
+        0.4014014014014014
+      ],
+      "mean_recall": 0.3940607273940607,
+      "auroc_by_seed": [
+        0.9557360162965769,
+        0.953966478991504,
+        0.9559123688252817
+      ],
+      "mean_auroc": 0.9552049547044543
+    },
+    "impulse_noise": {
+      "recall_by_seed": [
+        0.6456456456456456,
+        0.6446446446446447,
+        0.6516516516516516
+      ],
+      "mean_recall": 0.6473139806473139,
+      "auroc_by_seed": [
+        0.966385805224644,
+        0.9649870090310531,
+        0.966589211834457
+      ],
+      "mean_auroc": 0.9659873420300514
+    },
+    "defocus_blur": {
+      "recall_by_seed": [
+        0.34434434434434436,
+        0.34634634634634637,
+        0.35135135135135137
+      ],
+      "mean_recall": 0.34734734734734735,
+      "auroc_by_seed": [
+        0.9250456662869075,
+        0.9244244244244245,
+        0.9251498745993242
+      ],
+      "mean_auroc": 0.9248733217702187
+    },
+    "glass_blur": {
+      "recall_by_seed": [
+        0.12912912912912913,
+        0.13113113113113112,
+        0.13513513513513514
+      ],
+      "mean_recall": 0.13179846513179846,
+      "auroc_by_seed": [
+        0.7931610288967647,
+        0.7930838746654562,
+        0.7941830719608497
+      ],
+      "mean_auroc": 0.7934759918410235
+    },
+    "motion_blur": {
+      "recall_by_seed": [
+        0.04504504504504504,
+        0.04704704704704705,
+        0.04804804804804805
+      ],
+      "mean_recall": 0.04671338004671338,
+      "auroc_by_seed": [
+        0.7166891616341066,
+        0.7162262362462563,
+        0.7186500815129444
+      ],
+      "mean_auroc": 0.7171884931311023
+    },
+    "zoom_blur": {
+      "recall_by_seed": [
+        0.02902902902902903,
+        0.02902902902902903,
+        0.03003003003003003
+      ],
+      "mean_recall": 0.029362696029362697,
+      "auroc_by_seed": [
+        0.5956161366571777,
+        0.5969437906374844,
+        0.5984988992997001
+      ],
+      "mean_auroc": 0.5970196088647874
+    },
+    "snow": {
+      "recall_by_seed": [
+        0.17317317317317318,
+        0.17417417417417416,
+        0.17517517517517517
+      ],
+      "mean_recall": 0.17417417417417416,
+      "auroc_by_seed": [
+        0.6622237853469084,
+        0.6626766907047187,
+        0.6624051478906333
+      ],
+      "mean_auroc": 0.6624352079807534
+    },
+    "frost": {
+      "recall_by_seed": [
+        0.1091091091091091,
+        0.1111111111111111,
+        0.11211211211211211
+      ],
+      "mean_recall": 0.11077744411077743,
+      "auroc_by_seed": [
+        0.7559792024256489,
+        0.7575513451389326,
+        0.7579100622143665
+      ],
+      "mean_auroc": 0.757146869926316
+    },
+    "fog": {
+      "recall_by_seed": [
+        0.05305305305305305,
+        0.05805805805805806,
+        0.06406406406406406
+      ],
+      "mean_recall": 0.05839172505839172,
+      "auroc_by_seed": [
+        0.8429565701837973,
+        0.8458293127962798,
+        0.8499435371307243
+      ],
+      "mean_auroc": 0.8462431400369339
+    },
+    "brightness": {
+      "recall_by_seed": [
+        0.23123123123123124,
+        0.23423423423423423,
+        0.23123123123123124
+      ],
+      "mean_recall": 0.23223223223223224,
+      "auroc_by_seed": [
+        0.7238990742494247,
+        0.7253359465571678,
+        0.7244156067979891
+      ],
+      "mean_auroc": 0.7245502092015271
+    },
+    "contrast": {
+      "recall_by_seed": [
+        0.5425425425425425,
+        0.5535535535535535,
+        0.5575575575575575
+      ],
+      "mean_recall": 0.5512178845512179,
+      "auroc_by_seed": [
+        0.9582239897555214,
+        0.958786113440768,
+        0.9593161730298867
+      ],
+      "mean_auroc": 0.9587754254087253
+    },
+    "elastic_transform": {
+      "recall_by_seed": [
+        0.03003003003003003,
+        0.03003003003003003,
+        0.031031031031031032
+      ],
+      "mean_recall": 0.030363697030363696,
+      "auroc_by_seed": [
+        0.46297047798549296,
+        0.4642049456864272,
+        0.463968973978984
+      ],
+      "mean_auroc": 0.46371479921696807
+    },
+    "pixelate": {
+      "recall_by_seed": [
+        0.018018018018018018,
+        0.01901901901901902,
+        0.01901901901901902
+      ],
+      "mean_recall": 0.01868535201868535,
+      "auroc_by_seed": [
+        0.49014930846762683,
+        0.49184870556241933,
+        0.4914469023578133
+      ],
+      "mean_auroc": 0.49114830546261984
+    },
+    "jpeg_compression": {
+      "recall_by_seed": [
+        0.03403403403403404,
+        0.03403403403403404,
+        0.03403403403403404
+      ],
+      "mean_recall": 0.03403403403403404,
+      "auroc_by_seed": [
+        0.5175370565760956,
+        0.5183536890243596,
+        0.5184739293848404
+      ],
+      "mean_auroc": 0.5181215583284319
+    }
+  },
+  "limitations": [
+    "All conditions use the same images; seeds are detector replications, not independent test images.",
+    "Only severity 4 is tested; no classification repair is applied.",
+    "ImageNet-Sketch is a previously used domain, though this frozen image set is SHA-disjoint from the listed prior manifests."
+  ]
+}

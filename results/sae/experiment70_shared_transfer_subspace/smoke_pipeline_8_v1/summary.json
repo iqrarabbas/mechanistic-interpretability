@@ -1,0 +1,117 @@
+{
+  "configuration": {
+    "seeds": [
+      0
+    ],
+    "discovery_start": 36000,
+    "discovery_samples": 8,
+    "evaluation_start": 49990,
+    "evaluation_samples": 8,
+    "pca_rank": 8,
+    "shared_rank": 4,
+    "random_controls": 2,
+    "batch_size": 4,
+    "workers": 0,
+    "corruption_seed": 2070,
+    "bootstrap": 100,
+    "max_conditions": 2,
+    "run_name": "smoke_pipeline_8_v1",
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "adapter_paths": {
+      "0": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment67_mixed_noise_blur_block6/full_3seed_noise_blur_identity0p2_v1/seed_0/mixed_identity0p2.pt"
+    },
+    "vit_frozen": true,
+    "adapters_frozen": true,
+    "imageNetV2_accessed": false,
+    "imageNetSketch_accessed": false,
+    "status": "disjoint ImageNet-validation mechanism development",
+    "random_control": "orthogonal random rank-matched removal scaled per token to equal shared-component norm"
+  },
+  "results": {
+    "0": {
+      "principal_angle_cosines": [
+        0.9996798038482666,
+        0.9819996953010559,
+        0.943882167339325,
+        0.7665534019470215
+      ],
+      "conditions": {
+        "clean": {
+          "baseline_to_full": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "shared_removal": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": -0.125,
+            "accuracy_difference_95ci": [
+              -0.440625,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "shared_removal_cost": 0.125,
+          "random_removal_costs": [
+            0.125,
+            0.125
+          ],
+          "random_mean_removal_cost": 0.125,
+          "shared_exceeds_random_controls": 0,
+          "empirical_one_sided_pvalue": 1.0,
+          "shared_residual_energy_fraction": 0.9409763952582565
+        },
+        "noise": {
+          "baseline_to_full": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              -0.375,
+              0.25
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 1,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "shared_removal": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "shared_removal_cost": -0.0,
+          "random_removal_costs": [
+            -0.0,
+            0.125
+          ],
+          "random_mean_removal_cost": 0.0625,
+          "shared_exceeds_random_controls": 0,
+          "empirical_one_sided_pvalue": 1.0,
+          "shared_residual_energy_fraction": 0.8723615549219428
+        }
+      }
+    }
+  },
+  "limitations": [
+    "ImageNet validation images in these ranges appeared in earlier diagnostics; discovery and evaluation are disjoint within this experiment, which is mechanistic development rather than final independent confirmation.",
+    "Unseen online corruption implementations are controlled approximations, not official ImageNet-C."
+  ]
+}

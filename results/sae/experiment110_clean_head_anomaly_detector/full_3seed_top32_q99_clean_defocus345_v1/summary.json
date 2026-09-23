@@ -1,0 +1,261 @@
+{
+  "configuration": {
+    "run_name": "full_3seed_top32_q99_clean_defocus345_v1",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "severities": [
+      0,
+      3,
+      4,
+      5
+    ],
+    "top_k": 32,
+    "clean_quantile": 0.99,
+    "batch_size": 8,
+    "workers": 2,
+    "bootstrap": 5000,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "detector": "one-class clean attention-head anomaly detector",
+    "features": "720 head statistics: entropy, maximum, CLS entropy, CLS maximum, CLS patch mass",
+    "score": "mean of top-32 absolute per-feature z-scores",
+    "threshold_selection": "99th percentile of clean-only validation scores",
+    "corruption_examples_used_to_fit_detector": false,
+    "vit_and_repair_frozen": true,
+    "clean_counterpart_used_at_inference": false,
+    "post_hoc_status": "designed after Experiment 107/109 results; requires future untouched confirmation"
+  },
+  "calibration": {
+    "0": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 4.683867454528809,
+      "clean_validation_false_positive_rate": 0.009999999776482582,
+      "clean_validation_score_mean": 2.444122314453125,
+      "clean_validation_score_std": 1.2397611141204834
+    },
+    "1": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 5.388840675354004,
+      "clean_validation_false_positive_rate": 0.009999999776482582,
+      "clean_validation_score_mean": 2.440004825592041,
+      "clean_validation_score_std": 1.2420110702514648
+    },
+    "2": {
+      "clean_train_samples": 4000,
+      "clean_validation_samples": 1500,
+      "threshold": 4.570626258850098,
+      "clean_validation_false_positive_rate": 0.009999999776482582,
+      "clean_validation_score_mean": 2.433544158935547,
+      "clean_validation_score_std": 1.2293187379837036
+    }
+  },
+  "results": {
+    "0": {
+      "clean": {
+        "reference_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.017,
+        "anomaly_score_mean": 2.3224313699007033,
+        "anomaly_score_std": 1.7452261434627474
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.153,
+        "candidate_accuracy": 0.154,
+        "accuracy_difference": 0.001,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.003
+        ],
+        "reference_wrong_candidate_correct": 1,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.046,
+        "anomaly_score_mean": 3.194930512785912,
+        "anomaly_score_std": 1.762260884441158
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.09,
+        "candidate_accuracy": 0.094,
+        "accuracy_difference": 0.004,
+        "accuracy_difference_95ci": [
+          0.001,
+          0.008
+        ],
+        "reference_wrong_candidate_correct": 4,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.125,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.094,
+        "anomaly_score_mean": 3.604242685556412,
+        "anomaly_score_std": 1.7594470128640018
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.054,
+        "candidate_accuracy": 0.059,
+        "accuracy_difference": 0.005,
+        "accuracy_difference_95ci": [
+          0.001,
+          0.01
+        ],
+        "reference_wrong_candidate_correct": 5,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.0625,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.176,
+        "anomaly_score_mean": 3.9807460248470306,
+        "anomaly_score_std": 1.7561132756946807
+      }
+    },
+    "1": {
+      "clean": {
+        "reference_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.017,
+        "anomaly_score_mean": 2.3158957245349883,
+        "anomaly_score_std": 1.73495765649707
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.153,
+        "candidate_accuracy": 0.155,
+        "accuracy_difference": 0.002,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.005
+        ],
+        "reference_wrong_candidate_correct": 2,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.024,
+        "anomaly_score_mean": 3.182981213092804,
+        "anomaly_score_std": 1.752737894493046
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.09,
+        "candidate_accuracy": 0.091,
+        "accuracy_difference": 0.001,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.003
+        ],
+        "reference_wrong_candidate_correct": 1,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.04,
+        "anomaly_score_mean": 3.5913777487277985,
+        "anomaly_score_std": 1.7503810594196447
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.054,
+        "candidate_accuracy": 0.056,
+        "accuracy_difference": 0.002,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.005
+        ],
+        "reference_wrong_candidate_correct": 2,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.5,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.075,
+        "anomaly_score_mean": 3.969914983510971,
+        "anomaly_score_std": 1.7475761701572803
+      }
+    },
+    "2": {
+      "clean": {
+        "reference_accuracy": 0.361,
+        "candidate_accuracy": 0.361,
+        "accuracy_difference": 0.0,
+        "accuracy_difference_95ci": [
+          0.0,
+          0.0
+        ],
+        "reference_wrong_candidate_correct": 0,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 1.0,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.018,
+        "anomaly_score_mean": 2.312880932927132,
+        "anomaly_score_std": 1.7364002323702845
+      },
+      "defocus_blur_3": {
+        "reference_accuracy": 0.153,
+        "candidate_accuracy": 0.156,
+        "accuracy_difference": 0.003,
+        "accuracy_difference_95ci": [
+          -0.001,
+          0.008
+        ],
+        "reference_wrong_candidate_correct": 4,
+        "reference_correct_candidate_wrong": 1,
+        "mcnemar_exact_pvalue": 0.375,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.054,
+        "anomaly_score_mean": 3.1820138652324674,
+        "anomaly_score_std": 1.7534330823146964
+      },
+      "defocus_blur_4": {
+        "reference_accuracy": 0.09,
+        "candidate_accuracy": 0.094,
+        "accuracy_difference": 0.004,
+        "accuracy_difference_95ci": [
+          0.001,
+          0.008
+        ],
+        "reference_wrong_candidate_correct": 4,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.125,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.099,
+        "anomaly_score_mean": 3.589460515975952,
+        "anomaly_score_std": 1.750661549071264
+      },
+      "defocus_blur_5": {
+        "reference_accuracy": 0.054,
+        "candidate_accuracy": 0.06,
+        "accuracy_difference": 0.006,
+        "accuracy_difference_95ci": [
+          0.002,
+          0.011
+        ],
+        "reference_wrong_candidate_correct": 6,
+        "reference_correct_candidate_wrong": 0,
+        "mcnemar_exact_pvalue": 0.03125,
+        "samples": 1000,
+        "corruption_detection_fraction": 0.19,
+        "anomaly_score_mean": 3.9667918484210967,
+        "anomaly_score_std": 1.748062152153367
+      }
+    }
+  },
+  "limitations": [
+    "Only Defocus is evaluated here, so detection generality across unseen corruption families remains untested.",
+    "The evaluation images were already inspected in Experiments 107 and 109; this is a post-hoc method-development result."
+  ]
+}

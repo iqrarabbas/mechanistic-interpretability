@@ -1,0 +1,176 @@
+{
+  "configuration": {
+    "image_root": "/home/dr-yougart/Desktop/vit_mi/external_data/imagenetv2-matched-frequency-format-val",
+    "statistics": "/tmp/cfa_smoke.pt",
+    "source_samples": 100,
+    "source_start": 0,
+    "source_batch_size": 10,
+    "samples": 2,
+    "start_index": 0,
+    "conditions": [
+      "clean"
+    ],
+    "noise_seed": 2026,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0,
+    "full_max_moment": 3,
+    "class_max_moment": 1,
+    "max_grad_norm": 1.0,
+    "bootstrap_repetitions": 20,
+    "num_workers": 0,
+    "run_name": "smoke_2",
+    "resume": false,
+    "device": "cpu",
+    "official_cfa_repository_commit": "c89c573bb4e3b0fbd1fefa5c3f4b94254d1bf5b7",
+    "condition_reset": true,
+    "stream_order_fixed": true
+  },
+  "protocol_status": {
+    "algorithm": "CFA equations and official defaults ported to Hugging Face ViT",
+    "deviations": [
+      "source moments use labeled ImageNet validation because ImageNet train is unavailable",
+      "target batch size matches the existing adapter evaluation rather than official batch size 64",
+      "backbone is google/vit-base-patch16-224 rather than the official timm checkpoint"
+    ],
+    "claim": "same-setup CFA comparison, not reproduction of the official ImageNet-C table"
+  },
+  "source_statistics": {
+    "samples": 100,
+    "classes_with_samples": 93
+  },
+  "cfa": {
+    "clean": {
+      "accuracy": 1.0,
+      "accuracy_gain": 0.0,
+      "accuracy_gain_95ci": [
+        0.0,
+        0.0
+      ],
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mcnemar_exact_pvalue": 1.0,
+      "mean_cfa_loss": 17.36850357055664,
+      "mean_global_loss": 9.83509635925293,
+      "mean_class_loss": 7.533406734466553,
+      "adapted_parameter_count": 38400,
+      "adapted_parameter_names": [
+        "vit.layers.0.layernorm_before.weight",
+        "vit.layers.0.layernorm_before.bias",
+        "vit.layers.0.layernorm_after.weight",
+        "vit.layers.0.layernorm_after.bias",
+        "vit.layers.1.layernorm_before.weight",
+        "vit.layers.1.layernorm_before.bias",
+        "vit.layers.1.layernorm_after.weight",
+        "vit.layers.1.layernorm_after.bias",
+        "vit.layers.2.layernorm_before.weight",
+        "vit.layers.2.layernorm_before.bias",
+        "vit.layers.2.layernorm_after.weight",
+        "vit.layers.2.layernorm_after.bias",
+        "vit.layers.3.layernorm_before.weight",
+        "vit.layers.3.layernorm_before.bias",
+        "vit.layers.3.layernorm_after.weight",
+        "vit.layers.3.layernorm_after.bias",
+        "vit.layers.4.layernorm_before.weight",
+        "vit.layers.4.layernorm_before.bias",
+        "vit.layers.4.layernorm_after.weight",
+        "vit.layers.4.layernorm_after.bias",
+        "vit.layers.5.layernorm_before.weight",
+        "vit.layers.5.layernorm_before.bias",
+        "vit.layers.5.layernorm_after.weight",
+        "vit.layers.5.layernorm_after.bias",
+        "vit.layers.6.layernorm_before.weight",
+        "vit.layers.6.layernorm_before.bias",
+        "vit.layers.6.layernorm_after.weight",
+        "vit.layers.6.layernorm_after.bias",
+        "vit.layers.7.layernorm_before.weight",
+        "vit.layers.7.layernorm_before.bias",
+        "vit.layers.7.layernorm_after.weight",
+        "vit.layers.7.layernorm_after.bias",
+        "vit.layers.8.layernorm_before.weight",
+        "vit.layers.8.layernorm_before.bias",
+        "vit.layers.8.layernorm_after.weight",
+        "vit.layers.8.layernorm_after.bias",
+        "vit.layers.9.layernorm_before.weight",
+        "vit.layers.9.layernorm_before.bias",
+        "vit.layers.9.layernorm_after.weight",
+        "vit.layers.9.layernorm_after.bias",
+        "vit.layers.10.layernorm_before.weight",
+        "vit.layers.10.layernorm_before.bias",
+        "vit.layers.10.layernorm_after.weight",
+        "vit.layers.10.layernorm_after.bias",
+        "vit.layers.11.layernorm_before.weight",
+        "vit.layers.11.layernorm_before.bias",
+        "vit.layers.11.layernorm_after.weight",
+        "vit.layers.11.layernorm_after.bias",
+        "vit.layernorm.weight",
+        "vit.layernorm.bias"
+      ]
+    }
+  },
+  "same_setup_comparison": {
+    "clean": {
+      "baseline_accuracy": 1.0,
+      "fixed_adapter": {
+        "accuracy": 1.0,
+        "accuracy_gain": 0.0,
+        "accuracy_gain_95ci": [
+          0.0,
+          0.0
+        ],
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mcnemar_exact_pvalue": 1.0
+      },
+      "winner_by_accuracy": "fixed_adapter"
+    }
+  },
+  "locked_sae_references": {
+    "clean": {
+      "accuracy": 0.6841,
+      "accuracy_gain_vs_original": 0.0004,
+      "accuracy_gain_95ci": [
+        -0.0004,
+        0.0013
+      ],
+      "mean_margin": 2.2676682472229004,
+      "margin_change_vs_original": 0.0012542993063107133,
+      "predictions_recovered": 11,
+      "originally_correct_damaged": 7,
+      "mcnemar_exact_pvalue": 0.480682373046875,
+      "mean_changed_feature_patch_pairs": 77.5822,
+      "mean_changed_patches": 28.7267
+    },
+    "blur4": {
+      "accuracy": 0.5132,
+      "accuracy_gain_vs_original": 0.005,
+      "accuracy_gain_95ci": [
+        0.0030975,
+        0.007
+      ],
+      "mean_margin": 0.342938631772995,
+      "margin_change_vs_original": 0.034592121839523315,
+      "predictions_recovered": 75,
+      "originally_correct_damaged": 25,
+      "mcnemar_exact_pvalue": 5.636282034205402e-07,
+      "mean_changed_feature_patch_pairs": 224.1486,
+      "mean_changed_patches": 30.8891
+    },
+    "noise4": {
+      "accuracy": 0.5723,
+      "accuracy_gain_vs_original": -0.0002,
+      "accuracy_gain_95ci": [
+        -0.0013,
+        0.0008
+      ],
+      "mean_margin": 1.0162221193313599,
+      "margin_change_vs_original": 0.0008425814448855817,
+      "predictions_recovered": 13,
+      "originally_correct_damaged": 15,
+      "mcnemar_exact_pvalue": 0.8505540192127228,
+      "mean_changed_feature_patch_pairs": 84.6527,
+      "mean_changed_patches": 28.4154
+    }
+  }
+}

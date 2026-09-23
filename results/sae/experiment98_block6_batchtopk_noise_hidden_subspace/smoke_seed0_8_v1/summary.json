@@ -1,0 +1,463 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "block": 6,
+    "training_corruption": "Noise-4",
+    "output_root": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment98_block6_batchtopk_noise_hidden_subspace",
+    "seeds": [
+      0
+    ],
+    "rank": 16,
+    "classification_weight": 0.05,
+    "preservation_weight": 0.05,
+    "train_alpha": 0.5,
+    "alpha": 1.0,
+    "epochs": 1,
+    "patience": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "smooth_l1_beta": 1.0,
+    "predictor_batch_size": 4,
+    "image_batch_size": 2,
+    "workers": 0,
+    "bootstrap_repetitions": 100,
+    "max_samples": 8,
+    "run_name": "smoke_seed0_8_v1",
+    "resume": false,
+    "batch_size": 4,
+    "model": "google/vit-base-patch16-224",
+    "transfer_corruption": "Blur-4",
+    "feature_selection": "seed-specific top-8 strengthened plus top-8 weakened noise BatchTopK features",
+    "trainable_parameters_per_method": 15440,
+    "matched_parameter_count": true,
+    "frozen_components": [
+      "ViT",
+      "BatchTopK SAE",
+      "all output bases"
+    ],
+    "imageNetV2_accessed": false,
+    "final_reserve_49000_50000_accessed": false,
+    "status": "adapter-development comparison only"
+  },
+  "audit_of_experiment45": {
+    "valid_split_protocol": true,
+    "valid_parameter_matching": true,
+    "limitations_corrected_here": [
+      "Experiment 45 used an older fixed clean Vanilla SAE rather than seed-specific BatchTopK SAEs.",
+      "Experiment 45 trained and evaluated only Noise repair."
+    ],
+    "experiment45_not_repeated": true
+  },
+  "development_splits": {
+    "0": {
+      "train": {
+        "name": "adapter0_gate_train",
+        "dataset": "imagenet_val",
+        "start": 15000,
+        "end": 20000,
+        "isolation_group": "adapter_gate_development"
+      },
+      "validation": {
+        "name": "adapter0_gate_validation",
+        "dataset": "imagenet_val",
+        "start": 20000,
+        "end": 22000,
+        "isolation_group": "adapter_gate_development"
+      }
+    }
+  },
+  "controls": {
+    "0": {
+      "sae_checkpoint": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment84_block6_clean_sae_calibration/full_seed0_1000train_200val_3epoch_v1/batchtopk_lambda_1em03/model.pt",
+      "diagnostic_summary": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment85_block6_batchtopk_diagnostics/full_seed0_noise4_blur4_corrected_v1/summary.json",
+      "noise_features": [
+        10151,
+        18122,
+        11046,
+        11653,
+        8950,
+        16354,
+        2516,
+        2789,
+        5348,
+        11454,
+        17974,
+        15185,
+        9287,
+        7279,
+        3355,
+        7440
+      ],
+      "random_features": [
+        15819,
+        10452,
+        19954,
+        9368,
+        19933,
+        10497,
+        3190,
+        23581,
+        2230,
+        23726,
+        17101,
+        9810,
+        9591,
+        10274,
+        20644,
+        14777
+      ],
+      "high_variance_dimensions": [
+        187,
+        382,
+        759,
+        183,
+        660,
+        636,
+        377,
+        512,
+        435,
+        503,
+        143,
+        51,
+        561,
+        358,
+        128,
+        277
+      ],
+      "pca_eigenvalues": [
+        91570.4140625,
+        209.76736450195312,
+        172.81951904296875,
+        116.29150390625,
+        64.6044921875,
+        54.78814697265625,
+        45.92531967163086,
+        43.59889221191406,
+        36.49639129638672,
+        35.92607879638672,
+        33.22547149658203,
+        26.96691131591797,
+        24.970813751220703,
+        20.207204818725586,
+        18.215293884277344,
+        17.455490112304688
+      ]
+    }
+  },
+  "training": {
+    "0": {
+      "noise_batchtopk_decoder": {
+        "best_validation_total": 0.24749095737934113,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3160334900021553,
+              "coefficient": 0.2767904922366142,
+              "classification": 0.7829155325889587,
+              "preservation": 0.0019446214428171515
+            },
+            "validation": {
+              "total": 0.24749095737934113,
+              "coefficient": 0.2360595539212227,
+              "classification": 0.21425476670265198,
+              "preservation": 0.014373302459716797
+            }
+          }
+        ]
+      },
+      "random_batchtopk_decoder": {
+        "best_validation_total": 0.2306782305240631,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.3033042252063751,
+              "coefficient": 0.2636239230632782,
+              "classification": 0.7904604077339172,
+              "preservation": 0.0031455359421670437
+            },
+            "validation": {
+              "total": 0.2306782305240631,
+              "coefficient": 0.21968191117048264,
+              "classification": 0.21364231407642365,
+              "preservation": 0.006284117698669434
+            }
+          }
+        ]
+      },
+      "high_variance_hidden": {
+        "best_validation_total": 0.21879345178604126,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.2851978689432144,
+              "coefficient": 0.2455579787492752,
+              "classification": 0.7863034605979919,
+              "preservation": 0.006494204513728619
+            },
+            "validation": {
+              "total": 0.21879345178604126,
+              "coefficient": 0.20750286430120468,
+              "classification": 0.21088730171322823,
+              "preservation": 0.014924466609954834
+            }
+          }
+        ]
+      },
+      "noise_residual_pca": {
+        "best_validation_total": 0.18441881984472275,
+        "history": [
+          {
+            "epoch": 1,
+            "train": {
+              "total": 0.4010194391012192,
+              "coefficient": 0.3616824150085449,
+              "classification": 0.7802183032035828,
+              "preservation": 0.006522258277982473
+            },
+            "validation": {
+              "total": 0.18441881984472275,
+              "coefficient": 0.17224550247192383,
+              "classification": 0.21018654853105545,
+              "preservation": 0.03327977657318115
+            }
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "0": {
+      "noise": {
+        "baseline_accuracy": 0.875,
+        "paired_clean_accuracy": 0.875,
+        "methods": {
+          "noise_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_residual_pca": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "blur": {
+        "baseline_accuracy": 0.75,
+        "paired_clean_accuracy": 0.875,
+        "methods": {
+          "noise_batchtopk_decoder": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_residual_pca": {
+            "reference_accuracy": 0.75,
+            "candidate_accuracy": 0.75,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "clean": {
+        "baseline_accuracy": 0.875,
+        "methods": {
+          "noise_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "random_batchtopk_decoder": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "high_variance_hidden": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "noise_residual_pca": {
+            "reference_accuracy": 0.875,
+            "candidate_accuracy": 0.875,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "noise_batchtopk_decoder": {
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "random_batchtopk_decoder": {
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "high_variance_hidden": {
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    },
+    "noise_residual_pca": {
+      "noise_gains_by_seed": [
+        0.0
+      ],
+      "mean_noise_gain": 0.0,
+      "blur_gains_by_seed": [
+        0.0
+      ],
+      "mean_blur_gain": 0.0,
+      "clean_gains_by_seed": [
+        0.0
+      ],
+      "mean_clean_gain": 0.0
+    }
+  },
+  "guardrails": [
+    "SAE feature discovery [11000,12000) is disjoint from every seed-specific adapter train/validation split.",
+    "Every seed uses an independently initialized SAE and predictor.",
+    "All four methods have exactly the same trainable architecture and parameter count.",
+    "Clean counterparts provide training targets only; inference receives only the corrupted hidden state.",
+    "No full SAE reconstruction is inserted; corrections are residual hidden-state deltas.",
+    "ImageNetV2 and [49000,50000) are not accessed."
+  ]
+}

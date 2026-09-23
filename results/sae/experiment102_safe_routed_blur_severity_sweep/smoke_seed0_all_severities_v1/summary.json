@@ -1,0 +1,272 @@
+{
+  "configuration": {
+    "split_manifest": "/home/dr-yougart/Desktop/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0
+    ],
+    "severities": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "batch_size": 2,
+    "workers": 0,
+    "bootstrap": 100,
+    "max_samples": 2,
+    "run_name": "smoke_seed0_all_severities_v1",
+    "methods": [
+      "safe_router",
+      "always_blur"
+    ],
+    "model": "google/vit-base-patch16-224",
+    "block": 6,
+    "repair_training_severity": 4,
+    "router_training_severity": 4,
+    "all_components_frozen": true,
+    "clean_counterpart_used_at_inference": false,
+    "corruption_label_used_by_safe_router": false,
+    "imageNetV2_accessed": false,
+    "status": "frozen development severity generalization; no tuning"
+  },
+  "evaluation_ranges": {
+    "0": [
+      20166,
+      22000
+    ]
+  },
+  "results": {
+    "0": {
+      "1": {
+        "samples": 2,
+        "baseline_accuracy": 0.0,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "always_blur": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "2": {
+        "samples": 2,
+        "baseline_accuracy": 0.0,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "always_blur": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "3": {
+        "samples": 2,
+        "baseline_accuracy": 0.0,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "always_blur": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "4": {
+        "samples": 2,
+        "baseline_accuracy": 0.0,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "always_blur": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.0,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              0.0,
+              0.0
+            ],
+            "reference_wrong_candidate_correct": 0,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      },
+      "5": {
+        "samples": 2,
+        "baseline_accuracy": 0.0,
+        "methods": {
+          "safe_router": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.5,
+            "accuracy_difference_95ci": [
+              0.0,
+              1.0
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "always_blur": {
+            "reference_accuracy": 0.0,
+            "candidate_accuracy": 0.5,
+            "accuracy_difference": 0.5,
+            "accuracy_difference_95ci": [
+              0.0,
+              1.0
+            ],
+            "reference_wrong_candidate_correct": 1,
+            "reference_correct_candidate_wrong": 0,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "1": {
+      "safe_router": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "always_blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    },
+    "2": {
+      "safe_router": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "always_blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    },
+    "3": {
+      "safe_router": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "always_blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    },
+    "4": {
+      "safe_router": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      },
+      "always_blur": {
+        "gains_by_seed": [
+          0.0
+        ],
+        "mean_gain": 0.0
+      }
+    },
+    "5": {
+      "safe_router": {
+        "gains_by_seed": [
+          0.5
+        ],
+        "mean_gain": 0.5
+      },
+      "always_blur": {
+        "gains_by_seed": [
+          0.5
+        ],
+        "mean_gain": 0.5
+      }
+    }
+  },
+  "guardrails": [
+    "The router, thresholds, SAEs, repair bases, and repair predictors remain frozen.",
+    "Severity is varied only during evaluation; no severity-specific selection occurs.",
+    "The same image indices are paired across all severities and methods.",
+    "This development range was used to select the repair checkpoint, so it is not a pristine final benchmark."
+  ]
+}

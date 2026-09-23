@@ -1,0 +1,191 @@
+{
+  "configuration": {
+    "calibration_samples": 4,
+    "validation_samples": 2,
+    "evaluation_samples": 2,
+    "calibration_start": 41400,
+    "validation_start": 41404,
+    "evaluation_start": 41406,
+    "feature_counts": [
+      4
+    ],
+    "patch_counts": [
+      1
+    ],
+    "alphas": [
+      0.0
+    ],
+    "quantile": 0.99,
+    "batch_size": 2,
+    "seed": 0,
+    "run_name": "smoke_patch_identity",
+    "device": "cpu",
+    "source_experiment": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment12_failure_targeted_repair/full_failure_targeted_residual_gpu/summary.json"
+  },
+  "selected": {
+    "name": "features4_patches1_alpha0",
+    "features": [
+      14852,
+      8823,
+      14024,
+      6757
+    ],
+    "weights": [
+      1.9559272817028701,
+      0.7611327646546101,
+      0.6467919438194585,
+      0.6361480098230613
+    ],
+    "alpha": 0.0,
+    "patch_count": 1,
+    "strategy": "top"
+  },
+  "validation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 2.4422101974487305
+      },
+      "features4_patches1_alpha0": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.4422106742858887,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 2.5,
+        "mean_changed_patches": 1.0
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 0.25066518783569336
+      },
+      "features4_patches1_alpha0": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 0.25066375732421875,
+        "margin_change_vs_original": -1.430511474609375e-06,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 4.0,
+        "mean_changed_patches": 1.0
+      }
+    }
+  },
+  "evaluation": {
+    "clean": {
+      "original_vit": {
+        "accuracy": 0.5,
+        "mean_margin": 2.540391445159912
+      },
+      "patch_targeted": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.5403919219970703,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 1.5,
+        "mean_changed_patches": 1.0
+      },
+      "patch_targeted_confidence_safe": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.540391445159912,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      },
+      "all_patch_baseline": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.5403919219970703,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 87.0,
+        "mean_changed_patches": 84.0
+      },
+      "random_patch_control": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.5403919219970703,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 0.5,
+        "mean_changed_patches": 0.5
+      },
+      "low_score_patch_control": {
+        "accuracy": 0.5,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": 2.5403919219970703,
+        "margin_change_vs_original": 4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    },
+    "blur4": {
+      "original_vit": {
+        "accuracy": 0.0,
+        "mean_margin": -1.2010159492492676
+      },
+      "patch_targeted": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": -1.2010159492492676,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 3.0,
+        "mean_changed_patches": 1.0
+      },
+      "patch_targeted_confidence_safe": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": -1.2010164260864258,
+        "margin_change_vs_original": -4.76837158203125e-07,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 1.5,
+        "mean_changed_patches": 0.5
+      },
+      "all_patch_baseline": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": -1.2010159492492676,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 125.5,
+        "mean_changed_patches": 110.5
+      },
+      "random_patch_control": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": -1.2010159492492676,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 0.5,
+        "mean_changed_patches": 0.5
+      },
+      "low_score_patch_control": {
+        "accuracy": 0.0,
+        "accuracy_gain_vs_original": 0.0,
+        "mean_margin": -1.2010159492492676,
+        "margin_change_vs_original": 0.0,
+        "predictions_recovered": 0,
+        "originally_correct_damaged": 0,
+        "mean_changed_feature_patch_pairs": 0.0,
+        "mean_changed_patches": 0.0
+      }
+    }
+  }
+}

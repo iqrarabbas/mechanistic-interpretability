@@ -1,0 +1,93 @@
+{
+  "configuration": {
+    "run_name": "full_level4_15corruptions_multiview_v1",
+    "severity": 4,
+    "corruption_seed": 116000,
+    "batch_size": 8,
+    "workers": 2,
+    "resume": false,
+    "model": "google/vit-base-patch16-224",
+    "manifest_sha256": "a32d9c4a5f4571ca00fe82ea569e2dccf87c4313febdb0ee9bef6c74408eb42d",
+    "feature_dimension": 98,
+    "views": [
+      "original",
+      "resize_180_roundtrip",
+      "brightness_1.05",
+      "jpeg_quality_85"
+    ],
+    "detector": "clean-only photo/sketch multiview consistency Mahalanobis ensemble",
+    "threshold": "95th percentile on clean-only validation",
+    "corruptions_used_for_fit_or_threshold": false,
+    "repair_applied": false
+  },
+  "threshold": 150.86196480525285,
+  "results": {
+    "clean": {
+      "false_positive_rate": 0.06118355065195587
+    },
+    "gaussian_noise": {
+      "recall": 0.995987963891675,
+      "auroc": 0.9833975346299682
+    },
+    "shot_noise": {
+      "recall": 1.0,
+      "auroc": 0.9956343453630702
+    },
+    "impulse_noise": {
+      "recall": 1.0,
+      "auroc": 0.9950262019760384
+    },
+    "defocus_blur": {
+      "recall": 0.6359077231695085,
+      "auroc": 0.9462052154457354
+    },
+    "glass_blur": {
+      "recall": 0.2678034102306921,
+      "auroc": 0.8990597670644833
+    },
+    "motion_blur": {
+      "recall": 0.19358074222668004,
+      "auroc": 0.8224568389219816
+    },
+    "zoom_blur": {
+      "recall": 0.1675025075225677,
+      "auroc": 0.7782399354533006
+    },
+    "snow": {
+      "recall": 0.25075225677031093,
+      "auroc": 0.7449097543382404
+    },
+    "frost": {
+      "recall": 0.6920762286860582,
+      "auroc": 0.9145017801649682
+    },
+    "fog": {
+      "recall": 0.1464393179538616,
+      "auroc": 0.8091068591934278
+    },
+    "brightness": {
+      "recall": 0.36710130391173523,
+      "auroc": 0.7784999934608237
+    },
+    "contrast": {
+      "recall": 0.31995987963891676,
+      "auroc": 0.8626254893064348
+    },
+    "elastic_transform": {
+      "recall": 0.13841524573721165,
+      "auroc": 0.7104991001087515
+    },
+    "pixelate": {
+      "recall": 0.5817452357071213,
+      "auroc": 0.9340976791960636
+    },
+    "jpeg_compression": {
+      "recall": 0.05015045135406219,
+      "auroc": 0.6666926557003006
+    }
+  },
+  "limitations": [
+    "Four ViT passes per image make this substantially more expensive than Experiment 114.",
+    "No detector can guarantee recognition of every possible attack."
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "configuration": {
+    "calibration_samples": 2000,
+    "validation_samples": 2000,
+    "evaluation_samples": 5000,
+    "calibration_start": 30000,
+    "validation_start": 30000,
+    "evaluation_start": 40000,
+    "quantiles": [
+      0.95,
+      0.99,
+      0.995,
+      0.999
+    ],
+    "patch_counts": [
+      16,
+      32
+    ],
+    "alphas": [
+      0.5,
+      1.0
+    ],
+    "clean_loss_penalty": 4.0,
+    "batch_size": 2,
+    "seed": 0,
+    "run_name": "clean_gated_noise_development_gpu",
+    "device": "cuda",
+    "status": "exploratory development experiment; ImageNetV2 is not used",
+    "source_features": "/home/dr-yougart/Desktop/vit_mi/results/sae/experiment17_noise_bidirectional_repair/noise_bidirectional_development_gpu/summary.json"
+  },
+  "selected": {
+    "name": "q0.95_patches32_alpha1",
+    "quantile": 0.95,
+    "patch_count": 32,
+    "alpha": 1.0,
+    "over_features": [
+      14024,
+      14852,
+      11406,
+      4889,
+      8139,
+      17892,
+      18955,
+      3893,
+      6757,
+      17227,
+      12743,
+      12135,
+      8903,
+      3867,
+      22608,
+      8779
+    ]
+  },
+  "validation": {
+    "original_vit": {
+      "clean_correct": 0.7975,
+      "noise_correct": 0.7105,
+      "clean_margin": 3.66322684442997,
+      "noise_margin": 2.522600727915764
+    },
+    "q0.95_patches16_alpha0.5": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.001774921178817749,
+      "noise4_margin_change": 0.004016884326934814,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 1,
+      "mean_changed_feature_patch_pairs": 68.239,
+      "mean_changed_patches": 15.962
+    },
+    "q0.95_patches16_alpha1": {
+      "clean_accuracy": 0.7965,
+      "noise4_accuracy": 0.711,
+      "clean_accuracy_gain": -0.001,
+      "noise4_accuracy_gain": 0.0005,
+      "clean_margin_change": 0.0030163187980651856,
+      "noise4_margin_change": 0.00698566210269928,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 2,
+      "mean_changed_feature_patch_pairs": 68.239,
+      "mean_changed_patches": 15.962
+    },
+    "q0.95_patches32_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.0016416839361190795,
+      "noise4_margin_change": 0.005110275626182556,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 1,
+      "mean_changed_feature_patch_pairs": 109.8135,
+      "mean_changed_patches": 31.5875
+    },
+    "q0.95_patches32_alpha1": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7125,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.002,
+      "clean_margin_change": 0.0026382554769515992,
+      "noise4_margin_change": 0.009031161069869995,
+      "predictions_recovered": 6,
+      "originally_correct_damaged": 2,
+      "mean_changed_feature_patch_pairs": 109.8135,
+      "mean_changed_patches": 31.5875
+    },
+    "q0.99_patches16_alpha0.5": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.711,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.0005,
+      "clean_margin_change": 0.0010020556449890138,
+      "noise4_margin_change": 0.0024658677577972412,
+      "predictions_recovered": 2,
+      "originally_correct_damaged": 1,
+      "mean_changed_feature_patch_pairs": 23.468,
+      "mean_changed_patches": 12.2315
+    },
+    "q0.99_patches16_alpha1": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.0016334154605865479,
+      "noise4_margin_change": 0.004376912355422973,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 1,
+      "mean_changed_feature_patch_pairs": 23.468,
+      "mean_changed_patches": 12.2315
+    },
+    "q0.99_patches32_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.0008658941984176636,
+      "noise4_margin_change": 0.0027148079872131347,
+      "predictions_recovered": 2,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 32.592,
+      "mean_changed_patches": 19.2745
+    },
+    "q0.99_patches32_alpha1": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.712,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.0015,
+      "clean_margin_change": 0.0012903343439102173,
+      "noise4_margin_change": 0.004809642314910888,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 32.592,
+      "mean_changed_patches": 19.2745
+    },
+    "q0.995_patches16_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.000563912034034729,
+      "noise4_margin_change": 0.0013181115388870238,
+      "predictions_recovered": 2,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 13.2855,
+      "mean_changed_patches": 8.2975
+    },
+    "q0.995_patches16_alpha1": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.712,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.0015,
+      "clean_margin_change": 0.0008674567937850952,
+      "noise4_margin_change": 0.0023316856622695925,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 13.2855,
+      "mean_changed_patches": 8.2975
+    },
+    "q0.995_patches32_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7115,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.001,
+      "clean_margin_change": 0.00043692684173583985,
+      "noise4_margin_change": 0.0013958916664123535,
+      "predictions_recovered": 2,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 17.122,
+      "mean_changed_patches": 11.547
+    },
+    "q0.995_patches32_alpha1": {
+      "clean_accuracy": 0.797,
+      "noise4_accuracy": 0.712,
+      "clean_accuracy_gain": -0.0005,
+      "noise4_accuracy_gain": 0.0015,
+      "clean_margin_change": 0.0005898045301437378,
+      "noise4_margin_change": 0.0024508090019226074,
+      "predictions_recovered": 3,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 17.122,
+      "mean_changed_patches": 11.547
+    },
+    "q0.999_patches16_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7105,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0,
+      "clean_margin_change": 9.843504428863525e-05,
+      "noise4_margin_change": 0.0001410154104232788,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 3.309,
+      "mean_changed_patches": 2.404
+    },
+    "q0.999_patches16_alpha1": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.711,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0005,
+      "clean_margin_change": 0.00011556053161621094,
+      "noise4_margin_change": 0.00023007893562316894,
+      "predictions_recovered": 1,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 3.309,
+      "mean_changed_patches": 2.404
+    },
+    "q0.999_patches32_alpha0.5": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.7105,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0,
+      "clean_margin_change": 0.00010540211200714112,
+      "noise4_margin_change": 0.00011693894863128663,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 3.9065,
+      "mean_changed_patches": 2.9635
+    },
+    "q0.999_patches32_alpha1": {
+      "clean_accuracy": 0.7975,
+      "noise4_accuracy": 0.711,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0005,
+      "clean_margin_change": 0.00012238430976867676,
+      "noise4_margin_change": 0.00017179131507873534,
+      "predictions_recovered": 1,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 3.9065,
+      "mean_changed_patches": 2.9635
+    }
+  },
+  "evaluation": {
+    "original_vit": {
+      "clean_correct": 0.8002,
+      "noise_correct": 0.6998,
+      "clean_margin": 3.655080554294586,
+      "noise_margin": 2.376496287345886
+    },
+    "gated_affine": {
+      "clean_accuracy": 0.8006,
+      "noise4_accuracy": 0.6994,
+      "clean_accuracy_gain": 0.0004,
+      "noise4_accuracy_gain": -0.0004,
+      "clean_margin_change": 0.0029409432888031005,
+      "noise4_margin_change": 0.007470807838439941,
+      "predictions_recovered": 5,
+      "originally_correct_damaged": 7,
+      "mean_changed_feature_patch_pairs": 111.1568,
+      "mean_changed_patches": 31.5762
+    },
+    "ungated_affine": {
+      "clean_accuracy": 0.8012,
+      "noise4_accuracy": 0.6994,
+      "clean_accuracy_gain": 0.001,
+      "noise4_accuracy_gain": -0.0004,
+      "clean_margin_change": 0.004954315137863159,
+      "noise4_margin_change": 0.011732163858413696,
+      "predictions_recovered": 4,
+      "originally_correct_damaged": 6,
+      "mean_changed_feature_patch_pairs": 421.834,
+      "mean_changed_patches": 32.0
+    },
+    "quantile_clip_only": {
+      "clean_accuracy": 0.8004,
+      "noise4_accuracy": 0.6986,
+      "clean_accuracy_gain": 0.0002,
+      "noise4_accuracy_gain": -0.0012,
+      "clean_margin_change": 0.002250844383239746,
+      "noise4_margin_change": 0.005639223289489746,
+      "predictions_recovered": 1,
+      "originally_correct_damaged": 7,
+      "mean_changed_feature_patch_pairs": 104.2372,
+      "mean_changed_patches": 31.5762
+    },
+    "wrong_direction_control": {
+      "clean_accuracy": 0.8006,
+      "noise4_accuracy": 0.6976,
+      "clean_accuracy_gain": 0.0004,
+      "noise4_accuracy_gain": -0.0022,
+      "clean_margin_change": -0.00592790675163269,
+      "noise4_margin_change": -0.01285677695274353,
+      "predictions_recovered": 8,
+      "originally_correct_damaged": 19,
+      "mean_changed_feature_patch_pairs": 111.1568,
+      "mean_changed_patches": 31.5762
+    },
+    "random_feature_control": {
+      "clean_accuracy": 0.8002,
+      "noise4_accuracy": 0.7,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0002,
+      "clean_margin_change": 4.099283218383789e-05,
+      "noise4_margin_change": 7.381343841552734e-06,
+      "predictions_recovered": 1,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 8.9998,
+      "mean_changed_patches": 8.9998
+    },
+    "residual_identity": {
+      "clean_accuracy": 0.8002,
+      "noise4_accuracy": 0.6998,
+      "clean_accuracy_gain": 0.0,
+      "noise4_accuracy_gain": 0.0,
+      "clean_margin_change": 4.2438507080078125e-09,
+      "noise4_margin_change": -1.5783309936523436e-08,
+      "predictions_recovered": 0,
+      "originally_correct_damaged": 0,
+      "mean_changed_feature_patch_pairs": 0.0,
+      "mean_changed_patches": 0.0
+    }
+  }
+}

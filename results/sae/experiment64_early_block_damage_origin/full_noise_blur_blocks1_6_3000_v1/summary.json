@@ -1,0 +1,167 @@
+{
+  "experiment": 64,
+  "question": "Which of Blocks 1-5 first creates most corruption damage?",
+  "method": "Aggregate the matched 3,000-image factorial clean-component interventions from Experiment 63 across Blocks 1-6.",
+  "split": {
+    "start_index": 47000,
+    "samples": 3000,
+    "status": "mechanistic analysis only"
+  },
+  "training_or_tuning": false,
+  "deployment_method": false,
+  "rows": [
+    {
+      "corruption": "noise",
+      "block": 1,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 1.4333333333333333,
+      "incoming_residual_increment_pp": null,
+      "attention_shapley_pp": 1.2499999999999973,
+      "mlp_shapley_pp": 6.416666666666666,
+      "incoming_residual_shapley_pp": 0.9333333333333322
+    },
+    {
+      "corruption": "noise",
+      "block": 2,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 4.433333333333334,
+      "incoming_residual_increment_pp": 3.0000000000000004,
+      "attention_shapley_pp": -0.23888888888888848,
+      "mlp_shapley_pp": 3.1777777777777736,
+      "incoming_residual_shapley_pp": 5.661111111111111
+    },
+    {
+      "corruption": "noise",
+      "block": 3,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 5.633333333333333,
+      "incoming_residual_increment_pp": 1.1999999999999997,
+      "attention_shapley_pp": 1.3333333333333308,
+      "mlp_shapley_pp": 0.8500000000000008,
+      "incoming_residual_shapley_pp": 6.416666666666665
+    },
+    {
+      "corruption": "noise",
+      "block": 4,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 6.233333333333333,
+      "incoming_residual_increment_pp": 0.5999999999999999,
+      "attention_shapley_pp": 0.9055555555555537,
+      "mlp_shapley_pp": 1.2388888888888894,
+      "incoming_residual_shapley_pp": 6.455555555555553
+    },
+    {
+      "corruption": "noise",
+      "block": 5,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 6.0,
+      "incoming_residual_increment_pp": -0.2333333333333333,
+      "attention_shapley_pp": 1.366666666666666,
+      "mlp_shapley_pp": 1.0333333333333306,
+      "incoming_residual_shapley_pp": 6.2
+    },
+    {
+      "corruption": "noise",
+      "block": 6,
+      "baseline_accuracy": 0.7253333333333334,
+      "full_oracle_gain_pp": 8.6,
+      "incoming_residual_gain_pp": 7.2666666666666675,
+      "incoming_residual_increment_pp": 1.2666666666666673,
+      "attention_shapley_pp": 1.3611111111111092,
+      "mlp_shapley_pp": 1.1944444444444442,
+      "incoming_residual_shapley_pp": 6.0444444444444425
+    },
+    {
+      "corruption": "blur",
+      "block": 1,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 1.0,
+      "incoming_residual_increment_pp": null,
+      "attention_shapley_pp": 2.433333333333337,
+      "mlp_shapley_pp": 11.616666666666669,
+      "incoming_residual_shapley_pp": 1.516666666666666
+    },
+    {
+      "corruption": "blur",
+      "block": 2,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 8.799999999999999,
+      "incoming_residual_increment_pp": 7.8,
+      "attention_shapley_pp": 1.2944444444444425,
+      "mlp_shapley_pp": 5.561111111111116,
+      "incoming_residual_shapley_pp": 8.711111111111114
+    },
+    {
+      "corruption": "blur",
+      "block": 3,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 11.799999999999999,
+      "incoming_residual_increment_pp": 3.0,
+      "attention_shapley_pp": 3.7222222222222245,
+      "mlp_shapley_pp": 0.8388888888888927,
+      "incoming_residual_shapley_pp": 11.005555555555555
+    },
+    {
+      "corruption": "blur",
+      "block": 4,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 14.133333333333335,
+      "incoming_residual_increment_pp": 2.3333333333333344,
+      "attention_shapley_pp": 1.3888888888888895,
+      "mlp_shapley_pp": 1.1388888888888893,
+      "incoming_residual_shapley_pp": 13.038888888888895
+    },
+    {
+      "corruption": "blur",
+      "block": 5,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 14.233333333333334,
+      "incoming_residual_increment_pp": 0.10000000000000009,
+      "attention_shapley_pp": 1.8833333333333364,
+      "mlp_shapley_pp": 0.26666666666666505,
+      "incoming_residual_shapley_pp": 13.416666666666671
+    },
+    {
+      "corruption": "blur",
+      "block": 6,
+      "baseline_accuracy": 0.6556666666666666,
+      "full_oracle_gain_pp": 15.566666666666668,
+      "incoming_residual_gain_pp": 13.3,
+      "incoming_residual_increment_pp": -0.9333333333333332,
+      "attention_shapley_pp": 2.8277777777777806,
+      "mlp_shapley_pp": 1.0277777777777792,
+      "incoming_residual_shapley_pp": 11.71111111111111
+    }
+  ],
+  "conclusions": {
+    "noise": {
+      "earliest_dominant_source": "Block 1 MLP",
+      "block1_mlp_shapley_pp": 6.416666666666666,
+      "block1_full_oracle_gain_pp": 8.6,
+      "block1_mlp_share_of_block1_full_percent": 74.6124031007752,
+      "largest_later_incoming_residual_jump_block": 2
+    },
+    "blur": {
+      "earliest_dominant_source": "Block 1 MLP",
+      "block1_mlp_shapley_pp": 11.616666666666669,
+      "block1_full_oracle_gain_pp": 15.566666666666668,
+      "block1_mlp_share_of_block1_full_percent": 74.6252676659529,
+      "largest_later_incoming_residual_jump_block": 2
+    }
+  },
+  "limitations": [
+    "This is paired-clean oracle diagnosis, not a deployable inference procedure.",
+    "Component swaps can be off-manifold; Shapley values average all factorial interactions.",
+    "The split was reused for mechanistic analysis and must not be presented as untouched final evaluation."
+  ]
+}

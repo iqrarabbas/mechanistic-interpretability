@@ -1,0 +1,259 @@
+{
+  "configuration": {
+    "source_run": "/media/dr-yougart/Iqrar/vit_mi/results/sae/experiment50_block6_clean_preservation/full_3seed_identity_sweep_v1",
+    "split_manifest": "/media/dr-yougart/Iqrar/vit_mi/configs/split_manifest_supervisor_v1.json",
+    "split_protocol": "proposed_protocol",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "selected_variant": "identity_0p2",
+    "include_no_identity_control": true,
+    "alpha": 1.0,
+    "image_batch_size": 4,
+    "num_workers": 0,
+    "bootstrap_repetitions": 5000,
+    "max_samples": null,
+    "run_name": "full_3seed_frozen_identity0p2_v1",
+    "device": "cuda",
+    "block": 6,
+    "model": "google/vit-base-patch16-224",
+    "model_frozen": true,
+    "adapter_frozen": true,
+    "adapter_training_corruption": "Noise-4",
+    "evaluation_corruption": "Blur-4",
+    "blur_used_for_selection": false,
+    "imageNetV2_accessed": false,
+    "status": "development transfer evaluation"
+  },
+  "development_splits": {
+    "0": {
+      "name": "adapter0_gate_validation",
+      "dataset": "imagenet_val",
+      "start": 20000,
+      "end": 22000,
+      "isolation_group": "adapter_gate_development"
+    },
+    "1": {
+      "name": "adapter1_gate_validation",
+      "dataset": "imagenet_val",
+      "start": 27000,
+      "end": 29000,
+      "isolation_group": "adapter_gate_development"
+    },
+    "2": {
+      "name": "adapter2_gate_validation",
+      "dataset": "imagenet_val",
+      "start": 34000,
+      "end": 36000,
+      "isolation_group": "adapter_gate_development"
+    }
+  },
+  "validation": {
+    "seed_0": {
+      "baseline_clean_accuracy": 0.8045,
+      "baseline_blur4_accuracy": 0.64,
+      "variants": {
+        "identity_0p2": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.8045,
+            "candidate_accuracy": 0.809,
+            "accuracy_difference": 0.0045,
+            "accuracy_difference_95ci": [
+              -0.0055,
+              0.014
+            ],
+            "reference_wrong_candidate_correct": 54,
+            "reference_correct_candidate_wrong": 45,
+            "mcnemar_exact_pvalue": 0.4215233436157701
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.64,
+            "candidate_accuracy": 0.651,
+            "accuracy_difference": 0.011,
+            "accuracy_difference_95ci": [
+              -0.0005,
+              0.023
+            ],
+            "reference_wrong_candidate_correct": 83,
+            "reference_correct_candidate_wrong": 61,
+            "mcnemar_exact_pvalue": 0.07975707036384036
+          }
+        },
+        "identity_0": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.8045,
+            "candidate_accuracy": 0.7915,
+            "accuracy_difference": -0.013,
+            "accuracy_difference_95ci": [
+              -0.0245,
+              -0.0015
+            ],
+            "reference_wrong_candidate_correct": 57,
+            "reference_correct_candidate_wrong": 83,
+            "mcnemar_exact_pvalue": 0.03423566187319538
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.64,
+            "candidate_accuracy": 0.642,
+            "accuracy_difference": 0.002,
+            "accuracy_difference_95ci": [
+              -0.011012499999999995,
+              0.016
+            ],
+            "reference_wrong_candidate_correct": 98,
+            "reference_correct_candidate_wrong": 94,
+            "mcnemar_exact_pvalue": 0.828663429173007
+          }
+        }
+      }
+    },
+    "seed_1": {
+      "baseline_clean_accuracy": 0.8005,
+      "baseline_blur4_accuracy": 0.6405,
+      "variants": {
+        "identity_0p2": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.8005,
+            "candidate_accuracy": 0.797,
+            "accuracy_difference": -0.0035,
+            "accuracy_difference_95ci": [
+              -0.012,
+              0.0055
+            ],
+            "reference_wrong_candidate_correct": 39,
+            "reference_correct_candidate_wrong": 46,
+            "mcnemar_exact_pvalue": 0.5154257318839004
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.6405,
+            "candidate_accuracy": 0.6555,
+            "accuracy_difference": 0.015,
+            "accuracy_difference_95ci": [
+              0.0035,
+              0.0265
+            ],
+            "reference_wrong_candidate_correct": 84,
+            "reference_correct_candidate_wrong": 54,
+            "mcnemar_exact_pvalue": 0.013273216041919205
+          }
+        },
+        "identity_0": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.8005,
+            "candidate_accuracy": 0.792,
+            "accuracy_difference": -0.0085,
+            "accuracy_difference_95ci": [
+              -0.0195,
+              0.002
+            ],
+            "reference_wrong_candidate_correct": 51,
+            "reference_correct_candidate_wrong": 68,
+            "mcnemar_exact_pvalue": 0.14213202807505837
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.6405,
+            "candidate_accuracy": 0.644,
+            "accuracy_difference": 0.0035,
+            "accuracy_difference_95ci": [
+              -0.01,
+              0.017
+            ],
+            "reference_wrong_candidate_correct": 96,
+            "reference_correct_candidate_wrong": 89,
+            "mcnemar_exact_pvalue": 0.6592367635355442
+          }
+        }
+      }
+    },
+    "seed_2": {
+      "baseline_clean_accuracy": 0.808,
+      "baseline_blur4_accuracy": 0.6435,
+      "variants": {
+        "identity_0p2": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.808,
+            "accuracy_difference": 0.0,
+            "accuracy_difference_95ci": [
+              -0.0085,
+              0.009
+            ],
+            "reference_wrong_candidate_correct": 40,
+            "reference_correct_candidate_wrong": 40,
+            "mcnemar_exact_pvalue": 1.0
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.6435,
+            "candidate_accuracy": 0.6575,
+            "accuracy_difference": 0.014,
+            "accuracy_difference_95ci": [
+              0.002,
+              0.026
+            ],
+            "reference_wrong_candidate_correct": 90,
+            "reference_correct_candidate_wrong": 62,
+            "mcnemar_exact_pvalue": 0.02819284181764288
+          }
+        },
+        "identity_0": {
+          "clean_vs_baseline": {
+            "reference_accuracy": 0.808,
+            "candidate_accuracy": 0.791,
+            "accuracy_difference": -0.017,
+            "accuracy_difference_95ci": [
+              -0.0285,
+              -0.0055
+            ],
+            "reference_wrong_candidate_correct": 51,
+            "reference_correct_candidate_wrong": 85,
+            "mcnemar_exact_pvalue": 0.004481251675252485
+          },
+          "blur4_vs_baseline": {
+            "reference_accuracy": 0.6435,
+            "candidate_accuracy": 0.644,
+            "accuracy_difference": 0.0005,
+            "accuracy_difference_95ci": [
+              -0.014,
+              0.015
+            ],
+            "reference_wrong_candidate_correct": 107,
+            "reference_correct_candidate_wrong": 106,
+            "mcnemar_exact_pvalue": 1.0
+          }
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "identity_0p2": {
+      "blur4_gains_by_seed": [
+        0.011,
+        0.015,
+        0.014
+      ],
+      "mean_blur4_gain": 0.013333333333333334,
+      "clean_gains_by_seed": [
+        0.0045,
+        -0.0035,
+        0.0
+      ],
+      "mean_clean_gain": 0.0003333333333333332
+    },
+    "identity_0": {
+      "blur4_gains_by_seed": [
+        0.002,
+        0.0035,
+        0.0005
+      ],
+      "mean_blur4_gain": 0.002,
+      "clean_gains_by_seed": [
+        -0.013,
+        -0.0085,
+        -0.017
+      ],
+      "mean_clean_gain": -0.012833333333333334
+    }
+  }
+}
